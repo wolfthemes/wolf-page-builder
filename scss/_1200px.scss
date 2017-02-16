@@ -1,0 +1,115 @@
+.wpb-slide-caption{
+	padding: 0 114px;
+}
+
+.wpb-show-tablet{
+	display: none!important;
+}
+
+.wpb-section-columns .wpb-section-inner{
+	padding: 5em 0;
+}
+
+.wpb-col-3{
+	//width: 22.573%;
+}
+
+/* Section arrow */
+.wpb-arrow-down{
+	width:60px;
+	height:60px;
+	margin-left: -30px;
+	
+	&:before{
+		top: 20px;
+		left: 18px;
+	}
+}
+
+/* Mosaic gallery */
+.wpb-mosaic-gallery .wpb-images-block{
+	width:49.999%;
+	float:left;
+}
+
+/* Pricing table */
+.wpb-pricing-tables-2-cols{
+	width: 60%;
+	margin: 0 auto;
+}
+
+.wpb-pricing-tables-3-cols{
+	width: 85%;
+	margin: 0 auto;
+}
+
+.wpb-pricing-tables-4-cols{
+	margin: 0 auto;
+}
+
+/* Testimonials slider */
+.wpb-testimonials-container{
+	.owl-next{
+		right: -40px!important;
+	}
+
+	.owl-prev{
+		left: -40px!important;
+	}
+}
+
+/* Counter */
+.wpb-counter{
+	font-size: 72px;
+}
+
+.wpb-counter-text{
+	font-size: 16px;
+}
+
+/* Countdown */
+.wpb-countdown-container{
+	.countdown-amount {
+		font-size: 72px;
+	}
+	.countdown-period {
+		font-size: 16px;
+	}
+}
+
+/* Slider */
+.wpb-row-full-width{
+	.wpb-slider-background-default{
+		.flex-prev,
+		.flex-next{
+			width: 50px;
+			height: 100px;
+			background-size: 50px 100px;
+			margin-top: -50px;
+		}
+	}
+}
+
+.wpb-slide-text-type-big-text{
+	font-size: 24px;
+	padding: 0;
+}
+
+/* Carousel */
+.owl-next{
+	right: -33px;
+}
+
+.owl-prev{
+	left: -33px;
+}
+
+.wpb-font-dark{
+	.owl-next{
+		background-image:url('../img/slider/next-dark.png');
+	}
+
+	.owl-prev{
+		background-image:url('../img/slider/prev-dark.png');
+	}
+}

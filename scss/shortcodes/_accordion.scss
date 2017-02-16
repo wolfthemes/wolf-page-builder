@@ -1,0 +1,22 @@
+.wpb-accordion{
+	.ui-state-focus{
+		outline: none;
+	}
+	
+	.ui-accordion-content{
+		padding: 1em 1.5em;
+		
+		p{
+			margin-top: 0;
+			margin-bottom: 10px;
+		}
+	}
+}
+
+.wpb-accordion-tab{
+	margin: 0;
+	padding: 8px 15px;
+	a{
+		display: block;
+	}
+}

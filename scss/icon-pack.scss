@@ -1,0 +1,49 @@
+@font-face {
+  font-family: 'FontAwesome';
+  src: url('fonts/fontawesome-webfont.eot?v=4.7.0');
+  src: url('fonts/fontawesome-webfont.eot?#iefix&v=4.7.0') format('embedded-opentype'), url('fonts/fontawesome-webfont.woff2?v=4.7.0') format('woff2'), url('fonts/fontawesome-webfont.woff?v=4.7.0') format('woff'), url('fonts/fontawesome-webfont.ttf?v=4.7.0') format('truetype'), url('fonts/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'theme-icons';
+  src: url("fonts/theme-icons.eot?zaw4py");
+  src: url("fonts/theme-icons.eot?#iefixzaw4py") format("embedded-opentype"), url("fonts/theme-icons.woff?zaw4py") format("woff"), url("fonts/theme-icons.ttf?zaw4py") format("truetype"), url("fonts/theme-icons.svg?zaw4py#theme-icons") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'line-icons';
+  src: url("fonts/line-icons.eot?-omcai4");
+  src: url("fonts/line-icons.eot?#iefix-omcai4") format("embedded-opentype"), url("fonts/line-icons.woff?-omcai4") format("woff"), url("fonts/line-icons.ttf?-omcai4") format("truetype"), url("fonts/line-icons.svg?-omcai4#line-icons") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Linearicons-Free';
+  src:url('fonts/Linearicons-Free.eot?w118d');
+  src:url('fonts/Linearicons-Free.eot?#iefixw118d') format('embedded-opentype'),
+    url('fonts/Linearicons-Free.woff2?w118d') format('woff2'),
+    url('fonts/Linearicons-Free.woff?w118d') format('woff'),
+    url('fonts/Linearicons-Free.ttf?w118d') format('truetype'),
+    url('fonts/Linearicons-Free.svg?w118d#Linearicons-Free') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Font awesome
+-----------------------------------------------*/
+@import "icons/fontawesome";
+
+/* Line icons
+-----------------------------------------------*/
+@import "icons/line-icons";
+  
+/* Linearicons
+-----------------------------------------------*/
+@import "icons/linearicons";
+
+/* Custom icons
+-----------------------------------------------*/
+@import "icons/theme-icons";

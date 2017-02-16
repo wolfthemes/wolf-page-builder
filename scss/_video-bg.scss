@@ -1,0 +1,68 @@
+.wpb-video-bg-container{
+	display: block;
+	z-index: 0;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top:0;
+	left: 0;
+	overflow: hidden;
+
+	embed, iframe, object, video{
+		max-width: none;
+	}
+}
+
+.wpb-video-bg,
+.wpb-vimeo-bg{
+	position: absolute;
+	z-index: 0;
+	top:0;
+	left: 0;
+}
+
+.wpb-video-bg-overlay{
+	position: absolute;
+	z-index: 0;
+	top:0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.wpb-video-bg-fallback{
+	position: absolute;
+	z-index: 0;
+	top: 0px;
+	left: 0px;
+	display: block;
+	height: 100%;
+	width: 100%;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	opacity:1;
+}
+
+.wpb-video-bg-container{
+	background: #0d0d0d;
+}
+
+/* Video background control */
+.wpb-youtube-player{
+	opacity: 0;
+	transition:opacity ease 2s;
+	transition-delay: 1s;
+	
+	&.wpb-youtube-player-is-loaded{
+		opacity: 1;
+	}
+}
+
+.wpb-is-mobile{
+	.wpb-video-bg-container{
+		iframe{
+			display: none;
+		}
+	}
+}

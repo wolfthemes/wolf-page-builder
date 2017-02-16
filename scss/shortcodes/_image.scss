@@ -1,0 +1,51 @@
+.wpb-image{
+
+	.wpb-image-inner{
+		display: block;
+		position: relative;
+
+		img{
+			backface-visibility:hidden;
+			vertical-align: bottom;
+		}
+
+		.wpb-image-hover-image{
+			transition:opacity .44s cubic-bezier(0.39, 0.58, 0.57, 1);
+			position: absolute;
+			opacity: 0;
+			top: 0;
+			left: 0;
+		}
+
+		&:hover{
+			.wpb-image-hover-image{
+				opacity: 1;
+			}
+		}
+
+		img,
+		iframe, 
+		embed,
+		object, 
+		video{
+			max-width: 100%;
+		}
+	}
+
+	&.wpb-image-align-left{
+		text-align: left;
+	}
+
+	&.wpb-image-align-center{
+		text-align: center;
+	}
+
+	&.wpb-image-align-right{
+		text-align: right;
+	}
+
+	.wpb-image-caption{
+		display: block;
+		margin-top: 15px;
+	}
+}

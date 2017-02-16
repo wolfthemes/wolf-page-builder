@@ -1,0 +1,221 @@
+.wpb-slide-caption{
+	padding: 0 80px;
+}
+
+.wpb-show-mobile{
+	display: none!important;
+}
+
+.wpb-section-columns .wpb-section-inner{
+	padding: 4em 0;
+}
+
+/* Blocks */
+.wpb-section-2-cols{
+	.wpb-blocks-wrapper{
+		display: table;
+		width: 100%;
+	}
+	.wpb-block{
+		display: table-cell;
+		vertical-align: middle;	
+		width: 50%;
+	}
+}
+
+/* Lniked image */
+.wpb-linked-image .wpb-image-inner{
+	display: inline-block;
+}
+
+.wpb-block {
+	.wpb-linked-image .wpb-image-inner{
+		display: block;
+	}
+}
+
+/* Process */
+ul.wpb-process-list{
+	position: relative;
+	&:before{
+		content: ' ';
+		height: 2px;
+		background: #333;
+		position: absolute;
+		top: 45px;
+	}
+
+	li{
+		display: table-cell;
+	}
+}
+
+.wpb-font-light{
+	ul.wpb-process-list:before{
+		background: #fff;
+	}
+}
+
+.wpb-process-5-elements ul.wpb-process-list li{
+	width: 20%;
+}
+
+.wpb-process-5-elements ul.wpb-process-list:before{
+	width: 80%;
+	left: 10%;
+}
+
+.wpb-process-4-elements ul.wpb-process-list li{
+	width: 25%;
+}
+
+.wpb-process-4-elements ul.wpb-process-list:before{
+	width: 80%;
+	left: 10%;
+}
+
+.wpb-process-3-elements ul.wpb-process-list li{
+	width: 33.33%;
+}
+
+.wpb-process-3-elements ul.wpb-process-list:before{
+	width: 70%;
+	left: 15%;
+}
+
+.wpb-process-2-elements ul.wpb-process-list li{
+	width: 50%;
+}
+
+.wpb-process-2-elements ul.wpb-process-list:before{
+	width: 50%;
+	left: 25%;
+}
+
+/* Pricing tables */
+.wpb-pricing-table-inner{
+	float: left;
+}
+
+.wpb-pricing-tables-2-cols{
+	.wpb-pricing-table-inner{
+		width: 50%;
+	}
+
+	.wpb-pricing-table-featured{
+		position: relative;
+		top: 17px;
+		margin-top: 0;
+	}
+}
+
+.wpb-pricing-tables-3-cols{
+	.wpb-pricing-table-inner{
+		width: 33.2%;
+	}
+
+	.wpb-pricing-table-featured{
+		position: relative;
+		top: 17px;
+		margin-top: 0;
+	}
+}
+
+.wpb-pricing-tables-4-cols{
+	.wpb-pricing-table-inner{
+		width: 25%;
+	}
+
+	.wpb-pricing-table-featured{
+		position: relative;
+		top: 17px;
+		margin-top: 0;
+	}
+}
+
+/* Call to action */
+.wpb-call-to-action{
+	display: table;
+	width: 100%;
+
+	.wpb-call-to-action-text,
+	.wpb-call-to-action-button{
+		display: table-cell;
+		vertical-align: middle;
+		//height: 150px;
+	}
+
+	.wpb-call-to-action-text{
+		text-align: left;
+	}
+
+	.wpb-call-to-action-button{
+		text-align: right;
+
+		a.wpb-button{
+			margin-right: 0;
+			margin-top: 0;
+			margin-bottom: 0;
+			text-align: center;
+		}
+	}
+}
+
+.wpb-call-to-action-text{
+	margin-bottom: 0;
+}
+
+/* Counter */
+.wpb-counter{
+	font-size: 48px;
+}
+
+/* Slider */
+.wpb-slide-caption-text{
+	font-size: 18px;
+}
+
+/* Mailchimp */
+
+.wpb-mailchimp-size-large{
+	//font-size: 18px;
+
+	.wpb-mailchimp-email-container{
+		margin-right: 5px;
+		float: left;
+		width: 70%;
+	}
+
+	.wpb-mailchimp-submit-container{
+		float: left;
+		width: calc( 30% - 5px );
+	}
+}
+
+/* Buttons */
+.wpb-button{
+	padding:10px 30px 10px;
+}
+
+/* Testimonials */
+blockquote.wpb-testimonial-content{
+	font-size: 16px;
+}
+
+/* Image gallery */
+$columns : 6;
+$width: 100%;
+@for $i from 1 through $columns {
+	.wpb-images-gallery-columns-#{$i} .wpb-block{
+		float: left;
+		width: ( $width / $i  );
+	}
+}
+
+.wpb-alpha{
+	margin-left: 0!important;
+}
+
+.wpb-omega{
+	margin-right: 0!important;
+}

@@ -1,0 +1,16 @@
+hr.wpb-separator{
+	width: 100%;
+	border:none;
+	height: 2px;
+	background: $dark_font;
+	margin-top: 30px;
+	margin-bottom: 30px;
+	
+	&.wpb-separator-align-left{
+		margin-left: 0;
+	}
+
+	&.wpb-separator-align-right{
+		margin-right: 0;
+	}
+}

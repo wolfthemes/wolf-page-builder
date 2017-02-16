@@ -1,0 +1,45 @@
+.wpb-team-member-container{
+	padding: 0.5em;
+	
+	&.wpb-round img{
+		border-radius:50%;
+	}
+}
+
+.wpb-team-member-image{
+	margin-bottom: 1em;
+}
+
+.wpb-team-member-name{
+	font-size: 18px;
+	margin-bottom: 0!important;
+}
+
+.wpb-team-member-role{
+	font-size: 16px;
+	font-weight: 400;
+}
+
+.wpb-team-member-tagline{
+	font-size: 13px;
+}
+
+.wpb-team-member-social-container{
+	text-align: center;
+	margin-top: 20px;
+
+	a{
+		margin: 0 8px;
+		font-size: 18px;
+	}
+}
+
+.wpb-team-member-container{
+	&.wpb-text-left .wpb-team-member-social-container{
+		text-align: left;
+	}
+
+	&.wpb-text-right .wpb-team-member-social-container{
+		text-align: right;
+	}
+}

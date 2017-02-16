@@ -1,0 +1,78 @@
+/* Restaurant menu item */
+.wpb-item-price{
+	margin-bottom: 25px;
+}
+
+.wpb-item-price-layout-big-image{
+	margin-bottom: 40px;
+}
+
+.wpb-item-price-layout-small-image{
+	.wpb-item-price-image{
+		margin-top: 10px;
+	}
+}
+
+.wpb-item-price-title-container{
+	display: table;
+	width: 100%;
+	margin-bottom: 2px;
+}
+
+.wpb-item-price-title,
+.wpb-item-price-dots,
+.wpb-item-price-price{
+	display: table-cell;
+}
+
+.wpb-item-price-title,
+.wpb-item-price-price{
+	white-space: nowrap;
+	width: auto;
+	font-size: 18px;
+	font-weight: 700;
+}
+
+.wpb-item-price-title{
+	text-align: left;
+	line-height: 1.5
+}
+
+.wpb-item-price-price{
+	text-align: right;
+}
+
+.wpb-item-price-dots {
+	position: relative;
+	bottom: 10px;
+	height: 0;
+	width: 100%;
+	line-height: 0;
+	border-bottom: 2px dotted #ddd;
+}
+
+.wpb-item-price-content{
+	opacity: 0.8;
+}
+
+.wpb-item-price-layout-big-image{
+	.wpb-item-price-image-container{
+		margin-bottom:20px;
+	}
+}
+
+.wpb-item-price-title-container-block{
+	.wpb-item-price-title,
+	.wpb-item-price-price{
+		white-space: normal;
+		display: block;
+	}
+
+	.wpb-item-price-price{
+		text-align: left;
+	}
+
+	.wpb-item-price-dots{
+		display: none;
+	}
+}

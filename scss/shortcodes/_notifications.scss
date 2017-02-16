@@ -1,0 +1,67 @@
+@mixin alert($color : #EDFDD3){
+	color : darken($color, 80%);
+	border: 1px solid darken($color, 45%)!important;
+	background-color: $color;
+
+	a, a:hover, strong, span{
+		color : darken($color, 80%)!important;
+	}
+}
+
+.wpb-notification{
+	width: 100%;
+	padding:0;
+	position: relative;
+	text-shadow:none!important;
+	line-height: 1.5;
+	font-size: 14px;
+	padding:0.2em 2em;
+	margin-bottom: 1em;
+
+	a{
+		text-decoration: underline!important;
+		font-weight: 700;
+		opacity: 1!important;
+		border:none!important;
+	}
+
+	p{
+		margin:1.666em 0;
+	}
+
+	.fa{
+		margin-right: 15px;
+	}
+
+	.wpb-notification-close{
+		cursor: pointer;
+		position: absolute;
+		top: 0px;
+		right: 3px;
+		width: 12px;
+		height: 15px;
+		display: inline-block;
+		font-size: 100%;
+		text-decoration: none!important;
+		font-weight: 700!important;
+		line-height: 1.5;
+		font-size: 16px;
+		font-family: Helvetica, Arial, sans-serif;
+	}
+
+	&.wpb-info{
+		@include alert(#BEEFFF);
+	}
+
+	&.wpb-alert{
+		@include alert(#FFF7D6);
+	}
+
+	&.wpb-success{
+		@include alert();
+	}
+
+	&.wpb-error{
+		@include alert(#ffe6e3);
+	}
+}

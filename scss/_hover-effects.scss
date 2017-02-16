@@ -1,0 +1,88 @@
+.wpb-hover-default,
+.wpb-hover-greyscale,
+.wpb-hover-to-greyscale,
+.wpb-hover-scale,
+.wpb-hover-scale-greyscale,
+.wpb-hover-scale-to-greyscale{
+	.wpb-image-inner{
+		img{
+			transition: all .2s linear;
+		}
+	}
+}
+
+.wpb-hover-greyscale,
+.wpb-hover-scale-greyscale{
+	.wpb-image-inner{
+		img{
+
+			@include greyscale();
+		}
+
+		&:hover,
+		&:focus {
+			img{
+				@include no-greyscale();
+			}
+		}
+	}
+}
+
+.wpb-hover-to-greyscale,
+.wpb-hover-scale-to-greyscale{
+	.wpb-image-inner{
+		&:hover,
+		&:focus {
+			img{
+				@include greyscale();
+			}
+		}
+	}
+}
+
+.wpb-hover-scale,
+.wpb-hover-scale-greyscale,
+.wpb-hover-scale-to-greyscale{
+	.wpb-image-inner{
+		img{
+			transition: all .2s linear;
+		}
+
+		&:hover,
+		&:focus {
+			img{
+				transform: scale(1.1);
+			}
+		}
+	}
+}
+
+.wpb-hover-default{
+	.wpb-image-inner{
+
+		&:hover,
+		&:focus {
+			img{
+				opacity: 0.8;
+			}
+		}
+	}
+}
+
+.wpb-linked-image-caption-container,
+.wpb-linked-image-overlay{
+	transition: opacity .2s ease;
+}
+
+.wpb-image-inner{
+
+	&:hover{
+		.wpb-linked-image-caption-container{
+			//opacity: 0.5;
+		}
+
+		.wpb-linked-image-overlay{
+			opacity: 0.14!important;
+		}
+	}
+}

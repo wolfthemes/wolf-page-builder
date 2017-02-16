@@ -1,0 +1,77 @@
+[class*='_page_wpb-about'] .about-wrap .about-text{
+	min-height:0;
+}
+
+/* About page
+--------------------------------------*/
+.wpb-about-actions .twitter-share-button {
+	margin-left: 3px;
+	vertical-align: top;
+}
+
+.svg .wp-badge.wpb-about-page-logo,
+.wp-badge.wpb-about-page-logo {
+	background-image: url(../../img/admin/about-badge.png);
+}
+
+@mixin alert($color : #EDFDD3){
+	color : darken($color, 80%);
+	border: 1px solid darken($color, 45%)!important;
+	background-color: $color;
+
+	a, a:hover, strong, span{
+		color : darken($color, 80%)!important;
+	}
+}
+
+#wpb-notifications{
+	margin: 50px 0 30px;
+	
+	&:empty{
+		margin:0;
+	}	
+}
+
+#wpb-changelog{
+	font-family :'andale mono', 'lucida console', monospace;
+	font-size: 13px;
+}
+
+.wpb-changelog-notification{
+	width: 100%;
+	padding:0;
+	position: relative;
+	text-shadow:none!important;
+	line-height: 1.5;
+	font-size: 14px;
+	padding:0.2em 2em;
+	margin-bottom: 1em;
+
+	a{
+		text-decoration: underline!important;
+		font-weight: 700;
+		opacity: 1!important;
+		border:none!important;
+	}
+
+	p{
+		margin:1.666em 0;
+	}
+
+	&#wpb-changelog-info{
+		@include alert(#BEEFFF);
+	}
+
+	&#wpb-changelog-news{
+		@include alert(#FFF7D6);
+	}
+
+	&#wpb-changelog-success{
+		@include alert();
+	}
+
+	&#wpb-changelog-warning{
+		@include alert(#ffe6e3);
+	}
+}
+

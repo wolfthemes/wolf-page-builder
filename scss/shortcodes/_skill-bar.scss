@@ -1,0 +1,59 @@
+.wpb-skill-bar-container{
+	margin-bottom: 20px;
+}
+
+.wpb-skill-title{
+	position: absolute;
+	font-size: 16px;
+	line-height: 23px;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 10px;
+	letter-spacing : 0;
+	text-transform: none;
+	padding: 5px 8px;
+}
+
+.wpb-skill-bar-container .wpb-skill .wpb-skill-title{
+	color: #FFF!important;
+}
+
+.wpb-skill{
+	position: relative;
+	width: 100%;
+	height:35px;
+	background:rgba(0,0,0, .08);
+	margin-bottom: 1em;
+	overflow: hidden;
+}
+
+.wpb-skill-percent{
+	display: block;
+	position: absolute;
+	font-size: 18px;
+	top:0;
+	right: 10px;
+	z-index: 2;
+	text-align: right;
+	line-height: 35px;
+	height: 100%;
+	font-weight: 700;
+	color:#939394;
+}
+
+.wpb-skill-bar{
+	position: absolute;
+	display: block;
+	height:100%;
+	background:rgba(0,0,0, .7);
+}
+
+.wpb-skill-value{
+	position: relative;
+	z-index: 5;
+	//color: #FFF;
+	display: block;
+	padding: 5px 8px;
+	line-height: 1.7;
+	text-align: right;
+}

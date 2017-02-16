@@ -1,0 +1,311 @@
+/* Hide if shortcode attributes are set */
+.wpb-last-posts{
+	&.wpb-hide-category {
+		.categories-links,
+		.post-square-caption .category{
+			display: none;
+		}
+	}
+
+	&.wpb-hide-tag {
+		.tags-links{
+			display: none;
+		}
+	}
+
+	&.wpb-hide-date {
+		.posted-on{
+			display: none;
+		}
+	}
+
+	&.wpb-hide-author {
+		.by-author{
+			display: none;
+		}
+	}
+
+	&.wpb-hide-summary {
+		.entry-summary{
+			display: none;
+		}
+	}
+
+	&.wpb-hide-cover {
+		.wpb-post-column-entry-thumbnail,
+		.wpb-post-column-entry-slider{
+			display: none;
+		}
+	}
+}
+
+.wpb-last-posts-slider,
+.wpb-last-posts-preview,
+.wpb-last-posts-columns{
+
+	img.avatar {
+		position: relative;
+		top: 5px;
+		margin-right: 5px;
+	}
+
+	.wolf-button,
+	.wpb-button{
+		font-size: 11px;
+		border-width:1px;
+		padding: 0.4em 1em 0.4em;
+	}
+}
+
+/* Date */
+.wpb-updated:not(.wpb-published) {
+	display: none;
+}
+
+.wpb-post-slide-entry-meta,
+.wpb-post-preview-entry-meta,
+.wpb-post-column-entry-meta{
+	a{
+		font-size: 12px;
+	}
+	
+	& > span{
+		margin-right: 5px;
+	}
+}
+
+.wpb-post-slide-entry-title,
+.wpb-post-preview-entry-title,
+.wpb-post-column-entry-title{
+	margin-top: 0;
+	margin-bottom: 0;
+	font-size: 18px;
+}
+
+/* Last posts slider */
+.wpb-last-posts-slider{
+	.flex-control-nav{
+		top:15px;
+		bottom : auto!important;
+		right: 15px;
+		text-align: right;
+		
+		li a{
+			text-indent: 100%;
+			white-space: nowrap;
+			overflow: hidden;
+		}
+	}
+
+	.flex-direction-nav .flex-prev,
+	.flex-direction-nav .flex-next{
+		width: 40px;
+		height: 80px;
+		background-size: 40px 80px;
+		margin-top: -40px;
+	}
+}
+
+.wpb-post-slide{
+	width: 100%;
+	font-size: 13px;
+}
+
+.wpb-post-slide-inner{
+	display: block;
+	padding: 1.5em;
+	
+	p{
+		margin: 20px 0 0;
+	}
+}
+
+.wpb-post-slide-entry-meta{
+	margin: 8px 0 8px;
+}
+
+/* Last posts preview */
+.wpb-last-posts-preview{
+	
+}
+
+.wpb-post-preview{
+	margin-bottom: 15px;
+}
+
+.wpb-post-preview-entry-meta{
+	margin: 5px 0 5px;
+}
+
+.wpb-post-preview-entry-thumbnail {
+	float: left;
+	margin-right: 15px;
+	margin-bottom: 10px;
+}
+
+.wpb-post-preview-entry-summary{
+	font-size: 12px;
+	
+	p{
+		margin: 0 0 15px;
+	}
+}
+
+/* Last posts columns */
+.wpb-last-posts-columns{
+	
+}
+
+.wpb-post-column{
+	padding: 10px;
+	margin-bottom: 10px;
+	
+	p{
+		margin: 15px 0 0;
+		font-size: 14px;
+	}
+}
+
+.wpb-post-column-entry-thumbnail,
+.wpb-post-column-entry-slider{
+	margin-bottom: 10px;
+}
+
+.wpb-post-column-entry-meta{
+	margin: 5px 0 0;
+	
+	a{
+		font-size: 13px;
+	}
+}
+
+@media screen and (min-width: 500px) {
+	.wpb-last-posts-columns-2,
+	.wpb-last-posts-columns-3,
+	.wpb-last-posts-columns-4,
+	.wpb-last-posts-columns-5,
+	.wpb-last-posts-columns-6{
+		.wpb-post-column{
+			float: left;
+			width: 50%;
+			
+			&:nth-child(2n+1){
+				clear:left;
+			}
+		}
+	}
+}
+
+@media screen and (min-width: 800px) {
+
+	.wpb-last-posts-columns-3,
+	.wpb-last-posts-columns-6{
+		.wpb-post-column{
+			width: 33.33%;
+
+			&:nth-child(2n+1){
+				clear:none;
+			}
+
+			&:nth-child(3n+1){
+				clear:left;
+			}
+		}
+	}
+
+	.wpb-last-posts-columns-4{
+		.wpb-post-column{
+			width: 25%;
+
+			&:nth-child(2n+1){
+				clear:none;
+			}
+
+			&:nth-child(3n+1){
+				clear:none;
+			}
+
+			&:nth-child(4n+1){
+				clear:left;
+			}
+		}
+	}
+}
+
+
+@media screen and (min-width: 1200px) {
+
+	.wpb-last-posts-columns-5{
+		.wpb-post-column{
+			width: 20%;
+
+			&:nth-child(2n+1){
+				clear:none;
+			}
+
+			&:nth-child(3n+1){
+				clear:none;
+			}
+
+			&:nth-child(4n+1){
+				clear:none;
+			}
+
+			&:nth-child(5n+1){
+				clear:left;
+			}
+		}
+	}
+
+	.wpb-last-posts-columns-6{
+		.wpb-post-column{
+			width: 16.65%;
+
+			&:nth-child(2n+1){
+				clear:none;
+			}
+
+			&:nth-child(3n+1){
+				clear:none;
+			}
+
+			&:nth-child(4n+1){
+				clear:none;
+			}
+
+			&:nth-child(5n+1){
+				clear:none;
+			}
+
+			&:nth-child(6n+1){
+				clear:left;
+			}
+		}
+	}
+}
+
+
+/* Post skin */
+.wpb-font-light{
+	.wpb-post-slide-inner{
+		background: #333;
+	}
+
+	.wpb-post-slide-entry-link,
+	.wpb-post-preview-entry-link,
+	.wpb-post-column-entry-link{
+		color: #FFF;
+	}
+}
+
+.wpb-font-dark{
+	.wpb-post-slide-inner{
+		background: #fff;
+	}
+
+	.wpb-post-slide-entry-link,
+	.wpb-post-preview-entry-link,
+	.wpb-post-column-entry-link{
+		color: #0d0d0d;
+	}
+}

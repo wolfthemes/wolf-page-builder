@@ -1,0 +1,30 @@
+.wpb-video-opener{
+
+	a{
+		display: block;
+	}
+
+	&.wpb-video-opener-align-left{
+		text-align: left;
+	}
+
+	&.wpb-video-opener-align-center{
+		text-align: center;
+	}
+
+	&.wpb-video-opener-align-right{
+		text-align: right;
+	}
+}
+
+.wpb-video-opener-default-image{
+	width: 90px;
+	height: 90px;
+}
+
+#swipebox-slider .slide .swipebox-video-container{
+	/*max-width: none!important;
+	max-width:calc(100%-20px)!important;
+	height: 100%;
+	padding: 0;*/
+}

@@ -1,0 +1,16 @@
+.wpb-text-block{
+
+	p{
+		&:first-of-type{
+			margin-top:0;
+		}
+	}
+
+	img,
+	iframe, 
+	embed, 
+	object, 
+	video{
+		max-width: 100%;
+	}
+}

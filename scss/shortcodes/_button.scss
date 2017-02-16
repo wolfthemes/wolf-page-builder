@@ -1,0 +1,307 @@
+.wpb-button-container{
+
+	margin-top: 1em;
+
+	&.wpb-text-left{
+		text-align: left;
+		.wolf-button,
+		.wpb-button{
+			margin-left: 0;
+			margin-right: 10px;
+		}
+	}
+
+	&.wpb-text-center{
+		text-align: center;
+		.wolf-button,
+		.wpb-button{
+			margin-right: 5px;
+			margin-left: 5px;
+		}
+	}
+
+	&.wpb-text-right{
+		text-align: right;
+		.wolf-button,
+		.wpb-button{
+			margin-right: 0;
+			margin-left: 10px;
+		}
+	}
+}
+
+.wpb-button-inner{
+	
+	margin-bottom: 0;
+	display: block;
+	//width: 100%;
+
+	&.wpb-full-width-button-inner{
+		margin-top: 0;
+		display: inline;
+
+		.wpb-button,
+		.wolf-button{
+			display: block!important;
+			width: 100%!important;
+			margin-bottom: 8px;
+			margin-left: 0;
+			margin-right: 0;
+		}
+
+		.wpb-very-large{
+			padding: 1.5em 2em;
+		}
+
+		&:last-child{
+			.wpb-button{
+				margin-bottom: 0;
+			}
+		}
+	}
+}
+
+.wpb-button{
+	cursor: pointer;
+	font-style:normal!important;
+	text-shadow: none!important;
+	text-align: center!important;
+	text-decoration: none!important;
+	vertical-align: middle;
+	letter-spacing:0;
+	// width: auto;
+	transition:0.3s;
+	display: inline-block;
+	cursor: pointer;
+	font-size: 13px;
+	font-weight: 700;
+	margin: 0 8px 10px;
+	border-radius: 4px;
+	line-height: 2;
+	position: relative;
+	
+	&:hover{
+		outline: 0;
+	}
+
+	&:active{
+		top: 1px;
+	}
+}
+
+.wpb-button,
+.wolf-button{
+	margin: 0 8px 10px;
+}
+
+.wpb-button{
+	display: block;
+	width: 100%;
+}
+
+.wpb-button-icon-before{
+	.fa{
+		margin-right: 8px;
+	}
+}
+
+.wpb-button-icon-after{
+	.fa{
+		margin-left: 8px;
+	}
+}
+
+.wpb-button-tagline{
+	display: block;
+	margin: 0;
+	margin-top: 0;
+	padding: 0;
+	font-size:11px;
+	font-weight: 400;
+	text-transform: none;
+}
+
+.wpb-button.wpb-has-tagline{
+	line-height: 2.2;
+	.wpb-button-tagline{
+		position: relative;
+		top:-3px;
+		//padding-bottom: 8px;
+	}
+}
+
+.wpb-button-small {
+	font-size: 12px;
+	//padding: 0.4em 1em 0.4em;
+	padding: 6px 14px;
+
+	.wpb-button-tagline{
+		font-size: 11px;
+	}
+}
+
+.wpb-button-medium {
+	font-size: 13px;
+	padding: 5px 15px;
+}
+
+.wpb-button-large {
+	font-size: 18px;
+	span.wpb-button-tagline{
+		font-size: 12px;
+	}
+}
+
+.wpb-button-very-large{
+	border-width:2px;
+	font-size: 20px;
+	padding: .66em 2em;
+	span.wpb-button-tagline{
+		font-size: 13px;
+	}
+}
+
+.wpb-flat.wpb-button-default-color{
+	opacity: 0.9;
+	
+	&:hover{
+		opacity: 1;
+	}
+}
+
+.wpb-button.wpb-default {
+	border-radius: 3px;
+}
+
+.wpb-button.wpb-round {
+	border-radius: 99em;
+	padding:10px 40px 10px;
+}
+
+.wpb-button.wpb-square {
+	border-radius: 0;
+}
+
+.wpb-font-dark{
+	.wpb-button{
+		background: #333;
+		border:1px solid #333;
+		color: #fff;
+	}
+}
+
+.wpb-font-light{
+	.wpb-button{
+		background: #fff;
+		border:1px solid #fff;
+		color: #333;
+	}
+}
+
+/* Button styles */
+
+/* Outline */
+.wpb-font-dark,
+.wpb-font-light{
+	.wpb-outline{
+		background: none;
+	}
+}
+
+.wpb-font-dark{
+	.wpb-button-default-color.wpb-button.wpb-outline{
+		color: #333;
+		
+		&:hover{
+			background: #333;
+			color: #FFF;
+		}
+	}
+}
+
+.wpb-font-light{
+	.wpb-button-default-color.wpb-button.wpb-outline{
+		color: #fff;
+		
+		&:hover{
+			background: #fff;
+			color: #333;
+		}
+	}
+}
+
+/* Outline inverted */
+.wpb-font-dark{
+	.wpb-button-default-color.wpb-button.wpb-outline-inverted{
+		&:hover{
+			background: none;
+			color: #333;
+		}
+	}
+}
+
+.wpb-font-light{
+	.wpb-button-default-color.wpb-button.wpb-outline-inverted{
+		
+		&:hover{
+			background: none;
+			color: #FFF;
+		}
+	}
+}
+
+/* Fill in */
+.wpb-fill-in-up{
+	position: relative;
+	background: none!important;
+	
+	&:before{
+		transition: all 0.3s;
+		z-index: -1;
+		content:' ';
+		bottom: 0;
+		left: 0;
+		position: absolute;
+		width: 100%;
+		height: 0;
+	}
+
+	&:hover{
+		
+		&:before{
+			height: 100%;
+		}
+	}
+}
+
+.wpb-font-dark{
+	.wpb-fill-in-up{
+		color: #000;
+		border-color: rgb(0, 0, 0);
+		
+		&:before{
+			background: #000;
+		}
+
+		&:hover{
+			color: #fff;
+		}
+	}
+}
+
+.wpb-font-light{
+	.wpb-fill-in-up{
+		color: #fff;
+		border-color: rgb(255, 255, 255);
+		
+		&:before{
+			background: #fff;
+		}
+
+		&:hover{
+			color: #000;
+		}
+	}
+}
+
+

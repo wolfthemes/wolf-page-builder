@@ -1,0 +1,160 @@
+.post-type-page .postarea {
+	//display: none;
+}
+
+@import "../scss/mixins";
+/**
+ * Helper classes
+ */
+@import "../scss/helpers";
+
+/**
+ * Grid
+ */
+.wpb-alpha, 
+.wpb-first {
+	margin-left: 0!important;
+	&:before { clear: both; }
+}
+
+.wpb-omega, 
+.wpb-last {
+	margin-right: 0!important;
+	&:after { clear: both; }
+}
+@import "../scss/grid";
+
+/**
+ * Page builder panel
+ */
+@import "panel";
+
+/**
+ * Dialog box
+ */
+@import "dialog";
+
+/**
+ * Element icons
+ */
+@import "elements";
+
+/**
+ * Welcome message
+ */
+@import "welcome-panel";
+
+/**
+ * About page
+ */
+@import "about-page";
+
+/**
+ * Tipsy
+ */
+@import "tipsy";
+
+/**
+ * TinyMce hacks
+ */
+@import "mce";
+
+/**
+ * Admin notices
+ */
+@import "notices";
+
+/**
+ * Debug
+ */
+@import "debug";
+
+/**
+ * Media queries
+ */
+@media screen and (max-width: 1600px) {
+	
+	.wpb-row.wpb-4-cols{
+		.wpb-element-params{
+			display: none;
+		}
+
+		.wpb-element-icon-container{
+			float: none;
+			margin: 10px auto;
+		}
+
+		.wpb-element-properties-caption{
+			padding-left: 0;
+			text-align: center;
+		}
+	}
+}
+
+@media screen and (max-width: 1355px) {
+	.wpb-row.wpb-4-cols{
+		.wpb-element-container element:after,
+		.wpb-element-container element_container:after{
+			display: none;
+		}
+	}
+
+	.wpb-row.wpb-3-cols{
+		.wpb-element-params{
+			display: none;
+		}
+
+		.wpb-element-icon-container{
+			float: none;
+			margin: 10px auto;
+		}
+
+		.wpb-element-properties-caption{
+			padding-left: 0;
+			text-align: center;
+		}
+	}
+}
+
+@media screen and (max-width: 1200px) {
+	.wpb-row.wpb-4-cols{
+		.wpb-element-properties-caption{
+			display: none;
+		}
+	}
+
+	.wpb-row.wpb-3-cols{
+		.wpb-element-container element:after,
+		.wpb-element-container element_container:after{
+			display: none;
+		}
+	}
+}
+
+@media screen and (max-width: 1160px) {
+	.wpb-row.wpb-4-cols{
+		.wpb-element-container element:before,
+		.wpb-element-container element_container:before{
+			display: none;
+		}
+	}
+
+	.wpb-row.wpb-2-cols{
+		.wpb-element-params{
+			display: none;
+		}
+
+		.wpb-element-icon-container{
+			float: none;
+			margin: 10px auto;
+		}
+
+		.wpb-element-properties-caption{
+			padding-left: 0;
+			text-align: center;
+		}
+	}
+}
+
+
+

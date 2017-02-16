@@ -1,0 +1,40 @@
+.wpb-services-table{
+	text-align: center;
+	padding: 0.5em;
+	padding-top: 1.5em;
+	padding-bottom: 2em;
+	ul{
+		margin: 0!important;
+		padding: 0!important;
+
+		li{
+			list-style-type:none!important;
+			
+			padding: 0.5em;
+			
+			&.wpb-service-title-container{
+				border:none!important;
+				margin-bottom: 10px;
+			}
+
+			&.wpb-service-icon-container{
+				margin-bottom: 10px;
+			}
+
+			// &.wpb-service-title-icon{
+			// 	border:none!important;
+			// }
+		}
+	}
+}
+
+.wpb-service-title{
+	font-size: 18px;
+	margin-top: 0;
+	margin-bottom: 10px;
+}
+
+.wpb-services-table{
+	background: #FFF;
+	color: #333;
+}

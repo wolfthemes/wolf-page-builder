@@ -1,0 +1,22 @@
+/* Fluid video */
+.wpb-fluid-video{
+	display: block;
+	width: 100%;
+	margin-bottom: 20px;
+	height: 0;
+	padding-bottom: 56.25%;
+	overflow: hidden;
+	position: relative;
+}
+
+.wpb-fluid-video{
+	iframe, 
+	embed, 
+	object, 
+	video{
+		width: 100%!important;
+		height: 100%!important;
+		position: absolute;
+		top: 0; left: 0;
+	}
+}

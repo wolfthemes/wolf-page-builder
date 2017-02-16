@@ -1,0 +1,87 @@
+.wpb-linked-image{
+	position: relative;
+	
+	.wpb-image-inner{
+		margin-bottom:-1px;
+		position: relative;
+		display: block;
+		overflow:hidden;
+		
+		img{
+			vertical-align: bottom;
+		}
+
+		img,
+		iframe, 
+		embed, 
+		object, 
+		video{
+			max-width: 100%;
+		}
+	}
+
+	&.wpb-shadow{
+		box-shadow:5px 5px 5px 1px rgba(0,0,0,0.2);
+	}
+
+	&.wpb-round .wpb-image-inner{
+		border-radius:50%;
+	}
+
+	.wpb-linked-image-overlay{
+		z-index: 0;
+		display: inline-block;
+		position: absolute;
+		top:0;
+		left:0;
+		width: 100%;
+		height: 100%;
+		background: #000;
+		opacity: 0.33;
+	}
+
+	.wpb-linked-image-caption-container{
+		z-index: 1;
+		display: block;
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top:0;
+		left:0;
+	}
+
+	&.wpb-frame-border{
+		.wpb-linked-image-caption-container{
+			padding: 15px;
+		}
+
+		.wpb-linked-image-caption-table{
+			border: 1px solid white;
+		}
+	}
+
+	.wpb-linked-image-caption-table{
+		display: table;
+		width: 100%;
+		height: 100%;
+	}
+
+	.wpb-linked-image-caption-table-cell{
+		display: table-cell;
+		width: 100%;
+		height: 100%;
+		vertical-align: middle;
+		padding: 8%;
+	}
+
+	.wpb-linked-image-secondary-text,
+	.wpb-linked-image-caption{
+		display: block;
+		width: 100%;
+	}
+
+	.wpb-linked-image-button{
+		margin-top: 25px;
+		@include simplebuttonplain();
+	}
+}

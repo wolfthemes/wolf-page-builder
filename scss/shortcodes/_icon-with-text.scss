@@ -1,0 +1,311 @@
+.wpb-icon-box{
+
+	display: block;
+
+	margin: 0 auto 50px;
+	
+	.wpb-text-danger {
+		color: #a94442;
+	}
+
+	p{
+		margin: 0 auto;
+		font-size: 14px;
+		max-width: 450px;
+	}
+
+	
+	.fa{
+		//width: 100%;
+		height: 100%;
+
+
+		&:before{
+			line-height: inherit;
+		}
+	}
+}
+
+.wpb-icon-title{
+	margin-top: 0;
+	margin-bottom: 10px;
+	font-size: 18px;
+	line-height: 1.1;
+	display: block;
+}
+
+.wpb-icon-container{
+	position: relative;
+	line-height: inherit;
+}
+
+/* Sizes */
+.wpb-icon-box-small{
+	.fa{
+		line-height: 60px;
+	}
+}
+
+.wpb-icon-box-medium{
+	.fa{
+		line-height: 90px;
+	}
+}
+
+.wpb-icon-box-large{
+	.fa{
+		line-height: 120px;
+	}
+}
+
+.wpb-icon-box-very-large{
+	.fa{
+		line-height: 150px;
+	}
+}
+
+/* Containers */
+.wpb-icon-type-circle,
+.wpb-icon-type-square{
+	.wpb-icon-no-custom-style{
+
+		&.wpb-hover-fill-in{
+			transition: box-shadow 0.3s ease;
+			background: none;
+			border:none;
+			box-shadow: inset 0 0 0 2px $dark_font;
+			color: $dark_font;
+
+			&:hover{
+				box-shadow: inset 0 0 0 1em $dark_bg;
+				background: none;
+				border-color:$dark_bg;
+				color: $light_font;
+				
+				.fa{
+					color: $light_font;
+				}
+			}
+		}
+
+		&.wpb-hover-none{
+			transition:all .2s ease;
+			border: 2px solid $dark_font;
+
+			&:hover{
+				border-color:$dark_bg;
+				background: $dark_bg;
+				color: #FFF;
+
+				a{
+					color: #FFF;
+				}
+			}
+		}
+	}
+	
+	.wpb-icon-custom-style{
+		transition:all .2s ease;
+		border: 2px solid $dark_font;
+	}
+}
+
+.wpb-icon-type-circle .fa-stack{
+	border-radius:99em;
+}
+
+.wpb-icon-type-square .fa-stack{
+	border-radius:3px;
+}
+
+.wpb-icon-position-top{
+	text-align: center;
+	
+	.wpb-icon-text-holder{
+		display: block;
+		margin-top: 0;
+	}
+
+	&.wpb-icon-type-ban,
+	&.wpb-icon-type-circle,
+	&.wpb-icon-type-square{
+		.wpb-icon-text-holder{
+			margin-top: 28px;
+		}
+	}
+}
+
+.wpb-icon-position-left,
+.wpb-icon-position-right{
+	.wpb-icon-holder,
+	.wpb-icon-text-holder{
+		display: flex;
+	}
+}
+
+.wpb-icon-position-left{
+	
+	.wpb-icon-holder {
+		float: left;
+		padding-right: 28px;
+	}
+
+	.wpb-icon-text-holder{
+		text-align: left;
+	}
+}
+
+.wpb-icon-position-right{
+	
+	.wpb-icon-holder {
+		float: right;
+		padding-left: 28px;
+	}
+
+	.wpb-icon-text-holder{
+		flex-direction: row-reverse;
+		text-align: right;
+	}
+}
+
+.wpb-icon-position-left_from_title{
+
+	.wpb-icon-title-holder {
+		display: table;
+		//margin: 0 0 0;
+	}
+
+	p{
+		margin-left: 0;
+	}
+
+	.wpb-icon-holder,
+	.wpb-icon-title{
+		display: table-cell;
+		height: 100%;
+		vertical-align: middle;
+		float: none;
+	}
+
+	.wpb-icon-holder{
+		padding-right: 28px;
+		width: auto!important;
+	}
+}
+
+.wpb-icon-position-right_from_title{
+
+	p{
+		clear:both;
+		text-align: right;
+		float: right;
+	}
+
+	.wpb-icon-title-holder {
+		float:right;
+		display: table;
+		//margin: 0 0 0;
+	}
+
+	.wpb-icon-holder,
+	.wpb-icon-title{
+		display: table-cell;
+		height: 100%;
+		vertical-align: middle;
+		float: none;
+	}
+
+	.wpb-icon-holder{
+		padding-left: 28px;
+		width: auto!important;
+	}
+}
+
+.wpb-icon-position-right_from_title,
+.wpb-icon-position-left_from_title{
+	&.wpb-icon-type-circle,
+	&.wpb-icon-type-square{
+		.wpb-icon-title-holder{
+			margin-bottom: 1em;
+		}
+	}
+}
+
+/* Dark font */
+.wpb-font-dark{
+	.wpb-icon-text-inner{
+		p{
+			color: #333;
+		}
+	}
+}
+
+/* Light font */
+.wpb-font-light{
+
+	.wpb-icon-text-inner{
+		p{
+			color: #fff;
+		}
+	}
+
+	.wpb-icon-type-circle,
+	.wpb-icon-type-square{
+		.wpb-icon-no-custom-style{
+
+			&.wpb-hover-fill-in{
+				box-shadow: inset 0 0 0 2px $light_font;
+				color: $light_font;
+
+				&:hover{
+					box-shadow: inset 0 0 0 1em $light_bg;
+					border-color:$dark_bg;
+					color: #fff;
+					
+					.fa{
+						color: #fff;
+					}
+				}
+			}
+
+			&.wpb-hover-none{
+				border: 2px solid $light_font;
+
+				&:hover{
+					border-color:$dark_bg;
+					background: $dark_bg;
+					color: #FFF;
+
+					a{
+						color: #FFF;
+					}
+				}
+			}
+		}
+		
+		.wpb-icon-custom-style{
+			transition:all .2s ease;
+			border: 2px solid $light_font;
+		}
+	}
+}
+
+/* Line icon adjustment */
+.wpb-icon-box{
+	.fa-stack-1x,
+	.fa-stack-2x,
+	.fa-stack-3x,
+	.fa-stack-3x{
+		&.line-icon-paperplane{
+			left: -3px;
+			top: -2px;
+		}
+
+		&.line-icon-phone,
+		&.line-icon-location,
+		&.line-icon-like,
+		&.line-icon-user{
+			//top:-2px;
+		}
+	}
+}

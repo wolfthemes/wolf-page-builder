@@ -1,0 +1,41 @@
+.wpb-countdown-container{
+	margin: 30px auto;
+	transition:opacity .5s linear .3s;
+	opacity: 0;
+
+	.countdown-rtl {
+		direction: rtl;
+	}
+
+	.countdown-show4 {
+		
+		list-style: none;
+		text-align: center;
+		display: block;
+		width: 100%;
+	}
+
+	.countdown-section {
+		list-style-type: none;
+		float: left;
+		width: 25%;
+	}
+	.countdown-amount {
+		font-size: 48px;
+	}
+	.countdown-period {
+		display: block;
+	}
+	.countdown-descr {
+		display: block;
+		width: 100%;
+	}
+}
+
+.wpb-loaded .wpb-countdown-container{
+	opacity: 1;
+}
+
+.wpb-countdown-container-loaded{
+	opacity: 1;
+}

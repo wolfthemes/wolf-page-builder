@@ -1,0 +1,80 @@
+.wpb-section{
+	.wpb-row{
+		margin-bottom: 50px;
+		
+		&:last-child{
+			margin-bottom: 0;
+		}
+	}
+}
+
+// golden ratio
+$golden : 1.618;
+$cols : 12;
+$width: 100%;
+$gutter : $golden * 1%;
+$wrapper : $width + 2 * $gutter;
+
+.wpb-col{
+	float: left;
+	position: relative;
+	margin-left: $gutter;
+	margin-right: $gutter;
+	margin-bottom: 0;
+	&:empty{
+		height: 1px; // fill empty column
+	}
+}
+
+// admin
+@for $i from 1 through $cols {
+	.wpb-col-#{$i}{
+		float: left;
+		position: relative;
+		margin-left: $gutter;
+		margin-right: $gutter;
+		margin-bottom: 0;
+		width: ( $i * $wrapper / $cols - 2 * $gutter  ) ;
+	}
+}
+
+@for $i from 2 through $cols {
+	.wpb-row-#{$i}-cols .wpb-col{
+		width: ( $width / $i - 2 * $gutter  );
+	}
+}
+
+.wpb-row-1-cols .wpb-col{
+	width: 100%;
+}
+
+.wpb-row-4-cols{
+
+	.wpb-col-3{
+		width: 48.382%;
+				
+		&:nth-child(2){
+			margin-right: 0;
+			margin-bottom: $gutter;
+			//&:after { clear: both; }
+		}
+
+		&:nth-child(3){
+			margin-left: 0;
+			//&:before { clear: both; }
+		}
+	}
+}
+
+.wpb-row .wpb-col {
+	
+	&:first-child{
+		margin-left: 0!important;
+		&:before { clear: both; }
+	}
+
+	&:last-child{
+		margin-right: 0!important;
+		&:after { clear: both; }
+	}
+}

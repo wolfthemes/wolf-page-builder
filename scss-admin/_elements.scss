@@ -1,0 +1,385 @@
+.wpb-icon{
+	width: 32px;
+	height: 32px;
+	display: inline-block;
+	-webkit-background-size: 32px 32px;
+	-o-background-size: 32px 32px;
+	background-size: 32px 32px;
+	background-position-x: 0!important;
+	background-position-y: 0!important;
+	font: normal normal normal 14px/1 FontAwesome;
+	font-size: inherit;
+	text-rendering: auto;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	font-size: 32px;
+	color: #383838;
+	
+	&:before{
+		color: #383838;
+	}
+}
+
+@mixin image-bg() {
+	background-size: 32px 32px;
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+
+.wpb-empty-space{
+	&:before{
+		content:'\f07d';
+	}
+}
+
+.wpb-twitter{
+	font-family: Dashicons;
+	&:before{
+		content: "\f301";
+	}
+}
+
+.wpb-facebook{
+	font-family: Dashicons;
+	&:before{
+		content: "\f305";
+	}
+}
+
+.wpb-dribbble{
+	&:before{
+		content:'\f17d';
+	}
+}
+
+.wpb-instagram{
+	&:before{
+		content:'\f16d';
+	}
+}
+
+.wpb-notification{
+	font-family: Dashicons;
+	&:before{
+		content: "\f109";
+	}
+}
+
+.wpb-text-block{
+	&:before{
+		content:'\f0f6';
+	}
+}
+
+.wpb-works{
+	&:before{
+		content:'\f1fc';
+	}
+}
+
+.wpb-jplayer{
+	font-family: Dashicons;
+	&:before{
+		content: "\f127";
+	}
+}
+
+.wpb-music-network{
+	&:before{
+		content:'\f0c0';
+	}
+}
+
+.wpb-video{
+	font-family: Dashicons;
+	&:before{
+		content: "\f126";
+	}
+}
+
+.wpb-videos{
+	&:before{
+		content:'\f008';
+	}
+}
+
+.wpb-albums{
+	font-family: Dashicons;
+	&:before{
+		content: "\f233";
+	}
+}
+
+.wpb-releases{
+	font-family: Dashicons;
+	&:before{
+		content: "\f514";
+	}
+}
+
+.wpb-tour-dates{
+	font-family: Dashicons;
+	&:before{
+		content: "\f520";
+	}
+}
+
+.wpb-contactform7{
+	font-family: Dashicons;
+	&:before {
+		content: "\f466";
+	}
+}
+
+.wpb-map{
+	font-family: Dashicons;
+	&:before{
+		content: "\f231";
+	}
+}
+
+.wpb-separator{
+	font-family: Dashicons;
+	&:before{
+		content: "\f460";
+	}
+}
+
+.wpb-counter{
+	font-family: Dashicons;
+	&:before{
+		content: "\f226";
+	}
+}
+
+.wpb-count-down{
+	&:before{
+		content:'\f0a2';
+	}
+}
+
+.wpb-headline{
+	&:before{
+		content:'\f035';
+	}
+}
+
+.wpb-raw-html{
+	font-family: Dashicons;
+	&:before{
+		content: "\f475";
+	}
+}
+
+.wpb-oembed-gist{
+	&:before{
+		content:'\f09b';
+	}
+}
+
+.wpb-revslider{
+	&:before{
+		content:'\f021';
+	}
+}
+
+.wpb-layerslider{
+	font-family: Dashicons;
+	&:before{
+		content: "\f233";
+	}
+}
+
+.wpb-soundcloud{
+	&:before{
+		content:'\f1be';
+	}
+}
+
+.wpb-icon-text{
+	&:before{
+		content:'\f118';
+	}
+}
+
+.wpb-testimonials{
+	font-family: Dashicons;
+	&:before{
+		content: "\f473";
+	}
+}
+
+.wpb-team-member{
+	font-family: Dashicons;
+	&:before{
+		content: "\f110";
+	}
+}
+
+.wpb-toggle{
+	&:before{
+		content:'\f205';
+	}
+}
+
+.wpb-accordion{
+	font-family: Dashicons;
+	&:before{
+		content: "\f181";
+	}
+}
+
+.wpb-tab{
+	font-family: Dashicons;
+	&:before{
+		content: "\f510";
+	}
+}
+
+.wpb-image-link{
+	font-family: Dashicons;
+	&:before{
+		content: "\f504";
+	}
+}
+
+.wpb-single-image{
+	font-family: Dashicons;
+	&:before{
+		content: "\f128";
+	}
+}
+
+.wpb-images-gallery{
+	font-family: Dashicons;
+	&:before{
+		content: "\f233";
+	}
+}
+
+.wpb-images-slider{
+	font-family: Dashicons;
+	&:before{
+		content: "\f181";
+	}
+}
+
+.wpb-wordpress{
+	font-family: Dashicons;
+	&:before {
+		content: "\f324";
+	}
+}
+
+.wpb-social-icons{
+	font-family: Dashicons;
+	&:before {
+		content: "\f237";
+	}
+}
+
+.wpb-process{
+	font-family: line-icons;
+	&:before {
+		content: "\e60e";
+	}
+}
+
+.wpb-button{
+	font-family: Dashicons;
+	&:before {
+		content: "\f108";
+	}
+}
+
+.wpb-call-to-action{
+	font-family: Dashicons;
+	&:before {
+		content: "\f529";
+	}
+}
+
+.wpb-posts{
+	font-family: Dashicons;
+	&:before {
+		content: "\f464";
+	}
+}
+
+.wpb-posts-slider{
+	font-family: Dashicons;
+	&:before {
+		content: "\f181";
+	}
+}
+
+.wpb-skill-bar{
+	font-family: Dashicons;
+	&:before {
+		content: "\f206";
+	}
+}
+
+.wpb-pricing-tables{
+	font-family: Dashicons;
+	&:before {
+		content: "\f524";
+	}
+}
+
+.wpb-service-table{
+	font-family: Dashicons;
+	&:before {
+		content: "\f157";
+	}
+}
+
+.wpb-playlist{
+	font-family: Dashicons;
+	&:before {
+		content: "\f492";
+	}
+}
+
+.wpb-events{
+	font-family: Dashicons;
+	&:before {
+		content: "\f508";
+	}
+}
+
+.wpb-youtube{
+	&:before {
+		content: "\f16a";
+	}
+}
+
+.wpb-unknown{
+	font-family: Dashicons;
+	&:before {
+		content: "\f534";
+	}
+}
+
+.wpb-autotyping{
+	&:before {
+		top: 7px;
+		position: relative;
+		content: "\f246";
+	}
+}
+
+.wpb-woocommerce{
+	@include image-bg();
+	background-image: url(../../img/admin/icons/woocommerce.png);
+}
+
+.wpb-mailchimp{
+	@include image-bg();
+	background-image: url(../../img/admin/icons/mailchimp.png);
+}
+
+.wpb-bandsintown{
+	@include image-bg();
+	background-image: url(../../img/admin/icons/bandsintown.png);
+}

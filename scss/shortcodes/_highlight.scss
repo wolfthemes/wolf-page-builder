@@ -1,0 +1,42 @@
+.wpb-highlight{
+	text-shadow: none;
+	display: inline-block;
+	padding: 0 5px;
+	line-height: 1.3em;
+	color: #fff!important;
+}
+
+@mixin highlight($color : #ff0 ){
+	background-color: $color!important;
+}
+
+/* White : #fff */
+span.wpb-highlight-white {
+	@extend .wpb-highlight;
+ 	@include highlight(#fff);
+}
+
+/* Black : #000 */
+span.wpb-highlight-black {
+	@extend .wpb-highlight;
+ 	@include highlight(#000);
+}
+
+/* Yellow : #ff0 */
+span.wpb-highlight-yellow {
+	@extend .wpb-highlight;
+ 	@include highlight();
+	color: #333333!important;
+}
+
+/* Red : #D45554; */
+span.wpb-highlight-red {
+	@extend .wpb-highlight;
+ 	@include highlight(#D45554);
+}
+
+/* Green : #327627; */
+span.wpb-highlight-green {
+	@extend .wpb-highlight;
+ 	@include highlight(#327627);
+}

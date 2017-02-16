@@ -1,0 +1,59 @@
+$toggle_margin:28px;
+
+.wpb-toggle-content p{
+	margin-top: 0;
+}
+
+.wpb-toggle-title{
+	cursor: pointer;
+	margin-top: 5px;
+	margin-bottom: 10px;
+}
+
+.wpb-toggle-content{
+	padding-left: $toggle_margin;
+}
+
+.wpb-toggle-title{
+
+	position: relative;
+	line-height: 2;
+
+	.wpb-toggle-plus{
+		position: relative;
+		display: inline-block;
+		width: $toggle_margin;
+		height: $toggle_margin;
+		line-height: $toggle_margin;
+		vertical-align: middle;
+		text-align: left;
+		
+		&:before{
+			line-height: inherit;
+			text-align: left;
+			width: $toggle_margin;
+			height: $toggle_margin;
+			font-family: Dashicons;
+			content: "\f132";
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+	}
+}
+
+.wpb-toggle{
+	margin-bottom: 15px;
+}
+
+.wpb-toggle.open{
+	.wpb-toggle-title a:before{
+		content: "\f460";
+	}
+}
+
+.wpb-toggle-close{
+	.wpb-toggle-content{
+		display: none;
+	}
+}

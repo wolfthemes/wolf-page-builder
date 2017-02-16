@@ -1,0 +1,163 @@
+.wpb-font-light{
+	background: $dark_bg;
+	color: $light_font;
+
+	h1,h2,h3,h4,h5,h6,
+	strong,
+	blockquote,
+	.wpb-bigtext-link,
+	.wpb-fittext-link{
+		color: #fff;
+	}
+
+	.wpb-icon-box.wpb-icon-type-circle.wpb-icon-default-style .fa-stack,
+	.wpb-icon-box.wpb-icon-type-square.wpb-icon-default-style .fa-stack {
+
+		border-color: #fff !important;
+
+		&:hover{
+			border-color: $dark_bg!important;
+		}
+	}
+
+	hr.wpb-separator{
+		background: $light_font;
+	}
+
+	.wpb-countdown{
+		color: #fff!important;
+	}
+
+	.wpb-toggle-title a{
+		color: #fff!important;
+	}
+
+	.wpb-accordion{
+		.ui-accordion-content{
+			background: #333333 ;
+			box-shadow: inset 0 0 3px 0 rgba(0, 0, 0, 0.2);
+		}
+	}
+
+	.wpb-accordion-tab{
+		background: #333333 ;
+		border-bottom : solid 1px rgba(0, 0, 0, 0.2);
+		a{
+			color: #fff!important;
+		}
+	}
+
+	.wpb-tabs-menu li{
+		
+		&.ui-tabs-active a{
+			background: #333;
+		}
+		
+		a{
+			color: #fff!important;
+		}
+	}
+
+	.wpb-tabs-container{
+		.ui-tabs-panel{
+			background: #333;
+		}
+	}
+
+	.owl-dot{
+		background: #fff;
+		
+		&.active{
+			background: none!important;
+			box-shadow:0 0 0 1px #fff;
+		}
+
+		&:hover{
+			box-shadow: 0 0 0 1px #fff;
+		}
+	}
+
+	.wpb-social,
+	.wpb-icon-box a,
+	.wpb-team-member-social-container a{
+		color: #FFF;
+	}
+
+	.wolf-bigtweet-content:after {
+		background: rgba(255,255,255,.1);
+	}
+}
+
+.wpb-font-dark{
+	background: $light_bg;
+	color: $dark_font;
+	
+	.wpb-bigtext-link,
+	.wpb-fittext-link{
+		color: #333;
+	}
+
+	h1,h2,h3,h4,h5,h6,
+	strong,
+	blockquote{
+		color: #0d0d0d;
+	}
+
+	.wpb-separator{
+		background: #333;
+	}
+
+	.wpb-countdown{
+		color: #333!important;
+	}
+
+	.wpb-toggle-title a{
+		color: #0d0d0d!important;
+	}
+
+	.wpb-accordion{
+		.ui-accordion-content{
+			background: #fff;
+			box-shadow: inset 0 0 3px 0 rgba(0, 0, 0, 0.2);
+		}
+	}
+
+	.wpb-accordion-tab{
+		background: #FFF;
+		border-bottom : solid 1px rgba(0, 0, 0, 0.05);
+		a{
+			color: #0d0d0d!important;
+		}
+	}
+
+	.wpb-tabs-menu li{
+		
+		&.ui-tabs-active a{
+			background: #fff;
+		}
+		
+		a{
+			color: #333!important;
+		}
+	}
+
+	.wpb-tabs-container{
+		.ui-tabs-panel{
+			background: #FFF;
+		}
+	}
+
+	.owl-dot{
+		background: #333;
+		
+		&.active{
+			box-shadow:0 0 0 1px #333;
+		}
+	}
+
+	.wpb-social,
+	.wpb-icon-box a,
+	.wpb-team-member-social-container a{
+		color: #333;
+	}
+}

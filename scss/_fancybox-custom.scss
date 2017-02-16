@@ -1,0 +1,73 @@
+html.fancybox-lock {
+	overflow: visible !important;
+}
+
+.fancybox-skin{
+	padding: 0!important;
+}
+
+.fancybox-close {
+	background-image: url('../img/fancybox/close.png');
+	background-position:center center;
+	background-repeat:no-repeat;
+	right:0;
+	top:0;
+	background-color:#393939;
+	height: 54px;
+	width: 54px;
+	background-size:15px 15px;
+}
+
+.fancybox-prev span {
+	background-image: url('../img/fancybox/left.png');
+	background-position:center center;
+	background-repeat:no-repeat;
+	background-color: #393939;
+	height: 54px;
+	width: 54px;
+	background-size: 12px 20px;
+}
+
+.fancybox-next span {
+	background-image: url('../img/fancybox/right.png');
+	background-position:center center;
+	background-repeat:no-repeat;
+	background-color: #393939;
+	height: 54px;
+	width: 54px;
+	background-size: 12px 20px;
+}
+
+#fancybox-loading div {
+	background-image: url('../img/fancybox/fancybox_loading.gif');
+}
+
+.fancybox-nav {
+	background: transparent url('../img/fancybox/blank.gif'); /* helps IE */
+}
+
+.fancybox-overlay {
+	background: url('../img/fancybox/fancybox_overlay.png');
+}
+
+.fancybox-nav {height:60%; margin-top:16%;}
+
+/*Retina graphics!*/
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+	   only screen and (min--moz-device-pixel-ratio: 1.5),
+	   only screen and (min-device-pixel-ratio: 1.5){
+
+	.fancybox-close {
+		background-size: 15px 15px;
+	}
+
+	.fancybox-prev span, .fancybox-next span {
+		background-size: 12px 20px;
+	}
+
+	#fancybox-loading div {
+		background-image: url('../img/fancybox/fancybox_loading@2x.gif');
+	}
+}
+
+

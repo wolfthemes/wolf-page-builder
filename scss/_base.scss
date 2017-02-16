@@ -1,0 +1,28 @@
+#wpb-sections{
+	* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	&:after, &:before {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box; } }
+	@import "normalize";
+}
+
+/* Basic grid column containers */
+$columns : 12;
+@for $i from 1 through $columns {
+	.wpb-col-#{$i}{
+		margin-bottom: 20px;
+		min-height: 1px; // fill empty column
+
+		img,
+		iframe, 
+		embed, 
+		object, 
+		video{
+			max-width: 100%;
+		}
+	}
+}

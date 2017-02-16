@@ -1,0 +1,314 @@
+
+@charset "UTF-8";
+/*
+	MAIN STYLESHEET
+	-------------------------
+*/
+
+@import "compass";
+@import "var";
+@import "mixins";
+
+// for Wolf Themes old versions
+body.wolf-page-builder{
+	.content-wrapper{
+		max-width: none!important;
+		width: 100%!important;
+	}
+}
+
+/**
+ * Normalize page builder content
+ */
+@import "base";
+@import "cursor";
+
+/**
+ * Helper classes
+ */
+@import "helpers";
+
+/**
+ * Section
+ */
+@import "section";
+
+/**
+ * Video background
+ */
+@import "video-bg";
+//@import "video-bg-controls";
+
+/**
+ * Slideshow background
+ */
+@import "slideshow-background";
+
+/**
+ * Autotyping
+ */
+@import "shortcodes/autotyping";
+
+/**
+ * Fluid videos
+ */
+@import "fluid-video";
+
+/**
+ * Notifications
+ */
+@import "shortcodes/notifications";
+
+/**
+ * Blocks
+ */
+@import "shortcodes/blocks";
+
+/**
+ * Testimonials
+ */
+@import "shortcodes/testimonials";
+
+/**
+ * Team members
+ */
+@import "shortcodes/team-members";
+
+/**
+ * Icon with text
+ */
+@import "shortcodes/icon-with-text";
+
+/**
+ * Counter
+ */
+@import "shortcodes/counter";
+
+/**
+ * Count down
+ */
+@import "shortcodes/countdown";
+
+/**
+ * FitText
+ */
+@import "shortcodes/fittext";
+
+/**
+ * BigText
+ */
+@import "shortcodes/bigtext";
+
+/**
+ * Separator
+ */
+@import "shortcodes/separator";
+
+/**
+ * Text block
+ */
+@import "shortcodes/text-block";
+
+/**
+ * Image
+ */
+@import "shortcodes/image";
+
+/**
+ * Button
+ */
+@import "shortcodes/button";
+
+/**
+ * Call to action
+ */
+@import "shortcodes/call-to-action";
+
+/**
+ * Linked image
+ */
+@import "shortcodes/image-link";
+
+/**
+ * Images gallery
+ */
+@import "shortcodes/images-gallery";
+
+/**
+ * Images slider
+ */
+@import "shortcodes/images-slider";
+@import "shortcodes/last-posts-big-slider";
+@import "shortcodes/advanced-slider";
+
+/**
+ * Process
+ */
+@import "shortcodes/process";
+
+/**
+ * Serices table
+ */
+@import "shortcodes/services-table";
+
+/**
+ * Pricing tables
+ */
+@import "shortcodes/pricing-tables";
+
+/**
+ * Tabs
+ */
+@import "shortcodes/tabs";
+
+/**
+ * Toggles
+ */
+@import "shortcodes/toggles";
+
+/**
+ * Accordion
+ */
+@import "shortcodes/accordion";
+
+/**
+ * Video opener
+ */
+@import "shortcodes/video-opener";
+
+/**
+ * Highlight
+ */
+@import "shortcodes/highlight";
+
+/**
+ * Dropcap
+ */
+@import "shortcodes/dropcap";
+
+/**
+ * Skill bar
+ */
+@import "shortcodes/skill-bar";
+
+/**
+ * Socials
+ */
+@import "shortcodes/socials";
+
+/**
+ * Instagram
+ */
+@import "shortcodes/instagram";
+
+/**
+ * Item price
+ */
+@import "shortcodes/item-price";
+
+/**
+ * Map
+ */
+@import "shortcodes/map";
+
+/**
+ * jPlayer
+ */
+@import "shortcodes/jplayer";
+
+/**
+ * Last posts
+ */
+@import "shortcodes/last-posts";
+
+/**
+ * Mailchimp
+ */
+@import "shortcodes/mailchimp";
+
+/**
+ * Video carousel
+ */
+@import "shortcodes/video-carousel";
+
+/**
+ * YouTube
+ */
+@import "shortcodes/youtube";
+
+/**
+ * WP Widgets
+ */
+@import "shortcodes/wp-widgets";
+
+/**
+ * Flexslider custom styles
+ */
+@import "flexslider-custom";
+
+/**
+ * Owl Carousel custom styles
+ */
+@import "owlcarousel-custom";
+
+/**
+ * Swipebox custom styles
+ */
+@import "swipebox-custom";
+
+/**
+ * Fancybox custom styles
+ */
+@import "fancybox-custom";
+
+/**
+ * Layout for default WP themes
+ */
+@import "wp-themes";
+
+/**
+ * Hover effects
+ */
+@import "hover-effects";
+
+/**
+ * Skins
+ */
+@import "skins";
+
+/**
+ * Media Queries
+ */
+@media screen and (min-width: 500px) {
+	@import "500px";
+}
+
+@media screen and (min-width: 800px) {
+	/**
+	 * Grid
+	 */
+	@import "grid";
+	@import "800px";
+}
+
+@media screen and (min-width: 1000px) {
+	@import "1000px";
+}
+
+@media screen and (min-width: 1200px) {
+	@import "1200px";
+}
+
+@media screen and (max-width: 800px) {
+	.wpb-hide-mobile{
+		display: none!important;
+	}
+}
+
+@media screen and (max-width: 1200px) {
+	.wpb-hide-tablet{
+		display: none!important;
+	}
+}
+
+

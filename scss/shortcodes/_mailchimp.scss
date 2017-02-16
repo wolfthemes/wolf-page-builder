@@ -1,0 +1,109 @@
+.wpb-mailchimp-form-container{
+	position: relative;
+	z-index: 0;
+	margin: 30px auto;
+	max-width: 100%;
+
+	&.wpb-mailchimp-has-bg{
+		
+		&:before{
+			content : ' ';
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			left: 0;
+			top: 0;
+			background: #000;
+			opacity: 0.44;			
+		}
+
+		padding: 40px 40px 10px;
+		background: #333 no-repeat center center scroll;
+		background-size: cover;
+		
+		color: #FFF;
+		
+		.wpb-mailchimp-title{
+			color: #FFF;
+		}
+
+		.wpb-mailchimp-email{
+			background: #FFF;
+		}
+
+		&.wpb-mailchimp-size-large{
+			padding: 50px 60px 30px;
+		}
+	}
+		
+	.wpb-mailchimp-form{
+		position: relative;
+		margin: 0 auto;
+		width: 100%;
+		line-height: 1.5;
+		max-width: 800px;
+	}
+
+	&.wpb-mailchimp-text-align-center{
+		text-align: center;
+	}
+
+	&.wpb-mailchimp-text-align-left{
+		text-align: left;
+	}
+
+	&.wpb-mailchimp-text-align-right{
+		text-align: right;
+	}
+	
+	&.wpb-mailchimp-align-left{
+		margin-left: 0;
+	}
+
+	&.wpb-mailchimp-align-right{
+		margin-right: 0;
+	}
+
+	.wpb-mailchimp-email{
+		margin: 0;
+		width: 100%;
+	}
+
+	.wpb-mailchimp-title{
+		//text-align: center;
+		font-size: 18px;
+		margin-bottom: 30px;
+	}
+
+	.wpb-mailchimp-email-container{
+		margin-bottom: 6px;
+	}
+	
+	.wpb-mailchimp-submit{
+		display: block;
+		width: 100%;
+		margin-top: 0;
+	}
+}
+
+.widget-content{
+	.wpb-mailchimp-form-container{
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+}
+
+.wpb-mailchimp-size-large{
+	//max-width: 750px;
+}
+
+.wpb-mailchimp-size-normal{
+	max-width: 500px;
+}
+
+.wpb-mailchimp-result{
+	display: block;
+	width: 100%;
+	text-align: center;
+	opacity: 0;
+}

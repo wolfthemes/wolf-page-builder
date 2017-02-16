@@ -1,0 +1,35 @@
+<?php
+/**
+ * Layer slider
+ *
+ * @author %AUTHOR%
+ * @category Core
+ * @package %PACKAGENAME%/Admin/Elements
+ * @version %VERSION%
+ */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
+if ( defined( 'LS_PLUGIN_VERSION' ) ) {
+	// layer_slider
+	wpb_add_element(
+		array(
+			'name' => esc_html__( 'Layer Slider', '%TEXTDOMAIN%' ),
+			'description' => esc_html__( 'Display a Layer slider', '%TEXTDOMAIN%' ),
+			'base' => 'wpb_layer_slider',
+			'category' => esc_html__( 'Sliders', '%TEXTDOMAIN%' ),
+			'icon' => 'wpb-icon wpb-layer_slider',
+			'params' => array(
+				array(
+					'type' => 'select',
+					'label' => esc_html__( 'Choose a Slider', '%TEXTDOMAIN%' ),
+					'param_name' => 'slider',
+					'choices' => wpb_get_revsliders()
+				),
+				'display' => true,
+			)
+		)
+	);
+}
