@@ -1,5 +1,5 @@
 {
-	"version" : "2.9.2",
+	"version" : "2.9.3",
 	"updated" : "2017-02-15",
 	"slug" : "wolf-page-builder",
 	"textdomain" : "wolf-page-builder",
@@ -29,6 +29,8 @@
 		"../*.bat",
 		"../*.html",
 		"../README",
+		"../READMETMPL",
+		"../deploy.sh",
 		"../dev.config.php",
 		"../.idea{,/**/*}",
 		"../html{,/**/*}",

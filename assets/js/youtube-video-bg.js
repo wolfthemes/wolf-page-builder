@@ -4,9 +4,7 @@
  * %NAME% %VERSION% 
  */
 /* jshint -W062 */
-/* global WPBYTVideoBg,
-YT,
-console */
+/* global YT */
 
 var WPBYTVideoBg = function( $ ) {
 
@@ -20,38 +18,34 @@ var WPBYTVideoBg = function( $ ) {
 			
 			var _this = this;
 
-			$container = $container || $( '#content' );
+			$container = $container || $( '#wpb-inner' );
 
-			if ( $container.find( '.youtube-video-bg-container' ).length && ! this.isMobile ) {
+			if ( $container.find( '.wpb-youtube-video-bg-container' ).length && ! this.isMobile ) {
 				
 				if ( 'undefined' === typeof( YT ) || 'undefined' === typeof( YT.Player ) ) {
 					
 					window.onYouTubePlayerAPIReady = function() {
 						
-						$container.find( '.youtube-video-bg-container' ).each( function() {
+						$container.find( '.wpb-youtube-video-bg-container' ).each( function() {
 							var $this = $( this ), containerId, videoId;
 
-							containerId = $this.find( '.youtube-player' ).attr( 'id' );
+							containerId = $this.find( '.wpb-youtube-player' ).attr( 'id' );
 							videoId = $this.data( 'youtube-video-id' );
 							
-							if ( ! $this.hasClass( 'youtube-player-is-loaded' ) ) {
-								_this.loadPlayer( containerId, videoId );
-							}
+							_this.loadPlayer( containerId, videoId );
 						} );
 						
 					};
 					$.getScript( '//www.youtube.com/player_api' );
 				
 				} else {
-					$container.find( '.youtube-video-bg-container' ).each( function() {
+					$container.find( '.wpb-youtube-video-bg-container' ).each( function() {
 						var $this = $( this ), containerId, videoId;
 
-						containerId = $this.find( '.youtube-player' ).attr( 'id' );
+						containerId = $this.find( '.wpb-youtube-player' ).attr( 'id' );
 						videoId = $this.data( 'youtube-video-id' );
 
-						if ( ! $this.hasClass( 'youtube-player-is-loaded' ) ) {
-							_this.loadPlayer( containerId, videoId );
-						}
+						_this.loadPlayer( containerId, videoId );
 					} );
 				}
 			}
@@ -79,7 +73,7 @@ var WPBYTVideoBg = function( $ ) {
 					onReady: function ( event ) {
 						event.target.mute().setLoop( true );
 						var el = document.getElementById( containerId );
-						el.className = el.className + ' youtube-player-is-loaded';
+						el.className = el.className + ' wpb-youtube-player-is-loaded';
 					}
 				}
 			} );

@@ -33,7 +33,7 @@ var WPB = function( $ ) {
 		body : $( 'body' ),
 		isMobile : ( navigator.userAgent.match( /(iPad)|(iPhone)|(iPod)|(Android)|(PlayBook)|(BB10)|(BlackBerry)|(Opera Mini)|(IEMobile)|(webOS)|(MeeGo)/i ) ) ? true : false,
 		isApple : ( navigator.userAgent.match( /(Safari)|(iPad)|(iPhone)|(iPod)/i ) && navigator.userAgent.indexOf( 'Chrome' ) === -1 && navigator.userAgent.indexOf( 'Android' ) === -1 ) ? true : false,
-		supportSVG : !! document.createElementNS && !! document.createElementNS( 'http://www.w3.org/2000/svg', 'svg').createSVGRect,
+		supportSVG : !! document.createElementNS && !! document.createElementNS( 'https://www.w3.org/2000/svg', 'svg').createSVGRect,
 		isTouch : 'ontouchstart' in window || window.DocumentTouch && document instanceof DocumentTouch,
 
 		/**

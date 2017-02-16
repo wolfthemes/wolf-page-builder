@@ -34,7 +34,7 @@ if ( ! function_exists( 'wpb_shortcode_bandsintown_events' ) ) {
 		if ( $artist ) {
 
 			ob_start(); ?>
-			<script type="text/javascript" src="http://www.bandsintown.com/javascripts/bit_widget.js"></script>
+			<script type="text/javascript" src="https://widget.bandsintown.com/javascripts/bit_widget.js"></script>
 			<script type="text/javascript">  
 			jQuery( document ).ready( function( $ ) { 
 				new BIT.Widget( { 
