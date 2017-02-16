@@ -267,7 +267,7 @@ if ( class_exists( 'Wolf_Albums' ) ) {
 	);
 }
 
-if ( class_exists( 'Wolf_Discorgaphy' ) ) {
+if ( class_exists( 'Wolf_Discography' ) ) {
 	/**
 	 * Wolf Discorgaphy
 	 */

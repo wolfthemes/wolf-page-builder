@@ -1,7 +1,8 @@
-#### 16th february 2017 - Version 2.9.3
+#### 17th february 2017 - Version 2.9.4
 
 * Tweak: Added SSL support for Bandsintown widget
 * Tweak: Added Vimeo background option
+* Fix: Typo preventing animation option showing in "Last releases" element
 * Fix: YouTube video background fallback on mobile
 * Fix: Advanced slider image fallback issue
 
