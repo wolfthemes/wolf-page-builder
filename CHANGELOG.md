@@ -1,5 +1,6 @@
-#### 17th february 2017 - Version 2.9.4
+#### 17th february 2017 - Version 2.9.5b
 
+* Tweak: Added text alignment option to headline element
 * Tweak: Added SSL support for Bandsintown widget
 * Tweak: Added Vimeo background option
 * Fix: Typo preventing animation option showing in "Last releases" element

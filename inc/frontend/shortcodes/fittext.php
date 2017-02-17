@@ -27,6 +27,7 @@ if ( ! function_exists( 'wpb_shortcode_headline' ) ) {
 			'letter_spacing' => 0,
 			'font_weight' => 700,
 			'text_transform' => 'none',
+			'text_alignment' => 'center',
 			'color' => '',
 			'animation' => '',
 			'animation_delay' => '',
@@ -53,6 +54,7 @@ if ( ! function_exists( 'wpb_shortcode_headline' ) ) {
 		$style = 'line-height:1;';
 		$style .= 'font-weight:' . absint( $font_weight ) . ';';
 		$style .= 'letter-spacing:' . absint( $letter_spacing ) . 'px;';
+		$style .= 'text-align:' . esc_attr( $text_alignment ) . ';';
 
 		if ( $font_family ) {
 			$style .= 'font-family:' . esc_attr( $font_family ) . ';';

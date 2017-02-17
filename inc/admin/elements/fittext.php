@@ -39,6 +39,17 @@ wpb_add_element(
 			),
 
 			array(
+				'type' => 'select',
+				'label' => esc_html__( 'Text Alignment', '%TEXTDOMAIN%' ),
+				'param_name' => 'text_alignment',
+				'choices' => array(
+					'center' => esc_html__( 'Center', '%TEXTDOMAIN%' ),
+					'left' => esc_html__( 'Left', '%TEXTDOMAIN%' ),
+					'right' => esc_html__( 'Right', '%TEXTDOMAIN%' ),
+				),
+			),
+
+			array(
 				'type' => 'colorpicker',
 				'label' => esc_html__( 'Text Color', '%TEXTDOMAIN%' ),
 				'param_name' => 'color',
