@@ -833,9 +833,15 @@ var WPB = function( $ ) {
 			this.init();
 			this.fullHeightSection();
 
+			// YouTube
 			if ( 'undefined' !== typeof WPBYTVideoBg ) {
 				WPBYTVideoBg.playVideo();
 			}
+
+			// Vimeo
+			// if ( 'undefined' !== typeof WPBVimeoVideoBg ) {
+			// 	WPBVimeoVideoBg.muteVimeoBackgrounds();
+			// }
 
 			// Sliders
 			if ( 'undefined' !== typeof WPBSliders ) {

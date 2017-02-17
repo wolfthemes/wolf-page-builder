@@ -80,6 +80,7 @@ function wpb_register_scripts() {
 
 		// Plugin scripts
 		wp_register_script( 'wpb-youtube-video-bg', WPB_JS . '/youtube-video-bg.js', array( 'jquery' ), $version, true );
+		//wp_register_script( 'wpb-vimeo-video-bg', WPB_JS . '/vimeo-video-bg.js', array( 'jquery' ), $version, true );
 		wp_register_script( 'wpb-functions', WPB_JS . '/functions.js', array( 'jquery' ), $version, true );
 
 	} else {
@@ -103,6 +104,7 @@ function wpb_register_scripts() {
 
 		// Plugin scripts
 		wp_register_script( 'wpb-youtube-video-bg', WPB_JS . '/min/youtube-video-bg.min.js', array( 'jquery' ), $version, true );
+		//wp_register_script( 'wpb-vimeo-video-bg', WPB_JS . '/min/vimeo-video-bg.min.js', array( 'jquery' ), $version, true );
 		wp_register_script( 'wpb-functions', WPB_JS . '/min/functions.min.js', array( 'jquery' ), $version, true );
 	}
 }
@@ -143,6 +145,7 @@ function wpb_enqueue_common_scripts() {
 
 	// Plugin common scripts
 	wp_enqueue_script( 'wpb-youtube-video-bg' );
+	//wp_enqueue_script( 'wpb-vimeo-video-bg' );
 	wp_enqueue_script( 'wpb-functions' ); // common functions
 
 	// Recently added elements, need theme update before enqueuing elsewhere

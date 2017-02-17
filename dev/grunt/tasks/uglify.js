@@ -36,6 +36,7 @@ module.exports = {
 			'<%= app.jsPath %>/min/toggles.min.js': [ '<%= app.jsPath %>/toggles.js'],
 			'<%= app.jsPath %>/min/tabs.min.js': [ '<%= app.jsPath %>/tabs.js'],
 			'<%= app.jsPath %>/min/youtube-video-bg.min.js': [ '<%= app.jsPath %>/youtube-video-bg.js'],
+			//'<%= app.jsPath %>/min/vimeo-video-bg.min.js': [ '<%= app.jsPath %>/vimeo-video-bg.js'],
 			'<%= app.jsPath %>/min/youtube.min.js': [ '<%= app.jsPath %>/youtube.js'],
 			'<%= app.jsPath %>/min/functions.min.js': [ '<%= app.jsPath %>/functions.js'],
 		}

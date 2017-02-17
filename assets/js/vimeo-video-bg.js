@@ -4,16 +4,26 @@
  * %NAME% %VERSION% 
  */
 /* jshint -W062 */
-var WPBVimeoVideoBg =  WPBVimeoVideoBg || {},
-	console = console || {};
 
-WPBVimeoVideoBg = function( $ ) {
+var WPBVimeoVideoBg = function( $ ) {
 
 	'use strict';
 
 	return {
-		playVideo: function() {
+		isMobile : ( navigator.userAgent.match( /(iPad)|(iPhone)|(iPod)|(Android)|(PlayBook)|(BB10)|(BlackBerry)|(Opera Mini)|(IEMobile)|(webOS)|(MeeGo)/i ) ) ? true : false,
+		initFlag : false,
+
+		/**
+		 * Mute all Vimeo video backgrounds
+		 */
+		muteVimeoBackgrounds: function( $container ) {
 			
+			$container = $container || $( '#wpb-inner' );
+
+			// Do nothing if no vimeo background is found
+			if ( 1 > $container.find( '.wpb-youtube-video-bg-container' ).length || this.isMobile ) {
+				return;
+			}
 		}
 	};
 
@@ -24,7 +34,7 @@ WPBVimeoVideoBg = function( $ ) {
 	'use strict';
 
 	$( document ).ready( function() {
-		WPBVimeoVideoBg.playVideo();
+		WPBVimeoVideoBg.muteVimeoBackgrounds();
 	} );
 
 } )( jQuery );

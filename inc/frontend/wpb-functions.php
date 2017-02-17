@@ -279,19 +279,15 @@ function wpb_vimeo_video_bg( $url = null, $img_fallback = null, $parallax = fals
 				-o-background-size: cover;
 				background-size: cover;';
 				$style = wpb_esc_style_attr( $style );
-				// debug( $style );
 			}
 
-			// $output .= "<div class='$class' id='wpb-vimeo-video-bg-$random_id-container' data-vimeo-video-id='$vimeo_id' style='$style'>" . "\n";
-			// 	$output .= "<div class='wpb-vimeo-player' id='wpb-vimeo-player-$random_id'></div>" . "\n";
-			// $output .= '</div><!-- .wpb-vimeo-video-bg -->' . "\n";
 			$output .= '<div class="wpb-vimeo-video-bg-container wpb-video-bg-container">';
 			
 			if ( $img_fallback ) {
 				$output .= '<div class="wpb-video-bg-fallback" style="background-image:url(' . esc_url( $img_fallback ) . ')"></div>';
 			}
 
-			$output .= '<iframe class="wpb-vimeo-bg" src="https://player.vimeo.com/video/' . esc_attr( $vimeo_id ) . '?autoplay=1&loop=1&byline=0&title=0"></iframe>';
+			$output .= '<iframe class="wpb-vimeo-bg" src="https://player.vimeo.com/video/' . esc_attr( $vimeo_id ) . '?autoplay=1&loop=1&byline=0&title=0&background=1"></iframe>';
 			$output .= '<div class="wpb-video-bg-overlay"></div>';
 			$output .= '</div><!--.wpb-video-bg-container-->';
 		}
