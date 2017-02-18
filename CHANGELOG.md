@@ -1,4 +1,4 @@
-#### 17th february 2017 - Version 2.9.7b
+= 17th february 2017 - Version 2.9.7 =
 
 * Tweak: Added text alignment option to headline element
 * Tweak: Added SSL support for Bandsintown widget
@@ -9,7 +9,7 @@
 * Fix: YouTube video background fallback on mobile
 * Fix: Advanced slider image fallback issue
 
-#### 10th february 2017 - Version 2.8.9
+= 10th february 2017 - Version 2.8.9 =
 
 * Tweak: Added WP link helper to insert link easily
 * Fix: Advanced slider button link bug
@@ -17,7 +17,7 @@
 * Fix: JS bugs IE11
 * Fix: JS bug with YOAST analysis when page is empty
 
-#### 1rst february 2017 - Version 2.8.4
+= 1rst february 2017 - Version 2.8.4 =
 
 * Tweak: Added YOAST analysis compatibility (still need improvement for live analysis, at the moment, the page needs to be updated)
 * Tweak: Added "remove image" button in image set field
@@ -31,7 +31,7 @@
 * Fix: Fixed Safari/IOS lazyload bug
 * Fix: Icon position
 
-#### 19th january 2017 - Version 2.7.3
+= 19th january 2017 - Version 2.7.3 =
 
 * Tweak: Added lazyload option
 * Tweak: Added default settings filter (wpb_default_settings)
@@ -45,23 +45,23 @@
 * Fix: Duplicated "Image Link" setting field
 * Fix: Advanced slider overlay transition glitch with "slide" animation
 
-#### 13th january 2017 - Version 2.6.2
+= 13th january 2017 - Version 2.6.2 =
 
 * Tweak: Allow decimal in price tables
 * Tweak: Added "Add element" button when container is empty
 * Tweak: Improve admin CSS
 * Fix: Parallax in TentySeventeen
 
-#### 8th january 2017 - Version 2.5.8
+= 8th january 2017 - Version 2.5.8 =
 
 * Fix: Missing editor toggle button when switching back from standard mode
 
-#### 6th january 2017 - Version 2.5.7
+= 6th january 2017 - Version 2.5.7 =
 
 * Tweak: Improved dialog box. Now works without jquery UI. It fixes glitch with autofocus and improves speed. Cosmetic improvement to come.
 * Fix: Loader not hiding when loading the elements panel
 
-#### 5nd january 2017 - Version 2.5.5
+= 5nd january 2017 - Version 2.5.5 =
 
 * Tweak: Advanced slide video backgrounds now use HTML5 video to avoid conflict with other players (previously used mejs)
 * Tweak: Added "Fill-in-up" button type
@@ -72,7 +72,7 @@
 * Fix: Regex for Cyrillic symbols ц
 * Fix: Advanced Slider Target
 
-#### 17th december 2016 - Version 2.4.7
+= 17th december 2016 - Version 2.4.7 =
 
 * Tweak: Added WooCommerce "Sale products" element
 * Tweak: Added post type option to "Last Post big Slider" (for Wolf Albums, Wolf Videos plugin etc...)
@@ -80,7 +80,7 @@
 * Fix: Separator alignment setting
 * Fix: Minor CSS fix & improvements
 
-#### 3th december 2016 - Version 2.4.2
+= 3th december 2016 - Version 2.4.2 =
 
 * Tweak: Increase text field length
 * Tweak: Change separator from comma to line break for autotyping, services and pricing tables
@@ -92,18 +92,18 @@
 * Fix: Autotyping script path
 * Fix: Video background issue on firefox
 
-#### 25th november 2016 - Version 2.3.2
+= 25th november 2016 - Version 2.3.2 =
 
 * Tweak: Added filters to add last post shortcode display type from theme
 
-#### 23th november 2016 - Version 2.3.1
+= 23th november 2016 - Version 2.3.1 =
 
 * Tweak: Removed theme button style option. Now additional button type can be added from theme.
 * Tweak: Minor CSS improvements
 * Tweak: Minor PHP improvements
 * Fix: Foursquare duplicated in social icons
 
-#### 17th november 2016 - Version 2.2.7
+= 17th november 2016 - Version 2.2.7 =
 
 * Tweak: Added lightbox option with fancybox alernative to swipebox
 * Tweak: Added apple (itunes) and amazon as social profiles
@@ -111,7 +111,7 @@
 * Tweak: Minor CSS improvements (for twentysixteen theme)
 * Fix: Item price element column float
 
-#### 9th november 2016 - Version 2.2.2
+= 9th november 2016 - Version 2.2.2 =
 
 * Tweak: Updated Font Awesome to 4.7
 * Tweak: Added exclude IDs parameters to last posts shortcode to choose the post to display if needed
@@ -121,21 +121,21 @@
 * Fix: Post excerpt lenght
 * Fix: Icons in admin resetting
 
-#### 2nd november 2016 - Version 2.1.5
+= 2nd november 2016 - Version 2.1.5 =
 
 * Tweak: Added include IDs parameters to last posts shortcode to choose the post to display if needed
 * Tweak: Minor CSS improvement
 * Tweak: Add setting to hide background in mailchimp element
 * Fix: 6 columns block layout fix
 
-#### 31th october 2016 - Version 2.1.1
+= 31th october 2016 - Version 2.1.1 =
 
 * Tweak: Added theme button style option
 * Tweak: Added bleed pixels to full height calculation to avoid "white lines"
 * Fix: Typos in admin
 * Fix: YouTube closing div
 
-#### 30th october 2016 - Version 2.0.7
+= 30th october 2016 - Version 2.0.7 =
 
 * Tweak: Improved CSS grid system
 * Tweak: Added file inclusion system to extend the plugin in themes
@@ -154,18 +154,18 @@
 * Fix: Process display with parallax background
 * Fix: "Start now" link in welcome message
 
-#### 20th october 2016 - Version 1.9.1
+= 20th october 2016 - Version 1.9.1 =
 
 * Tweak: Added offset to full width section when there is a sticky player
 * Tweak: Improved shortcode regex (now supports slovenian alphabet)
 * Tweak: Re-organized settings
 * Fix: Improved wpb_do_admin_wpb function
 
-#### 15th october 2016 - Version 1.8.7
+= 15th october 2016 - Version 1.8.7 =
 
 * Fix: Improved TinyMCE initialization for text editor to fix glitch. Now works on firefox as well.
 
-#### 14th october 2016 - Version 1.8.6
+= 14th october 2016 - Version 1.8.6 =
 
 * Tweak: Added custom social icons elements
 * Tweak: Makes Bandsintown work on AJAX load
@@ -183,19 +183,19 @@
 * Fix: Add force animation option on mobile (so it's disabled by default)
 * Fix: Visual glitch in admin when demo images from import are mixed with actual images in image set field (for slider, image galleries etc...)
 
-#### 8th october 2016 - Version 1.6.9
+= 8th october 2016 - Version 1.6.9 =
 
 * Fix: Remove disabled shortcodes to avoid breaking the markup
 * Fix: Video opener autoplay when multiple youtube videos
 * Tweak: Improve smooth scroll logic
 * Tweak: Admin style improvement
 
-#### 6th october 2016 - Version 1.6.6
+= 6th october 2016 - Version 1.6.6 =
 
 * Tweak: Fix autofocus glitch in page builder element settings
 * Tweak: Fix "click to next section arrow"
 
-#### 5th october 2016 - Version 1.6.4
+= 5th october 2016 - Version 1.6.4 =
 
 * Tweak: Added Wolf Playlist element
 * Tweak: Change the way to include files to improve security
@@ -203,7 +203,7 @@
 * Tweak: Improve Mailchimp error handling
 * Tweak: Improve buttons responsive behavior
 
-#### 1rst october 2016 - Version 1.6.0
+= 1rst october 2016 - Version 1.6.0 =
 
 * Tweak: Added hover image in image element
 * Tweak: Added scale effect to image element
@@ -211,16 +211,16 @@
 * Tweak: Added scroll to bottom arrow style option in section settings
 * Tweak: Minor styling Improvement
 
-#### 29th september 2016 - Version 1.5.5
+= 29th september 2016 - Version 1.5.5 =
 
 * Tweak: Added more HTML tag options to elements that use title tags
 * Tweak: Improved Big Text behavior to avoid line overflow
 
-#### 22th september 2016 - Version 1.5.3
+= 22th september 2016 - Version 1.5.3 =
 
 * Tweak: Added section background repeat options
 
-#### 20th september 2016 - Version 1.5.2
+= 20th september 2016 - Version 1.5.2 =
 
 * Tweak: Moved the tmp WPB export folder into the wp-content/uploads folder (import/export feature) to avoid issues with file permission
 * Tweak: Improve responsive behavior in admin interface
@@ -231,15 +231,15 @@
 * Fix: Image element custom URL
 * Fix: Mailchimp widget with ajax
 
-#### 6th september 2016 - Version 1.4.3
+= 6th september 2016 - Version 1.4.3 =
 
 * Fix: Remove/duplicate element after drag 'n drop
 
-#### 24th august 2016 - Version 1.4.2
+= 24th august 2016 - Version 1.4.2 =
 
 * Fix: JS error notice for advanced slide with video background
 
-#### 4th august 2016 - Version 1.4.1
+= 4th august 2016 - Version 1.4.1 =
 
 * Fix: TinyMce link feature bug
 * Fix: TinyMce quicktags tab
@@ -252,85 +252,85 @@
 * Tweak: Improve CSS for theme compatibility
 * Tweak: Added Bandsintown plugin element
 
-#### 15th july 2016 - Version 1.3.1
+= 15th july 2016 - Version 1.3.1 =
 
 * Fix: minor bug, default image showing in section background settings instead of actual one
 
-#### 13th july 2016 - Version 1.3.0
+= 13th july 2016 - Version 1.3.0 =
 
 * Fix: issue when there is multiple author with the last post element
 
-#### 5th july 2016 - Version 1.2.9
+= 5th july 2016 - Version 1.2.9 =
 
 * Tweak: minor improvements
 * Fix: minor bug fixes
 
-#### 24th june 2016 - Version 1.2.7
+= 24th june 2016 - Version 1.2.7 =
 
 * Tweak: minor improvements
 * Fix: bugs on template importation
 * Fix: "process" elment width issue
 * Fix: issue with image size in team member module when "round" image style is set
 
-#### 15th june 2016 - Version 1.2.3
+= 15th june 2016 - Version 1.2.3 =
 
 * Fix: additional fixes for firefox
 
-#### 14th june 2016 - Version 1.2.2
+= 14th june 2016 - Version 1.2.2 =
 
 * Fix: element panel not opening in firefox
 * Tweak: Added "Advanced slider" element
 
-#### 6th may 2016 - Version 1.2.0
+= 6th may 2016 - Version 1.2.0 =
 
 * Tweak: Improved text editor loading in modal window
 
-#### 8th april 2016 - Version 1.1.9
+= 8th april 2016 - Version 1.1.9 =
 
 * Tweak: Disable scroll on contact map when scrolling the page 
 
-#### 8th april 2016 - Version 1.1.8
+= 8th april 2016 - Version 1.1.8 =
 
 * Tweak: Minor improvements
 * Tweak: Added video background controls (self hosted video only)
 
-#### 4th april 2016 - Version 1.1.6
+= 4th april 2016 - Version 1.1.6 =
 
 * Fix: Youtube Video background admin page builder bug
 
-#### 29th march 2016 - Version 1.1.5
+= 29th march 2016 - Version 1.1.5 =
 
 * Fix: Font option in "headline" element
 * Fix: Google map width
 
-#### 18th march 2016 - Version 1.1.3
+= 18th march 2016 - Version 1.1.3 =
 
 * Fix: Errors with PHP7.0.0
 * Other: Unminified fittext jquery script to avoid being flagged as trojan by several antivirus
 
-#### 14th march 2016 - Version 1.1.1
+= 14th march 2016 - Version 1.1.1 =
 
 * Fix: Fixed a few errors to improve HTML validation
 * Other: Updated swipebox js
 
-#### 10th march 2016 - Version 1.0.9
+= 10th march 2016 - Version 1.0.9 =
 
 * Fix: Hide socials ( if any ) in team member element if "Add social profiles" option is off
 * Tweak: Social icon color in team member element
 
-#### 09th march 2016 - Version 1.0.7
+= 09th march 2016 - Version 1.0.7 =
 
 * Tweak: You can now add "wpb-nav-scroll" class to your menu items to create one-page website
 * Tweak: Added warning message for PHP version inferior to 4.0.5
 * Tweak: Improved slug sanitization for section anchor
 * Tweak: Disable submit button when inserting content to avoid bug
 
-#### 8th march 2016 - Version 1.0.3
+= 8th march 2016 - Version 1.0.3 =
 
 * Fix: Image fallback on mobile
 * Fix: Don't show content on private or password protected pages
 * Tweak: Disable plugin style on albums, videos, and portfolio page (wolf plugins compatibility http://wlfthm.es/7lJ1lD )
 
-#### 3rd march 2016 - Version 1.0.0b
+= 3rd march 2016 - Version 1.0.0b =
 
 * Initial Release

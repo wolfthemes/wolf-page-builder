@@ -24,7 +24,8 @@ module.exports = function(grunt) {
 		shortlink : grunt.file.readJSON('app.config.json').shortlink || grunt.file.readJSON('app.config.json').link || 'http://wolfthemes.com/wordpress-plugins',
 		news : grunt.file.read('../html/news.html'),
 		info : grunt.file.read('../html/info.html'),
-		warning : grunt.file.read('../html/warning.html')
+		warning : grunt.file.read('../html/warning.html'),
+		changelog : grunt.file.read('../CHANGELOG.md')
 	};
 
 	grunt.util._.extend(config, loadConfig('./grunt/tasks/'));

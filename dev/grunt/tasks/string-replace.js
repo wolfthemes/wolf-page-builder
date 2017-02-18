@@ -5,7 +5,7 @@ module.exports = {
 	build : {
 		files: {
 			'../pack/dist/changelog.xml' : '../pack/dist/changelog.xml',
-			'../readme.txt' : '../READMETMPL',
+			'../readme.txt' : '../README',
 		},
 		options: {
 			replacements: [
@@ -80,7 +80,11 @@ module.exports = {
 				{
 					pattern: '%NEWS%',
 					replacement: '<%= news %>'
-				}
+				},
+				{
+					pattern: '%CHANGELOG%',
+					replacement: '<%= changelog %>'
+				},
 			]
 		}
 	}
