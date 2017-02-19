@@ -232,6 +232,7 @@ function wpb_youtube_video_bg( $url = null, $img_fallback = null, $parallax = fa
 
 			$output .= "<div class='$class' id='wpb-youtube-video-bg-$random_id-container' data-youtube-video-id='$youtube_id' style='$style'>" . "\n";
 				$output .= "<div class='wpb-youtube-player' id='wpb-youtube-player-$random_id'></div>" . "\n";
+			$output .= '<div class="wpb-video-bg-overlay"></div>';
 			$output .= '</div><!-- .wpb-youtube-video-bg -->' . "\n";
 		}
 	}
@@ -257,7 +258,7 @@ function wpb_vimeo_video_bg( $url = null, $img_fallback = null, $parallax = fals
 	$random_id = rand( 1, 9999 );
 
 	if (
-		preg_match( '#vimeo\.com/([0-9]+)#', $url, $match )
+		preg_match( '#vimeo\.com/([0-9a-z\#=]+)#', $url, $match )
 	) {
 
 		if ( $match && isset( $match[1] ) ) {
