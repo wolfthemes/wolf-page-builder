@@ -190,10 +190,10 @@ function wpb_video_bg( $mp4 = null, $webm = null, $ogv = null,  $img = null, $pa
  *
  * @param string $url
  * @param string $img_fallback
- * @param bool $parallax
+ * @param string $start_time
  * @return string $output
  */
-function wpb_youtube_video_bg( $url = null, $img_fallback = null, $parallax = false ) {
+function wpb_youtube_video_bg( $url = null, $img_fallback = null, $start_time = 0 ) {
 
 	$output = $style = '';
 	$img_fallback = ( $img_fallback ) ? esc_url( $img_fallback ) : '';
@@ -213,10 +213,6 @@ function wpb_youtube_video_bg( $url = null, $img_fallback = null, $parallax = fa
 			$youtube_id = $match[1];
 			$embed_url = 'https://youtube.com/embed/' . $youtube_id;
 
-			if ( $parallax ) {
-				$class .= ' wpb-video-bg-container-parallax';
-			}
-
 			if ( $img_fallback ) {
 				$style .= "background:url('$img_fallback') center center no-repeat;";
 				$style .= '-webkit-background-size: 100%;
@@ -230,7 +226,7 @@ function wpb_youtube_video_bg( $url = null, $img_fallback = null, $parallax = fa
 				// debug( $style );
 			}
 
-			$output .= "<div class='$class' id='wpb-youtube-video-bg-$random_id-container' data-youtube-video-id='$youtube_id' style='$style'>" . "\n";
+			$output .= "<div class='$class' data-youtube-start-time='$start_time' id='wpb-youtube-video-bg-$random_id-container' data-youtube-id='$youtube_id' style='$style'>" . "\n";
 				$output .= "<div class='wpb-youtube-player' id='wpb-youtube-player-$random_id'></div>" . "\n";
 			$output .= '<div class="wpb-video-bg-overlay"></div>';
 			$output .= '</div><!-- .wpb-youtube-video-bg -->' . "\n";

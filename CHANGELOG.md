@@ -1,5 +1,6 @@
-= 19th february 2017 - Version 2.9.8b =
+= 19th february 2017 - Version 2.9.9b =
 
+* Tweak: Added YouTube start time option
 * Tweak: Added YouTube background overlay
 
 = 17th february 2017 - Version 2.9.7 =

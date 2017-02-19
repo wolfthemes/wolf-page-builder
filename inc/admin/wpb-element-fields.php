@@ -639,7 +639,7 @@ function wpb_get_element_settings( $element, $values = array() ) {
 				<label class="wpb-param-label"><?php printf( esc_html__( '%s Type', '%TEXTDOMAIN%' ), sanitize_text_field( $label ) ); ?></label>
 				<select data-element-type="select" name="<?php echo esc_attr( $param_name . '_type' ); ?>">
 					<option value="youtube" <?php selected( $meta, 'youtube' ); ?>>YouTube</option>
-					<option value="vimeo" <?php selected( $meta, 'vimeo' ); ?>>Vimeo</option>
+					<option value="vimeo" <?php selected( $meta, 'vimeo' ); ?>>Vimeo (beta)</option>
 					<option value="selfhosted" <?php selected( $meta, 'selfhosted' ); ?>><?php _e( 'Self hosted', '%TEXTDOMAIN%' ); ?></option>
 				</select>
 			</p>
@@ -650,6 +650,13 @@ function wpb_get_element_settings( $element, $values = array() ) {
 			<p data-dependency-element="<?php echo esc_attr( $param_name . '_type' ); ?>" data-dependency-values='["youtube"]' class="<?php echo wpb_sanitize_html_classes( $p_class ); ?>">
 				<label class="wpb-param-label"><?php printf( esc_html__( '%s YouTube URL', '%TEXTDOMAIN%' ), sanitize_text_field( $label ) ); ?></label>
 				<input data-element-type="<?php echo esc_attr( $type ); ?>" type="text" name="<?php echo esc_attr( $param_name . '_youtube_url' ); ?>" value="<?php echo esc_url( $meta ); ?>" placeholder="https://www.youtube.com/watch?v=nrJtHemSPW4">
+			<p>
+			<?php 
+			$meta = ( isset( $values[ $param_name . '_youtube_start_time' ] ) ) ? $values[ $param_name . '_youtube_start_time' ] : '';
+			?>
+			<p data-dependency-element="<?php echo esc_attr( $param_name . '_type' ); ?>" data-dependency-values='["youtube"]' class="<?php echo wpb_sanitize_html_classes( $p_class ); ?>">
+				<label class="wpb-param-label"><?php printf( esc_html__( '%s Start Time (in seconds)', '%TEXTDOMAIN%' ), sanitize_text_field( $label ) ); ?></label>
+				<input data-element-type="<?php echo esc_attr( $type ); ?>" type="text" name="<?php echo esc_attr( $param_name . '_youtube_start_time' ); ?>" value="<?php echo esc_attr( $meta ); ?>" placeholder="10">
 			<p>
 			<?php
 			$meta = ( isset( $values[ $param_name . '_vimeo_url' ] ) ) ? $values[ $param_name . '_vimeo_url' ] : '';

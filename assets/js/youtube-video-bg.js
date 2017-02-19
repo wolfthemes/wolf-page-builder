@@ -27,12 +27,15 @@ var WPBYTVideoBg = function( $ ) {
 					window.onYouTubePlayerAPIReady = function() {
 						
 						$container.find( '.wpb-youtube-video-bg-container' ).each( function() {
-							var $this = $( this ), containerId, videoId;
+							var $this = $( this ), containerId, videoId, startTime = 0;
 
 							containerId = $this.find( '.wpb-youtube-player' ).attr( 'id' );
-							videoId = $this.data( 'youtube-video-id' );
+							videoId = $this.data( 'youtube-id' ),
+							startTime = $this.data( 'youtube-start-time' );
+
+							console.log( startTime );
 							
-							_this.loadPlayer( containerId, videoId );
+							_this.loadPlayer( containerId, videoId, startTime );
 						} );
 						
 					};
@@ -40,18 +43,19 @@ var WPBYTVideoBg = function( $ ) {
 				
 				} else {
 					$container.find( '.wpb-youtube-video-bg-container' ).each( function() {
-						var $this = $( this ), containerId, videoId;
+						var $this = $( this ), containerId, videoId, startTime = 0;
 
 						containerId = $this.find( '.wpb-youtube-player' ).attr( 'id' );
-						videoId = $this.data( 'youtube-video-id' );
+						videoId = $this.data( 'youtube-id' ),
+						startTime = $this.data( 'youtube-start-time' );
 
-						_this.loadPlayer( containerId, videoId );
+						_this.loadPlayer( containerId, videoId, startTime );
 					} );
 				}
 			}
 		},
 
-		loadPlayer: function( containerId, videoId ) {
+		loadPlayer: function( containerId, videoId, startTime ) {
 			
 			new YT.Player( containerId, {
 				width: '100%',
@@ -67,7 +71,8 @@ var WPBYTVideoBg = function( $ ) {
 					showinfo: 0,
 					rel: 0,
 					loop: 1,
-					wmode: 'transparent'
+					wmode: 'transparent',
+					start: startTime
 				},
 				events: {
 					onReady: function ( event ) {

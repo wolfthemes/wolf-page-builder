@@ -39,6 +39,7 @@ if ( ! function_exists( 'wpb_shortcode_section' ) ) {
 			'parallax_img' => '',
 			'video_bg_type' => '',
 			'video_bg_youtube_url' => '',
+			'video_bg_youtube_start_time' => 0,
 			'video_bg_vimeo_url' => '',
 			'video_bg_mp4' => '',
 			'video_bg_webm' => '',
@@ -236,7 +237,7 @@ if ( ! function_exists( 'wpb_shortcode_section' ) ) {
 				
 				elseif( $video_bg_youtube_url && 'youtube' == $video_bg_type ) {
 					
-					$output .= wpb_youtube_video_bg( $video_bg_youtube_url, $video_bg_img );
+					$output .= wpb_youtube_video_bg( $video_bg_youtube_url, $video_bg_img, $video_bg_youtube_start_time );
 				}
 
 				elseif( $video_bg_vimeo_url && 'vimeo' == $video_bg_type ) {

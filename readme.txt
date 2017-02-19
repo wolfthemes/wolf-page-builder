@@ -28,13 +28,17 @@ Verified customers however, who have purchased a premium theme on [ThemeForest](
 
 == Changelog ==
 
+= 19th february 2017 - Version 2.9.8b =
+
+* Tweak: Added YouTube background overlay
+
 = 17th february 2017 - Version 2.9.7 =
 
 * Tweak: Added text alignment option to headline element
 * Tweak: Added SSL support for Bandsintown widget
 * Tweak: Added Vimeo background option
 * Fix: Button padding on small tablet (between 500px and 800px)
-* Fix: Mute Vimeo video background
+* Fix: Mute Vimeo video background (not working on all video yet)
 * Fix: Typo preventing animation option showing in "Last releases" element
 * Fix: YouTube video background fallback on mobile
 * Fix: Advanced slider image fallback issue
