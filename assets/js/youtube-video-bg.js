@@ -14,47 +14,67 @@ var WPBYTVideoBg = function( $ ) {
 
 		isMobile : ( navigator.userAgent.match( /(iPad)|(iPhone)|(iPod)|(Android)|(PlayBook)|(BB10)|(BlackBerry)|(Opera Mini)|(IEMobile)|(webOS)|(MeeGo)/i ) ) ? true : false,
 
+		/**
+		 * @link http://gambit.ph/how-to-use-the-javascript-youtube-api-across-multiple-plugins/
+		 */
+		init : function ( $container ) {
+
+			var _this = this;
+			
+			$container = $container || $( '#wpb-inner' );
+
+			if ( ! $container.find( '.wpb-youtube-video-bg-container' ).length || this.isMobile ) {
+				return;
+			}
+
+			if ( 'undefined' === typeof( YT ) || 'undefined' === typeof( YT.Player ) ) {
+				$.getScript( '//www.youtube.com/player_api' );
+			}
+
+			setTimeout( function() {
+				
+				if ( typeof window.onYouTubePlayerAPIReady !== 'undefined' ) {
+					if ( typeof window.WPBOtherYTAPIReady === 'undefined' ) {
+						window.WPBOtherYTAPIReady = [];
+					}
+					window.WPBOtherYTAPIReady.push( window.onYouTubePlayerAPIReady );
+				}
+				
+				window.onYouTubePlayerAPIReady = function() {
+
+					// Initialize YT.Player and do stuff here
+					_this.playVideo( $container );
+
+					if ( typeof window.WPBOtherYTAPIReady !== 'undefined' ) {
+						if ( window.WPBOtherYTAPIReady.length ) {
+							window.WPBOtherYTAPIReady.pop()();
+						}
+					}
+				}
+			}, 2 );
+		},
+
+		/**
+		 * Loop through video container and load player
+		 */
 		playVideo: function( $container ) {
 			
 			var _this = this;
-
-			$container = $container || $( '#wpb-inner' );
-
-			if ( $container.find( '.wpb-youtube-video-bg-container' ).length && ! this.isMobile ) {
 				
-				if ( 'undefined' === typeof( YT ) || 'undefined' === typeof( YT.Player ) ) {
-					
-					window.onYouTubePlayerAPIReady = function() {
-						
-						$container.find( '.wpb-youtube-video-bg-container' ).each( function() {
-							var $this = $( this ), containerId, videoId, startTime = 0;
+			$container.find( '.wpb-youtube-video-bg-container' ).each( function() {
+				var $this = $( this ), containerId, videoId, startTime = 0;
 
-							containerId = $this.find( '.wpb-youtube-player' ).attr( 'id' );
-							videoId = $this.data( 'youtube-id' ),
-							startTime = $this.data( 'youtube-start-time' );
-
-							console.log( startTime );
-							
-							_this.loadPlayer( containerId, videoId, startTime );
-						} );
-						
-					};
-					$.getScript( '//www.youtube.com/player_api' );
+				containerId = $this.find( '.wpb-youtube-player' ).attr( 'id' );
+				videoId = $this.data( 'youtube-id' ),
+				startTime = $this.data( 'youtube-start-time' );
 				
-				} else {
-					$container.find( '.wpb-youtube-video-bg-container' ).each( function() {
-						var $this = $( this ), containerId, videoId, startTime = 0;
-
-						containerId = $this.find( '.wpb-youtube-player' ).attr( 'id' );
-						videoId = $this.data( 'youtube-id' ),
-						startTime = $this.data( 'youtube-start-time' );
-
-						_this.loadPlayer( containerId, videoId, startTime );
-					} );
-				}
-			}
+				_this.loadPlayer( containerId, videoId, startTime );
+			} );
 		},
 
+		/**
+		 * Load YT player
+		 */
 		loadPlayer: function( containerId, videoId, startTime ) {
 			
 			new YT.Player( containerId, {
@@ -94,7 +114,7 @@ var WPBYTVideoBg = function( $ ) {
 	'use strict';
 
 	$( document ).ready( function() {
-		WPBYTVideoBg.playVideo();
+		WPBYTVideoBg.init();
 	} );
 
 } )( jQuery );

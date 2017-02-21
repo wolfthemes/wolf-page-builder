@@ -835,7 +835,7 @@ var WPB = function( $ ) {
 
 			// YouTube
 			if ( 'undefined' !== typeof WPBYTVideoBg ) {
-				WPBYTVideoBg.playVideo();
+				WPBYTVideoBg.init();
 			}
 
 			// Vimeo
