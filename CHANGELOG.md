@@ -1,5 +1,6 @@
-= 19th february 2017 - Version 3.0.0b =
+= 19th february 2017 - Version 3.0.1b =
 
+* Tweak: Added Bandsintown icon
 * Tweak: Improved YouTube background script
 * Tweak: Added YouTube start time option
 * Tweak: Added YouTube background overlay

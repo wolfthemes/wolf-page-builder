@@ -1,6 +1,6 @@
 [class^="ti-"]:before, [class*=" ti-"]:before{
   display: inline-block;
-  font: normal normal normal 14px/1 'theme-icons';
+  font: normal normal normal 14px/1 'custom-icons';
   font-size: inherit;
   text-rendering: auto;
   -webkit-font-smoothing: antialiased;
@@ -8,97 +8,45 @@
 }
 
 [class^="ti-"], [class*=" ti-"] {
-  font-family: 'theme-icons';
+  font-family: 'custom-icons';
 }
 
+.ti-bandsintown:before {
+  content: "\e900";
+}
 .ti-wolf:before {
-  content: "\e601";
+  content: "\e901";
 }
-
-.ti-amp:before {
-  content: "\e01d";
-}
-
-.ti-amazon:before {
-  content: "\e058";
-}
-
-.ti-mute:before {
-  content: "\e003";
-}
-
-.ti-unmute:before {
-  content: "\e004";
-}
-
-.ti-play:before {
-  content: "\e008";
-}
-
-.ti-pause:before {
-  content: "\e009";
-}
-
-.ti-tripadvisor:before {
-  content: "\e600";
-}
-
-.ti-forrst:before {
+.ti-forrrst:before {
   content: "\e011";
 }
-
 .ti-soundcloud:before {
   content: "\e013";
 }
-
-.ti-flickr:before {
-  content: "\e014";
+.ti-ampersand:before {
+  content: "\e01d";
 }
-
-.ti-vimeo:before {
-  content: "\e016";
-}
-
 .ti-deviantart:before {
   content: "\e02a";
 }
-
-.ti-github:before {
-  content: "\e02b";
-}
-
-.ti-foursquare:before {
-  content: "\e031";
-}
-
-.ti-spotify:before {
-  content: "\e045";
-}
-
 .ti-zerply:before {
   content: "\e050";
 }
-
 .ti-myspace:before {
   content: "\e051";
 }
-
-.ti-grooveshark:before {
+.ti-uniE052:before {
   content: "\e052";
 }
-
 .ti-evernote:before {
   content: "\e053";
 }
-
-.ti-500px:before {
-  content: "\e059";
+.ti-tripadvisor:before {
+  content: "\e600";
 }
-
 .ti-cart:before {
   content: "\e60a";
 }
-
 .ti-basket:before {
   content: "\e60d";
 }

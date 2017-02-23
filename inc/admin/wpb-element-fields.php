@@ -285,7 +285,7 @@ function wpb_get_element_settings( $element, $values = array() ) {
 		 * Font
 		 */
 		elseif ( 'font' == $type ) {
-			$wpb_google_fonts = wpb_get_google_fonts_options();
+			$wpb_google_fonts = apply_filters( 'wpb_fonts', wpb_get_google_fonts_options() );
 			// debug( $wpb_google_fonts );
 			?>
 			<select tabindex="-1" data-element-type="<?php echo esc_attr( $type ); ?>" name="<?php echo esc_attr( $param_name ); ?>" >

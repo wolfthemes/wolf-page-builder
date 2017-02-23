@@ -17,6 +17,7 @@ $wpb_socials = array(
 	'amazon',
 	'apple', // iTunes
 	'bandcamp',
+	'bandsintown',
 	'bitbucket',
 	'codepen',
 	'deviantart',
