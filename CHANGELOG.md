@@ -1,5 +1,7 @@
-= 19th february 2017 - Version 3.0.1b =
+= 28th february 2017 - Version 3.0.3 =
 
+* Tweak: Added Linea icon set
+* Tweak: Improved shortcode regex (now supports japanese alphabet)
 * Tweak: Added Bandsintown icon
 * Tweak: Improved YouTube background script
 * Tweak: Added YouTube start time option

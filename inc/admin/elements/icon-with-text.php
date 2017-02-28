@@ -16,7 +16,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 wpb_add_element( 
 	array(
 		'name' => esc_html__( 'Icon with Text', '%TEXTDOMAIN%' ),
-		'description' => esc_html__( '940+ icons with additional text', '%TEXTDOMAIN%' ),
+		'description' => esc_html__( '1600+ icons with additional text', '%TEXTDOMAIN%' ),
 		'base' => 'wpb_icon_with_text',
 		'icon' => 'wpb-icon wpb-icon-text',
 		'category' => esc_html__( 'Content', '%TEXTDOMAIN%' ),

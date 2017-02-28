@@ -3,7 +3,7 @@ Contributors: wolfthemes
 Tags: page builder
 Requires at least: 4.5
 Tested up to: 4.7.2
-Stable tag: 2.9.7
+Stable tag: 3.0.3
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -28,8 +28,13 @@ Verified customers however, who have purchased a premium theme on [ThemeForest](
 
 == Changelog ==
 
-= 19th february 2017 - Version 2.9.8b =
+= 28th february 2017 - Version 3.0.3 =
 
+* Tweak: Added Linea icon set
+* Tweak: Improved shortcode regex (now supports japanese alphabet)
+* Tweak: Added Bandsintown icon
+* Tweak: Improved YouTube background script
+* Tweak: Added YouTube start time option
 * Tweak: Added YouTube background overlay
 
 = 17th february 2017 - Version 2.9.7 =
