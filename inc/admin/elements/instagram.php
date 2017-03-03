@@ -25,9 +25,17 @@ if ( class_exists( 'Wolf_Instagram' ) ) {
 				array(
 					'type' => 'int',
 					'label' => esc_html__( 'Image Count', '%TEXTDOMAIN%' ),
-					'description' => esc_html__( 'A multiple of 6 is recommended. Note that the instagram API may limit the number of image to display', '%TEXTDOMAIN%' ),
+					'description' => esc_html__( 'Note that the instagram API may limit the number of image to display.', '%TEXTDOMAIN%' ),
 					'param_name' => 'count',
 					'value' => 18,
+					'display' => true,
+				),
+
+				array(
+					'type' => 'select',
+					'label' => esc_html__( 'Columns', '%TEXTDOMAIN%' ),
+					'param_name' => 'columns',
+					'choices' => array( 6, 4, 3, 2 ),
 					'display' => true,
 				),
 

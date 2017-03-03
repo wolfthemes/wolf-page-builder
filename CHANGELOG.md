@@ -1,3 +1,8 @@
+= 28th february 2017 - Version 3.0.5b =
+
+* Tweak: Added "columns" attribute to Instagram element
+* Fix: Button shortcode atributes when generated from TinyMCE dropdown
+
 = 28th february 2017 - Version 3.0.3 =
 
 * Tweak: Added Linea icon set

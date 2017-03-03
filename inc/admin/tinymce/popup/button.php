@@ -38,7 +38,7 @@ $params = array(
 	),
 
 	array(
-		'id' => 'url',
+		'id' => 'link_url',
 		'label' => esc_html__( 'Link', '%TEXTDOMAIN%' ),
 		'placeholder' => esc_html__( 'http://', '%TEXTDOMAIN%' ),
 	),
@@ -70,7 +70,7 @@ $params = array(
 	),
 
 	array(
-		'id' => 'target',
+		'id' => 'link_target',
 		'label' => esc_html__( 'Open link in a new tab', '%TEXTDOMAIN%' ),
 		'type' => 'checkbox',
 		'value' => '_blank',
