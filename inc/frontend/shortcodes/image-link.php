@@ -50,7 +50,7 @@ if ( ! function_exists( 'wpb_shortcode_image_link' ) ) {
 		$href = $image_css = '';
 		$class = $extra_class;
 		$image_class     = $class;
-		$image_style     = sanitize_text_field( $image_style );
+		$image_style     = esc_attr( $image_style );
 		$container_class = "wpb-linked-image wpb-text-$alignment $image_style $frame_style";
 		$overlay_opacity = ( $overlay_opacity ) ? absint( $overlay_opacity ) / 100 : null;
 		$text = sanitize_text_field( $text );

@@ -48,8 +48,8 @@ function wpb_register_scripts() {
 	}
 	
 	// Libraries
+	wp_register_script( 'cocoen', WPB_JS . '/lib/cocoen.min.js', array( 'jquery' ), '1.0.0', true );
 	wp_register_script( 'countdown', WPB_JS . '/lib/jquery.countdown.min.js', array( 'jquery' ), '2.0.1', true );
-	//wp_register_script( 'counterup', WPB_JS . '/lib/jquery.counterup.min.js', array( 'jquery' ), '1.0', true );
 	wp_register_script( 'countup', WPB_JS . '/lib/countUp.min.js', array( 'jquery' ), '1.8.1', true );
 	wp_register_script( 'fittext', WPB_JS . '/lib/jquery.fittext.min.js', array( 'jquery' ), '1.2.0', true );
 	wp_register_script( 'owlcarousel', WPB_JS . '/lib/owl.carousel.min.js', array( 'jquery' ), '2.0.0', true );
@@ -67,6 +67,7 @@ function wpb_register_scripts() {
 		wp_register_script( 'wpb-advanced-slider', WPB_JS . '/advanced-slider.js', array( 'jquery' ), $version, false );
 		wp_register_script( 'wpb-buttons', WPB_JS . '/buttons.js', array( 'jquery' ), $version, true );
 		wp_register_script( 'wpb-carousels', WPB_JS . '/carousels.js', array( 'jquery' ), $version, true );
+		wp_register_script( 'wpb-cocoen', WPB_JS . '/cocoen.js', array( 'jquery' ), $version, true );
 		wp_register_script( 'wpb-countdown', WPB_JS . '/countdown.js', array( 'jquery' ), $version, true );
 		wp_register_script( 'wpb-counter', WPB_JS . '/counter.js', array( 'jquery' ), $version, true );
 		wp_register_script( 'wpb-icons', WPB_JS . '/icons.js', array( 'jquery' ), $version, true );
@@ -91,6 +92,7 @@ function wpb_register_scripts() {
 		wp_register_script( 'wpb-advanced-slider', WPB_JS . '/min/advanced-slider.min.js', array( 'jquery' ), $version, false );
 		wp_register_script( 'wpb-buttons', WPB_JS . '/min/buttons.min.js', array( 'jquery' ), $version, true );
 		wp_register_script( 'wpb-carousels', WPB_JS . '/min/carousels.min.js', array( 'jquery' ), $version, true );
+		wp_register_script( 'wpb-cocoen', WPB_JS . '/cocoen.min.js', array( 'jquery' ), $version, true );
 		wp_register_script( 'wpb-countdown', WPB_JS . '/min/countdown.min.js', array( 'jquery' ), $version, true );
 		wp_register_script( 'wpb-counter', WPB_JS . '/min/counter.min.js', array( 'jquery' ), $version, true );
 		wp_register_script( 'wpb-icons', WPB_JS . '/min/icons.min.js', array( 'jquery' ), $version, true );
@@ -178,6 +180,7 @@ function wpb_force_enqueue_scripts() {
 
 		// in case these libraries are used by 3rd party plugins
 		wp_dequeue_script( 'bigtext' );
+		wp_dequeue_script( 'cocoen' );
 		wp_dequeue_script( 'countdown' );
 		wp_dequeue_script( 'countup' );
 		wp_dequeue_script( 'fittext' );

@@ -24,6 +24,7 @@ $wpb_elements = array(
 	'button',
 	'call-to-action',
 	'column',
+	'comparison-images-slider',
 	'contactform7',
 	'count-down',
 	'counter',

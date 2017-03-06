@@ -10,6 +10,7 @@ module.exports = {
 		files: {
 			'<%= app.jsPath %>/lib/jquery.fittext.min.js': [ '<%= app.jsPath %>/lib/jquery.fittext.js'],
 			'<%= app.jsPath %>/lib/jquery.bigtext.min.js': [ '<%= app.jsPath %>/lib/bigtext.js'],
+			'<%= app.jsPath %>/lib/cocoen.min.js': [ '<%= app.jsPath %>/lib/cocoen.js'],
 			'<%= app.jsPath %>/lib/jquery.flexslider.min.js': [ '<%= app.jsPath %>/lib/jquery.flexslider.js']
 		}
 	},
@@ -29,6 +30,7 @@ module.exports = {
 			'<%= app.jsPath %>/min/buttons.min.js': [ '<%= app.jsPath %>/buttons.js'],
 			'<%= app.jsPath %>/min/icons.min.js': [ '<%= app.jsPath %>/icons.js'],
 			'<%= app.jsPath %>/min/mailchimp.min.js': [ '<%= app.jsPath %>/mailchimp.js'],
+			'<%= app.jsPath %>/min/cocoen.min.js': [ '<%= app.jsPath %>/cocoen.js'],
 			'<%= app.jsPath %>/min/countdown.min.js': [ '<%= app.jsPath %>/countdown.js'],
 			'<%= app.jsPath %>/min/counter.min.js': [ '<%= app.jsPath %>/counter.js'],
 			'<%= app.jsPath %>/min/autotyping.min.js': [ '<%= app.jsPath %>/autotyping.js'],
@@ -52,6 +54,7 @@ module.exports = {
 
 			'<%= app.jsPath %>/min/lib.min.js': [
 				'<%= app.jsPath %>/lib/bigtext.js',
+				'<%= app.jsPath %>/lib/cocoen.js',
 				'<%= app.jsPath %>/lib/jquery.countdown.min.js',
 				'<%= app.jsPath %>/lib/countUp.min.js',
 				'<%= app.jsPath %>/lib/jquery.fittext.js',
@@ -78,6 +81,7 @@ module.exports = {
 				'<%= app.jsPath %>/advanced-slider.js',
 				'<%= app.jsPath %>/buttons.js',
 				'<%= app.jsPath %>/carousels.js',
+				'<%= app.jsPath %>/cocoen.js',
 				'<%= app.jsPath %>/countdown.js',
 				'<%= app.jsPath %>/counter.js', // new
 				'<%= app.jsPath %>/icons.js',

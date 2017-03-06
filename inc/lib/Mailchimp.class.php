@@ -12,7 +12,8 @@ if ( ! class_exists( 'MailChimp' ) ) {
 	 * This probably has more comments than code.
 	 *
 	 * @author Drew McLellan <drew.mclellan@gmail.com>
-	 * @version 1.0
+	 * @author WolfThemes - slightly modify for WordPress
+	 * @version 1.0.1
 	 */
 	class MailChimp {
 		private $api_key;
@@ -48,6 +49,7 @@ if ( ! class_exists( 'MailChimp' ) ) {
 
 		/**
 		 * Performs the underlying HTTP request. Not very exciting
+		 * replaced curl by wp_remote_post for WP
 		 * @param  string $method The API method to be called
 		 * @param  array  $args   Assoc array of parameters to be passed
 		 * @return array          Assoc array of decoded result
@@ -56,21 +58,21 @@ if ( ! class_exists( 'MailChimp' ) ) {
 		{
 			$args['apikey'] = $this->api_key;
 
+			$result = null;
 			$url = $this->api_endpoint.'/'.$method.'.json';
 
-			$ch = curl_init();
-			curl_setopt($ch, CURLOPT_URL, $url);
-			curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
-			curl_setopt($ch, CURLOPT_USERAGENT, 'PHP-MCAPI/2.0');
-			curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-			curl_setopt($ch, CURLOPT_TIMEOUT, 10);
-			curl_setopt($ch, CURLOPT_POST, true);
-			curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, $this->verify_ssl);
-			curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($args));
-			$result = curl_exec($ch);
-			curl_close($ch);
+			// send request
+			$response = wp_remote_post( $url , array(
+					'timeout' => 5,
+					'body' => $args,
+				)
+			);
 
-			return $result ? json_decode($result, true) : false;
+			if ( ! is_wp_error( $response ) && is_array( $response ) ) {
+				$result = wp_remote_retrieve_body( $response ); // use the content
+			}
+
+			return $result ? json_decode( $result, true ) : false;
 		}
 	}
 } // end class check

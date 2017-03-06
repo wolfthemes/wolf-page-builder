@@ -19,6 +19,7 @@ WPBMailchimp,
 WPBTyped,
 WPBCountdown,
 WPBCarousels,
+WPBCocoen,
 WolfFrameworkJSParams,
 WOW
 */
@@ -903,6 +904,11 @@ var WPB = function( $ ) {
 			// Carousels
 			if ( 'undefined' !== typeof WPBCarousels ) {
 				WPBCarousels.init();
+			}
+
+			// Cocoen
+			if ( 'undefined' !== typeof WPBCocoen ) {
+				WPBCocoen.init();
 			}
 		}
 	};
