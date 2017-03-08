@@ -45,7 +45,6 @@ $wpb_socials = array(
 	'linkedin',
 	'digg',
 	'dribbble',
-	'deviantart',
 	'github',
 	'delicious',
 	'stumbleupon',

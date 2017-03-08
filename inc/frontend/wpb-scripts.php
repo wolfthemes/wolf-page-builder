@@ -92,7 +92,7 @@ function wpb_register_scripts() {
 		wp_register_script( 'wpb-advanced-slider', WPB_JS . '/min/advanced-slider.min.js', array( 'jquery' ), $version, false );
 		wp_register_script( 'wpb-buttons', WPB_JS . '/min/buttons.min.js', array( 'jquery' ), $version, true );
 		wp_register_script( 'wpb-carousels', WPB_JS . '/min/carousels.min.js', array( 'jquery' ), $version, true );
-		wp_register_script( 'wpb-cocoen', WPB_JS . '/cocoen.min.js', array( 'jquery' ), $version, true );
+		wp_register_script( 'wpb-cocoen', WPB_JS . '/min/cocoen.min.js', array( 'jquery' ), $version, true );
 		wp_register_script( 'wpb-countdown', WPB_JS . '/min/countdown.min.js', array( 'jquery' ), $version, true );
 		wp_register_script( 'wpb-counter', WPB_JS . '/min/counter.min.js', array( 'jquery' ), $version, true );
 		wp_register_script( 'wpb-icons', WPB_JS . '/min/icons.min.js', array( 'jquery' ), $version, true );

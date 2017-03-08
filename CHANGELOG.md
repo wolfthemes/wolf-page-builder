@@ -1,6 +1,6 @@
-= 6th march 2017 - Version 3.0.6 =
+= 6th march 2017 - Version 3.0.7 =
 
-* Tweak: Added Comparison Images Slider element
+* Tweak: Added Comparison Images Slider element (fix script issue in 3.0.7)
 * Tweak: Added "columns" attribute to Instagram element
 * Fix: Button shortcode atributes when generated from TinyMCE dropdown
 

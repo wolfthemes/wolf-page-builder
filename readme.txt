@@ -3,7 +3,7 @@ Contributors: wolfthemes
 Tags: page builder
 Requires at least: 4.5
 Tested up to: 4.7.2
-Stable tag: 3.0.6
+Stable tag: 3.0.7
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -28,9 +28,9 @@ Verified customers however, who have purchased a premium theme on [ThemeForest](
 
 == Changelog ==
 
-= 6th march 2017 - Version 3.0.6 =
+= 6th march 2017 - Version 3.0.7 =
 
-* Tweak: Added Comparison Images Slider element
+* Tweak: Added Comparison Images Slider element (fix script issue in 3.0.7)
 * Tweak: Added "columns" attribute to Instagram element
 * Fix: Button shortcode atributes when generated from TinyMCE dropdown
 
