@@ -61,7 +61,8 @@ module.exports = {
 				'<%= app.jsPath %>/lib/owl.carousel.min.js',
 				'<%= app.jsPath %>/lib/typed.min.js',
 				'<%= app.jsPath %>/lib/wow.min.js',
-				'<%= app.jsPath %>/lib/jquery.waypoints.min.js'
+				'<%= app.jsPath %>/lib/jquery.waypoints.min.js',
+				'<%= app.jsPath %>/lib/lity.min.js',
 			],
 		}
 	},

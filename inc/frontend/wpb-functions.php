@@ -25,6 +25,7 @@ function wpb_enqueue_styles() {
 	wp_register_style( 'animate-css', WPB_CSS . '/lib/animate.min.css', array(), '3.3.0' );
 	wp_register_style( 'flexslider', WPB_CSS . '/lib/flexslider.min.css', array(), '2.6.1' );
 	wp_register_style( 'owlcarousel', WPB_CSS . '/lib/owl.carousel.min.css', array(), '2.0.0' );
+	wp_register_style( 'lity', WPB_CSS . '/lib/lity.min.css', array(), '2.2.2' );
 	
 	// Plugin scripts
 	wp_register_style( 'wpb-icon-pack', WPB_CSS . '/icon-pack.min.css', array(), WPB_VERSION );
@@ -52,6 +53,7 @@ function wpb_enqueue_styles() {
 	wp_enqueue_style( 'animate-css' );
 	wp_enqueue_style( 'flexslider' );
 	wp_enqueue_style( 'owlcarousel' );
+	wp_enqueue_style( 'lity' );
 	wp_enqueue_style( 'wpb-icon-pack' );
 
 	// Check if the "minify CSS" option is checked

@@ -56,6 +56,7 @@ function wpb_register_scripts() {
 	wp_register_script( 'typed', WPB_JS . '/lib/typed.min.js', array( 'jquery' ), '2.0.1', true );
 	wp_register_script( 'wow', WPB_JS . '/lib/wow.min.js', array( 'jquery' ), '1.1.2', true );
 	wp_register_script( 'waypoints', WPB_JS . '/lib/jquery.waypoints.min.js', array( 'jquery' ), '1.6.2', true );
+	wp_register_script( 'lity', WPB_JS . '/lib/lity.min.js', array( 'jquery' ), '2.2.2', true );
 	
 	$version = ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? time() : WPB_VERSION;
 
@@ -188,6 +189,7 @@ function wpb_force_enqueue_scripts() {
 		wp_dequeue_script( 'typed' );
 		wp_dequeue_script( 'wow' );
 		wp_dequeue_script( 'waypoints' );
+		wp_dequeue_script( 'lity' );
 
 		// Lightbox
 		$lightbox = wpb_get_option( 'settings', 'lightbox', 'swipebox' );

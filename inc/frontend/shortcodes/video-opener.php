@@ -33,6 +33,8 @@ if ( ! function_exists( 'wpb_shortcode_video_opener' ) ) {
 			'inline_style' => '',
 		), $atts ) );
 
+		wp_enqueue_script( 'lity' );
+
 		$class = $extra_class;
 		$container_class = " wpb-video-opener wpb-video-opener-align-$alignment";
 
@@ -59,7 +61,7 @@ if ( ! function_exists( 'wpb_shortcode_video_opener' ) ) {
 		$output = '<div class="' . wpb_sanitize_html_classes( $container_class ) . '">';
 		
 		if ( $video_url ) {
-			$output .= '<a href="' . esc_url( $video_url ) . '" class="wpb-video-lightbox">';
+			$output .= '<a href="' . esc_url( $video_url ) . '" data-lity>';
 		}
 		
 		$output .= '<img src="' . esc_url( $src ) . '" alt="video-opener-play-button"';

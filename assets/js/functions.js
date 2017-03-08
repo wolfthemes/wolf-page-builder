@@ -461,33 +461,33 @@ var WPB = function( $ ) {
 
 				$( '.wpb-lightbox, .wpb-gallery-lightbox' ).swipebox();
 
-				$( '.wpb-video-lightbox' ).swipebox( {
-					hideBarsDelay : 0,
-					afterOpen : function () {
-						_this.setVimeoOptions();
-					}
-				} );
+				// $( '.wpb-video-lightbox' ).swipebox( {
+				// 	hideBarsDelay : 0,
+				// 	afterOpen : function () {
+				// 		_this.setVimeoOptions();
+				// 	}
+				// } );
 			
 			} else if ( 'fancybox' === WPBParams.lightbox ) {
 
 				$( '.wpb-lightbox, .wpb-gallery-lightbox' ).fancybox();
 
-				$( '.wpb-video-lightbox' ).fancybox( {
-					padding : 0,
-					nextEffect : 'none',
-					prevEffect : 'none',
-					openEffect  : 'none',
-					closeEffect : 'none',
-					helpers : {
-						media : {},
-						title : {
-							type : 'outside'
-						},
-						overlay : {
-							opacity: 0.9
-						}
-					}
-				} );
+				// $( '.wpb-video-lightbox' ).fancybox( {
+				// 	padding : 0,
+				// 	nextEffect : 'none',
+				// 	prevEffect : 'none',
+				// 	openEffect  : 'none',
+				// 	closeEffect : 'none',
+				// 	helpers : {
+				// 		media : {},
+				// 		title : {
+				// 			type : 'outside'
+				// 		},
+				// 		overlay : {
+				// 			opacity: 0.9
+				// 		}
+				// 	}
+				// } );
 			}
 		},
 

@@ -1,3 +1,7 @@
+= 6th march 2017 - Version 3.0.8b =
+
+* Tweak: Replaced video opener script by Lity
+
 = 6th march 2017 - Version 3.0.7 =
 
 * Tweak: Added Comparison Images Slider element (fix script issue in 3.0.7)
