@@ -105,11 +105,11 @@ if ( ! function_exists( 'wpb_shortcode_testimonial' ) ) {
 		$cite = '<cite class="wpb-testimonial-cite">';
 
 		if ( $avatar ) {
-			
+
 			if ( is_numeric( $avatar ) ) {
-			
+
 				$avatar = wpb_get_url_from_attachment_id( absint( $avatar ), 'wpb-2x2' );
-			
+
 			} else {
 
 				$avatar = wpb_get_image_by_size_from_url( esc_url( $avatar ), 'wpb-2x2' );
@@ -126,7 +126,7 @@ if ( ! function_exists( 'wpb_shortcode_testimonial' ) ) {
 
 		$cite .= '</cite>';
 
-		$output = "<div class='slide'><div class='wpb-testimonal-container'>";
+		$output = "<div class='wpb-testimonal-slide'><div class='wpb-testimonal-container'>";
 
 		if ( $avatar ) {
 			$output .= '<span class="wpb-testimonial-avatar"><img src="' . esc_url( $avatar ) . '" alt="testimonial-avatar"></span>';

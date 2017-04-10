@@ -27,6 +27,6 @@ $thumb_size = 'wpb-thumb';
 		<?php edit_post_link( esc_html__( 'Edit', 'wolf' ), '<span class="edit-link wpb-edit-link">', '</span>' ); ?>
 	</div>
 	<div class="wpb-post-column-entry-summary wpb-entry-summary entry-summary">
-		<p><?php echo wpb_sample( get_the_excerpt() , 10 ); ?><p>
+		<p><?php echo wpb_sample( get_the_excerpt() , 28 ); ?><p>
 	</div>
 </article>

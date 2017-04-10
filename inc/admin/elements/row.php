@@ -13,7 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 wpb_add_element(
-	array(		
+	array(
 		'base' => 'row',
 		'params' => array(
 

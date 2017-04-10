@@ -35,6 +35,7 @@ $wpb_socials = array(
 	'mixcloud',
 	'myspace',
 	'grooveshark',
+	'imdb',
 	'lastfm',
 	'google',
 	'pinterest',

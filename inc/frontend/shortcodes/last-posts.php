@@ -22,13 +22,14 @@ if ( ! function_exists( 'wpb_last_posts_shortcode' ) ) {
 	 * @return string
 	 */
 	function wpb_last_posts_shortcode( $atts, $content = null, $type ) {
-		
+
 		extract( shortcode_atts( array(
 			'ids' => '',
 			'exclude_ids' => '',
 			'count' => 4,
 			'columns' => 4,
 			'padding' => 'yes',
+			'display' => 'standard',
 			'category' => '',
 			'tag' => '',
 			'autoplay' => 'yes',
@@ -61,7 +62,7 @@ if ( ! function_exists( 'wpb_last_posts_shortcode' ) ) {
 
 		$class = $extra_class;
 		$class = ( $class ) ? "$class " : ''; // add space
-		$class .= "wpb-last-posts wpb-last-posts-$type wpb-last-posts-padding-$padding";
+		$class .= "wpb-last-posts wpb-last-posts-$type wpb-last-posts-padding-$padding wpb-last-posts-display-$display";
 
 		$no_column_types = apply_filters( 'wpb_posts_display_types_without_columns', array(
 			'preview',
@@ -110,11 +111,11 @@ if ( ! function_exists( 'wpb_last_posts_shortcode' ) ) {
 		}
 
 		$output .= '<section';
-		
+
 		if ( $anchor ) {
 			$output .= ' id="' . esc_attr( $anchor ) . '"';
 		}
-		
+
 		$output .= ' class="' . wpb_sanitize_html_classes( $class ) . '" style="' . wpb_esc_style_attr( $inline_style ) . '">';
 
 		if ( 'slider' == $type ) {
@@ -133,7 +134,6 @@ if ( ! function_exists( 'wpb_last_posts_shortcode' ) ) {
 			'post_type' => array( 'post' ),
 			'posts_per_page' => absint( $count ),
 			'ignore_sticky_posts' => 1,
-			//'post__not_in' => $exclude,
 			'meta_query' => array(
 				array(
 					'key' => '_thumbnail_id',
@@ -171,7 +171,7 @@ if ( ! function_exists( 'wpb_last_posts_shortcode' ) ) {
 				if ( 'preview' == $type ) {
 					echo "<div class='$animation_class'>";
 				}
-				
+
 				wpb_get_template_part( 'post/content', $type );
 
 				if ( 'preview' == $type ) {
@@ -191,11 +191,11 @@ if ( ! function_exists( 'wpb_last_posts_shortcode' ) ) {
 		endif;
 		wp_reset_postdata();
 		$output .= ob_get_clean();
-		
+
 		if ( 'slider' == $type ) {
 			$output .= '</ul></div><!--.flexslider-->';
 		}
-		
+
 		$output .= '</section><!--.wpb-last-posts-' . $type . '-->';
 
 		return $output;

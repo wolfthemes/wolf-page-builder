@@ -13,7 +13,7 @@
 			background: none;
 			color: #fff;
 			border:1px solid #fff;
-			
+
 			&:hover{
 				background: #fff;
 				color: #333;
@@ -35,6 +35,10 @@
 		.site-content-contain{
 			background:none;
 		}
+
+		.site-footer{
+			margin-top: 0!important;
+		}
 	}
 
 	/**
@@ -52,7 +56,7 @@
 			max-width: none!important;
 			overflow: hidden;
 		}
-		
+
 		.site-header{
 			background: #FFF;
 			margin: 0 auto;

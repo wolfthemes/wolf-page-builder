@@ -31,7 +31,7 @@ function wpb_get_google_fonts_options() {
 		foreach ( $raw_fonts as $font ) {
 			$font_name = str_replace( array( '+', ',', '|', ':' ), array( ' ', '' ), preg_replace( '/\d/', '', $font ) );
 			$font_name = str_replace( array( 'italic' ), '', $font_name );
-			
+
 			if ( '' != $font_name ) {
 				$wpb_google_fonts[ $font_name ] = $font;
 			}
@@ -109,7 +109,7 @@ add_action( 'wp_enqueue_scripts', 'wpb_enqueue_google_fonts' ); // enqueue googl
  * @return array $urls           URLs to print for resource hints.
  */
 function wpb_resource_hints( $urls, $relation_type ) {
-	
+
 	if ( wp_style_is( 'wpb-google-fonts', 'queue' ) && 'preconnect' === $relation_type ) {
 		$urls[] = array(
 			'href' => 'https://fonts.gstatic.com',

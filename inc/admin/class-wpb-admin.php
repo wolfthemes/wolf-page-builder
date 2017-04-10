@@ -27,7 +27,7 @@ class WPB_Admin {
 
 		// Update
 		add_action( 'admin_init', array( $this, 'update' ), 0 );
-		
+
 		// Includes necessary files
 		add_action( 'init', array( $this, 'includes' ), 0 );
 		//$this->includes();
@@ -37,7 +37,7 @@ class WPB_Admin {
 
 		// Add admin body class
 		add_filter( 'admin_body_class', array( $this, 'admin_body_class' ) );
-		
+
 		// Add Page Builder metabox
 		add_action( 'add_meta_boxes', array( $this, 'add_meta_box' ) );
 		// add_action( 'edit_form_after_title', array( $this, 'push_metabox_at_the_top' ) );
@@ -47,7 +47,7 @@ class WPB_Admin {
 
 		// Admin notices
 		add_action( 'admin_notices', array( $this, 'warning_other_page_builders' ) );
-		
+
 		// Create upload folder
 		add_action( 'admin_init', array( $this, 'create_import_folder' ) );
 
@@ -61,7 +61,7 @@ class WPB_Admin {
 	public function update() {
 
 		if ( ! defined( 'IFRAME_REQUEST' ) && ! defined( 'DOING_AJAX' ) && ( get_option( 'wpb_version' ) != WPB_VERSION ) ) {
-		
+
 			// Update hook
 			do_action( 'wpb_do_update' );
 
@@ -102,7 +102,7 @@ class WPB_Admin {
 
 		// Scripts
 		include_once( 'wpb-admin-scripts.php' );
-		
+
 		// Welcome message & About page
 		include_once( 'class-wpb-welcome-message.php' );
 		include_once( 'class-wpb-about-page.php' );
@@ -124,7 +124,7 @@ class WPB_Admin {
 		$elements_slugs = wpb_get_element_list();
 
 		foreach ( $elements_slugs as $slug ) {
-			
+
 			include_once( wpb_locate_file( 'elements/' . sanitize_title_with_dashes( $slug ) . '.php', 'admin' ) );
 		}
 
@@ -136,13 +136,13 @@ class WPB_Admin {
 	 * Add body class to the admin for cosmetic purpose
 	 */
 	public function admin_body_class( $classes ) {
-		
+
 		$classes .= ' wpb-admin';
 
 		if ( defined( 'WPB_VC_VERSION' ) ) {
 			$classes .= ' wolf-page-builder-vc-installed';
 		}
-		
+
 		return $classes;
 	}
 
@@ -155,9 +155,9 @@ class WPB_Admin {
 		if ( ! wpb_do_admin_wpb() ) {
 			return;
 		}
-		
+
 		$post_types = array( 'page' ); //limit meta box to chosen post types
-		
+
 		if ( in_array( $post_type, $post_types ) ) {
 			add_meta_box(
 				'wpb_content',
@@ -192,7 +192,7 @@ class WPB_Admin {
 	 * @param WP_Post $post The post object.
 	 */
 	public function render_meta_box_content( $post ) {
-	
+
 		// Add an nonce field so we can check for it later.
 		wp_nonce_field( 'wpb_content', 'wpb_content_nonce' );
 
@@ -222,11 +222,11 @@ class WPB_Admin {
 					<a href="#" class="wpb-refresh wpb-toolbar-button wpb-tipsy" title="<?php esc_html_e( 'Refresh markup', '%TEXTDOMAIN%' ); ?>"></a>
 				<?php endif; ?>
 			</div><!-- #wpb-toolbar -->
-			
+
 			<div id="wpb-markup-container">
 				<div id="wpb-markup"><?php echo wpb_sanitize_html_markup( $markup ); ?></div><!-- #wpb-markup -->
 			</div><!-- #wpb-markup-container -->
-			
+
 			<div id="wpb-bottom-toolbar">
 				<a href="#" id="wpb-add-section-append" class="wpb-add-section wpb-toolbar-button wpb-tipsy" title="<?php esc_html_e( 'Add a section at the bottom', '%TEXTDOMAIN%' ); ?>"></a>
 				<a target="_blank" href="<?php echo esc_url( WPB_DOC_URI ); ?>" class="wpb-help wpb-toolbar-button wpb-tipsy" title="<?php esc_html_e( 'Documentation', '%TEXTDOMAIN%' ); ?>"></a>
@@ -273,7 +273,7 @@ class WPB_Admin {
 			if ( ! current_user_can( 'edit_page', $post_id ) ) {
 				return $post_id;
 			}
-	
+
 		} else {
 
 			if ( ! current_user_can( 'edit_post', $post_id ) ) {

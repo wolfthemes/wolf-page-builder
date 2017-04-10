@@ -59,6 +59,7 @@ module.exports = {
 				'<%= app.jsPath %>/lib/countUp.min.js',
 				'<%= app.jsPath %>/lib/jquery.fittext.js',
 				'<%= app.jsPath %>/lib/owl.carousel.min.js',
+				'<%= app.jsPath %>/lib/flickity.pkgd.min.js',
 				'<%= app.jsPath %>/lib/typed.min.js',
 				'<%= app.jsPath %>/lib/wow.min.js',
 				'<%= app.jsPath %>/lib/jquery.waypoints.min.js',

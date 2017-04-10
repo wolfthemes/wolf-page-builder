@@ -20,13 +20,13 @@ body.wolf-page-builder{
 /**
  * Normalize page builder content
  */
-@import "base";
-@import "cursor";
+@import "global/base";
+@import "global/cursor";
 
 /**
  * Helper classes
  */
-@import "helpers";
+@import "global/helpers";
 
 /**
  * Section
@@ -36,23 +36,23 @@ body.wolf-page-builder{
 /**
  * Video background
  */
-@import "video-bg";
-//@import "video-bg-controls";
+@import "global/video-bg";
+//@import "global/video-bg-controls";
+
+/**
+ * Fluid videos
+ */
+@import "global/fluid-video";
 
 /**
  * Slideshow background
  */
-@import "slideshow-background";
+@import "global/slideshow-background";
 
 /**
  * Autotyping
  */
 @import "shortcodes/autotyping";
-
-/**
- * Fluid videos
- */
-@import "fluid-video";
 
 /**
  * Notifications
@@ -249,27 +249,37 @@ body.wolf-page-builder{
 /**
  * Flexslider custom styles
  */
-@import "flexslider-custom";
+@import "dependencies/flexslider-custom";
 
 /**
  * Owl Carousel custom styles
  */
-@import "owlcarousel-custom";
+@import "dependencies/owlcarousel-custom";
+
+/**
+ * Slider & Carousel dot navigation
+ */
+@import "dependencies/dots";
+
+/**
+ * Slider & Carousel arrow navigation
+ */
+@import "dependencies/arrows";
 
 /**
  * Swipebox custom styles
  */
-@import "swipebox-custom";
+@import "dependencies/swipebox-custom";
 
 /**
  * Fancybox custom styles
  */
-@import "fancybox-custom";
+@import "dependencies/fancybox-custom";
 
 /**
  * Layout for default WP themes
  */
-@import "wp-themes";
+@import "compatibility/wp-themes";
 
 /**
  * Hover effects
@@ -285,23 +295,23 @@ body.wolf-page-builder{
  * Media Queries
  */
 @media screen and (min-width: 500px) {
-	@import "500px";
+	@import "media-queries/500px";
 }
 
 @media screen and (min-width: 800px) {
 	/**
 	 * Grid
 	 */
-	@import "grid";
-	@import "800px";
+	@import "global/grid";
+	@import "media-queries/800px";
 }
 
 @media screen and (min-width: 1000px) {
-	@import "1000px";
+	@import "media-queries/1000px";
 }
 
 @media screen and (min-width: 1200px) {
-	@import "1200px";
+	@import "media-queries/1200px";
 }
 
 @media screen and (max-width: 800px) {

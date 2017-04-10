@@ -3,7 +3,7 @@
  *
  * Requires flexslider.js
  *
- * %NAME% %VERSION% 
+ * %NAME% %VERSION%
  */
 /* jshint -W062 */
 var WPBSliders =  WPBSliders || {},
@@ -34,7 +34,7 @@ WPBSliders = function( $ ) {
 				this.desktopSlider();
 				this.mobileSlider();
 				this.lastPostsBigSlider();
-				
+
 				/**
 				 * Resize event
 				 */
@@ -56,7 +56,7 @@ WPBSliders = function( $ ) {
 		 */
 		advancedSlider : function() {
 
-			var defaultTransition = ( Modernizr.isTouch ) ? 'slide' : 'fade';
+			var defaultTransition = ( this.isMobile ) ? 'slide' : 'fade';
 
 			$( '.wpb-advanced-slider' ).each( function() {
 				var $slider = $( this ),
@@ -71,7 +71,7 @@ WPBSliders = function( $ ) {
 					dataArrows = $slider.data( 'nav-arrows' );
 
 				transition = ( 'auto' === dataTransition ) ? defaultTransition : dataTransition;
-				
+
 				$( '#' + $slider.attr( 'id' ) ).wpbSlider( {
 					animation: transition,
 					slideshow :  dataAutoplay,
@@ -90,7 +90,7 @@ WPBSliders = function( $ ) {
 		 */
 		flexSlider : function() {
 
-			var defaultTransition = ( Modernizr.isTouch ) ? 'slide' : 'fade';
+			var defaultTransition = ( this.isMobile ) ? 'slide' : 'fade';
 
 			/* Image Slider & Last Posts Slider */
 			$( '.wpb-images-slider, .wpb-last-posts-slider .flexslider' ).each( function () {
@@ -152,13 +152,13 @@ WPBSliders = function( $ ) {
 		 * Last posts big slider
 		 */
 		lastPostsBigSlider : function () {
-			
+
 			var _this = this,
 				defaultTransition = ( Modernizr.isTouch ) ? 'slide' : 'fade';
 
 
 			$( '.wpb-last-posts-big-slider .flexslider' ).each( function () {
-				
+
 				var $slider = $( this ),
 					transition,
 					dataAutoplay = $slider.data( 'autoplay' ),
@@ -196,7 +196,7 @@ WPBSliders = function( $ ) {
 				bleed = 2;
 
 			winHeight = parseInt( value, 10 );
-			
+
 			if ( '%' === unit ) {
 				winHeight = Math.floor( $( window ).height() * value / 100 );
 			}

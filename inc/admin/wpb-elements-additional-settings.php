@@ -23,8 +23,68 @@ global $custom_colors;
 
 foreach ( $custom_colors_elements as $custom_colors_element ) {
 	wpb_inject_param(
-		$custom_colors_element, 
+		$custom_colors_element,
 		$custom_colors
+	);
+}
+
+/**
+ * Add carousel settings
+ */
+$carousel_elements = array(
+	'wpb_testimonials',
+);
+
+foreach ( $carousel_elements as $carousel_element ) {
+	wpb_inject_param(
+		$carousel_element, array(
+			array(
+				'type' => 'select',
+				'label' => esc_html__( 'Autoplay', '%TEXTDOMAIN%' ),
+				'param_name' => 'autoplay',
+				'choices' => array(
+					'true' => esc_html__( 'Yes', '%TEXTDOMAIN%' ),
+					'false' => esc_html__( 'No', '%TEXTDOMAIN%' ),
+				),
+			),
+
+			array(
+				'type' => 'select',
+				'label' => esc_html__( 'Pause on Hover (if autoplay)', '%TEXTDOMAIN%' ),
+				'param_name' => 'pause_on_hover',
+				'choices' => array(
+					'true' => esc_html__( 'Yes', '%TEXTDOMAIN%' ),
+					'false' => esc_html__( 'No', '%TEXTDOMAIN%' ),
+				),
+			),
+
+			array(
+				'type' => 'int',
+				'label' => esc_html__( 'Slideshow Speed in ms', '%TEXTDOMAIN%' ),
+				'param_name' => 'slideshow_speed',
+				'value' => 6000,
+			),
+
+			array(
+				'type' => 'select',
+				'label' => esc_html__( 'Show Navigation Bullets', '%TEXTDOMAIN%' ),
+				'param_name' => 'nav_bullets',
+				'choices' => array(
+					'true' => esc_html__( 'Yes', '%TEXTDOMAIN%' ),
+					'false' => esc_html__( 'No', '%TEXTDOMAIN%' ),
+				),
+			),
+
+			array(
+				'type' => 'select',
+				'label' => esc_html__( 'Show Navigation Arrows', '%TEXTDOMAIN%' ),
+				'param_name' => 'nav_arrows',
+				'choices' => array(
+					'true' => esc_html__( 'Yes', '%TEXTDOMAIN%' ),
+					'false' => esc_html__( 'No', '%TEXTDOMAIN%' ),
+				),
+			),
+		)
 	);
 }
 
@@ -32,7 +92,6 @@ foreach ( $custom_colors_elements as $custom_colors_element ) {
  * Add slider settings
  */
 $slider_elements = array(
-	'wpb_testimonials',
 	'wpb_slider',
 	'wpb_advanced_slider',
 	'wpb_posts_slider',
@@ -142,12 +201,12 @@ foreach ( $animated_elements as $animated_element ) {
  * Add inline style and class field settings to certain elements
  */
 $stylable_elements = array(
-	'block', 
+	'block',
 	'wpb_video',
 	'row',
-	'contact-form-7', 
-	'wpb_google_map', 
-	'wpb_separator', 
+	'contact-form-7',
+	'wpb_google_map',
+	'wpb_separator',
 	'wpb_icon_with_text', 'wpb_text_block',
 	'wpb_image_link',
 	'wpb_image',

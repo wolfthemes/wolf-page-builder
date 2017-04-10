@@ -34,7 +34,7 @@ function wpb_enqueue_admin_scripts() {
 	// wp_enqueue_style( 'wp-jquery-ui-dialog' );
 	wp_enqueue_style( 'fonticonpicker', WPB_CSS . '/admin/lib/jquery.fonticonpicker.min.css', array(), '2.0.0' );
 	wp_enqueue_style( 'fonticonpickertheme', WPB_CSS . '/admin/lib/jquery.fonticonpicker.grey.min.css', array(), '2.0.0' );
-	
+
 	// Scripts
 	$version = ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? time() : WPB_VERSION;
 	wp_enqueue_script( 'tipsy', WPB_JS . '/admin/lib/tipsy.js', 'jquery', '1.0.0a', true );
@@ -42,7 +42,7 @@ function wpb_enqueue_admin_scripts() {
 	wp_enqueue_script( 'fonticonpicker', WPB_JS . '/admin/lib/jquery.fonticonpicker.min.js', array( 'jquery' ), '2.0.0', true );
 	wp_enqueue_script( 'generatefile', WPB_JS . '/admin/lib/jquery.generateFile.js', array( 'jquery' ), '1.0.0', true );
 	wp_enqueue_script( 'fileupload', WPB_JS . '/admin/lib/jquery.fileupload.js', array( 'jquery' ), '1.0.0', true );
-	
+
 	wp_enqueue_script( 'wpb-panel', WPB_JS . '/admin/panel.js', array( 'jquery', 'jquery-ui-sortable', 'jquery-ui-dialog', 'wp-color-picker' ), $version, true );
 	wp_enqueue_script( 'wpb-params', WPB_JS . '/admin/params.js', array( 'jquery' ), $version, true );
 	wp_enqueue_script( 'wpb-filter', WPB_JS . '/admin/filter.js', array( 'jquery' ), $version, true );
@@ -55,7 +55,7 @@ function wpb_enqueue_admin_scripts() {
 
 	$post_id = ( isset( $_GET['post'] ) ) ? absint( $_GET['post'] ) : null;
 	$wpb_content = wpb_admin_get_content( $post_id );
-	
+
 	// Global JS variables
 	wp_localize_script( 'wpb-panel', 'WPBAdminParams', array(
 			'ajaxUrl' => esc_url( admin_url( 'admin-ajax.php' ) ),

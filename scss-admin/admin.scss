@@ -6,23 +6,23 @@
 /**
  * Helper classes
  */
-@import "../scss/helpers";
+@import "../scss/global/helpers";
 
 /**
  * Grid
  */
-.wpb-alpha, 
+.wpb-alpha,
 .wpb-first {
 	margin-left: 0!important;
 	&:before { clear: both; }
 }
 
-.wpb-omega, 
+.wpb-omega,
 .wpb-last {
 	margin-right: 0!important;
 	&:after { clear: both; }
 }
-@import "../scss/grid";
+@import "../scss/global/grid";
 
 /**
  * Page builder panel
@@ -73,7 +73,7 @@
  * Media queries
  */
 @media screen and (max-width: 1600px) {
-	
+
 	.wpb-row.wpb-4-cols{
 		.wpb-element-params{
 			display: none;

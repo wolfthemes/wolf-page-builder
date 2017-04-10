@@ -79,14 +79,14 @@ class WPB_Settings {
 	 * Init Settings
 	 */
 	public function settings() {
-		
+
 		foreach ( $this->settings as $setting ) {
 			$this->settings_id = $setting['settings_id'];
 			$this->settings_slug = $setting['settings_slug'];
-			
+
 			register_setting( $this->settings_id, $this->settings_slug, array( $this, 'settings_validate' ) );
 			add_settings_section( $this->settings_id, '', array( $this, 'section_intro' ), $this->settings_id );
-						
+
 			foreach ( $setting['fields'] as $key => $field ) {
 				$type = ( isset( $field['type'] ) ) ? $field['type'] : 'text';
 				$label = ( isset( $field['label'] ) ) ? $field['label'] : '';
@@ -100,7 +100,7 @@ class WPB_Settings {
 					array( $this, 'setting_field' ),
 					$this->settings_id,
 					$this->settings_id,
-					array( 
+					array(
 						'field_id' => $field['field_id'],
 						'type' => $type,
 						'settings_slug' => $this->settings_slug,
@@ -398,7 +398,7 @@ class WPB_Settings {
 
 			$default_twitter_url = ( get_user_meta( get_current_user_id(), 'twitter', true ) ) ? 'https://twitter.com/' . esc_attr( get_user_meta( get_current_user_id(), 'twitter', true ) ) : '#';
 			$default_facebook_url = ( get_user_meta( get_current_user_id(), 'facebook', true ) ) ? get_user_meta( get_current_user_id(), 'facebook', true ) : '#';
-			
+
 			$default = apply_filters( 'wpb_default_settings',
 				array(
 
@@ -414,7 +414,7 @@ class WPB_Settings {
 						'placeholder' => esc_html__( 'your email', '%TEXTDOMAIN%' ),
 					),
 					'fonts' => array(),
-					
+
 					'socials' => array(
 						'twitter' => $default_twitter_url,
 						'facebook' => $default_facebook_url,

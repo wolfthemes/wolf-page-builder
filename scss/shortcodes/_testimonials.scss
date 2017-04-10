@@ -3,28 +3,31 @@
 	position: relative;
 	max-width: 800px;
 	margin: 0 auto 20px;
-	
-	.owl-next{
-		right: -10px!important;
-	}
+	// .owl-next{
+	// 	right: -10px!important;
+	// }
 
-	.owl-prev{
-		left: -10px!important;
-	}
+	// .owl-prev{
+	// 	left: -10px!important;
+	// }
 
-	.owl-next,
-	.owl-prev{
-		width: 30px;
-		height: 60px;
-		background-size: 30px 60px;
-		background-repeat: no-repeat;
-		margin-top: -30px;	
-	}
+	// .owl-next,
+	// .owl-prev{
+	// 	width: 30px;
+	// 	height: 60px;
+	// 	background-size: 30px 60px;
+	// 	background-repeat: no-repeat;
+	// 	margin-top: -30px;	
+	// }
+}
+
+.wpb-testimonal-slide{
+	width: 100%;
 }
 
 .wpb-testimonial-container{
-	max-width: 800px;
-	margin: 0 auto;
+	//max-width: 800px;
+	//margin: 0 auto;
 	padding: 0 2em;
 }
 
@@ -39,7 +42,7 @@ blockquote.wpb-testimonial-content{
 	font-size: 14px;
 	text-align: center;
 	padding: 0 40px!important;
-	
+
 	&:before,
 	&:after{
 		display: none;

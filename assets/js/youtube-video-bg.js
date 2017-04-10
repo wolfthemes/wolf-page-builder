@@ -1,7 +1,7 @@
 /*!
  * YouTube Video Background
  *
- * %NAME% %VERSION% 
+ * %NAME% %VERSION%
  */
 /* jshint -W062 */
 /* global YT */
@@ -20,7 +20,7 @@ var WPBYTVideoBg = function( $ ) {
 		init : function ( $container ) {
 
 			var _this = this;
-			
+
 			$container = $container || $( '#wpb-inner' );
 
 			if ( ! $container.find( '.wpb-youtube-video-bg-container' ).length || this.isMobile ) {
@@ -32,14 +32,14 @@ var WPBYTVideoBg = function( $ ) {
 			}
 
 			setTimeout( function() {
-				
+
 				if ( typeof window.onYouTubePlayerAPIReady !== 'undefined' ) {
 					if ( typeof window.WPBOtherYTAPIReady === 'undefined' ) {
 						window.WPBOtherYTAPIReady = [];
 					}
 					window.WPBOtherYTAPIReady.push( window.onYouTubePlayerAPIReady );
 				}
-				
+
 				window.onYouTubePlayerAPIReady = function() {
 
 					// Initialize YT.Player and do stuff here
@@ -58,16 +58,16 @@ var WPBYTVideoBg = function( $ ) {
 		 * Loop through video container and load player
 		 */
 		playVideo: function( $container ) {
-			
+
 			var _this = this;
-				
+
 			$container.find( '.wpb-youtube-video-bg-container' ).each( function() {
 				var $this = $( this ), containerId, videoId, startTime = 0;
 
 				containerId = $this.find( '.wpb-youtube-player' ).attr( 'id' );
 				videoId = $this.data( 'youtube-id' ),
 				startTime = $this.data( 'youtube-start-time' );
-				
+
 				_this.loadPlayer( containerId, videoId, startTime );
 			} );
 		},
@@ -76,7 +76,7 @@ var WPBYTVideoBg = function( $ ) {
 		 * Load YT player
 		 */
 		loadPlayer: function( containerId, videoId, startTime ) {
-			
+
 			new YT.Player( containerId, {
 				width: '100%',
 				height: '100%',
@@ -113,7 +113,7 @@ var WPBYTVideoBg = function( $ ) {
 
 	'use strict';
 
-	$( document ).ready( function() {
+	$( window ).load( function() {
 		WPBYTVideoBg.init();
 	} );
 

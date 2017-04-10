@@ -21,11 +21,11 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Without having to messing with shortcodes in admin and such non-WP things
  */
 function wpb_admin_get_content( $post_id ) {
-	
+
 	if ( ! $post_id ) {
 		return;
 	}
-	
+
 	$url = get_permalink( $post_id );
 
 	// send request
@@ -36,7 +36,7 @@ function wpb_admin_get_content( $post_id ) {
 
 	// get result if no error
 	if ( ! is_wp_error( $response ) && is_array( $response ) ) {
-		
+
 		$html = wp_remote_retrieve_body( $response ); // use the content
 
 		if ( $html ) {
@@ -63,7 +63,7 @@ function wpb_admin_get_content( $post_id ) {
 function wpb_update_option_index( $index = 'settings', $options_array ) {
 
 	$wpb_settings = ( get_option( 'wpb_settings' ) && is_array( get_option( 'wpb_settings' ) ) ) ? get_option( 'wpb_settings' ) : array();
-	
+
 	$wpb_settings[ $index ] = $options_array;
 
 	update_option( 'wpb_settings', $wpb_settings );
@@ -81,7 +81,7 @@ function wpb_update_option_index( $index = 'settings', $options_array ) {
 function wpb_update_option( $index = 'settings', $key, $value ) {
 
 	$wpb_settings = ( get_option( 'wpb_settings' ) && is_array( get_option( 'wpb_settings' ) ) ) ? get_option( 'wpb_settings' ) : array();
-	
+
 	if ( ! isset( $wpb_settings[ $index ] ) ) {
 		$wpb_settings[ $index ] = array();
 	}
@@ -96,7 +96,7 @@ function wpb_update_option( $index = 'settings', $key, $value ) {
  * @since 1.0
  */
 function wpb_get_element_markup( $basename, $params_values = '' ) {
-	
+
 	$elements = wpb_get_elements();
 
 	if ( isset( $elements[ $basename ] ) ) {
@@ -126,7 +126,7 @@ function wpb_get_element_markup( $basename, $params_values = '' ) {
 				echo '>';
 
 				echo wpb_get_element_toolbar( $child_basename, $child_element_name );
-				
+
 				echo wpb_get_element_properties( $child_basename );
 				?>
 			</element>
@@ -164,14 +164,14 @@ function wpb_get_element_properties( $basename, $new_params = array() ) {
 		if ( $has_child ) {
 			return;
 		}
-		
+
 		foreach ( $params as $key => $param ) {
 
 			$param_name =  $param[ 'param_name' ];
 
 			// if param is set
 			if ( isset( $new_params[ $param_name ] ) ) {
-				
+
 				$name = sanitize_text_field( $param['param_name'] );
 				$type = sanitize_text_field( $param['type'] );
 				$label = ( isset( $param['label'] ) ) ? sanitize_text_field( $param['label'] ) : '';
@@ -199,7 +199,7 @@ function wpb_get_element_properties( $basename, $new_params = array() ) {
 		}
 
 		foreach ( $new_params as $setting_name => $setting_value ) {
-			
+
 			// $params_output .= $setting_name . ' &mdash; ' . sanitize_text_field( $setting_value );
 		}
 

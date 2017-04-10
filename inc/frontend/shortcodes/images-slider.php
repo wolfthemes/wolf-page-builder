@@ -75,7 +75,7 @@ if ( ! function_exists( 'wpb_shortcode_slider' ) ) {
 		$output .= '<ul class="slides">';
 
 		foreach ( $images as $image_id ) {
-			
+
 			$is_file = wpb_get_url_from_attachment_id( absint( $image_id ), $size );
 
 			if ( is_numeric( $image_id ) && $is_file ) {
@@ -100,9 +100,13 @@ if ( ! function_exists( 'wpb_shortcode_slider' ) ) {
 			}
 
 			$output .= '<li class="slide">';
-			$output .= '<img src="' . esc_url( $image_url ) . '" alt="' . esc_url( $alt ) . '">';
-			if ( $post_excerpt )
+
+			$output .= wp_get_attachment_image( $image_id, $size );
+
+			if ( $post_excerpt ) {
 				$output .= '<p class="flex-caption">' . sanitize_text_field( $post_excerpt ) . '</p>';
+			}
+
 			$output .= '</li><!--.slide-->';
 		}
 

@@ -57,6 +57,61 @@
   color: #333333 !important;
 }
 
+/* Backgrounds */
+.wpb-img-bg {
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.wpb-img-bg-effect-parallax {
+  opacity: 0;
+}
+
+.wpb-img-cover {
+  object-fit: cover;
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100% !important;
+  z-index: 0;
+}
+
+.wpb-compat-cover {
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+.wpb-compat-cover .wpb-img-cover {
+  opacity: 0;
+}
+
+.wpb-img-contain {
+  object-fit: cover;
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100% !important;
+  z-index: 0;
+}
+
+.wpb-compat-contain {
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+.wpb-compat-contain .wpb-img-contain {
+  opacity: 0;
+}
+
 /* Contain floats */
 .wpb-clearfix, .wpb-element-container .wpb-element-has-children, .wpb-element-container .wpb-element-child, .wpb-clear {
   zoom: 1;
@@ -1724,6 +1779,13 @@ p.wpb-inline-block {
 }
 .wpb-testimonials:before {
   content: "\f473";
+}
+
+.wpb-quote {
+  font-family: Dashicons;
+}
+.wpb-quote:before {
+  content: "\f122";
 }
 
 .wpb-team-member {

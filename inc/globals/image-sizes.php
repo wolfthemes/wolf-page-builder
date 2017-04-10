@@ -10,7 +10,7 @@
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
-} 
+}
 
 global $wpb_image_sizes, $wpb_image_placeholders;
 

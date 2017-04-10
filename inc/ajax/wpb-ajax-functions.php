@@ -19,7 +19,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @since 1.0.0
  */
 function wpb_mailchimp_ajax() {
-	
+
 	extract( $_POST );
 
 	if ( isset( $_POST['email'] ) && isset( $_POST['list_id'] ) ) {
@@ -46,7 +46,7 @@ add_action( 'wp_ajax_nopriv_wpb_mailchimp_ajax', 'wpb_mailchimp_ajax' );
  * @since 1.0.0
  */
 function wpb_ajax_get_import_file_content() {
-	
+
 	extract( $_POST );
 
 	if ( isset( $_POST['filename'] ) ) {
@@ -61,10 +61,10 @@ function wpb_ajax_get_import_file_content() {
 		$ext = pathinfo( $filename, PATHINFO_EXTENSION );
 
 		if ( 'txt' != $ext ) {
-			
+
 			$result['result'] = 'error';
 			$result['content'] = esc_html__( 'It must be a text file', '%TEXTDOMAIN%' );
-		
+
 		} else {
 			$folder = WPB_UPLOAD_URI;
 			$file = $folder . '/' . $filename;
@@ -80,7 +80,7 @@ function wpb_ajax_get_import_file_content() {
 
 			wpb_clean_folder( WPB_UPLOAD_DIR );
 		}
-		
+
 		echo json_encode( $result );
 	}
 	exit;
@@ -136,7 +136,7 @@ function wpb_ajax_get_new_row() {
 	$icons = wpb_get_container_toolbar();
 	$markup .= "<column class='wpb-column wpb-element-container'>$icons</column>";
 	$markup .= '</row>';
-	
+
 	echo $markup;
 	exit;
 }
@@ -235,7 +235,7 @@ function wpb_ajax_get_section_layout() {
 add_action( 'wp_ajax_wpb_ajax_get_section_layout', 'wpb_ajax_get_section_layout' );
 
 /**
- * Format ajax data 
+ * Format ajax data
  *
  * @since 1.0
  */
@@ -283,7 +283,7 @@ function wpb_ajax_sanitize_data() {
 			foreach ( $form_data as $input_key => $input ) {
 
 				$param_name = isset( $input['name'] ) ? $input['name'] : '';
-				
+
 				if ( in_array( $param_name, $available_params ) ) {
 
 					$type = isset( $input['type'] ) ? $input['type'] : 'text';
@@ -293,7 +293,7 @@ function wpb_ajax_sanitize_data() {
 					$new_form_data[ $input_key ]['name'] = esc_attr( $param_name ); // set name
 
 					if ( 'textarea_html' == $type || 'editor' == $type || 'textarea' == $type ) {
-						
+
 						$new_form_data[ $input_key ]['value'] = wpb_encode_textarea_html( $value );
 
 					} elseif ( 'background' == $type ) {
@@ -301,15 +301,15 @@ function wpb_ajax_sanitize_data() {
 						$bg_options = array( 'color', 'img', 'position', 'repeat', 'attachment', 'size', 'parallax', 'font_color' );
 
 						$new_form_data[ $input_key ]['value'] = esc_attr( $value );
-											
+
 					} elseif ( 'checkbox' == $type ) {
 
 						$new_form_data[ $input_key ]['value'] = ( $value ) ? '1' : '0';
 
 					} elseif ( 'slug' == $type ) {
-						
+
 						$new_form_data[ $input_key ]['value'] = sanitize_title_with_dashes( $value );
-					
+
 					} elseif ( 'text' == $type ) {
 
 						$new_form_data[ $input_key ]['value'] = wpb_sample( sanitize_text_field( stripslashes( $value ) ), 250 );
@@ -362,13 +362,13 @@ function wpb_ajax_get_element_first_child_params() {
 					if ( $value ) {
 						$len = 14;
 						if ( 'textarea_html' == $type || 'editor' == $type ) {
-								
+
 							$value = wpb_sample( wpb_decode_textarea_html( $value ), $len );
 
 						} elseif ( 'textarea' == $type ) {
-							
+
 							$value = wpb_sample( wpb_decode_textarea( $value ), $len );
-						
+
 						} else {
 							$value = sanitize_text_field( $value );
 						}
@@ -385,7 +385,7 @@ function wpb_ajax_get_element_first_child_params() {
 add_action( 'wp_ajax_wpb_ajax_get_element_first_child_params', 'wpb_ajax_get_element_first_child_params' );
 
 /**
- * 
+ *
  * @since 1.0
  */
 function wpb_ajax_get_element_params() {
@@ -403,7 +403,7 @@ function wpb_ajax_get_element_params() {
 
 			// create an array of available params
 			$elements_params = $elements[ $element ]['params'];
-			
+
 			$index = 0;
 			foreach ( $elements_params as $element_param_key => $element_param ) {
 				$available_params[ $element_param['param_name'] ] = array(
@@ -447,13 +447,13 @@ function wpb_ajax_get_element_params() {
 							} elseif ( 'checkbox' == $type ) {
 
 								$value = ( 1 == $value ) ? esc_html__( 'Yes', '%TEXTDOMAIN%' ) : '';
-							
+
 							} elseif ( 'textarea_html' == $type || 'editor' == $type ) {
-								
+
 								$value = wpb_sample( wpb_decode_textarea_html( $value ), $len );
 
 							} elseif ( 'textarea' == $type ) {
-								
+
 								$value = wpb_sample( wpb_decode_textarea( $value ), $len );
 
 							} else {
@@ -474,7 +474,7 @@ function wpb_ajax_get_element_params() {
 add_action( 'wp_ajax_wpb_ajax_get_element_params', 'wpb_ajax_get_element_params' );
 
 /**
- * 
+ *
  * @since 1.0
  */
 function wpb_ajax_get_section_markup() {
@@ -494,21 +494,21 @@ function wpb_ajax_get_section_markup() {
 add_action( 'wp_ajax_wpb_ajax_get_section_markup', 'wpb_ajax_get_section_markup' );
 
 /**
- * 
+ *
  * @since 1.0
  */
 function wpb_ajax_get_element_markup() {
 	extract( $_POST );
 
 	if ( isset( $_POST['element'] ) ) {
-		echo wpb_get_element_markup( sanitize_text_field( $_POST['element'] ) ); 
+		echo wpb_get_element_markup( sanitize_text_field( $_POST['element'] ) );
 	}
 	exit;
 }
 add_action( 'wp_ajax_wpb_ajax_get_element_markup', 'wpb_ajax_get_element_markup' );
 
 /**
- * 
+ *
  * @since 1.0
  */
 function wpb_ajax_get_markup_content() {
@@ -522,7 +522,7 @@ function wpb_ajax_get_markup_content() {
 add_action( 'wp_ajax_wpb_ajax_get_markup_content', 'wpb_ajax_get_markup_content' );
 
 /**
- * 
+ *
  * @since 1.0
  */
 function wpb_ajax_get_shortcode_content() {
@@ -536,17 +536,17 @@ function wpb_ajax_get_shortcode_content() {
 add_action( 'wp_ajax_wpb_ajax_get_shortcode_content', 'wpb_ajax_get_shortcode_content' );
 
 /**
- * 
+ *
  * @since 1.0
  */
-function wpb_ajax_get_elements() {	
+function wpb_ajax_get_elements() {
 	$elements = wpb_get_elements();
 	?>
 	<div class="wpb-dialog-elements">
 		<div id="wpb-element-nav">
 			<div id="wpb-element-filter">
 				<a href="#" data-category="all"><?php esc_html_e( 'All', '%TEXTDOMAIN%' ); ?></a>
-				<?php 
+				<?php
 				foreach ( wpb_get_element_categories() as $cat ) {
 					?>
 					<a href="#" data-category="<?php echo esc_attr( $cat ); ?>"><?php echo sanitize_text_field( $cat ); ?></a>
@@ -569,7 +569,7 @@ function wpb_ajax_get_elements() {
 					$description = ( isset( $element['description'] ) ) ? $element['description'] : '';
 					$tags = ( isset( $element['tags'] ) ) ? $element['tags'] : '';
 					$icon = ( isset( $element['icon'] ) ) ? $element['icon'] : '';
-				
+
 					if ( $name ) :
 				?>
 					<div class="wpb-element" data-element-name="<?php echo esc_attr( $name ); ?>" data-element="<?php echo esc_attr( $base ); ?>" data-element-category="<?php echo esc_attr( $category ); ?>" data-element-tags="<?php echo esc_attr( $tags ); ?>" original-title="<?php printf( __( '%s Settings', '%TEXTDOMAIN%' ), $name ); ?>">
@@ -590,11 +590,11 @@ function wpb_ajax_get_elements() {
 add_action( 'wp_ajax_wpb_ajax_get_elements', 'wpb_ajax_get_elements' );
 
 /**
- * 
+ *
  * @since 1.0
  */
 function wpb_ajax_get_element_settings() {
-	
+
 	extract( $_POST );
 
 	if ( isset( $_POST['element'] ) ) {
@@ -644,7 +644,7 @@ add_action( 'wp_ajax_wpb_ajax_get_element_settings', 'wpb_ajax_get_element_setti
  * Get URL of an attachment post by ID
  */
 function wpb_ajax_get_url_from_attachment_id() {
-	
+
 	extract( $_POST );
 
 	if ( isset( $_POST['attachmentId'] ) ) {

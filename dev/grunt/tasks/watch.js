@@ -4,7 +4,7 @@ module.exports = {
 		files:[
 			'<%= app.jsPath %>/*.js',
 			'!<%= app.jsPath %>/lib/**',
-			'!<%= app.jsPath %>/admin/*.js', 
+			'!<%= app.jsPath %>/admin/*.js',
 			],
 		tasks: [
 			// 'jshint',
@@ -16,6 +16,8 @@ module.exports = {
 	sass: {
 		files: [
 			'<%= app.scssPath %>/*.scss',
+			'<%= app.scssPath %>/global/*.scss',
+			'<%= app.scssPath %>/dependencies/*.scss',
 			'<%= app.scssPath %>/shortcodes/*.scss',
 			'<%= app.scssPath %>/icons/*.scss',
 			'<%= app.scssAdminPath %>/*.scss'

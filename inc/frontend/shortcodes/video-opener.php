@@ -50,33 +50,32 @@ if ( ! function_exists( 'wpb_shortcode_video_opener' ) ) {
 			$style .= 'animation-delay:' . absint( $animation_delay ) / 1000 . 's;-webkit-animation-delay:' . absint( $animation_delay ) / 1000 . 's;';
 		}
 
-		if ( $button_image && 'yes' == $custom_play_button ) {
-
-			$src = wpb_get_url_from_attachment_id( absint( $button_image ), 'wpb-XL' );
-
-		} else {
-			$src = esc_url( WPB_IMG . '/play.png' ); // default image
-		}
-
 		$output = '<div class="' . wpb_sanitize_html_classes( $container_class ) . '">';
-		
+
 		if ( $video_url ) {
 			$output .= '<a href="' . esc_url( $video_url ) . '" data-lity>';
 		}
-		
-		$output .= '<img src="' . esc_url( $src ) . '" alt="video-opener-play-button"';
-		
-		if ( $anchor ) {
-			$output .= ' id="' . esc_attr( $anchor ) . '"';
+
+		if ( $button_image && 'yes' == $custom_play_button ) {
+
+			$src = wpb_get_url_from_attachment_id( absint( $button_image ), 'wpb-XL' );
+			$output .= '<img src="' . esc_url( $src ) . '" alt="video-opener-play-button"';
+
+		} else {
+			$output .= '<span class="fa fa-play wpb-video-opener-icon"></span>';
 		}
 
-		if ( $inline_style ) {
-			$output .= ' style="' . wpb_esc_style_attr( $inline_style ) . '"';
-		}
+		// if ( $anchor ) {
+		// 	$output .= ' id="' . esc_attr( $anchor ) . '"';
+		// }
 
-		$output .= ' class="' . wpb_sanitize_html_classes( $class ) . '"';
+		// if ( $inline_style ) {
+		// 	$output .= ' style="' . wpb_esc_style_attr( $inline_style ) . '"';
+		// }
 
-		$output .= '>';
+		// $output .= ' class="' . wpb_sanitize_html_classes( $class ) . '"';
+
+		// $output .= '>';
 
 		if ( $video_url ) {
 			$output .= '</a>';

@@ -1,7 +1,7 @@
 /*!
  * Mailchimp
  *
- * %NAME% %VERSION% 
+ * %NAME% %VERSION%
  */
 /* jshint -W062 */
 var WPBMailchimp =  WPBMailchimp || {},
@@ -18,7 +18,7 @@ WPBMailchimp = function( $ ) {
 		 * Init UI
 		 */
 		init : function () {
-			
+
 			$( '.wpb-mailchimp-submit' ).on( 'click', function( event ) {
 				event.preventDefault();
 
@@ -39,9 +39,9 @@ WPBMailchimp = function( $ ) {
 
 				$.post( WPBMailchimpParams.ajaxUrl, data, function( response ) {
 					if ( response ) {
-						
+
 						message = response;
-					
+
 					} else {
 						message = 'An error occured';
 					}

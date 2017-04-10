@@ -3,7 +3,7 @@ Contributors: wolfthemes
 Tags: page builder
 Requires at least: 4.5
 Tested up to: 4.7.2
-Stable tag: 3.0.7
+Stable tag: 3.0.9b
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -27,6 +27,12 @@ Being a free product, this plugin is distributed as-is without official support.
 Verified customers however, who have purchased a premium theme on [ThemeForest](http://themeforest.net/user/wolf-themes/portfolio?ref=wolf-themes) will have access to the [support forums](http://docs.wolfthemes.com).
 
 == Changelog ==
+
+= 6th march 2017 - Version 3.0.9b =
+
+* Tweak: Improved Twenty Seventeen Compatiblity
+* Tweak: Replaced carousel script by Flickty
+* Tweak: Replaced video opener script by Lity
 
 = 6th march 2017 - Version 3.0.7 =
 

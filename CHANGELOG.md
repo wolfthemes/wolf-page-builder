@@ -1,5 +1,7 @@
-= 6th march 2017 - Version 3.0.8b =
+= 6th march 2017 - Version 3.0.9b =
 
+* Tweak: Improved Twenty Seventeen Compatiblity
+* Tweak: Replaced carousel script by Flickty
 * Tweak: Replaced video opener script by Lity
 
 = 6th march 2017 - Version 3.0.7 =

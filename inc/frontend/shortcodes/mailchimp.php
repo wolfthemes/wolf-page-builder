@@ -20,7 +20,7 @@ if ( ! function_exists( 'wpb_shortcode_mailchimp' ) ) {
 	 * @return string
 	 */
 	function wpb_shortcode_mailchimp( $atts ) {
-		
+
 		extract( shortcode_atts( array(
 			'list' => wpb_get_option( 'mailchimp', 'default_mailchimp_list_id' ),
 			'size' => 'normal',
@@ -107,7 +107,8 @@ function wpb_mailchimp( $args = array() ) {
 		$style .= $inline_style;
 	}
 
-	$background = wpb_get_url_from_attachment_id( $image_id, 'WPB-2x2' );
+	$image_size = ( 'large' == $size ) ? 'large' : 'medium';
+	$background = wpb_get_url_from_attachment_id( $image_id, $image_size );
 
 	if ( $background && $use_bg ) {
 		$class .= ' wpb-mailchimp-has-bg';
@@ -115,13 +116,13 @@ function wpb_mailchimp( $args = array() ) {
 	}
 
 	$output = '<div class="' . wpb_sanitize_html_classes( $class ) . '" style="' . wpb_esc_style_attr( $style ) . '">';
-	
+
 	$output .= '<form class="wpb-mailchimp-form"><input type="hidden" name="wpb-mailchimp-list" class="wpb-mailchimp-list" value="' . esc_attr( $list ) . '">';
-	
+
 	if ( $label ) {
 		$output .= '<h3 class="wpb-mailchimp-title">' . $label . '</h3>';
 	}
-		
+
 	$output .= '<div class="wpb-mailchimp-email-container">
 		<input placeholder="' . $placeholder . '"  type="text" name="wpb-mailchimp-email" class="wpb-mailchimp-email">
 		</div>';

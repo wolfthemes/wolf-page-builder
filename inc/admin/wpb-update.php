@@ -3,7 +3,7 @@
  * Update instagram shortcode
  */
 function wpb_update_instagram_shortcode() {
-	
+
 	$pages = get_pages();
 
 	foreach ( $pages as $page ) {
@@ -12,7 +12,7 @@ function wpb_update_instagram_shortcode() {
 
 		$content = get_post_meta( $page_id, '_wpb_shortcode_content', true );
 		$content = str_replace( 'wolfgram_gallery', 'wolf_instagram_gallery', $content );
-		
+
 		// update meta
 		update_post_meta( $page_id, '_wpb_shortcode_content', $content );
 	}
@@ -22,7 +22,7 @@ function wpb_update_instagram_shortcode() {
  * Update button attr
  */
 function wpb_update_button_attr() {
-	
+
 	$pages = get_pages();
 
 	$_attrs_regex = '[a-zA-ZŽžšŠÀÁÂÃÄÅàáâãäåÒÓÔÕÖØòóôõöøÈÉÊËèéêëÇçČčÌÍÎÏìíîïÙÚÛÜùúûüÿÑñйА-я= {}0-9#@|\%_\.:;,+\/\/\?!\'%&€^¨°¤£$§~()`*"-]+';

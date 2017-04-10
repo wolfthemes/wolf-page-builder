@@ -36,9 +36,9 @@ function wpb_get_element_settings( $element, $values = array() ) {
 		$style = isset( $setting['style'] ) ? $setting['style'] : '';
 		$placeholder = isset( $setting['placeholder'] ) ? $setting['placeholder'] : '';
 		$video_type_option = isset( $setting['video_type_option'] ) ? $setting['video_type_option'] : true;
-		
+
 		$description = isset( $setting['description'] ) ? $setting['description'] : null;
-		
+
 		$default_value = isset( $setting['value'] ) ? $setting['value'] : '';
 		$data = '';
 		$p_class = '';
@@ -87,32 +87,32 @@ function wpb_get_element_settings( $element, $values = array() ) {
 		if ( 'text' == $type || 'int' == $type || 'url' == $type || 'slug' == $type || 'inline_css' == $type ) {
 
 			if ( 'int' == $type ) {
-				
+
 				$meta = ( $meta ) ? intval( $meta ) : '';
-			
-			} 
+
+			}
 
 			if ( 'url' == $type ) {
-				
+
 				$meta = esc_url( $meta );
 				$placeholder = ( $placeholder ) ? $placeholder : 'http://';
 
-			} 
+			}
 
 			if ( 'slug' == $type ) {
-				
+
 				$meta = sanitize_title_with_dashes( $meta );
 
-			} 
+			}
 
 			if ( 'inline_css' ) {
-				
+
 				$meta = wpb_esc_style_attr( $meta );
-			
+
 			}
 
 			if ( 'text' == $type ) {
-				
+
 				$meta = wpb_sample( sanitize_text_field( stripslashes( $meta ) ), 250 );
 			}
 			?>
@@ -139,7 +139,7 @@ function wpb_get_element_settings( $element, $values = array() ) {
 					field = $( this ).parent();
 					//wpActiveEditor = true; //we need to override this var as the link dialogue is expecting an actual wp_editor instance
 					wpLink.open(); //open the link popup
-					
+
 					$( '.wp-link-text-field' ).hide();
 
 					if ( '' !== field.find( '.wpb-link-url' ).val() ) {
@@ -152,13 +152,13 @@ function wpb_get_element_settings( $element, $values = array() ) {
 
 					return false;
 				} );
-				
+
 				$( 'body' ).on( 'click', '#wp-link-submit', function(event) {
-					
+
 					var linkAtts = wpLink.getAttrs(); //the links attributes (href, target) are stored in an object, which can be access via  wpLink.getAttrs()
 
 					field.find( '.wpb-link-url' ).val( linkAtts.href ); //get the href attribute and add to a textfield, or use as you see fit
-					
+
 					//console.log( linkAtts );
 
 					if ( '_blank' === linkAtts.target ) {
@@ -175,7 +175,7 @@ function wpb_get_element_settings( $element, $values = array() ) {
 					field = '';
 					return false;
 				} );
-				
+
 				$( 'body' ).on( 'click', '#wp-link-cancel, #wp-link-close', function( event ) {
 					wpLink.textarea = $( 'body' );
 					wpLink.close();
@@ -224,13 +224,13 @@ function wpb_get_element_settings( $element, $values = array() ) {
 		 * Editor
 		 */
 		elseif ( 'editor' == $type ) {
-			
+
 			// Force visual mode to avoid glitch
  			add_filter( 'wp_default_editor', create_function( '', 'return "tinymce";') );
 
 			$meta = ( isset( $values[ $param_name ] ) ) ? wpb_decode_textarea_html( $values[ $param_name ] ) : wpb_decode_textarea_html( $default_value );
 			$editor_id =  'editorcontent'; // must the same ID as the param name.
-			
+
 			wp_editor( $meta, $editor_id, array(
 				'editor_height' => 180,
 				'drag_drop_upload' => false,
@@ -393,9 +393,9 @@ function wpb_get_element_settings( $element, $values = array() ) {
 			$is_file = wpb_get_url_from_attachment_id( absint( $meta ), 'thumbnail' );
 
 			if ( is_numeric( $meta ) && $is_file ) {
-				
+
 				$img_url = wpb_get_url_from_attachment_id( absint( $meta ), 'thumbnail' );
-			
+
 			} else {
 
 				if ( wpb_is_url( $meta ) ) {
@@ -424,9 +424,9 @@ function wpb_get_element_settings( $element, $values = array() ) {
 			 * file
 			 */
 			$meta = ( isset( $values[ $param_name ] ) ) ? $values[ $param_name ] : '';
-			
+
 			if ( is_numeric( $meta ) ) {
-				
+
 				$file_url = wpb_get_url_from_attachment_id( $value, 'thumbnail' );
 			} else {
 				$file_url = esc_url( $meta );
@@ -470,21 +470,21 @@ function wpb_get_element_settings( $element, $values = array() ) {
 				$attachments = array( $meta );
 			} else {
 				$attachments = explode( ',', $meta );
-			}			
+			}
 			$reset_multiple_image_confirm = esc_html__( 'Are you sure to want to reset all images ?', '%TEXTDOMAIN%' );
 			?>
 			<div class="wpb-images-set clearfix">
 				<?php
 				foreach ( $attachments as $attachment_id ) :
-					
+
 					if ( $attachment_id ) :
 
 						$is_file = wpb_get_url_from_attachment_id( absint( $attachment_id ), 'thumbnail' );
 
 						if ( is_numeric( $attachment_id ) && $is_file ) {
-							
+
 							$thumbnail_url = wpb_get_url_from_attachment_id( absint( $attachment_id ), 'thumbnail' );
-						
+
 						} else {
 
 							if ( wpb_is_url( $attachment_id ) ) {
@@ -538,9 +538,9 @@ function wpb_get_element_settings( $element, $values = array() ) {
 			$meta = ( isset( $values[ $param_name . '_img' ] ) ) ? $values[ $param_name . '_img' ] : '';
 			// debug( $meta );
 			if ( is_numeric( $meta ) ) {
-							
+
 				$img_url = wpb_get_url_from_attachment_id( absint( $meta ), 'thumbnail' );
-			
+
 			} else {
 
 				if ( wpb_is_url( $meta ) ) {
@@ -576,9 +576,9 @@ function wpb_get_element_settings( $element, $values = array() ) {
 				'size' => array(
 					'cover' => esc_html__( 'cover', '%TEXTDOMAIN%' ),
 					'contain' => esc_html__( 'contain', '%TEXTDOMAIN%' ),
-					'100% auto' => esc_html__( '100% width', '%TEXTDOMAIN%' ),
-					'auto 100%' => esc_html__( '100% height', '%TEXTDOMAIN%' ),
-					'inherit' => esc_html__( 'inherit', '%TEXTDOMAIN%' ),
+					'inherit' => esc_html__( 'default', '%TEXTDOMAIN%' ),
+					//'100% auto' => esc_html__( '100% width', '%TEXTDOMAIN%' ),
+					//'auto 100%' => esc_html__( '100% height', '%TEXTDOMAIN%' ),
 				),
 				'repeat' => array(
 					'no-repeat' => esc_html__( 'no repeat', '%TEXTDOMAIN%' ),
@@ -631,7 +631,7 @@ function wpb_get_element_settings( $element, $values = array() ) {
 		 * Video background
 		 */
 		elseif ( 'video_background' == $type ) {
-			
+
 			$meta = ( isset( $values[ $param_name . '_type' ] ) ) ? $values[ $param_name . '_type' ] : 'selfhosted';
 			$p_class = 'wpb-param-fieldset-' . esc_attr( $param_name . '_type' );
 			?>
@@ -651,7 +651,7 @@ function wpb_get_element_settings( $element, $values = array() ) {
 				<label class="wpb-param-label"><?php printf( esc_html__( '%s YouTube URL', '%TEXTDOMAIN%' ), sanitize_text_field( $label ) ); ?></label>
 				<input data-element-type="<?php echo esc_attr( $type ); ?>" type="text" name="<?php echo esc_attr( $param_name . '_youtube_url' ); ?>" value="<?php echo esc_url( $meta ); ?>" placeholder="https://www.youtube.com/watch?v=nrJtHemSPW4">
 			<p>
-			<?php 
+			<?php
 			$meta = ( isset( $values[ $param_name . '_youtube_start_time' ] ) ) ? $values[ $param_name . '_youtube_start_time' ] : '';
 			?>
 			<p data-dependency-element="<?php echo esc_attr( $param_name . '_type' ); ?>" data-dependency-values='["youtube"]' class="<?php echo wpb_sanitize_html_classes( $p_class ); ?>">

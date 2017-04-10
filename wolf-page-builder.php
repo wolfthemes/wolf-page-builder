@@ -15,7 +15,7 @@
  * @package %PACKAGENAME%
  * @category Core
  * @author %AUTHOR%
- * 
+ *
  * Being a free product, this plugin is distributed as-is without official support.
  * Verified customers however, who have purchased a premium theme
  * at https://themeforest.net/user/Wolf-Themes/portfolio?ref=Wolf-Themes
@@ -111,7 +111,7 @@ final class Wolf_Page_Builder {
 			add_action( 'admin_notices', array( $this, 'warning_php_version' ) );
 			return;
 		}
-		
+
 		// $this->version = time();
 		$this->define_constants();
 		$this->includes();
@@ -155,7 +155,7 @@ final class Wolf_Page_Builder {
 	 * Activation function
 	 */
 	public function activate() {
-		
+
 		do_action( 'wpb_activated' );
 	}
 
@@ -163,7 +163,7 @@ final class Wolf_Page_Builder {
 	 * Define WPB Constants
 	 */
 	private function define_constants() {
-		
+
 		// Upload dir
 		$wpb_upload_dir = wp_upload_dir();
 
@@ -232,7 +232,7 @@ final class Wolf_Page_Builder {
 
 		include_once( 'inc/wpb-core-functions.php' );
 		include_once( 'inc/wpb-google-fonts.php' );
-		
+
 		include_once( 'inc/class-wpb-mailchimp.php' );
 		require_once( 'inc/class-widget-mailchimp.php' );
 
@@ -269,6 +269,7 @@ final class Wolf_Page_Builder {
 
 		include_once( 'inc/frontend/wpb-conditional-functions.php' );
 		include_once( 'inc/frontend/wpb-functions.php' );
+		include_once( 'inc/frontend/wpb-background-functions.php' );
 		include_once( 'inc/frontend/wpb-template-hooks.php' );
 		include_once( 'inc/frontend/class-wpb-template-loader.php' ); // Template Loader
 		include_once( 'inc/frontend/wpb-scripts.php' );
@@ -279,12 +280,12 @@ final class Wolf_Page_Builder {
 	 */
 	public function include_elements() {
 		// Includes all shortcode files
-		
+
 		// Get elements list
 		$elements_slugs = wpb_get_element_list();
 
 		foreach ( $elements_slugs as $slug ) {
-			
+
 			if ( is_file( wpb_locate_file( 'shortcodes/' . sanitize_title_with_dashes( $slug ) . '.php', 'frontend' ) ) ) {
 				include_once( wpb_locate_file( 'shortcodes/' . sanitize_title_with_dashes( $slug ) . '.php', 'frontend' ) );
 			}

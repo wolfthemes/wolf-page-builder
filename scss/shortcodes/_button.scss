@@ -31,7 +31,7 @@
 }
 
 .wpb-button-inner{
-	
+
 	margin-bottom: 0;
 	display: block;
 	//width: 100%;
@@ -156,7 +156,8 @@
 .wpb-button-very-large{
 	border-width:2px;
 	font-size: 20px;
-	padding: .66em 2em;
+	padding: 1em 2em;
+
 	span.wpb-button-tagline{
 		font-size: 13px;
 	}
@@ -164,7 +165,7 @@
 
 .wpb-flat.wpb-button-default-color{
 	opacity: 0.9;
-	
+
 	&:hover{
 		opacity: 1;
 	}

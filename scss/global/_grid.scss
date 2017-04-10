@@ -1,7 +1,7 @@
 .wpb-section{
 	.wpb-row{
 		margin-bottom: 50px;
-		
+
 		&:last-child{
 			margin-bottom: 0;
 		}
@@ -52,7 +52,7 @@ $wrapper : $width + 2 * $gutter;
 
 	.wpb-col-3{
 		width: 48.382%;
-				
+
 		&:nth-child(2){
 			margin-right: 0;
 			margin-bottom: $gutter;
@@ -67,7 +67,7 @@ $wrapper : $width + 2 * $gutter;
 }
 
 .wpb-row .wpb-col {
-	
+
 	&:first-child{
 		margin-left: 0!important;
 		&:before { clear: both; }

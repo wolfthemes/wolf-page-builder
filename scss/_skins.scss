@@ -4,7 +4,6 @@
 
 	h1,h2,h3,h4,h5,h6,
 	strong,
-	blockquote,
 	.wpb-bigtext-link,
 	.wpb-fittext-link{
 		color: #fff;
@@ -48,11 +47,11 @@
 	}
 
 	.wpb-tabs-menu li{
-		
+
 		&.ui-tabs-active a{
 			background: #333;
 		}
-		
+
 		a{
 			color: #fff!important;
 		}
@@ -66,7 +65,7 @@
 
 	.owl-dot{
 		background: #fff;
-		
+
 		&.active{
 			background: none!important;
 			box-shadow:0 0 0 1px #fff;
@@ -86,20 +85,24 @@
 	.wolf-bigtweet-content:after {
 		background: rgba(255,255,255,.1);
 	}
+
+	.testimonial-inner{
+		background:#333;
+		border: 1px solid rgba(255,255,255,0.1);
+	}
 }
 
 .wpb-font-dark{
 	background: $light_bg;
 	color: $dark_font;
-	
+
 	.wpb-bigtext-link,
 	.wpb-fittext-link{
 		color: #333;
 	}
 
 	h1,h2,h3,h4,h5,h6,
-	strong,
-	blockquote{
+	strong{
 		color: #0d0d0d;
 	}
 
@@ -131,11 +134,11 @@
 	}
 
 	.wpb-tabs-menu li{
-		
+
 		&.ui-tabs-active a{
 			background: #fff;
 		}
-		
+
 		a{
 			color: #333!important;
 		}
@@ -149,7 +152,7 @@
 
 	.owl-dot{
 		background: #333;
-		
+
 		&.active{
 			box-shadow:0 0 0 1px #333;
 		}

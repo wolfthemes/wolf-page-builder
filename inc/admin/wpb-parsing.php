@@ -25,7 +25,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 function wpb_shortcode_to_markup_admin( $markup ) {
 
 	$markup = wpb_clean_shortcodes( $markup );
-	
+
 	$element_name_regex = '[a-zA-Z0-9-_]+';
 	// А-я is cyrilic
 	$_attrs_regex = '[a-zA-ZŽžšŠÀÁÂÃÄÅàáâãäåÒÓÔÕÖØòóôõöøÈÉÊËèéêëÇçČčÌÍÎÏìíîïÙÚÛÜùúûüÿÑñйА-яц一-龯= {}0-9#@|\%_\.:;,+\/\/\?!\'%&€^¨°¤£$§~()`*"-]+';
@@ -87,7 +87,7 @@ function wpb_shortcode_to_markup_admin( $markup ) {
 				$all_elements = wpb_get_elements();
 				$parent_elements = wpb_get_parent_elements();
 				$child_elements = wpb_get_child_elements();
-				
+
 				$all_elements_keys = array();
 				foreach ( $all_elements as $element => $params ) {
 					$all_elements_keys[] = $element;
@@ -105,10 +105,10 @@ function wpb_shortcode_to_markup_admin( $markup ) {
 
 				// parent element
 				if ( in_array( $basename, $parent_elements_keys ) ) {
-					
+
 					$tag = 'element_container';
 					$class = $basename . ' wpb-element-has-children';
-				
+
 				// child element
 				} elseif ( in_array( $basename, $children_elements_keys ) ) {
 
@@ -138,17 +138,17 @@ function wpb_shortcode_to_markup_admin( $markup ) {
 
 			/* Toobar depending on element type */
 			if ( 'section' == $tag ) {
-				
+
 				$toolbar .= wpb_get_section_toolbar( "section_$section_type", $layout, $section_type );
-			
+
 			} elseif ( 'row' == $tag ) {
-				
+
 				$toolbar .= wpb_get_row_toolbar();
-			
+
 			} elseif ( 'column' == $tag  || 'block' == $tag ) {
 
 				$toolbar .= wpb_get_container_toolbar( $tag );
-			
+
 			} elseif ( 'element_container' == $tag ) {
 
 				$element_name = $all_elements[ $basename ]['name'];
@@ -161,7 +161,7 @@ function wpb_shortcode_to_markup_admin( $markup ) {
 			}
 
 			$html .= $toolbar; // insert toolbar
-			
+
 			// close if standard element as it is not handled by the first part of the function
 			if ( 'element' === $tag ) {
 
@@ -179,7 +179,7 @@ function wpb_shortcode_to_markup_admin( $markup ) {
 
 	// shortcode with attributes
 	$markup = preg_replace_callback( '/\[' . $element_name_regex . ' ' . $_attrs_regex . '\]/', function( $matches ) {
-		
+
 		$output = '';
 
 		foreach ( $matches as $shortcode ) {
@@ -194,7 +194,7 @@ function wpb_shortcode_to_markup_admin( $markup ) {
 			$tag = ''; // section, row, column, block, element_container, element
 			$data = '';
 			$class = '';
-			
+
 			if ( 'wpb_section' == $basename ) {
 
 				$tag = 'section';
@@ -202,7 +202,7 @@ function wpb_shortcode_to_markup_admin( $markup ) {
 				$section_type = '';
 
 				if ( is_array( $attrs ) ) {
-					
+
 					foreach ( $attrs as $attr_name => $attr_value ) {
 
 						if ( '' != $attr_value ) {
@@ -222,7 +222,7 @@ function wpb_shortcode_to_markup_admin( $markup ) {
 						}
 					}
 				}
-			
+
 			} elseif ( 'wpb_row' == $basename ) {
 
 				$tag = 'row';
@@ -250,16 +250,16 @@ function wpb_shortcode_to_markup_admin( $markup ) {
 					foreach ( $attrs as $attr_name => $attr_value ) {
 
 						if ( '' != $attr_value && 'class' == $attr_name ) {
-							
+
 							$class .= ' ' . $attr_value;
 							//$data .= ' data-' . $attr_name . '="' . $attr_value . '"';
-						
+
 						} elseif ( '' != $attr_value ) {
 							$data .= ' data-' . $attr_name . '="' . $attr_value . '"';
 						}
 					}
 				}
-			
+
 			} elseif ( 'wpb_block' == $basename ) {
 
 				$tag = 'block';
@@ -280,7 +280,7 @@ function wpb_shortcode_to_markup_admin( $markup ) {
 				$all_elements = wpb_get_elements();
 				$parent_elements = wpb_get_parent_elements();
 				$child_elements = wpb_get_child_elements();
-				
+
 				$all_elements_keys = array();
 				foreach ( $all_elements as $element => $params ) {
 					$all_elements_keys[] = $element;
@@ -298,10 +298,10 @@ function wpb_shortcode_to_markup_admin( $markup ) {
 
 				// parent element
 				if ( in_array( $basename, $parent_elements_keys ) ) {
-					
+
 					$tag = 'element_container';
 					$class = $basename . ' wpb-element-has-children';
-				
+
 				// child element
 				} elseif ( in_array( $basename, $children_elements_keys ) ) {
 
@@ -341,17 +341,17 @@ function wpb_shortcode_to_markup_admin( $markup ) {
 
 			/* Toobar depending on element type */
 			if ( 'section' == $tag ) {
-				
+
 				$toolbar .= wpb_get_section_toolbar( "section_$section_type", $layout, $section_type );
-			
+
 			} elseif ( 'row' == $tag ) {
-				
+
 				$toolbar .= wpb_get_row_toolbar();
-			
+
 			} elseif ( 'column' == $tag  || 'block' == $tag ) {
 
 				$toolbar .= wpb_get_container_toolbar( $tag );
-			
+
 			} elseif ( 'element_container' == $tag ) {
 
 				$element_name = $all_elements[ $basename ]['name'];
@@ -364,7 +364,7 @@ function wpb_shortcode_to_markup_admin( $markup ) {
 			}
 
 			$html .= $toolbar; // insert toolbar
-			
+
 			// close if standard element as it is not handled by the first part of the function
 			if ( 'element' === $tag ) {
 

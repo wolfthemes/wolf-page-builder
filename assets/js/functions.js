@@ -29,10 +29,10 @@ var WPB = function( $ ) {
 	'use strict';
 
 	return {
-		doParallax : true,
 		doAnimation : true,
 		body : $( 'body' ),
 		isMobile : ( navigator.userAgent.match( /(iPad)|(iPhone)|(iPod)|(Android)|(PlayBook)|(BB10)|(BlackBerry)|(Opera Mini)|(IEMobile)|(webOS)|(MeeGo)/i ) ) ? true : false,
+		isEdge : ( navigator.userAgent.match( /(Edge)/i ) ) ? true : false,
 		isApple : ( navigator.userAgent.match( /(Safari)|(iPad)|(iPhone)|(iPod)/i ) && navigator.userAgent.indexOf( 'Chrome' ) === -1 && navigator.userAgent.indexOf( 'Android' ) === -1 ) ? true : false,
 		supportSVG : !! document.createElementNS && !! document.createElementNS( 'https://www.w3.org/2000/svg', 'svg').createSVGRect,
 		isTouch : 'ontouchstart' in window || window.DocumentTouch && document instanceof DocumentTouch,
@@ -47,7 +47,6 @@ var WPB = function( $ ) {
 			$( window ).trigger( 'resize' ); // trigger resize event to force all window size related calculation
 			$( window ).trigger( 'scroll' ); // trigger scroll event to force all window scroll related calculation
 
-			this.doParallax = ( ! this.isMobile ) || ( this.isMobile && WPBParams.doParallaxOnMobile );
 			this.doAnimation = ( ! this.isMobile ) || ( this.isMobile && WPBParams.doAnimationOnMobile );
 
 			this.setClasses();
@@ -134,12 +133,12 @@ var WPB = function( $ ) {
 				this.body.addClass( 'wpb-is-mobile' );
 			}
 
-			if ( this.doParallax ) {
-				this.body.addClass( 'wpb-do-parallax' );
-			}
-
 			if ( this.isApple ) {
 				this.body.addClass( 'wpb-is-apple' );
+			}
+
+			if ( this.isEdge ) {
+				this.body.addClass( 'wpb-is-edge' );
 			}
 		},
 
@@ -231,13 +230,13 @@ var WPB = function( $ ) {
 					newCss;
 
 				if ( videoContainer.hasClass( 'wpb-youtube-video-bg-container' ) ) {
-					
+
 					$video = videoContainer.find( 'iframe' );
 					ratioWidth = 560;
 					ratioHeight = 315;
 
 				} else if ( videoContainer.hasClass( 'wpb-vimeo-video-bg-container' ) ) {
-					
+
 					$video = videoContainer.find( 'iframe' );
 					ratioWidth = 560;
 					ratioHeight = 315;
@@ -430,19 +429,9 @@ var WPB = function( $ ) {
 		 */
 		parallax : function () {
 
-			if ( this.doParallax ) {
-				$( '.wpb-parallax-window' ).each( function () {
-					var $this = $( this ),
-						//naturalWidth = $this.data( 'natural-width' ),
-						//naturalHeight = $this.data( 'natural-height' ),
-						backgroundImageUrl = $this.data( 'background-url' );
-
-					$this.parallax( {
-						imageSrc : backgroundImageUrl,
-						//naturalWidth : naturalWidth,
-						//naturalHeight : naturalHeight,
-						mainContainer :'#page'
-					} );
+			if ( ! this.isEdge ) {
+				$( '.wpb-img-bg-effect-parallax' ).parallax( {
+					mainContainer : WPBParams.parallaxContainer
 				} );
 			}
 		},
@@ -467,7 +456,7 @@ var WPB = function( $ ) {
 				// 		_this.setVimeoOptions();
 				// 	}
 				// } );
-			
+
 			} else if ( 'fancybox' === WPBParams.lightbox ) {
 
 				$( '.wpb-lightbox, .wpb-gallery-lightbox' ).fancybox();
@@ -650,11 +639,11 @@ var WPB = function( $ ) {
 					}
 
 					if ( $targetSection.length ) {
-						
+
 						$( 'html, body' ).stop().animate( {
-							
+
 							scrollTop: $targetSection.offset().top - toolBarOffset - menuOffset
-						
+
 						}, 1E3, 'swing', function() {
 
 							if ( '' !== hash ) {
@@ -809,6 +798,7 @@ var WPB = function( $ ) {
 			this.videoShortcode();
 			this.loadInstagram();
 			this.loadTwitter();
+			this.objectFitfallback();
 
 			$( 'body' ).addClass( 'wpb-loaded' );
 		},
@@ -820,6 +810,39 @@ var WPB = function( $ ) {
 
 			if ( WPBParams.doLazyLoad ) {
 				$( 'img.lazy-hidden' ).lazyLoadXT();
+			}
+		},
+
+		/**
+		 * Provide compatibility for browser unsupported features
+		 */
+		objectFitfallback : function () {
+
+			if( ! Modernizr.objectfit ) {
+
+				$( '.wpb-img-cover' ).each( function() {
+
+					var $container = $( this ).parent(),
+						imgUrl = $container.find( 'img' ).prop('src');
+
+					if ( imgUrl ) {
+						$container
+						.css( { 'background-image' : 'url(' + imgUrl + ')' } )
+						.addClass( 'wpb-compat-cover' );
+					}
+				} );
+
+				$( '.wpb-img-contain' ).each( function() {
+
+					var $container = $( this ).parent(),
+						imgUrl = $container.find( 'img' ).prop('src');
+
+					if ( imgUrl ) {
+						$container
+						.css( { 'background-image' : 'url(' + imgUrl + ')' } )
+						.addClass( 'wpb-compat-contain' );
+					}
+				} );
 			}
 		},
 

@@ -14,7 +14,7 @@
 	-moz-osx-font-smoothing: grayscale;
 	font-size: 32px;
 	color: #383838;
-	
+
 	&:before{
 		color: #383838;
 	}
@@ -206,6 +206,13 @@
 	font-family: Dashicons;
 	&:before{
 		content: "\f473";
+	}
+}
+
+.wpb-quote{
+	font-family: Dashicons;
+	&:before{
+		content: "\f122";
 	}
 }
 

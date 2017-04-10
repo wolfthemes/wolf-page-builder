@@ -52,7 +52,7 @@ body.wpb-dialog-open #wpb-dialog-overlay{
 	top: 10%;
 	right: 0;
 	left: 0;
-	
+
 	img{
 		max-width: 100%;
 	}
@@ -89,7 +89,7 @@ body.wpb-dialog-open #wpb-dialog-overlay{
 	padding: 10px 14px;
 	border-top: 1px solid #dfdfdf;
 	text-align: right;
-	
+
 	.wpb-dialog-button{
 		display: inline-block;
 		font-size: 14px;
@@ -141,7 +141,7 @@ body.wpb-dialog-open #wpb-dialog-overlay{
 }
 
 #wpb-settings-dialog{
-		
+
 	.wpb-dialog-head{
 		//cursor: move;
 	}
@@ -176,7 +176,7 @@ body.wpb-dialog-open #wpb-dialog-overlay{
 		margin: 0 5px;
 		text-decoration: none;
 		line-height: 2;
-		
+
 		&:focus{
 			box-shadow:none;
 		}
@@ -208,12 +208,12 @@ body.wpb-dialog-open #wpb-dialog-overlay{
 	&:hover{
 		color: #fff!important;
 		//background: #00A0D2;
-		
+
 		.wpb-element-description{
 			color: #fff!important;
 		}
 	}
-	
+
 	.wpb-icon-container{
 		@include good-clearfix();
 		display: block;
@@ -246,14 +246,14 @@ $margin-bottom:30px;
 #wpb-dialog-form{
 	padding: 20px;
 	font-size: 14px;
-	
+
 	label{
 		display: block;
 		font-size: 15px;
 		font-weight: 700;
 		margin-bottom: 10px;
 		font-size: 15px;
-		
+
 		&.wpb-checkbox-label{
 			display: inline-block;
 			margin-top: 5px;
@@ -262,18 +262,18 @@ $margin-bottom:30px;
 
 	fieldset{
 		margin-bottom:$margin-bottom;
-		
+
 		p{
 			margin-bottom:$margin-bottom;
 		}
-				
-		input[type="text"], 
+
+		input[type="text"],
 		input[type="email"],
 		input[type="tel"]{
 			width: 100%;
 		}
-		
-		input[type="text"], 
+
+		input[type="text"],
 		input[type="email"],
 		input[type="tel"],
 		textarea,
@@ -310,7 +310,7 @@ $margin-bottom:30px;
 			height: 60px;
 		}
 
-		
+
 	}
 
 	[class^="wpb-col-"],
@@ -429,7 +429,7 @@ p.wpb-inline-block{
 	display:block;
 	padding:3px;
 	position: relative;
-	
+
 	img{
 		width: 100%;
 		display: block;
@@ -446,7 +446,7 @@ p.wpb-inline-block{
 		top: 3px;
 		right: 0;
 		font-weight: normal;
-		
+
 		&:before{
 			content:'\00D7';
 			font-size: 24px;
@@ -465,7 +465,7 @@ p.wpb-inline-block{
 		//display: table-cell;
 		//padding: 50px;
 	}
-	
+
 	#wpb-dialog-overlay-content{
 		//height: auto;
 	}

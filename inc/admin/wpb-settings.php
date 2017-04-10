@@ -2,7 +2,7 @@
 /**
  * %NAME% Plugin Settings
  *
- * 
+ *
  *
  * @author %AUTHOR%
  * @category Core
@@ -24,7 +24,7 @@ $wpb_socials = wpb_get_socials();
 
 foreach ( $wpb_socials as $social ) {
 	$no_http = array( 'skype' );
-	
+
 	if ( in_array( $social, $no_http ) ) {
 		$type = 'text';
 		$placeholder = '';
@@ -32,7 +32,7 @@ foreach ( $wpb_socials as $social ) {
 		$type = 'url';
 		$placeholder = 'http://';
 	}
-	
+
 	$social_fields[] = array(
 		'type' => $type,
 		'field_id' => $social,

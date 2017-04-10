@@ -73,6 +73,7 @@ $wpb_elements = array(
 	'soundcloud',
 	'tabs',
 	'team-member',
+	//'testimonials',
 	'testimonials-slider',
 	'toggle',
 	'tour-dates',

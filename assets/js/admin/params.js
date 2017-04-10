@@ -6,7 +6,7 @@ var WPBAdminParams =  WPBAdminParams || {};
 ;( function( $ ) {
 
 	'use strict';
-	
+
 	/**
 	 * Set image
 	 */
@@ -42,9 +42,9 @@ var WPBAdminParams =  WPBAdminParams || {};
 					attachmentId : attachment.id,
 					size : size
 				};
-			
+
 			// if ( WPBAdminParams.isDev ) {
-				
+
 			// 	$.post( WPBAdminParams.adminUrl, data, function( response ) {
 
 			// 		// console.log( response );
@@ -53,7 +53,7 @@ var WPBAdminParams =  WPBAdminParams || {};
 			// 			$( 'input', $el ).val( response );
 			// 		}
 			// 	} );
-			
+
 			// } else {
 			// 	$( 'input', $el ).val( attachment.id );
 			// }
@@ -67,7 +67,7 @@ var WPBAdminParams =  WPBAdminParams || {};
 	} );
 
 	/**
- 	 * make sure the previews are sortable 
+ 	 * make sure the previews are sortable
  	 */
  	$( '.wpb-images-set' ).sortable( {
 		update : function() {
@@ -91,7 +91,7 @@ var WPBAdminParams =  WPBAdminParams || {};
 		var $el = $( this ).parent(),
 			input = $el.find( 'input' ),
 			size = $el.parents( 'form' ).find( '.wpb-param-fieldset > select[name=image_size]' ).val(),
-		
+
 		/* open the wp.media frame with our localised title */
 		frame = wp.media.frames.file_frame = wp.media( {
 			title : WPBAdminParams.chooseMultipleImage,
@@ -126,7 +126,7 @@ var WPBAdminParams =  WPBAdminParams || {};
 				if ( image.id ) {
 
 					imageID = image.id;
-					
+
 					if ( imageURL ) {
 
 						imageIDs.push( imageID );
@@ -151,19 +151,19 @@ var WPBAdminParams =  WPBAdminParams || {};
 
 		/* opens the wp.media frame and selects the appropriate images */
 		frame.on( 'open', function() {
-			
+
 			/* get the image IDs from the hidden input */
 			var imgIDs = input.val().split( ',' ),
 				/* get the selection object for the wp.media frame */
 				selection = frame.state().get( 'selection' ),
 				attachment;
-			
+
 			if ( imgIDs && imgIDs.length ) {
-				
+
 				/* add each image to the selection */
 				$.each( imgIDs, function( idx, val ) {
 					var attachment;
-					
+
 					if ( $.isNumeric( val ) ) {
 						attachment = wp.media.attachment( val );
 					}
@@ -204,9 +204,9 @@ var WPBAdminParams =  WPBAdminParams || {};
 		$el.fadeOut( 'fast', function() {
 
 			$( this ).remove();
-			
+
 			$.each( $imagesSet.find( '.wpb-image' ), function() {
-				
+
 				if ( id !== $( this ).data( 'attachment-id' ) ) {
 					newImages += $( this ).data( 'attachment-id' ) + ',';
 				}

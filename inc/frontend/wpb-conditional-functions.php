@@ -10,6 +10,10 @@
  * @version %VERSION%
  */
 
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly
+}
+
 /**
  * Check if we're on the blog index page
  *

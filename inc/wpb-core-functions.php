@@ -15,18 +15,44 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
+ * Add image sizes
+ *
+ * These size will be ued for galleries and sliders
+ */
+function wpb_add_image_sizes() {
+
+	// Standard
+	add_image_size( 'wpb-thumb', 640, 360, true );
+	add_image_size( 'wpb-portrait', 600, 900, true );
+	add_image_size( 'wpb-2x2', 500, 500, true ); // square
+	add_image_size( 'wpb-XL', 2000, 1500, false ); // XL
+
+	// Slides
+	add_image_size( 'wpb-slide', 1200, 700, true );
+	add_image_size( 'wpb-slide-tablet', 625, 450, true );
+	add_image_size( 'wpb-slide-laptop', 676, 424, true );
+	add_image_size( 'wpb-slide-desktop', 922, 506, true );
+	add_image_size( 'wpb-slide-mobile', 277, 494, true );
+
+	// mosaic
+	//add_image_size( 'wpb-2x1', 960, 480, true ); // landscape
+	//add_image_size( 'wpb-1x2', 480, 960, true ); // portrait
+}
+add_action( 'init', 'wpb_add_image_sizes' );
+
+/**
  * Ouput page builder meta instead of content
  *
  * @since %NAME% 1.0
  */
 function wpb_get_content( $post_id = null ) {
-	
+
 	$post_id = ( $post_id ) ? $post_id : get_the_ID();
 	$shortcodes = get_post_meta( $post_id, '_wpb_shortcode_content', true );
 	$status = get_post_meta( $post_id, '_wpb_status', true );
 
 	if ( 'on' == $status && ! post_password_required() ) {
-		
+
 		$content = '<div id="wpb-inner">';
 		$content .= do_shortcode( wpb_clean_shortcodes( $shortcodes ) );
 		$content .= '</div><!--#wpb-inner-->';
@@ -45,7 +71,7 @@ function wpb_get_content( $post_id = null ) {
 function wpb_get_socials() {
 
 	$wpb_socials = array();
-	
+
 	include_once( WPB_DIR . '/inc/globals/socials.php' );
 
 	$wpb_socials = apply_filters( 'wpb_socials', $wpb_socials );
@@ -62,7 +88,7 @@ function wpb_get_socials() {
 function wpb_get_animations() {
 
 	$wpb_animations = array();
-	
+
 	include_once( WPB_DIR . '/inc/globals/animations.php' );
 
 	$wpb_animations = apply_filters( 'wpb_animations', $wpb_animations );
@@ -79,7 +105,7 @@ function wpb_get_animations() {
 function wpb_get_templates() {
 
 	$wpb_templates = array();
-	
+
 	include_once( WPB_DIR . '/inc/globals/templates.php' );
 
 	$wpb_templates = apply_filters( 'wpb_templates', $wpb_templates );
@@ -104,14 +130,14 @@ function wpb_get_template_content( $name ) {
  * Get element list in array top help including files
  */
 function wpb_get_element_list() {
-	
+
 	$wpb_elements = array();
 
 	include_once( WPB_DIR . '/inc/globals/elements.php' );
 
 	// apply filters
 	$wpb_elements = apply_filters( 'wpb_element_list', $wpb_elements );
-	
+
 	// sort by alphabetical order
 	sort( $wpb_elements );
 
@@ -121,33 +147,6 @@ function wpb_get_element_list() {
 
 	return $wpb_elements;
 }
-
-/**
- * Add image sizes
- *
- * These size will be ued for galleries and sliders
- */
-function wpb_add_image_sizes() {
-
-	// Standard
-	add_image_size( 'wpb-thumb', 640, 360, true );
-	add_image_size( 'wpb-video-thumb', 480, 270, true );
-	add_image_size( 'wpb-portrait', 600, 900, true );
-
-	// Slides
-	add_image_size( 'wpb-slide', 1200, 700, true );
-	add_image_size( 'wpb-slide-tablet', 625, 450, true );
-	add_image_size( 'wpb-slide-laptop', 676, 424, true );
-	add_image_size( 'wpb-slide-desktop', 922, 506, true );
-	add_image_size( 'wpb-slide-mobile', 277, 494, true );
-
-	// mosaic
-	add_image_size( 'wpb-2x1', 960, 480, true ); // landscape
-	add_image_size( 'wpb-2x2', 960, 960, true ); // square
-	add_image_size( 'wpb-1x2', 480, 960, true ); // portrait
-	add_image_size( 'wpb-XL', 2000, 1500, false ); // XL
-}
-add_action( 'init', 'wpb_add_image_sizes' );
 
 /**
  * Get any thumbnail URL
@@ -187,7 +186,7 @@ function wpb_get_post_thumbnail_url( $format = 'medium', $post_id = null ) {
  * @return void
  */
 function wpb_get_template_part( $slug, $name = '' ) {
-	
+
 	$template = '';
 
 	// Look in yourtheme/slug-name.php and yourtheme/wpb/slug-name.php
@@ -295,15 +294,15 @@ function wpb_get_template( $template_name, $args = array(), $template_path = '',
  * @return string
  */
 function wpb_locate_file( $filename, $context ) {
-	
+
 	if ( is_file( get_stylesheet_directory() . '/' . WPB()->extension_path() . '/' .untrailingslashit( $filename ) ) ) {
-		
+
 		$file = get_stylesheet_directory() . '/' . WPB()->extension_path() . '/' .untrailingslashit( $filename );
-	
+
 	} elseif ( is_file( get_template_directory() . '/' . WPB()->extension_path() . '/' .untrailingslashit( $filename ) ) ) {
 
 		$file = get_template_directory() . '/' . WPB()->extension_path() . '/' .untrailingslashit( $filename );
-	
+
 	} else {
 		$root = ( 'admin' == $context ) ? 'inc/admin' : 'inc/frontend';
 		$file = WPB()->plugin_path() . '/' . $root . '/' . untrailingslashit( $filename );
@@ -471,18 +470,18 @@ function wpb_get_option( $index = 'settings', $name, $default = null ) {
 	$wpb_settings = ( get_option( 'wpb_settings' ) && is_array( get_option( 'wpb_settings' ) ) ) ? get_option( 'wpb_settings' ) : array();
 
 	if ( isset( $wpb_settings[ $index ] ) && is_array( $wpb_settings[ $index ] ) ) {
-		
+
 		if ( isset( $wpb_settings[ $index ][ $name ] ) && '' != $wpb_settings[ $index ][ $name ] ) {
-			
+
 			return $wpb_settings[ $index ][ $name ];
-		
+
 		} elseif ( $default ) {
-			
+
 			return $default;
 		}
-		
+
 	} elseif ( $default ) {
-		
+
 		return $default;
 	}
 }
@@ -497,7 +496,7 @@ function wpb_get_option( $index = 'settings', $name, $default = null ) {
 function wpb_get_url_from_attachment_id( $id, $size = 'thumbnail' ) {
 	if ( is_numeric( $id ) ) {
 		$src = wp_get_attachment_image_src( absint( $id ), $size );
-		
+
 		if ( isset( $src[0] ) ) {
 
 			return esc_url( $src[0] );
@@ -635,11 +634,11 @@ function wpb_array_to_list( $array ) {
 }
 
 /**
- * Convert textarea linee to an array of each lines 
+ * Convert textarea linee to an array of each lines
  *
  * @param sting
  * @param string type text|html
- * @return array 
+ * @return array
  */
 function wpb_texarea_lines_to_array( $text, $type = 'text' ) {
 	$array = array();
@@ -718,9 +717,9 @@ function wpb_get_allowed_post_types() {
  * Set default background meta
  */
 function wpb_get_bg_meta( $settings_slug, $field_id ) {
-	
+
 	$meta = wpb_set_bg_meta(); // default array
-	
+
 	$option = wpb_get_option( $settings_slug, $field_id );
 	$option = ( is_array( $option ) ) ? $option : array();
 	$meta['color'] = ( isset( $option['color'] ) ) ? $option['color'] : '';
@@ -751,14 +750,14 @@ function wpb_set_bg_meta() {
  * Sanitize background meta
  */
 function wpb_sanitize_bg_meta( $meta = array() ) {
-	
+
 	$meta['color'] = wpb_sanitize_hex_color( $meta['color'] );
 	$meta['image_id'] = absint( $meta['image_id'] );
 	$meta['repeat'] = esc_attr( $meta['repeat'] );
 	$meta['size'] = esc_attr( $meta['size'] );
 	$meta['position'] = esc_attr( $meta['position'] );
 	$meta['attachment'] = esc_attr( $meta['attachment'] );
-	
+
 	return $meta;
 }
 

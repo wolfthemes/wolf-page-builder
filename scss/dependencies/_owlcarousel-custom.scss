@@ -1,0 +1,30 @@
+.owl-carousel{
+	img{
+		backface-visibility:hidden;
+	}
+}
+
+.owl-carousel .owl-wrapper-outer{
+	z-index: 1;
+}
+
+.owl-carousel .owl-video-play-icon{
+	background-image:url(../img/play.png);
+	background-size: 100%;
+	background-size: cover;
+}
+
+.owl-carousel .owl-video-wrapper,{
+	background: none!important;
+}
+
+.item-video{
+	background:#000 no-repeat center center;
+	background-size:100%;
+	background-size:cover;
+}
+
+.owl-video-tn{
+	background: none!important;
+	backface-visibility:hidden;
+}

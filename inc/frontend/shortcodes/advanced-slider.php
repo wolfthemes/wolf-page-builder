@@ -55,7 +55,7 @@ if ( ! function_exists( 'wpb_shortcode_advanced_slider' ) ) {
 		// em
 		} elseif ( 'em' == substr( $slider_height, -2) ) {
 			$slider_height_unit = 'em';
-		
+
 		//px
 		} elseif ( 'px' == substr( $slider_height, -2) ) {
 			$slider_height_unit = 'px';
@@ -174,9 +174,12 @@ if ( ! function_exists( 'wpb_shortcode_advanced_slide' ) ) {
 			'button_2_text' => '',
 		), $atts ) );
 
+		// Use image with srcset to improve loading speed when applicable
+		$do_object_fit = ( 'no-repeat' == $background_repeat && 'cover' == $background_size || 'contain' == $background_size );
+
 		$output = $image_url = $overlay_style = $slide_style_attr = '';
 		$rand = rand( 0, 9999 );
-		
+
 		$slide_class = "slide wpb-advanced-slide wpb-slide-caption-width-$caption_width wpb-slide-caption-position-$caption_position wpb-slide-caption-text-align-$caption_alignment wpb-font-$font_color";
 
 		if ( $background_color ) {
@@ -190,9 +193,9 @@ if ( ! function_exists( 'wpb_shortcode_advanced_slide' ) ) {
 				$is_file = wpb_get_url_from_attachment_id( absint( $background_img ), 'wpb-XL' );
 
 				if ( is_numeric( $background_img ) && $is_file ) {
-					
+
 					$image_url = wpb_get_url_from_attachment_id( absint( $background_img ), 'wpb-XL' );
-				
+
 				} else {
 
 					if ( wpb_is_url( $background_img ) ) {
@@ -205,7 +208,7 @@ if ( ! function_exists( 'wpb_shortcode_advanced_slide' ) ) {
 					}
 				}
 			}
-					
+
 		} elseif ( 'video' == $background_type ) {
 
 			$slide_class .= ' wpb-video-slide';
@@ -215,10 +218,14 @@ if ( ! function_exists( 'wpb_shortcode_advanced_slide' ) ) {
 			}
 		}
 
-		if ( $image_url ) {
+		if ( $image_url  ) {
 			$slide_style_attr .= 'background-position:' . $background_position . ';';
 			$slide_style_attr .= 'background-repeat:' . $background_repeat . ';';
-			$slide_style_attr .= 'background-image:url( ' . esc_url( $image_url ) . ' );-webkit-background-size: 100%; -o-background-size: 100%; -moz-background-size: 100%; background-size: 100%;-webkit-background-size: cover; -o-background-size: cover; background-size: cover;';
+			$slide_style_attr .= '-webkit-background-size: 100%; -o-background-size: 100%; -moz-background-size: 100%; background-size: 100%;-webkit-background-size: cover; -o-background-size: cover; background-size: cover;';
+
+			if ( ! $do_object_fit ) {
+				$slide_style_attr .= 'background-image:url( ' . esc_url( $image_url ) . ' );';
+			}
 		}
 
 		// overlay style
@@ -238,8 +245,28 @@ if ( ! function_exists( 'wpb_shortcode_advanced_slide' ) ) {
 				$overlay_style .= "opacity:$overlay_opacity;";
 			}
 
-		$output .= '<li id="wpb-advanced-slide-' . absint( $rand ) . '" class="' . wpb_sanitize_html_classes( $slide_class ) . '" style="' . wpb_esc_style_attr( $slide_style_attr ) . '">';			
-		
+		$output .= '<li id="wpb-advanced-slide-' . absint( $rand ) . '" class="' . wpb_sanitize_html_classes( $slide_class ) . '" style="' . wpb_esc_style_attr( $slide_style_attr ) . '">';
+
+			// If image cover is applicable
+			if ( $do_object_fit ) {
+
+				$position = array(
+					'center center' => '50% 50%',
+					'center top' => '50% 0',
+					'left top' => '0 0',
+					'right top' => '100% 0',
+					'center bottom' => '50% 100%',
+					'left bottom' => '0 100%',
+					'right bottom' => '100% 100%',
+					'left center' => '50% 0',
+					'right center' => '100% 50%',
+				);
+
+				$cover_class = "wpb-img-$background_size";
+
+				$output .= wp_get_attachment_image( $background_img, 'wpb-XL', false, array( 'class' => $cover_class ) );
+			}
+
 			// overlay
 			if ( $overlay ) {
 				$output .= '<div class="wpb-slide-overlay" style="' . wpb_esc_style_attr( $overlay_style ) . '"></div>';
@@ -256,7 +283,7 @@ if ( ! function_exists( 'wpb_shortcode_advanced_slide' ) ) {
 					if ( $video_bg_youtube_url ) {
 						//wpb_youtube_video_bg( $video_bg_youtube_url, $video_bg_img );
 					}
-				
+
 				} else {
 
 					$output .= '<video';
@@ -264,7 +291,7 @@ if ( ! function_exists( 'wpb_shortcode_advanced_slide' ) ) {
 					$output .= ' data-video-mute="true"';
 					$output .= ' data-video-play=""';
 					$output .= ' id="wpb-slide-video-' . absint( $rand ) . '" class="wpb-slide-video" preload="auto" muted loop>';
-					
+
 					if ( $video_bg_webm ) {
 						$output .= '<source src="' . esc_url( $video_bg_webm ) . '" type="video/webm">';
 					}
@@ -281,7 +308,7 @@ if ( ! function_exists( 'wpb_shortcode_advanced_slide' ) ) {
 						$output .= '<img src="' . esc_url( $image_url ) . '" alt="video-fallback">';
 					}
 				}
-											
+
 				$output .= '</video></div><!-- .wpb-slide-video-container -->';
 			}
 
@@ -312,7 +339,7 @@ if ( ! function_exists( 'wpb_shortcode_advanced_slide' ) ) {
 				if ( $title ) {
 					$output .= '<h3 style="' . esc_attr( $title_inline_style ) . '" class="wpb-slide-title wpb-fittext">' . sanitize_text_field( $title ) . '</h3>';
 				}
-							
+
 			} elseif ( 'image' == $title_type && $image ) {
 
 				if ( $image ) {
@@ -370,7 +397,7 @@ if ( ! function_exists( 'wpb_shortcode_advanced_slide' ) ) {
 			if ( $button_1 || $button_2 ) {
 				$output .= '</div><!--.wpb-slide-button-container-->';
 			}
-			
+
 		$output .= '</div><!-- .wpb-slide-caption-wrapper --></div><!-- .wpb-slide-inner --></div><!-- .wpb-slide-caption --></div><!-- .wpb-slide-caption-container --></li><!--.slide-->';
 
 		return $output;

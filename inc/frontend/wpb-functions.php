@@ -10,6 +10,10 @@
  * @version %VERSION%
  */
 
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly
+}
+
 /**
  * Enqueue CSS
  *
@@ -25,11 +29,12 @@ function wpb_enqueue_styles() {
 	wp_register_style( 'animate-css', WPB_CSS . '/lib/animate.min.css', array(), '3.3.0' );
 	wp_register_style( 'flexslider', WPB_CSS . '/lib/flexslider.min.css', array(), '2.6.1' );
 	wp_register_style( 'owlcarousel', WPB_CSS . '/lib/owl.carousel.min.css', array(), '2.0.0' );
+	wp_register_style( 'flickity', WPB_CSS . '/lib/flickity.min.css', array(), '2.0.5' );
 	wp_register_style( 'lity', WPB_CSS . '/lib/lity.min.css', array(), '2.2.2' );
-	
+
 	// Plugin scripts
 	wp_register_style( 'wpb-icon-pack', WPB_CSS . '/icon-pack.min.css', array(), WPB_VERSION );
-	
+
 	wp_register_style( 'wpb-styles', WPB_CSS . '/wpb.css', array(), WPB_VERSION );
 	wp_register_style( 'wpb-styles-min', WPB_CSS . '/wpb.min.css', array(), WPB_VERSION );
 
@@ -40,28 +45,29 @@ function wpb_enqueue_styles() {
 
 	// Libraries
 	if ( 'swipebox' == $lightbox ) {
-			
+
 		// enqueue swipebox styles
 		wp_enqueue_style( 'swipebox', WPB_CSS. '/lib/swipebox.min.css', array(), '1.3.0' );
-	
+
 	} elseif ( 'fancybox' == $lightbox ) {
-		
+
 		// enqueue swipebox styles
 		wp_enqueue_style( 'fancybox', WPB_CSS. '/lib/fancybox.css', array(), '2.1.5' );
 	}
-	
+
 	wp_enqueue_style( 'animate-css' );
 	wp_enqueue_style( 'flexslider' );
 	wp_enqueue_style( 'owlcarousel' );
+	wp_enqueue_style( 'flickity' );
 	wp_enqueue_style( 'lity' );
 	wp_enqueue_style( 'wpb-icon-pack' );
 
 	// Check if the "minify CSS" option is checked
 	if ( wpb_get_option( 'settings', 'css_min' ) ) {
-		
+
 		// Concat and minified styles
 		wp_enqueue_style( 'wpb-styles-min' );
-	
+
 	} else {
 
 		// Plugin styles
@@ -80,9 +86,9 @@ function wpb_output_styles() {
 
 	$bg_meta = wpb_get_bg_meta( 'settings', 'body_background' );
 	extract( $bg_meta );
-	
+
 	$background_style = 'body.wolf-page-builder{';
-	
+
 	if ( $color ) {
 		$background_style .= 'background-color:' . wpb_sanitize_hex_color( $color ) . ';';
 	}
@@ -90,17 +96,17 @@ function wpb_output_styles() {
 	if ( $image_id ) {
 		$background_style .= 'background-image:url(' . esc_url( wpb_get_url_from_attachment_id( $image_id, 'wpb-XL' ) ) . ');';
 	}
-	
+
 	if ( $repeat ) {
 		$background_style .= 'background-repeat:' . esc_attr( $repeat ) . ';';
 	}
-	
+
 	if ( $position ) {
 		$background_style .= 'background-position:' . esc_attr( $position ) . ';';
 	}
-	
+
 	if ( $size ) {
-		
+
 		if ( 'cover' == $size ) {
 
 			$background_style .= '
@@ -122,11 +128,11 @@ function wpb_output_styles() {
 				background-size: 100%;';
 		}
 	}
-	
+
 	if ( $attachment ) {
 		$background_style .= 'background-attachment:' . esc_attr( $attachment ) . ';';
 	}
-	
+
 	$background_style .= '}';
 
 	$output = '<style type="text/css">';
@@ -137,162 +143,6 @@ function wpb_output_styles() {
 	echo $output;
 }
 //add_action( 'wp_head', 'wpb_output_styles' );
-
-/**
- * Display a slef hosted video background
- *
- * Output a basic HTML5 video markup. Wordpress will apply mediaelement script automatically to it
- *
- * @param string $mp4
- * @param string $webm
- * @param string $ogv
- * @param string $img
- * @param bool $parallax
- * @return string $output
- */
-function wpb_video_bg( $mp4 = null, $webm = null, $ogv = null,  $img = null, $parallax = false ) {
-
-	$rand = rand( 0, 9999 );
-	$output = '';
-	$class = 'wpb-video-bg-container';
-	$output .= "<div class='$class'>";
-
-	if ( $img ) {
-		$output .= '<div class="wpb-video-bg-fallback" style="background-image:url(' . esc_url( $img ) . ')"></div>';
-	}
-		
-	$output .= '<video class="wpb-video-bg" id="wpb-video-bg-' . absint( $rand ) . '" preload="auto" autoplay loop="loop" muted>';
-
-	if ( $webm ) {
-		$output .= '<source src="' . esc_url( $webm ) . '" type="video/webm">';
-	}
-		
-	if ( $mp4 ) {
-		$output .= '<source src="' . esc_url( $mp4 ) . '" type="video/mp4">';
-	}
-
-	if ( $webm ) {
-		$output .= '<source src="' . esc_url( $ogv ) . '" type="video/ogg">';
-	}
-		
-	$output .= '</video>';
-	$output .= '<div class="wpb-video-bg-overlay"></div>';
-	/*
-		Video controls can be found in the shortcode file section.php
-	*/
-	$output .= '</div>';
-
-	return $output;
-}
-
-/**
- * Display a YouTube video background
- *
- * Output YouTube video background markup
- *
- * @param string $url
- * @param string $img_fallback
- * @param string $start_time
- * @return string $output
- */
-function wpb_youtube_video_bg( $url = null, $img_fallback = null, $start_time = 0 ) {
-
-	$output = $style = '';
-	$img_fallback = ( $img_fallback ) ? esc_url( $img_fallback ) : '';
-	$class = 'wpb-video-bg-container wpb-youtube-video-bg-container';
-	$url = esc_url( $url );
-	$random_id = rand( 1, 9999 );
-
-	if (
-		preg_match( '#youtube(?:\-nocookie)?\.com/watch\?v=([A-Za-z0-9\-_]+)#', $url, $match )
-		|| preg_match( '#youtube(?:\-nocookie)?\.com/v/([A-Za-z0-9\-_]+)#', $url, $match )
-		|| preg_match( '#youtube(?:\-nocookie)?\.com/embed/([A-Za-z0-9\-_]+)#', $url, $match )
-		|| preg_match( '#youtu.be/([A-Za-z0-9\-_]+)#', $url, $match )
-	) {
-
-		if ( $match && isset( $match[1] ) ) {
-
-			$youtube_id = $match[1];
-			$embed_url = 'https://youtube.com/embed/' . $youtube_id;
-
-			if ( $img_fallback ) {
-				$style .= "background:url('$img_fallback') center center no-repeat;";
-				$style .= '-webkit-background-size: 100%;
-				-o-background-size: 100%;
-				-moz-background-size: 100%;
-				background-size: 100%;
-				-webkit-background-size: cover;
-				-o-background-size: cover;
-				background-size: cover;';
-				$style = wpb_esc_style_attr( $style );
-				// debug( $style );
-			}
-
-			$output .= "<div class='$class' data-youtube-start-time='$start_time' id='wpb-youtube-video-bg-$random_id-container' data-youtube-id='$youtube_id' style='$style'>" . "\n";
-				$output .= "<div class='wpb-youtube-player' id='wpb-youtube-player-$random_id'></div>" . "\n";
-			$output .= '<div class="wpb-video-bg-overlay"></div>';
-			$output .= '</div><!-- .wpb-youtube-video-bg -->' . "\n";
-		}
-	}
-	return $output;
-}
-
-/**
- * Display a vimeo video background
- *
- * Output vimeo video background markup
- *
- * @param string $url
- * @param string $img_fallback
- * @param bool $parallax
- * @return string $output
- */
-function wpb_vimeo_video_bg( $url = null, $img_fallback = null, $parallax = false ) {
-
-	$output = $style = '';
-	$img_fallback = ( $img_fallback ) ? esc_url( $img_fallback ) : '';
-	$class = 'wpb-video-bg-container wpb-vimeo-video-bg-container';
-	$url = esc_url( $url );
-	$random_id = rand( 1, 9999 );
-
-	if (
-		preg_match( '#vimeo\.com/([0-9a-z\#=]+)#', $url, $match )
-	) {
-
-		if ( $match && isset( $match[1] ) ) {
-
-			$vimeo_id = $match[1];
-			$embed_url = 'https://player.vimeo.com/' . $vimeo_id;
-
-			if ( $parallax ) {
-				$class .= ' wpb-video-bg-container-parallax';
-			}
-
-			if ( $img_fallback ) {
-				$style .= "background:url('$img_fallback') center center no-repeat;";
-				$style .= '-webkit-background-size: 100%;
-				-o-background-size: 100%;
-				-moz-background-size: 100%;
-				background-size: 100%;
-				-webkit-background-size: cover;
-				-o-background-size: cover;
-				background-size: cover;';
-				$style = wpb_esc_style_attr( $style );
-			}
-
-			$output .= '<div class="wpb-vimeo-video-bg-container wpb-video-bg-container">';
-			
-			if ( $img_fallback ) {
-				$output .= '<div class="wpb-video-bg-fallback" style="background-image:url(' . esc_url( $img_fallback ) . ')"></div>';
-			}
-
-			$output .= '<iframe class="wpb-vimeo-bg" src="https://player.vimeo.com/video/' . esc_attr( $vimeo_id ) . '?autoplay=1&loop=1&byline=0&title=0&background=1"></iframe>';
-			$output .= '<div class="wpb-video-bg-overlay"></div>';
-			$output .= '</div><!--.wpb-video-bg-container-->';
-		}
-	}
-	return $output;
-}
 
 /**
  * Convert hex color to rgb
@@ -325,7 +175,7 @@ function wpb_hex_to_rgb( $hex ) {
  */
 function wpb_get_full_size_image_url_from_thumbnail_url( $url ) {
 	if ( preg_match( '/-[0-9]+x[0-9]+.(jpg|png|gix)/' , $url, $matches ) ) {
-		
+
 		if ( isset( $matches[0] ) && isset( $matches[1] ) ) {
 			return str_replace( $matches[0], '.' . $matches[1], $url );
 		}
@@ -352,12 +202,12 @@ if ( ! function_exists( 'wpb_post_entry_meta' ) ) {
 
 		// Post author
 		if ( 'post' == get_post_type() && is_multi_author() ) {
-			
+
 			$output .= '<span class="wpb-author-meta author-meta">';
 			$output .='<a class="wpb-author-link author-link" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '" rel="author">';
 			$output .= get_avatar( get_the_author_meta( 'user_email' ), 20 );
 			$output .= '</a>';
-			
+
 			$output .= sprintf(
 				'<span class="author vcard"><a class="url fn n" href="%1$s" title="%2$s" rel="author">%3$s</a></span></span>',
 				esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
@@ -437,10 +287,10 @@ if ( ! function_exists( 'wpb_the_author' ) ) {
 	function wpb_the_author( $echo = true ) {
 
 		global $post;
-		
+
 		if ( ! is_object( $post ) )
 			return;
-		
+
 		$author_id = $post->post_author;
 		$author = get_the_author_meta( 'user_nicename', $author_id );
 
@@ -679,18 +529,18 @@ if ( ! function_exists( 'wpb_socials' ) ) {
 		$is_list = true;
 
 		$wpb_socials = wpb_get_socials();
-		
+
 		if ( ! $services ) {
-			
+
 			$services = $wpb_socials;
-		
+
 		} elseif ( ! is_array( $services ) ) {
 
 			$services = strtolower( preg_replace( '/\s+/', '', sanitize_text_field( $services ) ) );
 			$services = explode( ',', $services );
-		
+
 		} elseif ( is_array( $services ) ) {
-			
+
 			$is_list = false;
 		}
 
@@ -725,13 +575,13 @@ if ( ! function_exists( 'wpb_socials' ) ) {
 			foreach ( $services as $s ) {
 				$social = wpb_get_option( 'socials', $s );
 				if ( $social ) {
-					
+
 					$prefix = 'fa fa';
 
 					if ( in_array( 'ti-' . $s, array_keys( $ti_icons ) ) ) {
-						
+
 						$prefix = 'ti';
-					
+
 					} elseif ( in_array( 'line-icon-' . $s, array_keys( $wpb_line_icons ) ) ) {
 
 						$prefix = 'fa line-icon';
@@ -754,9 +604,9 @@ if ( ! function_exists( 'wpb_socials' ) ) {
 					$prefix = 'fa fa';
 
 					if ( in_array( 'ti-' . $s, array_keys( $ti_icons ) ) ) {
-						
+
 						$prefix = 'ti';
-					
+
 					} elseif ( in_array( 'line-icon-' . $s, array_keys( $wpb_line_icons ) ) ) {
 
 						$prefix = 'fa line-icon';
@@ -765,7 +615,7 @@ if ( ! function_exists( 'wpb_socials' ) ) {
 
 						$prefix = 'fa lnr';
 					}
-					
+
 					$title = str_replace( '-', ' ', $s );
 					$output .= "<a href='$social' title='$title' target='$target' class='wpb-social-link'>";
 					$output .= "<span $icon_style $data class='wpb-social $prefix-$s $icon_class'></span>";
@@ -774,7 +624,7 @@ if ( ! function_exists( 'wpb_socials' ) ) {
 			}
 		}
 
-	
+
 		$output .= '</div><!-- .wpb-socials-container -->';
 
 		return $output;
@@ -797,9 +647,9 @@ function wpb_get_first_category( $post_id = null ) {
 		if ( $category ) {
 			return $category[0]->name;
 		}
-	
+
 	} elseif ( 'gallery' ) {
-		
+
 		$terms = get_the_terms( $post_id, 'gallery_type' );
 
 		if ( $terms ) {
@@ -828,7 +678,7 @@ function wpb_get_first_category_url( $post_id = null ) {
 		}
 
 	} elseif ( 'gallery' ) {
-		
+
 		$terms = get_the_terms( $post_id, 'gallery_type' );
 
 		if ( $terms ) {
@@ -870,11 +720,11 @@ function wpb_last_posts_big_slide_button_text_filter( $text ) {
 	$post_type = get_post_type();
 	$format = null;
 	$text = esc_html__( 'Continue reading', '%TEXTDOMAIN%' );
-	
+
 	if ( 'post' == $post_type || 'work' == $post_type ) {
 
 		$format = get_post_format();
-		
+
 		if ( $format ) {
 
 			if ( 'video' == $format ) {

@@ -92,7 +92,7 @@ class WPB_Admin_Welcome_Message {
 					<li><i class="fa-fw fa fa-facebook"></i> <a target="_blank" href="<?php echo esc_url( WPB_WOLF_DOMAIN ); ?>/plugin/wolf-facebook-page-box/">Facebook Page Box</a></li>
 				<?php endif; ?>
 
-				<li><i class="fa-fw fa ti-wolf"></i> <a target="_blank" href="<?php echo esc_url( WPB_WOLF_DOMAIN ); ?>/wordpress-plugins/"><?php esc_html_e( 'More plugins', '%TEXTDOMAIN%' ); ?></a></li>
+				<li><i class="fa-fw fa ti-wolf"></i> <a target="_blank" href="<?php echo esc_url( WPB_WOLF_DOMAIN ); ?>/plugins/"><?php esc_html_e( 'More plugins', '%TEXTDOMAIN%' ); ?></a></li>
 			</ul>
 		</div>
 	</div>

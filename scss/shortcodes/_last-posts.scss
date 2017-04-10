@@ -68,7 +68,7 @@
 	a{
 		font-size: 12px;
 	}
-	
+
 	& > span{
 		margin-right: 5px;
 	}
@@ -89,7 +89,7 @@
 		bottom : auto!important;
 		right: 15px;
 		text-align: right;
-		
+
 		li a{
 			text-indent: 100%;
 			white-space: nowrap;
@@ -114,7 +114,7 @@
 .wpb-post-slide-inner{
 	display: block;
 	padding: 1.5em;
-	
+
 	p{
 		margin: 20px 0 0;
 	}
@@ -126,7 +126,7 @@
 
 /* Last posts preview */
 .wpb-last-posts-preview{
-	
+
 }
 
 .wpb-post-preview{
@@ -145,7 +145,7 @@
 
 .wpb-post-preview-entry-summary{
 	font-size: 12px;
-	
+
 	p{
 		margin: 0 0 15px;
 	}
@@ -153,13 +153,13 @@
 
 /* Last posts columns */
 .wpb-last-posts-columns{
-	
+
 }
 
 .wpb-post-column{
 	padding: 10px;
 	margin-bottom: 10px;
-	
+
 	p{
 		margin: 15px 0 0;
 		font-size: 14px;
@@ -173,25 +173,37 @@
 
 .wpb-post-column-entry-meta{
 	margin: 5px 0 0;
-	
+
 	a{
 		font-size: 13px;
 	}
 }
 
+.wpb-last-posts-display-standard{
+	width: calc( 100% + 20px );
+	margin-left: -10px;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.wpb-last-posts-display-carousel{
+	padding-bottom: 30px;
+	.wpb-post-column{
+		width: 100%;
+		counter-increment: carousel-cell;
+		margin-bottom: 0;
+	}
+}
+
 @media screen and (min-width: 500px) {
+
 	.wpb-last-posts-columns-2,
 	.wpb-last-posts-columns-3,
 	.wpb-last-posts-columns-4,
 	.wpb-last-posts-columns-5,
 	.wpb-last-posts-columns-6{
 		.wpb-post-column{
-			float: left;
 			width: 50%;
-			
-			&:nth-child(2n+1){
-				clear:left;
-			}
 		}
 	}
 }
@@ -202,32 +214,12 @@
 	.wpb-last-posts-columns-6{
 		.wpb-post-column{
 			width: 33.33%;
-
-			&:nth-child(2n+1){
-				clear:none;
-			}
-
-			&:nth-child(3n+1){
-				clear:left;
-			}
 		}
 	}
 
 	.wpb-last-posts-columns-4{
 		.wpb-post-column{
 			width: 25%;
-
-			&:nth-child(2n+1){
-				clear:none;
-			}
-
-			&:nth-child(3n+1){
-				clear:none;
-			}
-
-			&:nth-child(4n+1){
-				clear:left;
-			}
 		}
 	}
 }
@@ -238,48 +230,12 @@
 	.wpb-last-posts-columns-5{
 		.wpb-post-column{
 			width: 20%;
-
-			&:nth-child(2n+1){
-				clear:none;
-			}
-
-			&:nth-child(3n+1){
-				clear:none;
-			}
-
-			&:nth-child(4n+1){
-				clear:none;
-			}
-
-			&:nth-child(5n+1){
-				clear:left;
-			}
 		}
 	}
 
 	.wpb-last-posts-columns-6{
 		.wpb-post-column{
 			width: 16.65%;
-
-			&:nth-child(2n+1){
-				clear:none;
-			}
-
-			&:nth-child(3n+1){
-				clear:none;
-			}
-
-			&:nth-child(4n+1){
-				clear:none;
-			}
-
-			&:nth-child(5n+1){
-				clear:none;
-			}
-
-			&:nth-child(6n+1){
-				clear:left;
-			}
 		}
 	}
 }

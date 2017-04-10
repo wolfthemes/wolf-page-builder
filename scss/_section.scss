@@ -32,12 +32,9 @@
 	background-size: cover;
 }
 
-body.wpb-do-parallax {
-	.wpb-section-parallax{
-		background: none!important;
-	}
+.wpb-section-parallax{
+	background: none!important;
 }
-
 
 .wpb-section-inner{
 	position: relative;
@@ -50,7 +47,7 @@ body.wpb-do-parallax {
 	}
 
 	.wpb-row{
-		@include good-clearfix();	
+		@include good-clearfix();
 	}
 }
 
