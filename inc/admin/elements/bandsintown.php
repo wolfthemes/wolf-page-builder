@@ -12,7 +12,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-if ( function_exists( 'the_bandsintown_events' ) ) {
+//if ( function_exists( 'the_bandsintown_events' ) ) {
 	wpb_add_element(
 		array(
 			'name' => 'Bandsintown',
@@ -31,4 +31,4 @@ if ( function_exists( 'the_bandsintown_events' ) ) {
 			),
 		)
 	);
-}
+//}

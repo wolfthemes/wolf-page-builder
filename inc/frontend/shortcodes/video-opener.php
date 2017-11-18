@@ -59,7 +59,7 @@ if ( ! function_exists( 'wpb_shortcode_video_opener' ) ) {
 		if ( $button_image && 'yes' == $custom_play_button ) {
 
 			$src = wpb_get_url_from_attachment_id( absint( $button_image ), 'wpb-XL' );
-			$output .= '<img src="' . esc_url( $src ) . '" alt="video-opener-play-button"';
+			$output .= '<img src="' . esc_url( $src ) . '" alt="video-opener-play-button">';
 
 		} else {
 			$output .= '<span class="fa fa-play wpb-video-opener-icon"></span>';

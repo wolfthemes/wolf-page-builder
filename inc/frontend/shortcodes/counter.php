@@ -40,7 +40,7 @@ if ( ! function_exists( 'wpb_shortcode_counter' ) ) {
 
 		wp_enqueue_script( 'countup' );
 		wp_enqueue_script( 'wpb-counter' );
-		
+
 		$class = $extra_class;
 		$class .= ' wpb-counter-container';
 		$output = '';

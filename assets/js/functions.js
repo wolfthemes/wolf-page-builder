@@ -429,9 +429,18 @@ var WPB = function( $ ) {
 		 */
 		parallax : function () {
 
-			if ( ! this.isEdge ) {
-				$( '.wpb-img-bg-effect-parallax' ).parallax( {
-					mainContainer : WPBParams.parallaxContainer
+			// if ( ! this.isEdge ) {
+			// 	$( '.wpb-img-bg-effect-parallax' ).parallax( {
+			// 		mainContainer : WPBParams.parallaxContainer
+			// 	} );
+			// }
+
+			var smallScreen = ( ( 800 > $( window ).width() || this.isMobile ) && WPB.parallaxNoSmallScreen );
+
+			if ( ! smallScreen ) {
+				$( '.wpb-parallax, .wpb-video-parallax' ).jarallax( {
+					noAndroid : WPB.parallaxNoAndroid,
+					noIos : WPB.parallaxNoIos
 				} );
 			}
 		},

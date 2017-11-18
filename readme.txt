@@ -3,7 +3,7 @@ Contributors: wolfthemes
 Tags: page builder
 Requires at least: 4.5
 Tested up to: 4.7.2
-Stable tag: 3.0.9b
+Stable tag: 3.2.0.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -28,11 +28,39 @@ Verified customers however, who have purchased a premium theme on [ThemeForest](
 
 == Changelog ==
 
-= 6th march 2017 - Version 3.0.9b =
+= 17th november 2017 - Version 3.2.0.1 =
+
+* Fix: Error message related to background function
+
+= 15th november 2017 - Version 3.1.9 =
+
+* Other: Updated Bandwintown integration for v2 API
+* Fix: Parallax BG
+
+= 6th october 2017 - Version 3.1.7 =
+
+* Fix: Bandsintown & Facebook (Wolf Facebook Page Box plugin) scripts conflict with AJAX navigation (AJAX themes like Sonic)
+
+= 11th august 2017 - Version 3.1.6 =
+
+* Fix: Video opener with custom image button closing tag
+* Fix: Slideshow background on mobile
+
+= 3rd august 2017 - Version 3.1.4 =
+
+* Fix: Image gallery issue
+
+= 1st august 2017 - Version 3.1.3 =
+
+* Fix: Missing background on mobile
+* Fix: Video image background
+
+= 10th july 2017 - Version 3.1.1 =
 
 * Tweak: Improved Twenty Seventeen Compatiblity
 * Tweak: Replaced carousel script by Flickty
 * Tweak: Replaced video opener script by Lity
+* Fix: WooCommerce "order by" attribute
 
 = 6th march 2017 - Version 3.0.7 =
 

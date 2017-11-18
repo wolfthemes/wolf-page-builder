@@ -147,7 +147,7 @@ wpb_add_element(
 			array(
 				'type' => 'select',
 				'label' => esc_html__( 'Order by', '%TEXTDOMAIN%' ),
-				'param_name' => 'order_by',
+				'param_name' => 'orderby',
 				'choices' => array(
 					'date' => esc_html__( 'Date', '%TEXTDOMAIN%' ),
 					'title' => esc_html__( 'Title', '%TEXTDOMAIN%' ),
@@ -195,7 +195,7 @@ wpb_add_element(
 			array(
 				'type' => 'select',
 				'label' => esc_html__( 'Order by', '%TEXTDOMAIN%' ),
-				'param_name' => 'order_by',
+				'param_name' => 'orderby',
 				'choices' => array(
 					'date' => esc_html__( 'Date', '%TEXTDOMAIN%' ),
 					'title' => esc_html__( 'Title', '%TEXTDOMAIN%' ),
@@ -242,7 +242,7 @@ wpb_add_element(
 			array(
 				'type' => 'select',
 				'label' => esc_html__( 'Order by', '%TEXTDOMAIN%' ),
-				'param_name' => 'order_by',
+				'param_name' => 'orderby',
 				'choices' => array(
 					'date' => esc_html__( 'Date', '%TEXTDOMAIN%' ),
 					'title' => esc_html__( 'Title', '%TEXTDOMAIN%' ),
@@ -289,7 +289,7 @@ wpb_add_element(
 			array(
 				'type' => 'select',
 				'label' => esc_html__( 'Order by', '%TEXTDOMAIN%' ),
-				'param_name' => 'order_by',
+				'param_name' => 'orderby',
 				'choices' => array(
 					'date' => esc_html__( 'Date', '%TEXTDOMAIN%' ),
 					'title' => esc_html__( 'Title', '%TEXTDOMAIN%' ),

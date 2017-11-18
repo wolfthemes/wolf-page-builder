@@ -25,6 +25,9 @@ function wpb_get_js_params() {
 		'doParallaxOnMobile' => wpb_get_option( 'settings', 'do_parallax_mobile' ),
 		'doAnimationOnMobile' => wpb_get_option( 'settings', 'do_animation_mobile' ),
 		'doLazyLoad' => wpb_get_option( 'settings', 'do_lazyload' ),
+		'parallaxNoIos' => apply_filters( 'wpb_parallax_no_ios', true ),
+		'parallaxNoAndroid' => apply_filters( 'wpb_parallax_no_android', true ),
+		'parallaxNoSmallScreen' => apply_filters( 'wpb_parallax_no_small_screen', true ),
 		'language' => get_locale(),
 	);
 }
@@ -49,7 +52,8 @@ function wpb_register_scripts() {
 	wp_register_script( 'fancybox', WPB_JS . '/lib/jquery.fancybox.pack.js', array( 'jquery' ), '2.1.5', true );
 
 	// Parallax
-	wp_register_script( 'wpb-parallax', WPB_JS . '/lib/parallax' . $suffix . '.js', array( 'jquery' ), $parallax_version, true );
+	//wp_register_script( 'wpb-parallax', WPB_JS . '/lib/parallax' . $suffix . '.js', array( 'jquery' ), $parallax_version, true );
+	wp_register_script( 'jarallax', WPB_JS . '/lib/jarallax.min.js', array(), '1.8.0', false );
 
 	// Lazyload
 	wp_register_script( 'lazyloadxt', WPB_JS . '/lib/jquery.lazyloadxt.min.js', array( 'jquery' ), '1.1.0', true );
@@ -106,6 +110,7 @@ function wpb_register_scripts() {
 	// Plugin scripts
 	wp_register_script( 'wpb-youtube-video-bg', WPB_JS . $folder . '/youtube-video-bg' . $suffix . '.js', array( 'jquery' ), $version, true );
 	//wp_register_script( 'wpb-vimeo-video-bg', WPB_JS . $folder . '/vimeo-video-bg' . $suffix . '.js', array( 'jquery' ), $version, true );
+
 	wp_register_script( 'wpb-functions', WPB_JS . $folder . '/functions' . $suffix . '.js', array( 'jquery' ), $version, true );
 }
 add_action( 'wp_enqueue_scripts', 'wpb_register_scripts' );
@@ -141,7 +146,7 @@ function wpb_enqueue_common_scripts() {
 	wp_enqueue_script( 'flickity' ); // carousels
 	wp_enqueue_script( 'wow' );
 	wp_enqueue_script( 'waypoints' );
-	wp_enqueue_script( 'wpb-parallax' );
+	wp_enqueue_script( 'jarallax' );
 	wp_enqueue_script( 'wpb-carousels' ); // may be used fro post types (post, product, testimonials etc...)
 
 	if ( wpb_get_option( 'settings', 'do_lazyload' ) ) {
@@ -199,8 +204,12 @@ function wpb_force_enqueue_scripts() {
 			wp_enqueue_script( 'fancybox-media', WPB_JS . '/lib/jquery.fancybox-media.min.js', array( 'jquery' ), '1.0.6', true );
 		}
 
+		// Plugins
+		wp_enqueue_script( 'wolf-facebook-page-box' );
+		wp_enqueue_script( 'bandsintown', 'https://widget.bandsintown.com/javascripts/bit_widget.js', array(), false, true );
+
 		// WPB lib
-		wp_enqueue_script( 'wpb-parallax' );
+		wp_enqueue_script( 'jarallax' );
 		wp_enqueue_script( 'wpb-lib-min' ); // all lib files
 		wp_enqueue_script( 'jquery-ui-accordion' );
 		wp_enqueue_script( 'jquery-ui-tabs' );

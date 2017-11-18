@@ -22,7 +22,6 @@ wpb_add_element(
 		'description' => esc_html__( 'A set of icons linked to your chosen URLs', '%TEXTDOMAIN%' ),
 		'category' => esc_html__( 'Social', '%TEXTDOMAIN%' ),
 		'params' => array(
-			
 
 			array(
 				'type' => 'select',

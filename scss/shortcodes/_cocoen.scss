@@ -9,8 +9,8 @@
   box-sizing: border-box;
 
   *,
-  *::before,
-  *::after {
+  *:before,
+  *:after {
     box-sizing: inherit;
   }
 
@@ -32,7 +32,10 @@
     overflow: hidden;
   }
 
-  &__drag {
+  
+}
+
+.cocoen__drag {
     position: absolute;
     top: 0;
     bottom: 0;
@@ -54,4 +57,3 @@
       margin-top: -18px;
     }
   }
-}

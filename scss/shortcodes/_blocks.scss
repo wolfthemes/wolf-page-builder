@@ -2,7 +2,7 @@
 	z-index: 0;
 	position: relative;
 	overflow: hidden;
-	
+
 	p:empty{
 		margin-top: 0!important;
 		margin-bottom: 0!important;
@@ -11,9 +11,9 @@
 	min-height: 1px; // fill empty column
 
 	img,
-	iframe, 
-	embed, 
-	object, 
+	iframe,
+	embed,
+	object,
 	video{
 		max-width: 100%;
 	}
@@ -54,9 +54,9 @@
 
 .wpb-block-media{
 	img,
-	iframe, 
-	embed, 
-	object, 
+	iframe,
+	embed,
+	object,
 	video{
 		width: 100%;
 		margin: 0!important;

@@ -23,9 +23,8 @@ function wpb_add_image_sizes() {
 
 	// Standard
 	add_image_size( 'wpb-thumb', 640, 360, true );
+	add_image_size( 'wpb-video-thumb', 480, 270, true );
 	add_image_size( 'wpb-portrait', 600, 900, true );
-	add_image_size( 'wpb-2x2', 500, 500, true ); // square
-	add_image_size( 'wpb-XL', 2000, 1500, false ); // XL
 
 	// Slides
 	add_image_size( 'wpb-slide', 1200, 700, true );
@@ -35,8 +34,11 @@ function wpb_add_image_sizes() {
 	add_image_size( 'wpb-slide-mobile', 277, 494, true );
 
 	// mosaic
-	//add_image_size( 'wpb-2x1', 960, 480, true ); // landscape
-	//add_image_size( 'wpb-1x2', 480, 960, true ); // portrait
+	add_image_size( 'wpb-2x1', 960, 480, true ); // landscape
+	add_image_size( 'wpb-2x2', 960, 960, true ); // square
+	add_image_size( 'wpb-1x2', 480, 960, true ); // portrait
+	add_image_size( 'wpb-XL', 2000, 1500, false ); // XL
+
 }
 add_action( 'init', 'wpb_add_image_sizes' );
 
@@ -759,6 +761,51 @@ function wpb_sanitize_bg_meta( $meta = array() ) {
 	$meta['attachment'] = esc_attr( $meta['attachment'] );
 
 	return $meta;
+}
+
+/**
+ * Get placeholder image URL
+ */
+function wpb_placeholder_img_url( $img_size ) {
+	
+	if ( in_array( $img_size, array( 'thumbnail', 'medium', 'large', 'wpb-XL', 'wpb-photo', 'full' ) ) ) {
+
+		switch( $img_size ) {
+			case 'wpb-XL':
+				$img_size = '2000x1500';
+				break;
+			case 'wpb-photo':
+				$img_size = '500x500';
+				break;
+			case 'full':
+				$img_size = '2000x1500';
+				break;
+			case 'thumbnail':
+				$img_size = get_option( 'thumbnail_size_w' ) . 'x' . get_option( 'thumbnail_size_h' );
+				break;
+			case 'medium':
+				$img_size = get_option( 'medium_size_w' ) . 'x' . get_option( 'medium_size_h' );
+				break;
+			case 'large':
+				$img_size = get_option( 'large_size_w' ) . 'x' . get_option( 'large_size_h' );
+				break;
+		}
+	}
+
+	if ( $img_size ) {
+		$formatted_size = str_replace( 'x', '/', $img_size );
+		return 'https://unsplash.it/' . $formatted_size . '/?image=' . rand( 1, 1084 );
+	}
+}
+
+/**
+ * Returns fallback from placeholder if image is missing
+ */
+function wpb_placeholder_img( $img_size, $class = '' ) {
+
+	if ( wpb_placeholder_img_url( $img_size ) ) {
+		return '<img class="' . wpb_sanitize_html_classes( $class ) . '" src="' . wpb_placeholder_img_url( $img_size ) . '" alt="placeholder" title="' . esc_html__( 'Image is missing', '%TEXTDOMAIN%' ) . '">';
+	}
 }
 
 if ( ! function_exists( 'debug' ) ) {

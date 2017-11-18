@@ -9,6 +9,10 @@
 	left: 0;
 	overflow: hidden;
 
+	.flex-viewport{
+		height: 100%;
+	}
+
 	.slides{
 		display: block;
 		width: 100%;

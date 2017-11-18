@@ -223,7 +223,7 @@ if ( ! function_exists( 'wpb_shortcode_advanced_slide' ) ) {
 			$slide_style_attr .= 'background-repeat:' . $background_repeat . ';';
 			$slide_style_attr .= '-webkit-background-size: 100%; -o-background-size: 100%; -moz-background-size: 100%; background-size: 100%;-webkit-background-size: cover; -o-background-size: cover; background-size: cover;';
 
-			if ( ! $do_object_fit ) {
+			if ( ! $do_object_fit || 'video' == $background_type ) {
 				$slide_style_attr .= 'background-image:url( ' . esc_url( $image_url ) . ' );';
 			}
 		}

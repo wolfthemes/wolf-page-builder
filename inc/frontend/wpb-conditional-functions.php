@@ -48,7 +48,7 @@ if ( ! function_exists( 'is_wpb' ) ) {
 		$not_wolf_plugins_pages = $not_wolf_events && $not_wolf_albums && $not_wolf_videos && $not_wolf_discography && $not_wolf_portfolio && $not_wolf_themes && $not_wolf_plugins;
 
 		if (
-			in_array( get_post_type(), $post_types ) 
+			in_array( get_post_type(), $post_types )
 			&& $wpb_on
 			&& $not_is_blog
 			&& $not_wolf_plugins_pages
@@ -57,4 +57,26 @@ if ( ! function_exists( 'is_wpb' ) ) {
 			return true;
 		}
 	}
+}
+
+/**
+ * Check if the browser is edge
+ *
+ * @return bool
+ */
+function wpb_is_edge() {
+	global $is_edge;
+
+	return $is_edge;
+}
+
+/**
+ * Check if the browser is iOS
+ *
+ * @return bool
+ */
+function wpb_is_iphone() {
+	global $is_iphone;
+
+	return $is_iphone;
 }

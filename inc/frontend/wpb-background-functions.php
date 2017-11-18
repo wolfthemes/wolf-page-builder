@@ -18,26 +18,28 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @param array $args
  * @return string $output
  */
-function wpb_background_img( $args ) {
+function wpb_background_img( $args = array() ) {
 
 	extract( wp_parse_args( $args, array(
-		'background_img' => '',
+		'background_img' => get_post_thumbnail_id(),
 		'background_color' => '',
 		'background_position' => 'center center',
 		'background_repeat' => 'no-repeat',
 		'background_size' => 'cover',
 		'background_effect' => '',
+		'background_img_size' => 'wpb-XL',
+		'background_img_lazyload' => true,
 	) ) );
 
 	$output = '';
 
-	if ( $background_effect ) {
+	if ( 'parallax' === $background_effect  ) {
 		$background_repeat = 'no-repeat';
 		$background_size = 'cover';
 	}
 
 	// Use image with srcset to improve loading speed when applicable
-	$do_object_fit = ( $background_img && 'no-repeat' === $background_repeat && 'cover' === $background_size || 'contain' === $background_size );
+	$do_object_fit = ( $background_img && 'no-repeat' === $background_repeat && 'default' !== $background_size && 'parallax' !== $background_effect && ! wpb_is_edge() && ! wp_is_mobile() );
 
 	if ( $do_object_fit ) {
 
@@ -53,37 +55,126 @@ function wpb_background_img( $args ) {
 			'right center' => '100% 50%',
 		);
 
-		$cover_class = "wpb-img-$background_size";
-		$cover_style = 'object-position:' . $position[ $background_position ];
+		$src = wpb_get_url_from_attachment_id( $background_img, $background_img_size );
+		$srcset = wp_get_attachment_image_srcset( $background_img,$background_img_size );
+		$alt = get_post_meta( $background_img, '_wp_attachment_image_alt', true);
+		$blank = WPB_URI . '/assets/img/blank.gif';
+		$img_dominant_color = wpb_get_image_dominant_color( $background_img );
 
-		$srcset = wp_get_attachment_image_srcset( $background_img, 'wpb-XL' );
-		$output .= wp_get_attachment_image( $background_img, 'wpb-XL', false, array( 'class' => "$cover_class wpb-img-bg-effect-$background_effect", 'style' => wpb_esc_style_attr( $cover_style ), 'data-image-srcset' => $srcset ) );
+		$original_src = ( $background_img_lazyload ) ? $blank : $src;
 
-	} elseif ( $background_img || $background_color ) {
+		$cover_class = "wpb-img-$background_size wpb-img-cover";
 
-		$style  ='';
+		if ( $background_img_lazyload ) {
+			$cover_class .= ' wpb-lazy-hidden wpb-lazyload-bg';
+		}
 
-		if ( $background_img ) {
-			$background_img_url = wpb_get_url_from_attachment_id( $background_img, 'wpb-XL' );
-			$style .= 'background-image:url(' . esc_url( $background_img_url ) . ');';
+		$cover_style = 'object-position:' . $position[ $background_position ] . ';';
+
+		$container_class = 'wpb-img-bg';
+		$container_style = '';
+
+		if ( 'zoomin' === $background_effect ) {
+			$cover_class .= ' wpb-zoomin';
 		}
 
 		if ( $background_color ) {
-			$style .= 'background-color:' . esc_attr( $background_color ) . ';';
+
+			$background_color = wpb_sanitize_color( $background_color );
+			$container_style .= "background-color:$background_color;";
+
+		} elseif ( $img_dominant_color ) {
+
+			$background_color = wpb_sanitize_color( $img_dominant_color );
+			$container_style .= "background-color:$img_dominant_color;";
 		}
 
-		if ( $background_position )
-			$style .= 'background-position:' . esc_attr( $background_position ) . ';';
+		$output .= '<div class="' . wpb_sanitize_html_classes( $container_class ) . '" style="' . wpb_esc_style_attr( $container_style ) . '">';
 
-		if ( $background_repeat ) {
-			$style .= 'background-repeat:' . esc_attr( $background_repeat ) . ';';
+		$bg_img_meta = wp_get_attachment_metadata( $background_img );
+		$bg_img_width = ( isset( $bg_img_meta['width'] ) ) ? $bg_img_meta['width'] . 'px' : '1500px';
+
+		if ( wp_attachment_is_image( $background_img ) ) {
+
+			$output .= '<img
+				src="' . esc_url( $original_src ) . '"
+				style="' . wpb_esc_style_attr( $cover_style ) . '"
+				data-src="' . esc_url( $src ) .'"
+				srcset="' . esc_attr( $srcset ) . '"
+				class="' . wpb_sanitize_html_classes( $cover_class ) . '"
+				sizes="(max-width: ' . esc_attr( $bg_img_width ) . ') 100vw, ' . esc_attr( $bg_img_width ) . '"
+				alt="' . esc_attr( $alt ) .'">';
+
+		} else {
+			$output .= wpb_placeholder_img( 'wpb-XL', $cover_class );
 		}
 
-		if ( $background_size ) {
-			$style .= 'background-size:' . esc_attr( $background_size ) . ';';
+		$output .= '<div class="wpb-img-bg-overlay"></div></div>';
+
+	} elseif ( $background_img || $background_color ) {
+
+		$style = $attrs = '';
+		$container_class = 'wpb-img-bg';
+
+		if ( 'parallax' === $background_effect && $background_img ) {
+
+			$container_class .= ' wpb-parallax';
+
+			$background_color = wpb_get_image_dominant_color( $background_img );
+
+			if ( $background_color ) {
+				$style .= 'background-color:' . wpb_sanitize_color( $background_color ) . ';';
+			}
+
+			$src = wpb_get_url_from_attachment_id( $background_img, $background_img_size );
+			$srcset = wp_get_attachment_image_srcset( $background_img, $background_img_size );
+			$attrs = ' data-image-src="' . $src . '"';
+			$attrs .= ' data-image-srcset="' . $srcset . '"';
+			$attrs .= ' data-speed="0.5"';
+
+			//$src = ( $src ) ? $src : wpb_placeholder_img_url( 'wpb-XL' );
+
+			$style .= 'background-image:url(' . esc_url( $src ) . ');';
+
+			// Image infos to increase parallax performances
+			$bg_meta = wp_get_attachment_metadata( $background_img );
+
+			if ( is_array( $bg_meta ) && isset( $bg_meta['width'] ) ) {
+				$attrs .= ' data-image-width="' . $bg_meta['width'] . '"';
+			}
+
+			if ( is_array( $bg_meta ) && isset( $bg_meta['height'] ) ) {
+				$attrs .= ' data-image-height="' . $bg_meta['height'] . '"';
+			}
 		}
 
-		$output .= '<div class="wpb-img-bg" style="' . esc_attr( $style ) . '"></div>';
+		if ( 'parallax' !== $background_effect ) {
+
+			if ( $background_color ) {
+				$style .= 'background-color:' . esc_attr( $background_color ) . ';';
+			}
+
+			if ( $background_position )
+				$style .= 'background-position:' . esc_attr( $background_position ) . ';';
+
+			if ( $background_repeat ) {
+				$style .= 'background-repeat:' . esc_attr( $background_repeat ) . ';';
+			}
+
+			if ( $background_size && 'default' !== $background_size ) {
+				$style .= 'background-size:' . esc_attr( $background_size ) . ';';
+			}
+
+			if ( $background_img ) {
+				$background_img_url = wpb_get_url_from_attachment_id( $background_img, $background_img_size );
+
+				//$background_img_url = ( $background_img_url ) ? $background_img_url : wpb_placeholder_img_url( 'wpb-XL' );
+
+				$style .= 'background-image:url(' . esc_url( $background_img_url ) . ');';
+			}
+		}
+
+		$output .= '<div ' . $attrs . ' class="' . wpb_sanitize_html_classes( $container_class ) . '" style="' . esc_attr( $style ) . '"></div>';
 	}
 
 	return $output;
@@ -106,6 +197,10 @@ function wpb_background_slideshow( $args ) {
 
 	$image_ids = wpb_list_to_array( $slideshow_img_ids );
 
+	$do_object_fit = ( ! wpb_is_edge() && ! wp_is_mobile() );
+
+	$do_object_fit = false;
+
 	if ( array() != $image_ids ) {
 
 		wp_enqueue_script( 'flexslider' );
@@ -114,10 +209,19 @@ function wpb_background_slideshow( $args ) {
 		$output .= '<div data-slideshow-speed="' . absint( $slideshow_speed ) . '" class="wpb-section-slideshow-background"><ul class="slides">';
 
 		foreach ( $image_ids as $image_id ) {
-			$src  = esc_url( wpb_get_url_from_attachment_id( $image_id, 'wpb-XL' ) );
+			$src = esc_url( wpb_get_url_from_attachment_id( $image_id, 'wpb-XL' ) );
 
 			$output .= '<li>';
-			$output .= wp_get_attachment_image( $image_id, 'wpb-XL', false, array( 'class' => 'wpb-img-cover' ) );
+
+			if ( $do_object_fit ) {
+
+				$output .= wp_get_attachment_image( $image_id, 'wpb-XL', false, array( 'class' => 'wpb-img-cover' ) );
+
+			} else {
+
+				$output .= '<div style="position:absolute;top:0;left:0;right:0;bottom:0;width:100%;height:100%;background:url(' . $src . ') center center;background-size:cover;"></div>';
+			}
+
 			$output .= '</li>';
 		}
 
@@ -300,4 +404,89 @@ function wpb_vimeo_video_bg( $args ) {
 		}
 	}
 	return $output;
+}
+
+/**
+ * Get dominant color from image
+ *
+ * @param int $attachment_id
+ */
+function wpb_get_image_dominant_color( $attachment_id ) {
+
+	if ( ! $attachment_id ) {
+		return;
+	}
+
+	$metadata = wp_get_attachment_metadata( $attachment_id );
+
+	if ( ! isset( $metadata['file'] ) ) {
+		return 'transparent';
+	}
+
+	$upload_dir = wp_upload_dir();
+	$filename = $upload_dir['basedir'] . '/' . $metadata['file'];
+	$ext = strtolower( pathinfo( $filename, PATHINFO_EXTENSION ) );
+
+	if ( 'jpg' == $ext || 'jpeg' == $ext ) {
+
+		$image = imagecreatefromjpeg( $filename);
+
+	} elseif ( 'png' == $ext ) {
+
+		$image = imagecreatefrompng( $filename);
+
+	} elseif ( 'gif' == $ext ) {
+
+		$image = imagecreatefromgif( $filename);
+
+	} else {
+		return 'transparent';
+	}
+
+	$thumb = imagecreatetruecolor( 1,1 );
+	imagecopyresampled( $thumb, $image, 0, 0, 0, 0, 1, 1, imagesx( $image ), imagesy( $image ) );
+	$main_color = strtoupper( dechex( imagecolorat( $thumb, 0, 0 ) ) );
+
+	return '#' . $main_color;
+}
+
+/**
+ * Sanitize color input
+ *
+ * @link https://github.com/redelivre/wp-divi/blob/master/includes/functions/sanitization.php
+ *
+ * @param string $color
+ * @return string $color
+ */
+function wpb_sanitize_color( $color ) {
+
+	// Trim unneeded whitespace
+	$color = str_replace( ' ', '', $color );
+	// If this is hex color, validate and return it
+	if ( 1 === preg_match( '|^#([A-Fa-f0-9]{3}){1,2}$|', $color ) ) {
+		return $color;
+	}
+	// If this is rgb, validate and return it
+	elseif ( 'rgb(' === substr( $color, 0, 4 ) ) {
+		sscanf( $color, 'rgb(%d,%d,%d)', $red, $green, $blue );
+		if ( ( $red >= 0 && $red <= 255 ) &&
+			 ( $green >= 0 && $green <= 255 ) &&
+			 ( $blue >= 0 && $blue <= 255 )
+			) {
+			return "rgb({$red},{$green},{$blue})";
+		}
+	}
+	// If this is rgba, validate and return it
+	elseif ( 'rgba(' === substr( $color, 0, 5 ) ) {
+		sscanf( $color, 'rgba(%d,%d,%d,%f)', $red, $green, $blue, $alpha );
+		if ( ( $red >= 0 && $red <= 255 ) &&
+			 ( $green >= 0 && $green <= 255 ) &&
+			 ( $blue >= 0 && $blue <= 255 ) &&
+			   $alpha >= 0 && $alpha <= 1
+			) {
+			return "rgba({$red},{$green},{$blue},{$alpha})";
+		}
+	} elseif ( 'transparent' === $color ) {
+		return 'transparent';
+	}
 }

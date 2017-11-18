@@ -1,6 +1,6 @@
 {
-	"version" : "3.0.9b",
-	"updated" : "2017-03-16",
+	"version" : "3.2.0.1",
+	"updated" : "2017-11-17",
 	"slug" : "wolf-page-builder",
 	"textdomain" : "wolf-page-builder",
 	"name" : "Wolf Page Builder",
@@ -13,7 +13,7 @@
 	"author" : "WolfThemes",
 	"authorURI" : "https://wolfthemes.com",
 	"requires" : "4.6",
-	"tested" : "4.7.2",
+	"tested" : "4.9",
 	"root" : "..",
 	"cssPath" : "../assets/css",
 	"jsPath" : "../assets/js",

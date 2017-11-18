@@ -206,10 +206,9 @@ blockquote.wpb-testimonial-content{
 $columns : 6;
 $width: 100%;
 @for $i from 1 through $columns {
-	.wpb-images-gallery-columns-#{$i} .wpb-image-inner{
+	.wpb-images-gallery-columns-#{$i} .wpb-block{
 		float: left;
 		width: ( $width / $i  );
-		//padding-bottom: ( $width / $i  );
 	}
 }
 
