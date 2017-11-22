@@ -71,6 +71,16 @@ var WPBCarousels = function( $ ) {
 					groupCells: true,
 					prevNextButtons: false,
 					cellSelector: '.wpb-block'
+				// Disable lightbox on drag
+				} ).on( 'dragStart.flickity', function() {
+
+					$( '.wpb-lightbox' ).addClass( 'wpb-disabled' );
+
+				} ).on( 'dragEnd.flickity', function() {
+
+					setTimeout( function() {
+						$( '.wpb-lightbox' ).removeClass( 'wpb-disabled' );
+					}, 1000 ); // wait before re-enabling lightbox
 				} );
 			} );
 		},

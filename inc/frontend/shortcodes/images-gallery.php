@@ -46,7 +46,7 @@ if ( ! function_exists( 'wpb_shortcode_gallery' ) ) {
 
 		} elseif ( 'carousel' == $layout ) {
 			
-			$output = wolf_carousel_gallery( $images, $link_type, $image_size, $padding, $hover_effect, $orderby, $inline_style, $class );
+			$output = wolf_carousel_gallery( $images, $link_type, $image_size, $padding, $columns, $hover_effect, $orderby, $inline_style, $class );
 
 		} elseif ( 'simple' == $layout ) {
 
@@ -205,9 +205,9 @@ if ( ! function_exists( 'wolf_carousel_gallery' ) ) {
 	 * @param string $orderby
 	 * @return string $output
 	 */
-	function wolf_carousel_gallery( $images = array(), $link_type = 'file', $image_size = 'wpb-2x1', $padding = 'no', $hover_effect = 'default', $orderby = '', $inline_style = '', $class = '' ) {
+	function wolf_carousel_gallery( $images = array(), $link_type = 'file', $image_size = 'wpb-2x1', $padding = 'no', $columns = 4, $hover_effect = 'default', $orderby = '', $inline_style = '', $class = '' ) {
 
-		wp_enqueue_script( 'owlcarousel' );
+		wp_enqueue_script( 'flickity' );
 		wp_enqueue_script( 'wpb-carousels' );
 
 		if ( 'rand' == $orderby ) {
@@ -217,10 +217,16 @@ if ( ! function_exists( 'wolf_carousel_gallery' ) ) {
 		$rand_id = rand( 0,999 );
 		$selector = "wpb-gallery-$rand_id";
 
-		$class .= " wolf-images-gallery wpb-clearfix wpb-carousel-gallery wpb-hover-$hover_effect owl-carousel";
+		$class .= " wolf-images-gallery wpb-clearfix wpb-carousel-gallery wpb-hover-$hover_effect";
 
 		if ( 'yes' == $padding ) {
 			$class .= " wpb-padding";
+		}
+
+		$class .= ' wpb-images-gallery-columns-' . $columns;
+
+		if ( 1 == $columns ) {
+			$image_size = 'wpb-XL';
 		}
 
 		$output = '<div id="' . esc_attr( $selector ) . '" class="' . wpb_sanitize_html_classes( $class ) . '"';
