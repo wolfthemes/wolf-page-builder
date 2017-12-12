@@ -54,6 +54,16 @@ if ( class_exists( 'Wolf_Playlist_Manager' ) ) {
 					),
 					'display' => true,
 				),
+
+				array(
+					'type' => 'select',
+					'label' => esc_html__( 'Skin', '%TEXTDOMAIN%' ),
+					'param_name' => 'theme',
+					'choices' => array(
+						'dark' => esc_html__( 'Dark', '%TEXTDOMAIN%' ),
+						'light' => esc_html__( 'Light', '%TEXTDOMAIN%' ),
+					),
+				),
 			)
 		)
 	);

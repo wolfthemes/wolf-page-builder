@@ -1,3 +1,7 @@
+#### 12th december 2017 - Version 3.2.2
+
+* Tweak: Added playlist skin option
+
 #### 22th november 2017 - Version 3.2.1
 
 * Fix: Image carousel
