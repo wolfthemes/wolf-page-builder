@@ -2138,17 +2138,69 @@ hr.wpb-separator.wpb-separator-align-right {
   padding-bottom: 10px;
 }
 
-.wpb-carousel-gallery {
-  cursor: move;
-  /* fallback if grab cursor is unsupported */
-  cursor: -webkit-grab;
-  cursor: grab;
+.wpb-gallery-carousel {
+  /* Padding */
 }
-.wpb-carousel-gallery:active {
-  cursor: -webkit-grabbing;
-  cursor: grabbing;
+.wpb-gallery-carousel figure {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  width: 50%;
+}
+.wpb-gallery-carousel img {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  display: inline-block;
+  text-align: center;
+  vertical-align: bottom;
+  width: auto;
+}
+.wpb-gallery-carousel.wpb-gallery-padding-yes .wpb-img-carousel {
+  padding: 10px;
+}
+.wpb-gallery-carousel.wpb-carousel-has-bullet {
+  margin-bottom: 55px !important;
 }
 
+/* Columns */
+.wpb-carousel-columns-1 .wpb-img-carousel {
+  float: none;
+  padding: 0;
+  padding-bottom: 10px;
+}
+
+@media screen and (min-width: 800px) {
+  /* Image gallery columns */
+  .wpb-carousel-columns-1 .wpb-img-carousel {
+    float: left;
+    width: 100%;
+  }
+
+  .wpb-carousel-columns-2 .wpb-img-carousel {
+    float: left;
+    width: 50%;
+  }
+
+  .wpb-carousel-columns-3 .wpb-img-carousel {
+    float: left;
+    width: 33.33333%;
+  }
+
+  .wpb-carousel-columns-4 .wpb-img-carousel {
+    float: left;
+    width: 25%;
+  }
+
+  .wpb-carousel-columns-5 .wpb-img-carousel {
+    float: left;
+    width: 20%;
+  }
+
+  .wpb-carousel-columns-6 .wpb-img-carousel {
+    float: left;
+    width: 16.66667%;
+  }
+}
 /**
  * Images slider
  */
@@ -2607,7 +2659,6 @@ body.wpb-is-mobile ul.wpb-slide-video-bg-controls {
 
 .wpb-slide-video-play-button {
   -webkit-user-select: none;
-  -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
   left: 70px;
@@ -2621,7 +2672,6 @@ body.wpb-is-mobile ul.wpb-slide-video-bg-controls {
 
 .wpb-slide-video-mute-button {
   -webkit-user-select: none;
-  -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
 }
@@ -3748,7 +3798,6 @@ span.wpb-highlight-green {
   margin: 0;
   padding: 0;
   -webkit-user-select: none;
-  -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
   cursor: pointer;

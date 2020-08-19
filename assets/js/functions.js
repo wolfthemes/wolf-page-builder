@@ -942,6 +942,11 @@ var WPB = function( $ ) {
 			if ( 'undefined' !== typeof WPBCocoen ) {
 				WPBCocoen.init();
 			}
+
+			// BIT
+			// if ( 'undefined' !== typeof BIT ) {
+			// 	console.log( BIT );
+			// }
 		}
 	};
 

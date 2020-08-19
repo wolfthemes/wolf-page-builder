@@ -96,11 +96,56 @@
 	padding-bottom: 10px;
 }
 
-.wpb-carousel-gallery{
-	cursor: move; /* fallback if grab cursor is unsupported */
-	cursor: grab;
-	
-	&:active{
-		cursor: grabbing;
+.wpb-gallery-carousel{
+
+	figure{
+		margin: 0;
+		padding: 0;
+		text-align: center;
+		width: 50%;
 	}
+
+	img{
+		backface-visibility:hidden;
+		display: inline-block;
+		text-align: center;
+		vertical-align: bottom;
+		width:auto; // ??
+		//width: 100%;
+	}
+
+	/* Padding */
+	&.wpb-gallery-padding-yes{
+		//padding: 5px;
+		.wpb-img-carousel{
+			padding: 10px;
+		}
+	}
+
+	&.wpb-carousel-has-bullet{
+		margin-bottom: 55px!important;
+	}
+}
+
+/* Columns */
+.wpb-carousel-columns-1 .wpb-img-carousel{
+	float: none;
+	padding: 0;
+	padding-bottom: 10px;
+}
+
+@media screen and (min-width: 800px) {
+
+/* Image gallery columns */
+$columns : 6;
+$width: 100%;
+@for $i from 1 through $columns {
+	.wpb-carousel-columns-#{$i} {
+		.wpb-img-carousel{
+			float: left;
+			width: ( $width / $i  );
+		}
+	}
+}
+
 }

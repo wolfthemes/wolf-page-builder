@@ -66,20 +66,24 @@ var WPBCarousels = function( $ ) {
 			// } );
 
 			$( '.wpb-carousel-gallery' ).each( function() {
+
+				var $carousel = $( this );
+
 				$( this ).flickity( {
 					wrapAround: true,
 					groupCells: true,
 					prevNextButtons: false,
-					cellSelector: '.wpb-block'
+					cellSelector: '.wpb-img-carousel'
 				// Disable lightbox on drag
 				} ).on( 'dragStart.flickity', function() {
 
-					$( '.wpb-lightbox' ).addClass( 'wpb-disabled' );
+					//$( '.wpb-lightbox' ).addClass( 'wpb-disabled' );
+					$carousel.find( 'a' ).addClass( 'wpb-disabled' );
 
 				} ).on( 'dragEnd.flickity', function() {
 
 					setTimeout( function() {
-						$( '.wpb-lightbox' ).removeClass( 'wpb-disabled' );
+						$carousel.find( 'a' ).removeClass( 'wpb-disabled' );
 					}, 1000 ); // wait before re-enabling lightbox
 				} );
 			} );

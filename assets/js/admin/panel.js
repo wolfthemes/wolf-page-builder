@@ -1571,11 +1571,14 @@ WolfPageBuilderAdminEditor = function ( $ ) {
 		 * Tooltip, just for cosmetic
 		 */
 		toolTip : function () {
-			$( '.wpb-tipsy' ).tipsy( {
-				fade: true,
-				live: true,
-				gravity: 's'
-			} );
+
+			if ('undefined' !== typeof( tipsy )  ) {
+				$( '.wpb-tipsy' ).tipsy( {
+					fade: true,
+					live: true,
+					gravity: 's'
+				} );
+			}
 		},
 
 		/**

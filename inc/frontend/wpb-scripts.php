@@ -206,7 +206,7 @@ function wpb_force_enqueue_scripts() {
 
 		// Plugins
 		wp_enqueue_script( 'wolf-facebook-page-box' );
-		wp_enqueue_script( 'bandsintown', 'https://widget.bandsintown.com/javascripts/bit_widget.js', array(), false, true );
+		wp_enqueue_script( 'bandsintown', 'https://widget.bandsintown.com/main.min.js', array(), false, true );
 
 		// WPB lib
 		wp_enqueue_script( 'jarallax' );

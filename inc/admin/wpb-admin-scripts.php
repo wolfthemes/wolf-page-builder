@@ -37,7 +37,7 @@ function wpb_enqueue_admin_scripts() {
 
 	// Scripts
 	$version = ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? time() : WPB_VERSION;
-	wp_enqueue_script( 'tipsy', WPB_JS . '/admin/lib/tipsy.js', 'jquery', '1.0.0a', true );
+	//wp_enqueue_script( 'tipsy', WPB_JS . '/admin/lib/tipsy.js', 'jquery', '1.0.0a', true );
 	wp_enqueue_script( 'cookie', WPB_JS . '/admin/lib/jquery.memo.min.js', array( 'jquery' ), '1.0', true );
 	wp_enqueue_script( 'fonticonpicker', WPB_JS . '/admin/lib/jquery.fonticonpicker.min.js', array( 'jquery' ), '2.0.0', true );
 	wp_enqueue_script( 'generatefile', WPB_JS . '/admin/lib/jquery.generateFile.js', array( 'jquery' ), '1.0.0', true );

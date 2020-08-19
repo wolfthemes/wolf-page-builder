@@ -1,18 +1,10 @@
 module.exports = {
+
 	options: {
 		args: ["--verbose", "--chmod=Du=rwx,Dg=rx,Do=rx,Fu=rw,Fg=r,Fo=r"],
+		//args: ["--verbose", "ssh 'C:/Program Files/Git/usr/bin/ssh.exe -p 18765'"],
+		//args: ["--verbose"],
 		recursive: true
-	},
-
-	// stage
-	stage: {
-		options: {
-			src: [ '<%= app.root %>/pack/<%= app.slug %>/' ],
-			dest: "/home/csag/http/wolfthemes.com/stage/wp-content/plugins/<%= app.slug %>",
-			host: "csag@wolfthemes.com",
-			exclude: [ "deploy.sh", ".git" ],
-			syncDestIgnoreExcl: true
-		}
 	},
 
 	// sandbox
@@ -20,52 +12,59 @@ module.exports = {
 		options: {
 			src: [ '<%= app.root %>/pack/<%= app.slug %>/' ],
 			dest: "/home/csag/http/wolfthemes.com/sandbox/wp-content/plugins/<%= app.slug %>",
-			host: "csag@wolfthemes.com",
-			exclude: [ "deploy.sh", ".git" ],
+			host: "wolf",
 			syncDestIgnoreExcl: true
 		}
 	},
 
-	// log
-	log: {
+	// stage
+	stage: {
 		options: {
-			src: [ '<%= app.root %>/pack/dist/changelog.xml' ],
-			dest: "/home/csag/http/wolfthemes.com/plugins/<%= app.slug %>",
-			host: "csag@wolfthemes.com",
+			src: [ '<%= app.root %>/pack/<%= app.slug %>/' ],
+			dest: "/home/csag/http/wolfthemes.com/stage/wp-content/plugins/<%= app.slug %>",
+			host: "wolf",
 			syncDestIgnoreExcl: true
 		}
+	},
+
+	newold: {
+		options: {
+			src: [ '<%= app.root %>/pack/<%= app.slug %>/' ],
+			dest: "/home/customer/www/demo.constantins2.sg-host.com/public_html/wp-content/plugins/<%= app.slug %>",
+			host: "sg", // set in ~/.ssh config
+			syncDestIgnoreExcl: true,
+			port: '18765'
+ 		}
+	},
+
+	new: {
+		options: {
+			src: [ '<%= app.root %>/pack/<%= app.slug %>/' ],
+			dest: "/home/customer/www/demos.constantins2.sg-host.com/public_html/wp-content/plugins/<%= app.slug %>",
+			host: "sg", // set in ~/.ssh config
+			syncDestIgnoreExcl: true,
+			port: '18765'
+ 		}
 	},
 
 	// demo
 	demo: {
 		options: {
 			src: [ '<%= app.root %>/pack/<%= app.slug %>/' ],
-			dest: "/home/csag/http/wolfthemes.com/demo/wp-content/plugins/<%= app.slug %>",
-			host: "csag@wolfthemes.com",
-			exclude: [ "deploy.sh", ".git" ],
+			dest: "/home/csag/http/wolfthemes.com/demos/wp-content/plugins/<%= app.slug %>",
+			host: "wolf",
 			syncDestIgnoreExcl: true
 		}
 	},
 
-	// dev
-	dev: {
+	envato: {
 		options: {
 			src: [ '<%= app.root %>/pack/<%= app.slug %>/' ],
-			dest: "/home/csag/http/wolfthemes.com/dev/wp-content/plugins/<%= app.slug %>",
-			host: "csag@wolfthemes.com",
-			exclude: [ "deploy.sh", ".git" ],
-			syncDestIgnoreExcl: true
-		}
-	},
-
-	// fillesdemars
-	fdm: {
-		options: {
-			src: [ '<%= app.root %>pack/build/<%= app.slug %>/' ],
-			dest: "/home/csag/http/fillesdemars.fr/www/wp-content/plugins/<%= app.slug %>",
-			host: "csag@wolfthemes.com",
-			syncDestIgnoreExcl: true
-		}
+			dest: "/home/customer/www/envato.constantins2.sg-host.com/public_html/wp-content/plugins/<%= app.slug %>",
+			host: "sg", // set in ~/.ssh config
+			syncDestIgnoreExcl: true,
+			port: '18765'
+ 		}
 	},
 
 	// wolf
@@ -73,19 +72,17 @@ module.exports = {
 		options: {
 			src: [ '<%= app.root %>/pack/<%= app.slug %>/' ],
 			dest: "/home/csag/http/wolfthemes.com/www/wp-content/plugins/<%= app.slug %>",
-			host: "csag@wolfthemes.com",
-			exclude: [ "deploy.sh", ".git" ],
+			host: "wolf",
 			syncDestIgnoreExcl: true
 		}
 	},
 
-	// help
-	help: {
+	// boss
+	boss: {
 		options: {
 			src: [ '<%= app.root %>/pack/<%= app.slug %>/' ],
-			dest: "/home/csag/http/wolfthemes.com/help/wp-content/plugins/<%= app.slug %>",
-			host: "csag@wolfthemes.com",
-			exclude: [ "deploy.sh", ".git" ],
+			dest: "/home/csag/http/billbossrider.com/www/wp-content/plugins/<%= app.slug %>",
+			host: "wolf",
 			syncDestIgnoreExcl: true
 		}
 	},
@@ -94,7 +91,7 @@ module.exports = {
 		options: {
 			src: [ '<%= app.root %>/pack/Documentation/' ],
 			dest: "/home/csag/http/wolfthemes.com/docs/documentation/plugins/<%= app.slug %>",
-			host: "csag@wolfthemes.com",
+			host: "wolf",
 			syncDestIgnoreExcl: true
 		}
 	},
@@ -104,8 +101,18 @@ module.exports = {
 		options: {
 			src: [ '<%= app.root %>/pack/dist/' ],
 			dest: "/home/csag/http/wolfthemes.com/plugins/<%= app.slug %>",
-			host: "csag@wolfthemes.com",
+			host: "wolf",
 			syncDestIgnoreExcl: true
+		}
+	},
+
+	newdist: {
+		options: {
+			src: [ '<%= app.root %>/pack/dist/' ],
+			dest: "/home/customer/www/plugins.constantins2.sg-host.com/public_html/<%= app.slug %>",
+			host: "sg", // set in ~/.ssh config
+			syncDestIgnoreExcl: true,
+			port: '18765'
 		}
 	}
 };

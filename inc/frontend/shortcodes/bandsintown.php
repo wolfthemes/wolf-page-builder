@@ -51,7 +51,7 @@ if ( ! function_exists( 'wpb_shortcode_bandsintown_events' ) ) {
 				'past_dates' => $past_dates,
 			);
 
-			$output .= '<script type="text/javascript" src="https://widget.bandsintown.com/main.min.js"></script>';
+			//$output .= '<script type="text/javascript" src="https://widget.bandsintown.com/main.min.js"></script>';
 			$output .= '<a class="bit-widget-initializer"'
 			. 'data-text-color="' . esc_attr( $options['text_color'] ) . '"'
 			. 'data-background-color="' . esc_attr( $options['background_color'] ) . '"'

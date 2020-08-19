@@ -217,13 +217,13 @@ if ( ! function_exists( 'wolf_carousel_gallery' ) ) {
 		$rand_id = rand( 0,999 );
 		$selector = "wpb-gallery-$rand_id";
 
-		$class .= " wolf-images-gallery wpb-clearfix wpb-carousel-gallery wpb-hover-$hover_effect";
+		$class .= " wolf-images-gallery wpb-clearfix wpb-carousel-gallery wpb-gallery-carousel wpb-hover-$hover_effect";
 
 		if ( 'yes' == $padding ) {
-			$class .= " wpb-padding";
+			$class .= " wpb-gallery-padding-yes";
 		}
 
-		$class .= ' wpb-images-gallery-columns-' . $columns;
+		$class .= ' wpb-carousel-columns-' . $columns;
 
 		if ( 1 == $columns ) {
 			$image_size = 'wpb-XL';
@@ -264,7 +264,7 @@ if ( ! function_exists( 'wolf_carousel_gallery' ) ) {
 				$post_excerpt = wpb_sample( wptexturize( $attachment->post_excerpt ), 88 );
 				$title_attr = ( $post_excerpt ) ? $post_excerpt : '';
 
-				$output .= "<div class='wpb-block'>";
+				$output .= "<figure class='wpb-img-carousel'>";
 
 				if ( 'none' != $link_type ) {
 					
@@ -288,7 +288,7 @@ if ( ! function_exists( 'wolf_carousel_gallery' ) ) {
 					$output .= '</span>';
 				}
 
-				$output .= '</div><!--.wpb-block-->';
+				$output .= '</figure><!--.wpb-block-->';
 			}
 		}
 

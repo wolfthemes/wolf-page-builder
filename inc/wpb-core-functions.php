@@ -39,6 +39,12 @@ function wpb_add_image_sizes() {
 	add_image_size( 'wpb-1x2', 480, 960, true ); // portrait
 	add_image_size( 'wpb-XL', 2000, 1500, false ); // XL
 
+	// disable for posts
+	add_filter( 'use_block_editor_for_post', '__return_false', 10 );
+
+	// disable for post types
+	add_filter( 'use_block_editor_for_post_type', '__return_false', 10 );
+
 }
 add_action( 'init', 'wpb_add_image_sizes' );
 

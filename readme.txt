@@ -3,7 +3,7 @@ Contributors: wolfthemes
 Tags: page builder
 Requires at least: 4.5
 Tested up to: 4.7.2
-Stable tag: 3.2.2
+Stable tag: 3.2.5
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -27,6 +27,22 @@ Being a free product, this plugin is distributed as-is without official support.
 Verified customers however, who have purchased a premium theme on [ThemeForest](http://themeforest.net/user/wolf-themes/portfolio?ref=wolf-themes) will have access to the [support forums](http://docs.wolfthemes.com).
 
 == Changelog ==
+
+#### 19th August 2020 - Version 3.2.6
+
+* Fix: WP 5.5 compatibility
+
+#### 11th December 2018 - Version 3.2.5
+
+* Other: Disable Gurengerg
+
+#### 13th September 2018 - Version 3.2.4
+
+* Fix: Bandsintown not loading
+
+#### 1st August 2018 - Version 3.2.3
+
+* Fix: Image carousel on mobile
 
 #### 12th december 2017 - Version 3.2.2
 

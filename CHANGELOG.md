@@ -1,3 +1,19 @@
+#### 19th August 2020 - Version 3.2.6
+
+* Fix: WP 5.5 compatibility
+
+#### 11th December 2018 - Version 3.2.5
+
+* Other: Disable Gurengerg
+
+#### 13th September 2018 - Version 3.2.4
+
+* Fix: Bandsintown not loading
+
+#### 1st August 2018 - Version 3.2.3
+
+* Fix: Image carousel on mobile
+
 #### 12th december 2017 - Version 3.2.2
 
 * Tweak: Added playlist skin option

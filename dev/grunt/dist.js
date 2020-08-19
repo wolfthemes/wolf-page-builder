@@ -4,6 +4,7 @@ module.exports = function(grunt) {
 		grunt.task.run( [
 			'compress:build',
 			'rsync:dist',
+			'rsync:newdist',
 			'notify:dist'
 		] );
 	} );
