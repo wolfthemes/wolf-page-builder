@@ -6,7 +6,7 @@
  * @version %VERSION%
  * @package %PACKAGENAME%/Classes
  * @category Class
- * @author %AUTHOR%
+ * @author WolfThemes
  */
 class WBP_Template_Loader {
 

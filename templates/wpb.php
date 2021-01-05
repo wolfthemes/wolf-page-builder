@@ -4,7 +4,7 @@
  *
  * Override this template by copying it to yourtheme/wpb-extend/wpb.php
  *
- * @author %AUTHOR%
+ * @author WolfThemes
  * @package WolfPageBuilder/Templates
  * @version %VERSION%
  */

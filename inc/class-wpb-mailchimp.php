@@ -12,7 +12,7 @@ if ( ! class_exists( 'WPB_Mailchimp' ) ) {
 	 *
 	 * @class WPB_Mailchimp
 	 * @since 1.0
-	 * @author %AUTHOR%
+	 * @author WolfThemes
 	 */
 	class WPB_Mailchimp {
 

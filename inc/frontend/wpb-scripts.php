@@ -4,7 +4,7 @@
  *
  * Scripts related functions for frontend
  *
- * @author %AUTHOR%
+ * @author WolfThemes
  * @category Core
  * @package %PACKAGENAME%/FRontend
  * @version %VERSION%

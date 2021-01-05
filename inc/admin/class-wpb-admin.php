@@ -3,7 +3,7 @@
  * %NAME% Admin.
  *
  * @class WPB_Admin
- * @author %AUTHOR%
+ * @author WolfThemes
  * @category Admin
  * @package %PACKAGENAME%/Admin
  * @version %VERSION%

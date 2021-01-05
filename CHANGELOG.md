@@ -1,3 +1,9 @@
+# Changelog
+
+#### 5th January 2021 - Version 3.2.7
+
+* Fix: Updated Swipebox
+
 #### 19th August 2020 - Version 3.2.6
 
 * Fix: WP 5.5 compatibility

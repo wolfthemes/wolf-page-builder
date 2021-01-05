@@ -4,7 +4,7 @@
  *
  * General  functions available on admin.
  *
- * @author %AUTHOR%
+ * @author WolfThemes
  * @category Core
  * @package %PACKAGENAME%/Admin
  * @version %VERSION%

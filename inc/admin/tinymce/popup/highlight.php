@@ -3,7 +3,7 @@
  * Highlight dialog box
  *
  * @class WPB_Admin
- * @author %AUTHOR%
+ * @author WolfThemes
  * @category Admin
  * @package wpbPageBuilder/Admin
  * @version %VERSION%

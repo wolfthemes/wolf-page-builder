@@ -2,7 +2,7 @@
 /**
  * Section shortcode
  *
- * @author %AUTHOR%
+ * @author WolfThemes
  * @category Core
  * @package %PACKAGENAME%/FrontEnd/Shortcodes
  * @version %VERSION%

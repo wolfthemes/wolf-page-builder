@@ -2,7 +2,7 @@
 /**
  * Animations
  *
- * @author %AUTHOR%
+ * @author WolfThemes
  * @category Core
  * @package %PACKAGENAME%/Globals
  * @version %VERSION%

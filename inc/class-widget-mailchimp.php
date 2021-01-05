@@ -4,7 +4,7 @@
  *
  * Displays mailchimp newsletter subscription form
  *
- * @author %AUTHOR%
+ * @author WolfThemes
  * @category Widgets
  * @extends WP_Widget
  */

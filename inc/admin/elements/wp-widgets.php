@@ -2,7 +2,7 @@
 /**
  * WP Widgets Elements
  *
- * @author %AUTHOR%
+ * @author WolfThemes
  * @category Core
  * @package %PACKAGENAME%/Admin/Elements
  * @version %VERSION%

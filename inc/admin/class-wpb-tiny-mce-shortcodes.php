@@ -3,7 +3,7 @@
  * %NAME% Tiny MCE shortcode.
  *
  * @class WPB_Tiny_Mce_Shortcodes
- * @author %AUTHOR%
+ * @author WolfThemes
  * @category Admin
  * @package %PACKAGENAME%/Admin
  * @version %VERSION%
@@ -22,7 +22,7 @@ if ( ! class_exists( 'WPB_Tiny_Mce_Shortcodes' ) ) {
 	 * @class WPB_Tiny_Mce_Shortcodes
 	 * @since 1.0.0
 	 * @package %NAME%
-	 * @author %AUTHOR%
+	 * @author WolfThemes
 	 */
 	class WPB_Tiny_Mce_Shortcodes {
 

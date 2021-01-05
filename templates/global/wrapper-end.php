@@ -2,7 +2,7 @@
 /**
  * Content wrappers
  *
- * @author %AUTHOR%
+ * @author WolfThemes
  * @package %PACKAGENAME%/Templates
  * @version %VERISION%
  */

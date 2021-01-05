@@ -4,7 +4,7 @@
  *
  * Redirect user to the support forum using JS
  *
- * @author %AUTHOR%
+ * @author WolfThemes
  * @category Core
  * @package %PACKAGENAME%/AdminPages
  * @version %VERSION%

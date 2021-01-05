@@ -4,17 +4,17 @@
  * Plugin URI: %LINK%
  * Description: %DESCRIPTION%
  * Version: %VERSION%
- * Author: %AUTHOR%
- * Author URI: %AUTHORURI%
- * Requires at least: %REQUIRES%
- * Tested up to: %TESTED%
+ * Author: WolfThemes
+ * Author URI: https://wolfthemes.com
+ * Requires at least: 5.0
+ * Tested up to: 5.5
  *
  * Text Domain: %TEXTDOMAIN%
  * Domain Path: /languages/
  *
  * @package %PACKAGENAME%
  * @category Core
- * @author %AUTHOR%
+ * @author WolfThemes
  *
  * Being a free product, this plugin is distributed as-is without official support.
  * Verified customers however, who have purchased a premium theme
@@ -70,7 +70,7 @@ final class Wolf_Page_Builder {
 	/**
 	 * @var the support forum URL
 	 */
-	private $support_url = 'https://docs.wolfthemes.com/';
+	private $support_url = 'https://wlfthm.es/help';
 
 	/**
 	 * Main %NAME% Instance
@@ -167,7 +167,6 @@ final class Wolf_Page_Builder {
 			'WPB_SLUG' => plugin_basename( dirname( __FILE__ ) ),
 			'WPB_PATH' => plugin_basename( __FILE__ ),
 			'WPB_VERSION' => $this->version,
-			'WPB_UPDATE_URL' => $this->update_url,
 			'WPB_SUPPORT_URL' => $this->support_url,
 			'WPB_DOC_URI' => 'https://docs.wolfthemes.com/documentation/plugins/' . plugin_basename( dirname( __FILE__ ) ),
 			'WPB_WOLF_DOMAIN' => 'wolfthemes.com',

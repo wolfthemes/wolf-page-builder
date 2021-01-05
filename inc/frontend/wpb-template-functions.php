@@ -4,7 +4,7 @@
  *
  * Functions for the templating system.
  *
- * @author %AUTHOR%
+ * @author WolfThemes
  * @category Core
  * @package %PACKAGENAME%/Functions
  * @version %VERSION%
