@@ -1,11 +1,11 @@
 <?php
 /**
- * %NAME% Admin scripts
+ * Wolf Page Builder Admin scripts
  *
  * @author WolfThemes
  * @category Admin
- * @package %PACKAGENAME%/Admin
- * @version %VERSION%
+ * @package WolfPageBuilder/Admin
+ * @version 3.2.8
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -17,7 +17,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  *
  * Styles and scripts for the admin
  *
- * @since %NAME% 2.4.2
+ * @since Wolf Page Builder 2.4.2
  */
 function wpb_enqueue_admin_scripts() {
 	/* Styles */
@@ -62,30 +62,30 @@ function wpb_enqueue_admin_scripts() {
 			'pluginUrl' => esc_url( WPB_URI ),
 			'currentPostId' => $post_id,
 			'wpbContent' => $wpb_content,
-			'removeSectionConfirmation' => esc_html__( 'This will remove the section and its content.', '%TEXTDOMAIN%' ),
-			'removeRowConfirmation' => esc_html__( 'This will remove the row and its content.', '%TEXTDOMAIN%' ),
-			'removeElementConfirmation' => esc_html__( 'This will remove the element and its content.', '%TEXTDOMAIN%' ),
-			'elementsListTitle' => esc_html__( 'Choose an element', '%TEXTDOMAIN%' ),
-			'chooseSectionText' => esc_html__( 'Choose your section style', '%TEXTDOMAIN%' ),
-			'cancelDialogText' => esc_html__( 'Cancel', '%TEXTDOMAIN%' ),
-			'saveDialogText' => esc_html__( 'Save', '%TEXTDOMAIN%' ),
-			'addElementText' => esc_html__( 'Add an Element', '%TEXTDOMAIN%' ),
-			'childrenElementLenght' => esc_html__( 'There must be at least one element in this container. Remove the element container to remove the whole thing.', '%TEXTDOMAIN%' ),
-			'rowLenght' => esc_html__( 'There must be at least one row in this section. Remove the entire section to remove the whole thing.', '%TEXTDOMAIN%' ),
-			'chooseMultipleImage' => esc_html__( 'Select images', '%TEXTDOMAIN%' ),
-			'chooseImage' => esc_html__( 'Select an image', '%TEXTDOMAIN%' ),
-			'chooseFile' => esc_html__( 'Select a file', '%TEXTDOMAIN%' ),
-			'chooseVideoFile' => esc_html__( 'Select a video', '%TEXTDOMAIN%' ),
-			'confirmRemoveAllImages' => esc_html__( 'This will remove the entire image set', '%TEXTDOMAIN%' ),
+			'removeSectionConfirmation' => esc_html__( 'This will remove the section and its content.', 'wolf-page-builder' ),
+			'removeRowConfirmation' => esc_html__( 'This will remove the row and its content.', 'wolf-page-builder' ),
+			'removeElementConfirmation' => esc_html__( 'This will remove the element and its content.', 'wolf-page-builder' ),
+			'elementsListTitle' => esc_html__( 'Choose an element', 'wolf-page-builder' ),
+			'chooseSectionText' => esc_html__( 'Choose your section style', 'wolf-page-builder' ),
+			'cancelDialogText' => esc_html__( 'Cancel', 'wolf-page-builder' ),
+			'saveDialogText' => esc_html__( 'Save', 'wolf-page-builder' ),
+			'addElementText' => esc_html__( 'Add an Element', 'wolf-page-builder' ),
+			'childrenElementLenght' => esc_html__( 'There must be at least one element in this container. Remove the element container to remove the whole thing.', 'wolf-page-builder' ),
+			'rowLenght' => esc_html__( 'There must be at least one row in this section. Remove the entire section to remove the whole thing.', 'wolf-page-builder' ),
+			'chooseMultipleImage' => esc_html__( 'Select images', 'wolf-page-builder' ),
+			'chooseImage' => esc_html__( 'Select an image', 'wolf-page-builder' ),
+			'chooseFile' => esc_html__( 'Select a file', 'wolf-page-builder' ),
+			'chooseVideoFile' => esc_html__( 'Select a video', 'wolf-page-builder' ),
+			'confirmRemoveAllImages' => esc_html__( 'This will remove the entire image set', 'wolf-page-builder' ),
 			'WPBStatus' => ( get_post_meta( get_the_ID(), '_wpb_status', true ) ) ? get_post_meta( get_the_ID(), '_wpb_status', true ) : 'on',
-			'standardMode' => esc_html__( 'Standard mode', '%TEXTDOMAIN%' ),
-			'pageBuilderMode' => esc_html__( 'Page builder mode', '%TEXTDOMAIN%' ),
-			'importContentText' => esc_html__( 'Import', '%TEXTDOMAIN%' ),
-			'exportContentText' => esc_html__( 'Export', '%TEXTDOMAIN%' ),
-			'pageIsEmpty' => esc_html__( 'The page is empty', '%TEXTDOMAIN%' ),
-			'exportFileName' => sanitize_title( esc_html__( 'my-template', '%TEXTDOMAIN%' ) ),
-			'saveButtonText' => esc_html__( 'Save', '%TEXTDOMAIN%' ),
-			'cancelButtonText' => esc_html__( 'Cancel', '%TEXTDOMAIN%' ),
+			'standardMode' => esc_html__( 'Standard mode', 'wolf-page-builder' ),
+			'pageBuilderMode' => esc_html__( 'Page builder mode', 'wolf-page-builder' ),
+			'importContentText' => esc_html__( 'Import', 'wolf-page-builder' ),
+			'exportContentText' => esc_html__( 'Export', 'wolf-page-builder' ),
+			'pageIsEmpty' => esc_html__( 'The page is empty', 'wolf-page-builder' ),
+			'exportFileName' => sanitize_title( esc_html__( 'my-template', 'wolf-page-builder' ) ),
+			'saveButtonText' => esc_html__( 'Save', 'wolf-page-builder' ),
+			'cancelButtonText' => esc_html__( 'Cancel', 'wolf-page-builder' ),
 			'isWPUploadsFolderWritable' => wpb_is_wp_upload_folder_writable(),
 			'isDev' => WPB_DEV,
 			'defaultPalette' => array(

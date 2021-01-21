@@ -4,8 +4,8 @@
  *
  * @author WolfThemes
  * @category Core
- * @package %PACKAGENAME%/FrontEnd/Shortcodes
- * @version %VERSION%
+ * @package WolfPageBuilder/FrontEnd/Shortcodes
+ * @version 3.2.8
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -47,7 +47,7 @@ if ( ! function_exists( 'wpb_shortcode_wp_widget' ) ) {
 		$options = array();
 
 		if ( 'WP_Widget_Text' == $widget_id ) {
-			
+
 			$options['title'] = sanitize_text_field( $title );
 			$options['text'] = wpb_decode_textarea( $text );
 
@@ -76,7 +76,7 @@ if ( ! function_exists( 'wpb_shortcode_wp_widget' ) ) {
 			$options['title'] = sanitize_text_field( $title );
 			$options['number'] = sanitize_text_field( $number );
 			$options['show_date'] = sanitize_text_field( $show_date );
-		
+
 		} elseif( 'WP_Widget_Recent_Comments' == $widget_id ) {
 
 			$options['title'] = sanitize_text_field( $title );
@@ -107,7 +107,7 @@ if ( ! function_exists( 'wpb_shortcode_wp_widget' ) ) {
 		} elseif( 'WP_Widget_Search' == $widget_id ) {
 
 			$options['title'] = sanitize_text_field( $title );
-		
+
 		} elseif( 'WP_Nav_Menu_Widget' == $widget_id ) {
 
 			$options['title'] = sanitize_text_field( $title );
@@ -133,7 +133,7 @@ if ( ! function_exists( 'wpb_shortcode_wp_widget' ) ) {
 		ob_end_clean();
 		return $output;
 	}
-	
+
 	$widgets = array( 'text', 'pages', 'calendar', 'archives', 'meta', 'categories', 'recent-posts', 'recent-comments', 'rss', 'tag_cloud', 'search', 'nav_menu', );
 
 	foreach ( $widgets as $widget ) {

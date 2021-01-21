@@ -4,8 +4,8 @@
  *
  * @author WolfThemes
  * @category Core
- * @package %PACKAGENAME%/Admin/Elements
- * @version %VERSION%
+ * @package WolfPageBuilder/Admin/Elements
+ * @version 3.2.8
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -16,15 +16,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 	wpb_add_element(
 		array(
 			'name' => 'Bandsintown',
-			'description' => esc_html__( 'Display Your Bandsintown Event List', '%TEXTDOMAIN%' ),
+			'description' => esc_html__( 'Display Your Bandsintown Event List', 'wolf-page-builder' ),
 			'tags' => 'tour dats event list',
 			'base' => 'wpb_bandsintown_events',
-			'category' => esc_html__( 'Music', '%TEXTDOMAIN%' ),
+			'category' => esc_html__( 'Music', 'wolf-page-builder' ),
 			'icon' => 'wpb-icon wpb-bandsintown',
 			'params' => array(
 				array(
 					'type' => 'text',
-					'label' => esc_html__( 'Artist Name', '%TEXTDOMAIN%' ),
+					'label' => esc_html__( 'Artist Name', 'wolf-page-builder' ),
 					'param_name' => 'artist',
 					'display' => true,
 				),

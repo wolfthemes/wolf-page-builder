@@ -1,7 +1,7 @@
 /*!
  * Plugin countdown
  *
- * %NAME% %VERSION% 
+ * WPBakery Page Builder Extension 3.2.8 
  */
 /* jshint -W062 */
 

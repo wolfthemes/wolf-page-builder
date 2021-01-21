@@ -4,8 +4,8 @@
  *
  * @author WolfThemes
  * @category Core
- * @package %PACKAGENAME%/FrontEnd/Shortcodes
- * @version %VERSION%
+ * @package WolfPageBuilder/FrontEnd/Shortcodes
+ * @version 3.2.8
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -67,7 +67,7 @@ if ( ! function_exists( 'wpb_last_posts_big_slider_shortcode' ) ) {
 		// em
 		} elseif ( 'em' == substr( $slider_height, -2) ) {
 			$slider_height_unit = 'em';
-		
+
 		//px
 		} elseif ( 'px' == substr( $slider_height, -2) ) {
 			$slider_height_unit = 'px';
@@ -96,11 +96,11 @@ if ( ! function_exists( 'wpb_last_posts_big_slider_shortcode' ) ) {
 		}
 
 		$output .= '<section';
-		
+
 		if ( $anchor ) {
 			$output .= ' id="' . esc_attr( $anchor ) . '"';
 		}
-		
+
 		$output .= ' class="' . wpb_sanitize_html_classes( $class ) . '" style="' . wpb_esc_style_attr( $inline_style ) . '">';
 
 		$slider_data = "data-pause-on-hover='$autoplay'
@@ -149,17 +149,17 @@ if ( ! function_exists( 'wpb_last_posts_big_slider_shortcode' ) ) {
 
 			if ( $last_post_loop->have_posts() ) :
 				while ( $last_post_loop->have_posts() ) : $last_post_loop->the_post();
-					
+
 					wpb_get_template_part( 'post/content', 'big-slider' );
 
 				endwhile;
 			else :
 				echo '<p class="wpb-text-center">';
-				esc_html_e( 'No post found.', '%TEXTDOMAIN%' );
+				esc_html_e( 'No post found.', 'wolf-page-builder' );
 
 				if ( is_user_logged_in() ) {
 					echo '<br>';
-					esc_html_e( 'Only posts with a featured image will be displayed.', '%TEXTDOMAIN%' );
+					esc_html_e( 'Only posts with a featured image will be displayed.', 'wolf-page-builder' );
 				}
 				echo '</p>';
 
@@ -169,7 +169,7 @@ if ( ! function_exists( 'wpb_last_posts_big_slider_shortcode' ) ) {
 
 
 			$output .= '</ul></div><!-- .flexslider -->';
-		
+
 		$output .= '</section><!-- .wpb-last-posts-big-slider -->';
 
 		return $output;

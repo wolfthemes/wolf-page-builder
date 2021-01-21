@@ -4,8 +4,8 @@
  *
  * @author WolfThemes
  * @category Core
- * @package %PACKAGENAME%/FrontEnd/Shortcodes
- * @version %VERSION%
+ * @package WolfPageBuilder/FrontEnd/Shortcodes
+ * @version 3.2.8
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -21,7 +21,7 @@ if ( ! function_exists( 'wpb_shortcode_accordion_container' ) ) {
 	 * @return string
 	 */
 	function wpb_shortcode_accordion_container( $atts, $content = null ) {
-		
+
 		extract( shortcode_atts(  array(
 			'anchor' => '',
 			'extra_class' => '',
@@ -37,7 +37,7 @@ if ( ! function_exists( 'wpb_shortcode_accordion_container' ) ) {
 		wp_enqueue_script( 'wpb-accordion' );
 
 		$class .= ' wpb-accordion wpb-clearfix';
-		
+
 		$output .= '<div';
 
 		$output .= ' id="' . esc_attr( $anchor ) . '"';
@@ -51,9 +51,9 @@ if ( ! function_exists( 'wpb_shortcode_accordion_container' ) ) {
 		}
 
 		$output .= '>';
-		
+
 		$output .= do_shortcode( $content );
-		
+
 		$output .= '</div>';
 
 		return $output;

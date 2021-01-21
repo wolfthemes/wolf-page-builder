@@ -4,8 +4,8 @@
  *
  * @author WolfThemes
  * @category Core
- * @package %PACKAGENAME%/FrontEnd/Shortcodes
- * @version %VERSION%
+ * @package WolfPageBuilder/FrontEnd/Shortcodes
+ * @version 3.2.8
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -34,7 +34,7 @@ if ( ! function_exists( 'wpb_text_block_shortcode' ) ) {
 		$editorcontent = wpb_format_editor_content( $editorcontent );
 
 		// debug( $editorcontent );
-		
+
 		// class
 		$class = $extra_class;
 		$class .= ' wpb-text-block';
@@ -62,9 +62,9 @@ if ( ! function_exists( 'wpb_text_block_shortcode' ) ) {
 		$output .= '>';
 
 		$output .= $editorcontent;
-		
+
 		$output .= '</div>';
-		
+
 		return $output;
 	}
 	add_shortcode( 'wpb_text_block', 'wpb_text_block_shortcode'  );

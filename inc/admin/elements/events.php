@@ -4,8 +4,8 @@
  *
  * @author WolfThemes
  * @category Core
- * @package %PACKAGENAME%/Admin/Elements
- * @version %VERSION%
+ * @package WolfPageBuilder/Admin/Elements
+ * @version 3.2.8
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -15,46 +15,46 @@ if ( ! defined( 'ABSPATH' ) ) {
 if ( class_exists( 'Wolf_Events' ) ) {
 	wpb_add_element(
 		array(
-			'name' => esc_html__( 'Event List', '%TEXTDOMAIN%' ),
-			'description' => esc_html__( 'Display your event list from the Wolf Events plugin', '%TEXTDOMAIN%' ),
+			'name' => esc_html__( 'Event List', 'wolf-page-builder' ),
+			'description' => esc_html__( 'Display your event list from the Wolf Events plugin', 'wolf-page-builder' ),
 			'base' => 'wolf_event_list',
-			'category' => esc_html__( 'Music', '%TEXTDOMAIN%' ),
+			'category' => esc_html__( 'Music', 'wolf-page-builder' ),
 			'icon' => 'wpb-icon wpb-events',
 			'params' => array(
 
 				array(
 					'type' => 'text',
-					'label' => esc_html__( 'Count', '%TEXTDOMAIN%' ),
-					'description' => esc_html__( 'Leave empty to display all', '%TEXTDOMAIN%' ),
+					'label' => esc_html__( 'Count', 'wolf-page-builder' ),
+					'description' => esc_html__( 'Leave empty to display all', 'wolf-page-builder' ),
 					'param_name' => 'count',
 					'display' => true,
 				),
 
 				array(
 					'type' => 'select',
-					'label' => esc_html__( 'Link to Single Event Page', '%TEXTDOMAIN%' ),
+					'label' => esc_html__( 'Link to Single Event Page', 'wolf-page-builder' ),
 					'param_name' => 'link',
 					'choices' => array(
-						'false' => esc_html__( 'No', '%TEXTDOMAIN%' ),
-						'true' => esc_html__( 'Yes', '%TEXTDOMAIN%' ),
+						'false' => esc_html__( 'No', 'wolf-page-builder' ),
+						'true' => esc_html__( 'Yes', 'wolf-page-builder' ),
 					),
 					'display' => true,
 				),
 
 				array(
 					'type' => 'select',
-					'label' => esc_html__( 'Display Past Events', '%TEXTDOMAIN%' ),
+					'label' => esc_html__( 'Display Past Events', 'wolf-page-builder' ),
 					'param_name' => 'past',
 					'choices' => array(
-						'false' => esc_html__( 'No', '%TEXTDOMAIN%' ),
-						'true' => esc_html__( 'Yes', '%TEXTDOMAIN%' ),
+						'false' => esc_html__( 'No', 'wolf-page-builder' ),
+						'true' => esc_html__( 'Yes', 'wolf-page-builder' ),
 					),
 					'display' => true,
 				),
 
 				array(
 					'type' => 'text',
-					'label' => esc_html__( 'Artist Slug', '%TEXTDOMAIN%' ),
+					'label' => esc_html__( 'Artist Slug', 'wolf-page-builder' ),
 					'param_name' => 'artist',
 					'display' => true,
 				),

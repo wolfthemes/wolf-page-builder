@@ -1,20 +1,21 @@
 module.exports = {
 	options:{
+
 		noLineComments : true
 	},
 
 	build:{
 		options:{
-			sassDir: '<%= app.scssPath %>',
-			cssDir: '<%= app.cssPath %>',
-			imagesDir : '<%= app.imagesPath %>'
+			sassDir: '../scss',
+			cssDir: '../assets/css',
+			imagesDir : '../assets/img'
 		}
 	},
 
 	admin:{
 		options:{
-			sassDir: '<%= app.root %>/scss-admin',
-			cssDir: '<%= app.cssPath %>/admin/'
+			sassDir: '<%= root %>/scss-admin',
+			cssDir: '../assets/css/admin/'
 		}
 	},
 };

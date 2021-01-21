@@ -3,7 +3,7 @@
  * Content wrappers
  *
  * @author WolfThemes
- * @package %PACKAGENAME%/Templates
+ * @package WolfWPBakeryPageBuilderExtension/Templates
  * @version %VERISION%
  */
 

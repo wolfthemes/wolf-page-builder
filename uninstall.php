@@ -1,13 +1,13 @@
 <?php
 /**
- * %NAME% Uninstall
+ * Wolf Page Builder Uninstall
  *
- * Uninstalling %NAME%
+ * Uninstalling Wolf Page Builder
  *
  * @author WolfThemes
  * @category Core
- * @package %PACKAGENAME%/Uninstaller
- * @version %VERSION%
+ * @package WolfPageBuilder/Uninstaller
+ * @version 3.2.8
  */
 
 defined( 'WP_UNINSTALL_PLUGIN' ) || exit;

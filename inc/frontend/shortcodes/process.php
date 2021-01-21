@@ -4,8 +4,8 @@
  *
  * @author WolfThemes
  * @category Core
- * @package %PACKAGENAME%/FrontEnd/Shortcodes
- * @version %VERSION%
+ * @package WolfPageBuilder/FrontEnd/Shortcodes
+ * @version 3.2.8
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -76,8 +76,8 @@ if ( ! function_exists( 'wpb_shortcode_process' ) ) {
 
 		$output .= '<div class="wpb-icon-box wpb-icon-position-top wpb-icon-box-medium wpb-icon-type-circle">
 		<div class="wpb-icon-holder">';
-		
-		
+
+
 		if ( $link_url ) {
 			$output .= '<a class="wolf-process-item-link" href="' . esc_attr( $link_url ) . '" target="' . esc_attr( $link_target ) . '">';
 		}
@@ -88,7 +88,7 @@ if ( ! function_exists( 'wpb_shortcode_process' ) ) {
 		if ( $link_url ) {
 			$output .= '</a>';
 		}
-		
+
 		$output .= '</div><!--.wpb-icon-holder-->
 		</div><!--.wpb-icon-box-->';
 

@@ -3,7 +3,7 @@
  *
  * Requires flexslider.js
  *
- * %NAME% %VERSION%
+ * WPBakery Page Builder Extension 3.2.8
  */
 /* jshint -W062 */
 var WPBSliders =  WPBSliders || {},
@@ -73,6 +73,7 @@ WPBSliders = function( $ ) {
 				transition = ( 'auto' === dataTransition ) ? defaultTransition : dataTransition;
 
 				$( '#' + $slider.attr( 'id' ) ).wpbSlider( {
+					selector : '#' + $slider.attr( 'id' ),
 					animation: transition,
 					slideshow :  dataAutoplay,
 					pauseOnHover:  dataPauseonHover,

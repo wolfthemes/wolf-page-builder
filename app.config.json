@@ -1,0 +1,16 @@
+{
+	"version": "3.2.8",
+	"updated": "2020-01-21",
+	"slug": "wolf-page-builder",
+	"name": "Wolf Page Builder",
+	"packagename": "WolfPageBuilder",
+	"created": "2016-04-03",
+	"createdNice": "3rd March 2016",
+	"description": "A Page Builder Plugin for WordPress.",
+	"link": "https://github.com/wolfthemes/wolf-page-builder",
+	"shortlink": "https://wlfthm.es/wpb",
+	"author": "WolfThemes",
+  "authorURI": "https://wolfthemes.com",
+  "cssPath" : "../assets/css",
+	"jsPath" : "../assets/js"
+}

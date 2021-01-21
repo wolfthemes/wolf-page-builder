@@ -4,8 +4,8 @@
  *
  * @author WolfThemes
  * @category Core
- * @package %PACKAGENAME%/Admin/Elements
- * @version %VERSION%
+ * @package WolfPageBuilder/Admin/Elements
+ * @version 3.2.8
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -14,31 +14,31 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 wpb_add_element(
 	array(
-		'name' => esc_html__( 'Column', '%TEXTDOMAIN%' ),
+		'name' => esc_html__( 'Column', 'wolf-page-builder' ),
 		'base' => 'column',
 		'icon' => 'wpb-icon wpb-section-columns',
 		'params' => array(
 			array(
 				'type' => 'text',
-				'label' => esc_html__( 'Anchor', '%TEXTDOMAIN%' ),
+				'label' => esc_html__( 'Anchor', 'wolf-page-builder' ),
 				'param_name' => 'anchor',
 				'placeholder' => 'my-column',
-				'description' => esc_html__( 'An unique identifier for your column.', '%TEXTDOMAIN%' ),
+				'description' => esc_html__( 'An unique identifier for your column.', 'wolf-page-builder' ),
 			),
 			array(
 				'type' => 'text',
-				'label' => esc_html__( 'Extra Class', '%TEXTDOMAIN%' ),
+				'label' => esc_html__( 'Extra Class', 'wolf-page-builder' ),
 				'param_name' => 'extra_class',
 				'placeholder' => '.my-class',
-				'description' => esc_html__( 'Optional additional CSS class to add to the column', '%TEXTDOMAIN%' ),
+				'description' => esc_html__( 'Optional additional CSS class to add to the column', 'wolf-page-builder' ),
 			),
 
 			array(
 				'type' => 'inline_css',
-				'label' => esc_html__( 'Inline Style', '%TEXTDOMAIN%' ),
+				'label' => esc_html__( 'Inline Style', 'wolf-page-builder' ),
 				'param_name' => 'inline_style',
 				'placeholder' => 'margin-top:15px;',
-				'description' => esc_html__( 'Additional inline CSS style', '%TEXTDOMAIN%' ),
+				'description' => esc_html__( 'Additional inline CSS style', 'wolf-page-builder' ),
 			),
 		),
 	)

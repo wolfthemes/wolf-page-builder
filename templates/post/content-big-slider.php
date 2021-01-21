@@ -25,7 +25,7 @@ $background_img = wpb_get_post_thumbnail_url( 'wpb-XL' );
 						<?php echo apply_filters( 'wpb_last_posts_big_slide_summary', wpb_sample( get_the_excerpt(), 14 ) ); ?>
 					</p>
 					<a class="<?php echo esc_attr( apply_filters( 'wpb_last_posts_big_slide_button_class', 'wpb-last-post-big-slide-button' ) ); ?>" href="<?php the_permalink(); ?>">
-						<?php echo apply_filters( 'wpb_last_posts_big_slide_button_text', esc_html__( 'Continue reading', '%TEXTDOMAIN%' ) ); ?>
+						<?php echo apply_filters( 'wpb_last_posts_big_slide_button_text', esc_html__( 'Continue reading', 'wolf-page-builder' ) ); ?>
 					</a>
 				</div><!-- .wpb-last-posts-big-slide-caption-inner -->
 			</div><!-- .wpb-last-posts-big-slide-caption-wrapper -->

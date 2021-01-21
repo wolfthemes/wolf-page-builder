@@ -4,8 +4,8 @@
  *
  * @author WolfThemes
  * @category Core
- * @package %PACKAGENAME%/Admin/Elements
- * @version %VERSION%
+ * @package WolfPageBuilder/Admin/Elements
+ * @version 3.2.8
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -28,13 +28,13 @@ wpb_add_element(
 
 			array(
 				'type' => 'select',
-				'label' => esc_html__( 'Layout', '%TEXTDOMAIN%' ),
+				'label' => esc_html__( 'Layout', 'wolf-page-builder' ),
 				'param_name' => 'layout',
 				'choices' => array(
-					'2-cols' => sprintf( esc_html__( '%d blocks', '%TEXTDOMAIN%' ), 2 ),
-					'3-cols' => sprintf( esc_html__( '%d blocks', '%TEXTDOMAIN%' ), 3 ),
-					'4-cols' => sprintf( esc_html__( '%d blocks', '%TEXTDOMAIN%' ), 4 ),
-					'6-cols' => sprintf( esc_html__( '%d blocks', '%TEXTDOMAIN%' ), 6 ),
+					'2-cols' => sprintf( esc_html__( '%d blocks', 'wolf-page-builder' ), 2 ),
+					'3-cols' => sprintf( esc_html__( '%d blocks', 'wolf-page-builder' ), 3 ),
+					'4-cols' => sprintf( esc_html__( '%d blocks', 'wolf-page-builder' ), 4 ),
+					'6-cols' => sprintf( esc_html__( '%d blocks', 'wolf-page-builder' ), 6 ),
 				),
 			),
 		)

@@ -4,8 +4,8 @@
  *
  * @author WolfThemes
  * @category Core
- * @package %PACKAGENAME%/Admin/Elements
- * @version %VERSION%
+ * @package WolfPageBuilder/Admin/Elements
+ * @version 3.2.8
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -15,44 +15,44 @@ if ( ! defined( 'ABSPATH' ) ) {
 // Skills bar
 wpb_add_element(
 	array(
-		'name' => esc_html__( 'Skill Bar', '%TEXTDOMAIN%' ),
-		'description' => esc_html__( 'An animation to show your competence', '%TEXTDOMAIN%' ),
+		'name' => esc_html__( 'Skill Bar', 'wolf-page-builder' ),
+		'description' => esc_html__( 'An animation to show your competence', 'wolf-page-builder' ),
 		'tags' => 'skills',
 		'base' => 'wpb_skill_bar',
-		'category' => esc_html__( 'Content', '%TEXTDOMAIN%' ),
+		'category' => esc_html__( 'Content', 'wolf-page-builder' ),
 		'icon' => 'wpb-icon wpb-skill-bar',
 		'params' => array(
 			array(
 				'type' => 'text',
-				'label' => esc_html__( 'Label', '%TEXTDOMAIN%' ),
+				'label' => esc_html__( 'Label', 'wolf-page-builder' ),
 				'param_name' => 'label',
 				'display' => true,
 			),
 
 			array(
 				'type' => 'int',
-				'label' => esc_html__( 'Value', '%TEXTDOMAIN%' ),
+				'label' => esc_html__( 'Value', 'wolf-page-builder' ),
 				'param_name' => 'value',
 				'display' => true,
 			),
 
 			array(
 				'type' => 'colorpicker',
-				'label' => esc_html__( 'Bar Color', '%TEXTDOMAIN%' ),
+				'label' => esc_html__( 'Bar Color', 'wolf-page-builder' ),
 				'param_name' => 'color',
 				'display' => true,
 			),
 
 			array(
 				'type' => 'colorpicker',
-				'label' => esc_html__( 'Text Color', '%TEXTDOMAIN%' ),
+				'label' => esc_html__( 'Text Color', 'wolf-page-builder' ),
 				'param_name' => 'text_color',
 				'display' => true,
 			),
 
 			array(
 				'type' => 'select',
-				'label' => esc_html__( 'Tag', '%TEXTDOMAIN%' ),
+				'label' => esc_html__( 'Tag', 'wolf-page-builder' ),
 				'param_name' => 'title_tag',
 				'choices' => array(
 					'h5',

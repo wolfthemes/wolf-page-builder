@@ -1,11 +1,11 @@
 <?php
 /**
- * %NAME% Element Additional Settings
+ * Wolf Page Builder Element Additional Settings
  *
  * @author WolfThemes
  * @category Core
- * @package %PACKAGENAME%/Admin
- * @version %VERSION%
+ * @package WolfPageBuilder/Admin
+ * @version 3.2.8
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -40,48 +40,48 @@ foreach ( $carousel_elements as $carousel_element ) {
 		$carousel_element, array(
 			array(
 				'type' => 'select',
-				'label' => esc_html__( 'Autoplay', '%TEXTDOMAIN%' ),
+				'label' => esc_html__( 'Autoplay', 'wolf-page-builder' ),
 				'param_name' => 'autoplay',
 				'choices' => array(
-					'true' => esc_html__( 'Yes', '%TEXTDOMAIN%' ),
-					'false' => esc_html__( 'No', '%TEXTDOMAIN%' ),
+					'true' => esc_html__( 'Yes', 'wolf-page-builder' ),
+					'false' => esc_html__( 'No', 'wolf-page-builder' ),
 				),
 			),
 
 			array(
 				'type' => 'select',
-				'label' => esc_html__( 'Pause on Hover (if autoplay)', '%TEXTDOMAIN%' ),
+				'label' => esc_html__( 'Pause on Hover (if autoplay)', 'wolf-page-builder' ),
 				'param_name' => 'pause_on_hover',
 				'choices' => array(
-					'true' => esc_html__( 'Yes', '%TEXTDOMAIN%' ),
-					'false' => esc_html__( 'No', '%TEXTDOMAIN%' ),
+					'true' => esc_html__( 'Yes', 'wolf-page-builder' ),
+					'false' => esc_html__( 'No', 'wolf-page-builder' ),
 				),
 			),
 
 			array(
 				'type' => 'int',
-				'label' => esc_html__( 'Slideshow Speed in ms', '%TEXTDOMAIN%' ),
+				'label' => esc_html__( 'Slideshow Speed in ms', 'wolf-page-builder' ),
 				'param_name' => 'slideshow_speed',
 				'value' => 6000,
 			),
 
 			array(
 				'type' => 'select',
-				'label' => esc_html__( 'Show Navigation Bullets', '%TEXTDOMAIN%' ),
+				'label' => esc_html__( 'Show Navigation Bullets', 'wolf-page-builder' ),
 				'param_name' => 'nav_bullets',
 				'choices' => array(
-					'true' => esc_html__( 'Yes', '%TEXTDOMAIN%' ),
-					'false' => esc_html__( 'No', '%TEXTDOMAIN%' ),
+					'true' => esc_html__( 'Yes', 'wolf-page-builder' ),
+					'false' => esc_html__( 'No', 'wolf-page-builder' ),
 				),
 			),
 
 			array(
 				'type' => 'select',
-				'label' => esc_html__( 'Show Navigation Arrows', '%TEXTDOMAIN%' ),
+				'label' => esc_html__( 'Show Navigation Arrows', 'wolf-page-builder' ),
 				'param_name' => 'nav_arrows',
 				'choices' => array(
-					'true' => esc_html__( 'Yes', '%TEXTDOMAIN%' ),
-					'false' => esc_html__( 'No', '%TEXTDOMAIN%' ),
+					'true' => esc_html__( 'Yes', 'wolf-page-builder' ),
+					'false' => esc_html__( 'No', 'wolf-page-builder' ),
 				),
 			),
 		)
@@ -103,59 +103,59 @@ foreach ( $slider_elements as $slider_element ) {
 		$slider_element, array(
 			array(
 				'type' => 'select',
-				'label' => esc_html__( 'Autoplay', '%TEXTDOMAIN%' ),
+				'label' => esc_html__( 'Autoplay', 'wolf-page-builder' ),
 				'param_name' => 'autoplay',
 				'choices' => array(
-					'true' => esc_html__( 'Yes', '%TEXTDOMAIN%' ),
-					'false' => esc_html__( 'No', '%TEXTDOMAIN%' ),
+					'true' => esc_html__( 'Yes', 'wolf-page-builder' ),
+					'false' => esc_html__( 'No', 'wolf-page-builder' ),
 				),
 			),
 
 			array(
 				'type' => 'select',
-				'label' => esc_html__( 'Pause on Hover (if autoplay)', '%TEXTDOMAIN%' ),
+				'label' => esc_html__( 'Pause on Hover (if autoplay)', 'wolf-page-builder' ),
 				'param_name' => 'pause_on_hover',
 				'choices' => array(
-					'true' => esc_html__( 'Yes', '%TEXTDOMAIN%' ),
-					'false' => esc_html__( 'No', '%TEXTDOMAIN%' ),
+					'true' => esc_html__( 'Yes', 'wolf-page-builder' ),
+					'false' => esc_html__( 'No', 'wolf-page-builder' ),
 				),
 			),
 
 			array(
 				'type' => 'select',
-				'label' => esc_html__( 'Transition', '%TEXTDOMAIN%' ),
+				'label' => esc_html__( 'Transition', 'wolf-page-builder' ),
 				'param_name' => 'transition',
 				'choices' => array(
-					'auto' => esc_html__( 'Auto (fade by default and slide on touchable devices)', '%TEXTDOMAIN%' ),
-					'slide' => esc_html__( 'Slide', '%TEXTDOMAIN%' ),
-					'fade' => esc_html__( 'Fade', '%TEXTDOMAIN%' ),
+					'auto' => esc_html__( 'Auto (fade by default and slide on touchable devices)', 'wolf-page-builder' ),
+					'slide' => esc_html__( 'Slide', 'wolf-page-builder' ),
+					'fade' => esc_html__( 'Fade', 'wolf-page-builder' ),
 				),
 			),
 
 			array(
 				'type' => 'int',
-				'label' => esc_html__( 'Slideshow Speed in ms', '%TEXTDOMAIN%' ),
+				'label' => esc_html__( 'Slideshow Speed in ms', 'wolf-page-builder' ),
 				'param_name' => 'slideshow_speed',
 				'value' => 6000,
 			),
 
 			array(
 				'type' => 'select',
-				'label' => esc_html__( 'Show Navigation Bullets', '%TEXTDOMAIN%' ),
+				'label' => esc_html__( 'Show Navigation Bullets', 'wolf-page-builder' ),
 				'param_name' => 'nav_bullets',
 				'choices' => array(
-					'true' => esc_html__( 'Yes', '%TEXTDOMAIN%' ),
-					'false' => esc_html__( 'No', '%TEXTDOMAIN%' ),
+					'true' => esc_html__( 'Yes', 'wolf-page-builder' ),
+					'false' => esc_html__( 'No', 'wolf-page-builder' ),
 				),
 			),
 
 			array(
 				'type' => 'select',
-				'label' => esc_html__( 'Show Navigation Arrows', '%TEXTDOMAIN%' ),
+				'label' => esc_html__( 'Show Navigation Arrows', 'wolf-page-builder' ),
 				'param_name' => 'nav_arrows',
 				'choices' => array(
-					'true' => esc_html__( 'Yes', '%TEXTDOMAIN%' ),
-					'false' => esc_html__( 'No', '%TEXTDOMAIN%' ),
+					'true' => esc_html__( 'Yes', 'wolf-page-builder' ),
+					'false' => esc_html__( 'No', 'wolf-page-builder' ),
 				),
 			),
 		)
@@ -180,7 +180,7 @@ foreach ( $animated_elements as $animated_element ) {
 		$animated_element, array(
 			array(
 				'type' => 'select',
-				'label' => esc_html__( 'Animation', '%TEXTDOMAIN%' ),
+				'label' => esc_html__( 'Animation', 'wolf-page-builder' ),
 				'param_name' => 'animation',
 				'choices' => $wpb_animations,
 				'display' => true,
@@ -188,7 +188,7 @@ foreach ( $animated_elements as $animated_element ) {
 
 			array(
 				'type' => 'int',
-				'label' => esc_html__( 'Animation Delay (in ms)', '%TEXTDOMAIN%' ),
+				'label' => esc_html__( 'Animation Delay (in ms)', 'wolf-page-builder' ),
 				'param_name' => 'animation_delay',
 				'display' => true,
 				'placeholder' => 0,
@@ -231,38 +231,38 @@ foreach ( $stylable_elements as $stylable_element ) {
 		$stylable_element, array(
 			array(
 				'type' => 'select',
-				'label' => esc_html__( 'Advanced Settings', '%TEXTDOMAIN%' ),
+				'label' => esc_html__( 'Advanced Settings', 'wolf-page-builder' ),
 				'param_name' => 'show_advanced_settings',
 				'choices' => array(
-					'hide' => esc_html__( 'Hide', '%TEXTDOMAIN%' ),
-					'show' => esc_html__( 'Show', '%TEXTDOMAIN%' ),
+					'hide' => esc_html__( 'Hide', 'wolf-page-builder' ),
+					'show' => esc_html__( 'Show', 'wolf-page-builder' ),
 				),
 			),
 			array(
 				'type' => 'slug',
-				'label' => esc_html__( 'Anchor', '%TEXTDOMAIN%' ),
+				'label' => esc_html__( 'Anchor', 'wolf-page-builder' ),
 				'param_name' => 'anchor',
 				'placeholder' => 'my-element',
-				'description' => esc_html__( 'An unique ID for your element.', '%TEXTDOMAIN%' ),
+				'description' => esc_html__( 'An unique ID for your element.', 'wolf-page-builder' ),
 				'dependency' => array( 'element' => 'show_advanced_settings', 'value' => array( 'show' ) ),
 				'display' => true,
 			),
 			array(
 				'type' => 'slug',
-				'label' => esc_html__( 'Extra Class', '%TEXTDOMAIN%' ),
+				'label' => esc_html__( 'Extra Class', 'wolf-page-builder' ),
 				'param_name' => 'extra_class',
 				'placeholder' => 'my-class',
-				'description' => esc_html__( 'Optional CSS class to add to the element', '%TEXTDOMAIN%' ),
+				'description' => esc_html__( 'Optional CSS class to add to the element', 'wolf-page-builder' ),
 				'dependency' => array( 'element' => 'show_advanced_settings', 'value' => array( 'show' ) ),
 				'display' => true,
 			),
 
 			array(
 				'type' => 'inline_css',
-				'label' => esc_html__( 'Inline Style', '%TEXTDOMAIN%' ),
+				'label' => esc_html__( 'Inline Style', 'wolf-page-builder' ),
 				'param_name' => 'inline_style',
 				'placeholder' => 'margin-top:15px;',
-				'description' => esc_html__( 'Additional inline CSS style', '%TEXTDOMAIN%' ),
+				'description' => esc_html__( 'Additional inline CSS style', 'wolf-page-builder' ),
 				'dependency' => array( 'element' => 'show_advanced_settings', 'value' => array( 'show' ) ),
 				'display' => true,
 			),
@@ -278,18 +278,18 @@ if ( class_exists( 'Wolf_Videos' ) ) {
 		'wolf_last_videos', array(
 			array(
 				'type' => 'select',
-				'label' => esc_html__( 'Padding', '%TEXTDOMAIN%' ),
+				'label' => esc_html__( 'Padding', 'wolf-page-builder' ),
 				'param_name' => 'padding',
 				'choices' => array(
-					'yes' => esc_html__( 'Yes', '%TEXTDOMAIN%' ),
-					'no' => esc_html__( 'No', '%TEXTDOMAIN%' ),
+					'yes' => esc_html__( 'Yes', 'wolf-page-builder' ),
+					'no' => esc_html__( 'No', 'wolf-page-builder' ),
 				),
 				'display' => true,
 			),
 
 			array(
 				'type' => 'select',
-				'label' => esc_html__( 'Animation', '%TEXTDOMAIN%' ),
+				'label' => esc_html__( 'Animation', 'wolf-page-builder' ),
 				'param_name' => 'animation',
 				'choices' => $wpb_animations,
 				'display' => true,
@@ -306,18 +306,18 @@ if ( class_exists( 'Wolf_Albums' ) ) {
 		'wolf_last_albums', array(
 			array(
 				'type' => 'select',
-				'label' => esc_html__( 'Padding', '%TEXTDOMAIN%' ),
+				'label' => esc_html__( 'Padding', 'wolf-page-builder' ),
 				'param_name' => 'padding',
 				'choices' => array(
-					'yes' => esc_html__( 'Yes', '%TEXTDOMAIN%' ),
-					'no' => esc_html__( 'No', '%TEXTDOMAIN%' ),
+					'yes' => esc_html__( 'Yes', 'wolf-page-builder' ),
+					'no' => esc_html__( 'No', 'wolf-page-builder' ),
 				),
 				'display' => true,
 			),
 
 			array(
 				'type' => 'select',
-				'label' => esc_html__( 'Animation', '%TEXTDOMAIN%' ),
+				'label' => esc_html__( 'Animation', 'wolf-page-builder' ),
 				'param_name' => 'animation',
 				'choices' => $wpb_animations,
 				'display' => true,
@@ -334,18 +334,18 @@ if ( class_exists( 'Wolf_Discography' ) ) {
 		'wolf_last_releases', array(
 			array(
 				'type' => 'select',
-				'label' => esc_html__( 'Padding', '%TEXTDOMAIN%' ),
+				'label' => esc_html__( 'Padding', 'wolf-page-builder' ),
 				'param_name' => 'padding',
 				'choices' => array(
-					'yes' => esc_html__( 'Yes', '%TEXTDOMAIN%' ),
-					'no' => esc_html__( 'No', '%TEXTDOMAIN%' ),
+					'yes' => esc_html__( 'Yes', 'wolf-page-builder' ),
+					'no' => esc_html__( 'No', 'wolf-page-builder' ),
 				),
 				'display' => true,
 			),
 
 			array(
 				'type' => 'select',
-				'label' => esc_html__( 'Animation', '%TEXTDOMAIN%' ),
+				'label' => esc_html__( 'Animation', 'wolf-page-builder' ),
 				'param_name' => 'animation',
 				'choices' => $wpb_animations,
 				'display' => true,

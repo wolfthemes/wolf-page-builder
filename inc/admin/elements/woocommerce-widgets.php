@@ -4,8 +4,8 @@
  *
  * @author WolfThemes
  * @category Core
- * @package %PACKAGENAME%/Admin/Elements
- * @version %VERSION%
+ * @package WolfPageBuilder/Admin/Elements
+ * @version 3.2.8
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -18,7 +18,7 @@ if ( function_exists( 'is_woocommerce' ) ) {
 /* Order Tracking */
 wpb_add_element(
 	array(
-		'name' => esc_html__( 'Order Tracking', '%TEXTDOMAIN%' ),
+		'name' => esc_html__( 'Order Tracking', 'wolf-page-builder' ),
 		'base' => 'woocommerce_order_tracking',
 		'icon' => 'wpb-icon wpb-woocommerce',
 		'category' => 'WooCommerce',
@@ -29,7 +29,7 @@ wpb_add_element(
 /* Product price/cart button */
 wpb_add_element(
 	array(
-		'name' => esc_html__( 'Product price/cart button', '%TEXTDOMAIN%' ),
+		'name' => esc_html__( 'Product price/cart button', 'wolf-page-builder' ),
 		'base' => 'add_to_cart',
 		'icon' => 'wpb-icon wpb-woocommerce',
 		'category' => 'WooCommerce',
@@ -52,7 +52,7 @@ wpb_add_element(
 /* Product by SKU/ID */
 wpb_add_element(
 	array(
-		'name' => esc_html__( 'Product by SKU/ID', '%TEXTDOMAIN%' ),
+		'name' => esc_html__( 'Product by SKU/ID', 'wolf-page-builder' ),
 		'base' => 'product',
 		'icon' => 'wpb-icon wpb-woocommerce',
 		'category' => 'WooCommerce',
@@ -75,7 +75,7 @@ wpb_add_element(
 /* Products by SKU/ID */
 wpb_add_element(
 	array(
-		'name' => esc_html__( 'Products by SKU/ID', '%TEXTDOMAIN%' ),
+		'name' => esc_html__( 'Products by SKU/ID', 'wolf-page-builder' ),
 		'base' => 'products',
 		'icon' => 'wpb-icon wpb-woocommerce',
 		'category' => 'WooCommerce',
@@ -98,7 +98,7 @@ wpb_add_element(
 /* Product categories */
 wpb_add_element(
 	array(
-		'name' => esc_html__( 'Product Categories', '%TEXTDOMAIN%' ),
+		'name' => esc_html__( 'Product Categories', 'wolf-page-builder' ),
 		'base' => 'product_categories',
 		'icon' => 'wpb-icon wpb-woocommerce',
 		'category' => 'WooCommerce',
@@ -106,7 +106,7 @@ wpb_add_element(
 		'params' => array(
 			array(
 				'type' => 'text',
-				'label' => esc_html__( 'Number', '%TEXTDOMAIN%' ),
+				'label' => esc_html__( 'Number', 'wolf-page-builder' ),
 				'param_name' => 'number',
 			),
 		),
@@ -116,7 +116,7 @@ wpb_add_element(
 /* Products by category slug */
 wpb_add_element(
 	array(
-		'name' => esc_html__( 'Products by Category Slug', '%TEXTDOMAIN%' ),
+		'name' => esc_html__( 'Products by Category Slug', 'wolf-page-builder' ),
 		'base' => 'product_category',
 		'icon' => 'wpb-icon wpb-woocommerce',
 		'category' => 'WooCommerce',
@@ -124,20 +124,20 @@ wpb_add_element(
 		'params' => array(
 			array(
 				'type' => 'text',
-				'label' => esc_html__( 'Category', '%TEXTDOMAIN%' ),
+				'label' => esc_html__( 'Category', 'wolf-page-builder' ),
 				'param_name' => 'category',
 				'display' => true,
 			),
 			array(
 				'type' => 'text',
-				'label' => esc_html__( 'Per page', '%TEXTDOMAIN%' ),
+				'label' => esc_html__( 'Per page', 'wolf-page-builder' ),
 				'param_name' => 'per_page',
 				'value' => 4,
 				'display' => true,
 			),
 			array(
 				'type' => 'select',
-				'label' => esc_html__( 'Columns', '%TEXTDOMAIN%' ),
+				'label' => esc_html__( 'Columns', 'wolf-page-builder' ),
 				'param_name' => 'columns',
 				'choices' => array(
 					4,3,2,
@@ -146,16 +146,16 @@ wpb_add_element(
 			),
 			array(
 				'type' => 'select',
-				'label' => esc_html__( 'Order by', '%TEXTDOMAIN%' ),
+				'label' => esc_html__( 'Order by', 'wolf-page-builder' ),
 				'param_name' => 'orderby',
 				'choices' => array(
-					'date' => esc_html__( 'Date', '%TEXTDOMAIN%' ),
-					'title' => esc_html__( 'Title', '%TEXTDOMAIN%' ),
+					'date' => esc_html__( 'Date', 'wolf-page-builder' ),
+					'title' => esc_html__( 'Title', 'wolf-page-builder' ),
 				),
 			),
 			array(
 				'type' => 'select',
-				'label' => esc_html__( 'Order', '%TEXTDOMAIN%' ),
+				'label' => esc_html__( 'Order', 'wolf-page-builder' ),
 				'param_name' => 'order',
 				'choices' => array(
 					'DESC' => 'desc',
@@ -169,7 +169,7 @@ wpb_add_element(
 /* Recent products */
 wpb_add_element(
 	array(
-		'name' => esc_html__( 'Recent Products', '%TEXTDOMAIN%' ),
+		'name' => esc_html__( 'Recent Products', 'wolf-page-builder' ),
 		'base' => 'recent_products',
 		'icon' => 'wpb-icon wpb-woocommerce',
 		'category' => 'WooCommerce',
@@ -177,14 +177,14 @@ wpb_add_element(
 		'params' => array(
 			array(
 				'type' => 'text',
-				'label' => esc_html__( 'Per page', '%TEXTDOMAIN%' ),
+				'label' => esc_html__( 'Per page', 'wolf-page-builder' ),
 				'param_name' => 'per_page',
 				'value' => 4,
 				'display' => true,
 			),
 			array(
 				'type' => 'select',
-				'label' => esc_html__( 'Columns', '%TEXTDOMAIN%' ),
+				'label' => esc_html__( 'Columns', 'wolf-page-builder' ),
 				'param_name' => 'columns',
 				'choices' => array(
 					4,3,2,
@@ -194,16 +194,16 @@ wpb_add_element(
 
 			array(
 				'type' => 'select',
-				'label' => esc_html__( 'Order by', '%TEXTDOMAIN%' ),
+				'label' => esc_html__( 'Order by', 'wolf-page-builder' ),
 				'param_name' => 'orderby',
 				'choices' => array(
-					'date' => esc_html__( 'Date', '%TEXTDOMAIN%' ),
-					'title' => esc_html__( 'Title', '%TEXTDOMAIN%' ),
+					'date' => esc_html__( 'Date', 'wolf-page-builder' ),
+					'title' => esc_html__( 'Title', 'wolf-page-builder' ),
 				),
 			),
 			array(
 				'type' => 'select',
-				'label' => esc_html__( 'Order', '%TEXTDOMAIN%' ),
+				'label' => esc_html__( 'Order', 'wolf-page-builder' ),
 				'param_name' => 'order',
 				'choices' => array(
 					'DESC' => 'desc',
@@ -217,7 +217,7 @@ wpb_add_element(
 /* Featured products */
 wpb_add_element(
 	array(
-		'name' => esc_html__( 'Featured Products', '%TEXTDOMAIN%' ),
+		'name' => esc_html__( 'Featured Products', 'wolf-page-builder' ),
 		'base' => 'featured_products',
 		'icon' => 'wpb-icon wpb-woocommerce',
 		'category' => 'WooCommerce',
@@ -225,14 +225,14 @@ wpb_add_element(
 		'params' => array(
 			array(
 				'type' => 'text',
-				'label' => esc_html__( 'Per page', '%TEXTDOMAIN%' ),
+				'label' => esc_html__( 'Per page', 'wolf-page-builder' ),
 				'param_name' => 'per_page',
 				'value' => 4,
 				'display' => true,
 			),
 			array(
 				'type' => 'select',
-				'label' => esc_html__( 'Columns', '%TEXTDOMAIN%' ),
+				'label' => esc_html__( 'Columns', 'wolf-page-builder' ),
 				'param_name' => 'columns',
 				'choices' => array(
 					4,3,2,
@@ -241,16 +241,16 @@ wpb_add_element(
 			),
 			array(
 				'type' => 'select',
-				'label' => esc_html__( 'Order by', '%TEXTDOMAIN%' ),
+				'label' => esc_html__( 'Order by', 'wolf-page-builder' ),
 				'param_name' => 'orderby',
 				'choices' => array(
-					'date' => esc_html__( 'Date', '%TEXTDOMAIN%' ),
-					'title' => esc_html__( 'Title', '%TEXTDOMAIN%' ),
+					'date' => esc_html__( 'Date', 'wolf-page-builder' ),
+					'title' => esc_html__( 'Title', 'wolf-page-builder' ),
 				),
 			),
 			array(
 				'type' => 'select',
-				'label' => esc_html__( 'Order', '%TEXTDOMAIN%' ),
+				'label' => esc_html__( 'Order', 'wolf-page-builder' ),
 				'param_name' => 'order',
 				'choices' => array(
 					'DESC' => 'desc',
@@ -264,7 +264,7 @@ wpb_add_element(
 /* Sale products */
 wpb_add_element(
 	array(
-		'name' => esc_html__( 'Sale Products', '%TEXTDOMAIN%' ),
+		'name' => esc_html__( 'Sale Products', 'wolf-page-builder' ),
 		'base' => 'sale_products',
 		'icon' => 'wpb-icon wpb-woocommerce',
 		'category' => 'WooCommerce',
@@ -272,14 +272,14 @@ wpb_add_element(
 		'params' => array(
 			array(
 				'type' => 'text',
-				'label' => esc_html__( 'Per page', '%TEXTDOMAIN%' ),
+				'label' => esc_html__( 'Per page', 'wolf-page-builder' ),
 				'param_name' => 'per_page',
 				'value' => 4,
 				'display' => true,
 			),
 			array(
 				'type' => 'select',
-				'label' => esc_html__( 'Columns', '%TEXTDOMAIN%' ),
+				'label' => esc_html__( 'Columns', 'wolf-page-builder' ),
 				'param_name' => 'columns',
 				'choices' => array(
 					4,3,2,
@@ -288,16 +288,16 @@ wpb_add_element(
 			),
 			array(
 				'type' => 'select',
-				'label' => esc_html__( 'Order by', '%TEXTDOMAIN%' ),
+				'label' => esc_html__( 'Order by', 'wolf-page-builder' ),
 				'param_name' => 'orderby',
 				'choices' => array(
-					'date' => esc_html__( 'Date', '%TEXTDOMAIN%' ),
-					'title' => esc_html__( 'Title', '%TEXTDOMAIN%' ),
+					'date' => esc_html__( 'Date', 'wolf-page-builder' ),
+					'title' => esc_html__( 'Title', 'wolf-page-builder' ),
 				),
 			),
 			array(
 				'type' => 'select',
-				'label' => esc_html__( 'Order', '%TEXTDOMAIN%' ),
+				'label' => esc_html__( 'Order', 'wolf-page-builder' ),
 				'param_name' => 'order',
 				'choices' => array(
 					'DESC' => 'desc',

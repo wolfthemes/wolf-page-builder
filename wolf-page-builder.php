@@ -1,18 +1,18 @@
 <?php
 /**
  * Plugin Name: Wolf Page Builder
- * Plugin URI: %LINK%
- * Description: %DESCRIPTION%
- * Version: %VERSION%
+ * Plugin URI: https://github.com/wolfthemes/wolf-page-builder
+ * Description: A Page Builder Plugin for WordPress.
+ * Version: 3.2.8
  * Author: WolfThemes
  * Author URI: https://wolfthemes.com
  * Requires at least: 5.0
  * Tested up to: 5.5
  *
- * Text Domain: %TEXTDOMAIN%
+ * Text Domain: wolf-page-builder
  * Domain Path: /languages/
  *
- * @package %PACKAGENAME%
+ * @package WolfPageBuilder
  * @category Core
  * @author WolfThemes
  *
@@ -40,10 +40,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 if ( ! class_exists( 'Wolf_Page_Builder' ) ) :
 /**
- * Main %NAME% Class
+ * Main WPBakery Page Builder Extension Class
  *
  * @class Wolf_Page_Builder
- * @version %VERSION%
+ * @version 3.2.8
  */
 final class Wolf_Page_Builder {
 
@@ -55,10 +55,10 @@ final class Wolf_Page_Builder {
 	/**
 	 * @var string
 	 */
-	public $version = '%VERSION%';
+	public $version = '3.2.8';
 
 	/**
-	 * @var %NAME% The single instance of the class
+	 * @var WPBakery Page Builder Extension The single instance of the class
 	 */
 	protected static $_instance = null;
 
@@ -73,13 +73,13 @@ final class Wolf_Page_Builder {
 	private $support_url = 'https://wlfthm.es/help';
 
 	/**
-	 * Main %NAME% Instance
+	 * Main WPBakery Page Builder Extension Instance
 	 *
-	 * Ensures only one instance of %NAME% is loaded or can be loaded.
+	 * Ensures only one instance of WPBakery Page Builder Extension is loaded or can be loaded.
 	 *
 	 * @static
 	 * @see WPB()
-	 * @return %NAME% - Main instance
+	 * @return WPBakery Page Builder Extension - Main instance
 	 */
 	public static function instance() {
 		if ( is_null( self::$_instance ) ) {
@@ -89,7 +89,7 @@ final class Wolf_Page_Builder {
 	}
 
 	/**
-	 * %NAME% Constructor.
+	 * WPBakery Page Builder Extension Constructor.
 	 */
 	public function __construct() {
 
@@ -115,8 +115,8 @@ final class Wolf_Page_Builder {
 			<p><?php
 
 			printf(
-				esc_html__( '%1$s needs at least PHP %2$s installed on your server. You have version %3$s currently installed. Please contact your hosting service provider if you\'re not able to update PHP by yourself.', '%TEXTDOMAIN%' ),
-				'%NAME%',
+				esc_html__( '%1$s needs at least PHP %2$s installed on your server. You have version %3$s currently installed. Please contact your hosting service provider if you\'re not able to update PHP by yourself.', 'wolf-page-builder' ),
+				'WPBakery Page Builder Extension',
 				$this->required_php_version,
 				phpversion()
 			);
@@ -168,6 +168,7 @@ final class Wolf_Page_Builder {
 			'WPB_PATH' => plugin_basename( __FILE__ ),
 			'WPB_VERSION' => $this->version,
 			'WPB_SUPPORT_URL' => $this->support_url,
+			'WPB_UPDATE_URL' => 'https://updates.wolfthemes.com',
 			'WPB_DOC_URI' => 'https://docs.wolfthemes.com/documentation/plugins/' . plugin_basename( dirname( __FILE__ ) ),
 			'WPB_WOLF_DOMAIN' => 'wolfthemes.com',
 			'WPB_UPLOAD_DIR' => $wpb_upload_dir['basedir'] . '/wpb-export-tmp',
@@ -278,14 +279,14 @@ final class Wolf_Page_Builder {
 	}
 
 	/**
-	 * Function used to Init %NAME% Template Functions - This makes them pluggable by plugins and themes.
+	 * Function used to Init WPBakery Page Builder Extension Template Functions - This makes them pluggable by plugins and themes.
 	 */
 	public function include_template_functions() {
 		include_once( 'inc/frontend/wpb-template-functions.php' );
 	}
 
 	/**
-	 * Init %NAME% when WordPress Initialises.
+	 * Init WPBakery Page Builder Extension when WordPress Initialises.
 	 */
 	public function init() {
 		// Before init action
@@ -303,8 +304,8 @@ final class Wolf_Page_Builder {
 	 */
 	public function load_plugin_textdomain() {
 
-		$domain = '%TEXTDOMAIN%';
-		$locale = apply_filters( '%TEXTDOMAIN%', get_locale(), $domain );
+		$domain = 'wolf-page-builder';
+		$locale = apply_filters( 'wolf-page-builder', get_locale(), $domain );
 		load_textdomain( $domain, WP_LANG_DIR . '/' . $domain . '/' . $domain . '-' . $locale . '.mo' );
 		load_plugin_textdomain( $domain, FALSE, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
 	}

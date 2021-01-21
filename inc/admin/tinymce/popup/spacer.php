@@ -5,15 +5,15 @@
  * @class WPB_Admin
  * @author WolfThemes
  * @category Admin
- * @package %PACKAGENAME%/Admin
- * @version %VERSION%
+ * @package WolfPageBuilder/Admin
+ * @version 3.2.8
  */
-$title = esc_html__( 'Height', '%TEXTDOMAIN%' );
+$title = esc_html__( 'Height', 'wolf-page-builder' );
 $params = array(
 
 	array(
 		'id' => 'height',
-		'label' => esc_html__( 'Height', '%TEXTDOMAIN%' ),
+		'label' => esc_html__( 'Height', 'wolf-page-builder' ),
 		'value' => '100px',
 	),
 );

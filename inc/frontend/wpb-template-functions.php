@@ -1,13 +1,13 @@
 <?php
 /**
- * %NAME% template functions
+ * Wolf Page Builder template functions
  *
  * Functions for the templating system.
  *
  * @author WolfThemes
  * @category Core
- * @package %PACKAGENAME%/Functions
- * @version %VERSION%
+ * @package WolfPageBuilder/Functions
+ * @version 3.2.8
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -36,7 +36,7 @@ function wpb_generator_tag( $gen, $type ) {
  * @return array
  */
 function wpb_body_class( $classes ) {
-	
+
 	$classes = ( array ) $classes;
 
 	if ( is_wpb() ) {
@@ -51,7 +51,7 @@ function wpb_body_class( $classes ) {
 
 if ( ! function_exists( 'wpb_content' ) ) {
 	/**
-	 * Output %NAME% content.
+	 * Output Wolf Page Builder content.
 	 *
 	 * This function is only used in the optional 'wpb.php' template
 	 * which people can add to their themes to add basic WPB support

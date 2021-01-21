@@ -1,12 +1,12 @@
 <?php
 /**
- * %NAME% Admin.
+ * Wolf Page Builder Admin.
  *
  * @class WPB_Admin
  * @author WolfThemes
  * @category Admin
- * @package %PACKAGENAME%/Admin
- * @version %VERSION%
+ * @package WolfPageBuilder/Admin
+ * @version 3.2.8
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -79,7 +79,7 @@ class WPB_Admin {
 	 */
 	public function settings_action_links( $links ) {
 		$setting_link = array(
-			'<a href="' . admin_url( 'admin.php?page=wpb-settings' ) . '">' . esc_html__( 'Settings', '%TEXTDOMAIN%' ) . '</a>',
+			'<a href="' . admin_url( 'admin.php?page=wpb-settings' ) . '">' . esc_html__( 'Settings', 'wolf-page-builder' ) . '</a>',
 		);
 		return array_merge( $links, $setting_link );
 	}
@@ -161,7 +161,7 @@ class WPB_Admin {
 		if ( in_array( $post_type, $post_types ) ) {
 			add_meta_box(
 				'wpb_content',
-				esc_html__( 'Page Builder', '%TEXTDOMAIN%' ),
+				esc_html__( 'Page Builder', 'wolf-page-builder' ),
 				array( $this, 'render_meta_box_content' ),
 				$post_type,
 				'normal',
@@ -210,16 +210,16 @@ class WPB_Admin {
 				<div class="wpb-table">
 					<div class="wpb-table-cell">
 						<span id="wpb-wait-icon" class="fa fa-coffee"></span>
-						<span id="wpb-wait-text"><?php esc_html_e( 'Please wait...', '%TEXTDOMAIN%' ); ?></span>
+						<span id="wpb-wait-text"><?php esc_html_e( 'Please wait...', 'wolf-page-builder' ); ?></span>
 					</div>
 				</div>
 			</div>
 			<div id="wpb-top-toolbar">
-				<a href="#" id="wpb-add-section-prepend" class="wpb-add-section wpb-toolbar-button wpb-tipsy" title="<?php esc_html_e( 'Add a section at the top', '%TEXTDOMAIN%' ); ?>"></a>
-				<a target="_blank" href="<?php echo esc_url( WPB_DOC_URI ); ?>" class="wpb-help wpb-toolbar-button wpb-tipsy" title="<?php esc_html_e( 'Documentation', '%TEXTDOMAIN%' ); ?>"></a>
-				<!-- <a href="#" class="wpb-settings wpb-toolbar-button wpb-tipsy" title="<?php // esc_html_e( 'Settings', '%TEXTDOMAIN%' ); ?>"></a> -->
+				<a href="#" id="wpb-add-section-prepend" class="wpb-add-section wpb-toolbar-button wpb-tipsy" title="<?php esc_html_e( 'Add a section at the top', 'wolf-page-builder' ); ?>"></a>
+				<a target="_blank" href="<?php echo esc_url( WPB_DOC_URI ); ?>" class="wpb-help wpb-toolbar-button wpb-tipsy" title="<?php esc_html_e( 'Documentation', 'wolf-page-builder' ); ?>"></a>
+				<!-- <a href="#" class="wpb-settings wpb-toolbar-button wpb-tipsy" title="<?php // esc_html_e( 'Settings', 'wolf-page-builder' ); ?>"></a> -->
 				<?php if ( WPB_DEV ) : ?>
-					<a href="#" class="wpb-refresh wpb-toolbar-button wpb-tipsy" title="<?php esc_html_e( 'Refresh markup', '%TEXTDOMAIN%' ); ?>"></a>
+					<a href="#" class="wpb-refresh wpb-toolbar-button wpb-tipsy" title="<?php esc_html_e( 'Refresh markup', 'wolf-page-builder' ); ?>"></a>
 				<?php endif; ?>
 			</div><!-- #wpb-toolbar -->
 
@@ -228,9 +228,9 @@ class WPB_Admin {
 			</div><!-- #wpb-markup-container -->
 
 			<div id="wpb-bottom-toolbar">
-				<a href="#" id="wpb-add-section-append" class="wpb-add-section wpb-toolbar-button wpb-tipsy" title="<?php esc_html_e( 'Add a section at the bottom', '%TEXTDOMAIN%' ); ?>"></a>
-				<a target="_blank" href="<?php echo esc_url( WPB_DOC_URI ); ?>" class="wpb-help wpb-toolbar-button wpb-tipsy" title="<?php esc_html_e( 'Documentation', '%TEXTDOMAIN%' ); ?>"></a>
-				<!-- <a href="#" class="wpb-settings wpb-toolbar-button wpb-tipsy" title="<?php // esc_html_e( 'Settings', '%TEXTDOMAIN%' ); ?>"></a> -->
+				<a href="#" id="wpb-add-section-append" class="wpb-add-section wpb-toolbar-button wpb-tipsy" title="<?php esc_html_e( 'Add a section at the bottom', 'wolf-page-builder' ); ?>"></a>
+				<a target="_blank" href="<?php echo esc_url( WPB_DOC_URI ); ?>" class="wpb-help wpb-toolbar-button wpb-tipsy" title="<?php esc_html_e( 'Documentation', 'wolf-page-builder' ); ?>"></a>
+				<!-- <a href="#" class="wpb-settings wpb-toolbar-button wpb-tipsy" title="<?php // esc_html_e( 'Settings', 'wolf-page-builder' ); ?>"></a> -->
 			</div><!-- #wpb-toolbar -->
 		</div><!-- #wpb-panel -->
 		<?php $hidden_class = ( WPB_DEV ) ? '' : 'wpb-hide'; ?>
@@ -317,7 +317,7 @@ class WPB_Admin {
 
 		$error_message = sprintf(
 			wp_kses(
-				__( 'It seems that another page builder is installed. Please deactivate the following plugin: <a href="%1$s"><strong>%2$s</strong></a>', '%TEXTDOMAIN%' ),
+				__( 'It seems that another page builder is installed. Please deactivate the following plugin: <a href="%1$s"><strong>%2$s</strong></a>', 'wolf-page-builder' ),
 				array(
 					'a' => array( 'href' => array() ),
 					'strong' => array()

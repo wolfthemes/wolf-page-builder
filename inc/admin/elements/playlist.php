@@ -4,8 +4,8 @@
  *
  * @author WolfThemes
  * @category Core
- * @package %PACKAGENAME%/Admin/Elements
- * @version %VERSION%
+ * @package WolfPageBuilder/Admin/Elements
+ * @version 3.2.8
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -25,20 +25,20 @@ if ( class_exists( 'Wolf_Playlist_Manager' ) ) {
 
 	// if no result display "no playlist"
 	if ( array() == $choices ) {
-		$choices[0] = esc_html__( 'No playlist created yet', '%TEXTDOMAIN%' );
+		$choices[0] = esc_html__( 'No playlist created yet', 'wolf-page-builder' );
 	}
 
 	wpb_add_element(
 		array(
-			'name' => esc_html__( 'Playlist', '%TEXTDOMAIN%' ),
+			'name' => esc_html__( 'Playlist', 'wolf-page-builder' ),
 			'base' => 'wolf_playlist',
-			'description' => esc_html__( 'Display one of your playlist', '%TEXTDOMAIN%' ),
-			'category' => esc_html__( 'Music', '%TEXTDOMAIN%' ),
+			'description' => esc_html__( 'Display one of your playlist', 'wolf-page-builder' ),
+			'category' => esc_html__( 'Music', 'wolf-page-builder' ),
 			'icon' => 'wpb-icon wpb-playlist',
 			'params' => array(
 				array(
 					'type' => 'select',
-					'label' => esc_html__( 'Playlist', '%TEXTDOMAIN%' ),
+					'label' => esc_html__( 'Playlist', 'wolf-page-builder' ),
 					'param_name' => 'id',
 					'choices' => $choices,
 					'display' => true,
@@ -46,22 +46,22 @@ if ( class_exists( 'Wolf_Playlist_Manager' ) ) {
 
 				array(
 					'type' => 'select',
-					'label' => esc_html__( 'Tracklist Visibility', '%TEXTDOMAIN%' ),
+					'label' => esc_html__( 'Tracklist Visibility', 'wolf-page-builder' ),
 					'param_name' => 'show_tracklist',
 					'choices' => array(
-						'true' => esc_html__( 'show', '%TEXTDOMAIN%' ),
-						'false' => esc_html__( 'hide', '%TEXTDOMAIN%' ),
+						'true' => esc_html__( 'show', 'wolf-page-builder' ),
+						'false' => esc_html__( 'hide', 'wolf-page-builder' ),
 					),
 					'display' => true,
 				),
 
 				array(
 					'type' => 'select',
-					'label' => esc_html__( 'Skin', '%TEXTDOMAIN%' ),
+					'label' => esc_html__( 'Skin', 'wolf-page-builder' ),
 					'param_name' => 'theme',
 					'choices' => array(
-						'dark' => esc_html__( 'Dark', '%TEXTDOMAIN%' ),
-						'light' => esc_html__( 'Light', '%TEXTDOMAIN%' ),
+						'dark' => esc_html__( 'Dark', 'wolf-page-builder' ),
+						'light' => esc_html__( 'Light', 'wolf-page-builder' ),
 					),
 				),
 			)

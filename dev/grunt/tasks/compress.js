@@ -8,7 +8,7 @@ module.exports = {
 		},
 		expand: true,
 		cwd: '../pack/<%= app.slug %>/',
-		src: [ '**/*', '!dev.config.php', '!deploy.sh' ],
+		src: [ '**/*', '!dev.config.php' ],
 		dest: '<%= app.slug %>/'
 	}
 };

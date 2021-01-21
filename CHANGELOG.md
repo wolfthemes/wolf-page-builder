@@ -1,5 +1,10 @@
 # Changelog
 
+#### 21th January 2021 - Version 3.2.8
+
+* Fix: Advanced slider bug
+
+
 #### 5th January 2021 - Version 3.2.7
 
 * Fix: Updated Swipebox
@@ -366,7 +371,7 @@
 
 #### 8th april 2016 - Version 1.1.9
 
-* Tweak: Disable scroll on contact map when scrolling the page 
+* Tweak: Disable scroll on contact map when scrolling the page
 
 #### 8th april 2016 - Version 1.1.8
 

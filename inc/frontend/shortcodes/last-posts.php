@@ -4,8 +4,8 @@
  *
  * @author WolfThemes
  * @category Core
- * @package %PACKAGENAME%/FrontEnd/Shortcodes
- * @version %VERSION%
+ * @package WolfPageBuilder/FrontEnd/Shortcodes
+ * @version 3.2.8
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -180,11 +180,11 @@ if ( ! function_exists( 'wpb_last_posts_shortcode' ) ) {
 			endwhile;
 		else :
 			echo '<p class="wpb-text-center">';
-			esc_html_e( 'No post found.', '%TEXTDOMAIN%' );
+			esc_html_e( 'No post found.', 'wolf-page-builder' );
 
 			if ( is_user_logged_in() ) {
 				echo '<br>';
-				esc_html_e( 'Only posts with a featured image will be displayed.', '%TEXTDOMAIN%' );
+				esc_html_e( 'Only posts with a featured image will be displayed.', 'wolf-page-builder' );
 			}
 			echo '</p>';
 

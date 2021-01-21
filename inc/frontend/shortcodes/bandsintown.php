@@ -4,8 +4,8 @@
  *
  * @author WolfThemes
  * @category Core
- * @package %PACKAGENAME%/FrontEnd/Shortcodes
- * @version %VERSION%
+ * @package WolfPageBuilder/FrontEnd/Shortcodes
+ * @version 3.2.8
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -68,12 +68,12 @@ if ( ! function_exists( 'wpb_shortcode_bandsintown_events' ) ) {
 
 		} else {
 			if ( is_user_logged_in() ) {
-				$output  = esc_html__( 'Please set an artist.', '%TEXTDOMAIN%' );
+				$output  = esc_html__( 'Please set an artist.', 'wolf-page-builder' );
 			} else {
-				$output  = esc_html__( 'No event scheduled.', '%TEXTDOMAIN%' );
+				$output  = esc_html__( 'No event scheduled.', 'wolf-page-builder' );
 			}
 		}
-		
+
 		return $output;
 	}
 	add_shortcode( 'wpb_bandsintown_events', 'wpb_shortcode_bandsintown_events' );

@@ -4,8 +4,8 @@
  *
  * @author WolfThemes
  * @category Core
- * @package %PACKAGENAME%/Admin/Elements
- * @version %VERSION%
+ * @package WolfPageBuilder/Admin/Elements
+ * @version 3.2.8
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -15,16 +15,16 @@ if ( ! defined( 'ABSPATH' ) ) {
 // Soundcloud
 wpb_add_element(
 	array(
-		'name' => esc_html__( 'Soundcloud', '%TEXTDOMAIN%' ),
+		'name' => esc_html__( 'Soundcloud', 'wolf-page-builder' ),
 		'base' => 'wpb_soundcloud',
-		'description' => esc_html__( 'An embed Soundcloud playlist or song', '%TEXTDOMAIN%' ),
+		'description' => esc_html__( 'An embed Soundcloud playlist or song', 'wolf-page-builder' ),
 		'icon' => 'wpb-icon wpb-soundcloud',
-		'category' => esc_html__( 'Music', '%TEXTDOMAIN%' ),
+		'category' => esc_html__( 'Music', 'wolf-page-builder' ),
 		'params' => array(
 
 			array(
 				'type' => 'url',
-				'label' => esc_html__( 'Playlist or Song URL', '%TEXTDOMAIN%' ),
+				'label' => esc_html__( 'Playlist or Song URL', 'wolf-page-builder' ),
 				'param_name' => 'url',
 				'placeholder' => 'https://',
 				'display' => true,

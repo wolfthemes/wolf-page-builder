@@ -4,8 +4,8 @@
  *
  * @author WolfThemes
  * @category Core
- * @package %PACKAGENAME%/FrontEnd/Shortcodes
- * @version %VERSION%
+ * @package WolfPageBuilder/FrontEnd/Shortcodes
+ * @version 3.2.8
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -71,11 +71,11 @@ if ( ! function_exists( 'wpb_shortcode_pricing_table' ) ) {
 			'offer_price' => '',
 			'price_period' => '',
 			'show_button' => '',
-			'button_text' => __( 'Buy Now', '%TEXTDOMAIN%' ),
+			'button_text' => __( 'Buy Now', 'wolf-page-builder' ),
 			'link' => '',
 			'target' => '',
 			'featured' => '',
-			'featured_text' => __( 'Best Choice', '%TEXTDOMAIN%' ),
+			'featured_text' => __( 'Best Choice', 'wolf-page-builder' ),
 			'services' => '',
 			'animation' => '',
 			'animation_delay' => '',
@@ -96,7 +96,7 @@ if ( ! function_exists( 'wpb_shortcode_pricing_table' ) ) {
 		if ( $animation ) {
 			$class .= " wow $animation";
 		}
-			
+
 		if ( $animation_delay && 'none' != $animation ) {
 			$style .= 'animation-delay:' . absint( $animation_delay ) / 1000 . 's;-webkit-animation-delay:' . absint( $animation_delay ) / 1000 . 's;';
 		}
@@ -184,7 +184,7 @@ if ( ! function_exists( 'wpb_shortcode_pricing_table' ) ) {
 				$output .= '</li>';
 			}
 		}
-		
+
 		if ( $show_button ) {
 			$output .= '<li class="wpb-pricing-table-button">';
 			$output .= '<a href="' . esc_url( $link ) . '"';

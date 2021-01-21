@@ -4,8 +4,8 @@
  *
  * @author WolfThemes
  * @category Core
- * @package %PACKAGENAME%/Admin/Elements
- * @version %VERSION%
+ * @package WolfPageBuilder/Admin/Elements
+ * @version 3.2.8
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -15,16 +15,16 @@ if ( ! defined( 'ABSPATH' ) ) {
 // empty space
 wpb_add_element(
 	array(
-		'name' => esc_html__( 'Separator', '%TEXTDOMAIN%' ),
-		'description' => esc_html__( 'Add a line to organize your content', '%TEXTDOMAIN%' ),
+		'name' => esc_html__( 'Separator', 'wolf-page-builder' ),
+		'description' => esc_html__( 'Add a line to organize your content', 'wolf-page-builder' ),
 		'base' => 'wpb_separator',
-		'category' => esc_html__( 'Content', '%TEXTDOMAIN%' ),
+		'category' => esc_html__( 'Content', 'wolf-page-builder' ),
 		'icon' => 'wpb-icon wpb-separator',
 		'params' => array(
 
 			array(
 				'type' => 'text',
-				'label' => esc_html__( 'Width', '%TEXTDOMAIN%' ),
+				'label' => esc_html__( 'Width', 'wolf-page-builder' ),
 				'param_name' => 'width',
 				'value' => '100%',
 				'display' => true,
@@ -32,7 +32,7 @@ wpb_add_element(
 
 			array(
 				'type' => 'text',
-				'label' => esc_html__( 'Height', '%TEXTDOMAIN%' ),
+				'label' => esc_html__( 'Height', 'wolf-page-builder' ),
 				'param_name' => 'height',
 				'placeholder' => '1px',
 				'display' => true,
@@ -40,35 +40,35 @@ wpb_add_element(
 
 			array(
 				'type' => 'select',
-				'label' => esc_html__( 'Aligment', '%TEXTDOMAIN%' ),
+				'label' => esc_html__( 'Aligment', 'wolf-page-builder' ),
 				'param_name' => 'alignment',
 				'choices' => array(
-					'center' => esc_html__( 'Center', '%TEXTDOMAIN%' ),
-					'left' => esc_html__( 'Left', '%TEXTDOMAIN%' ),
-					'right' => esc_html__( 'Right', '%TEXTDOMAIN%' ),
+					'center' => esc_html__( 'Center', 'wolf-page-builder' ),
+					'left' => esc_html__( 'Left', 'wolf-page-builder' ),
+					'right' => esc_html__( 'Right', 'wolf-page-builder' ),
 				),
 				'display' => true,
 			),
 
 			array(
 				'type' => 'colorpicker',
-				'label' => esc_html__( 'Color', '%TEXTDOMAIN%' ),
+				'label' => esc_html__( 'Color', 'wolf-page-builder' ),
 				'param_name' => 'color',
 				'display' => true,
 			),
 
 			array(
 				'type' => 'text',
-				'label' => esc_html__( 'Opacity', '%TEXTDOMAIN%' ),
+				'label' => esc_html__( 'Opacity', 'wolf-page-builder' ),
 				'param_name' => 'opacity',
-				'description' => esc_html__( 'in percent', '%TEXTDOMAIN%' ),
+				'description' => esc_html__( 'in percent', 'wolf-page-builder' ),
 				'placeholder' => 100,
 				'display' => true,
 			),
 
 			array(
 				'type' => 'text',
-				'label' => esc_html__( 'Margin Top', '%TEXTDOMAIN%' ),
+				'label' => esc_html__( 'Margin Top', 'wolf-page-builder' ),
 				'param_name' => 'margin_top',
 				'placeholder' => '30px',
 				'display' => true,
@@ -76,7 +76,7 @@ wpb_add_element(
 
 			array(
 				'type' => 'text',
-				'label' => esc_html__( 'Marign Bottom', '%TEXTDOMAIN%' ),
+				'label' => esc_html__( 'Marign Bottom', 'wolf-page-builder' ),
 				'param_name' => 'margin_bottom',
 				'placeholder' => '30px',
 				'display' => true,

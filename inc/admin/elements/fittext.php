@@ -4,8 +4,8 @@
  *
  * @author WolfThemes
  * @category Core
- * @package %PACKAGENAME%/Admin/Elements
- * @version %VERSION%
+ * @package WolfPageBuilder/Admin/Elements
+ * @version 3.2.8
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -15,24 +15,24 @@ if ( ! defined( 'ABSPATH' ) ) {
 // Fittext
 wpb_add_element(
 	array(
-		'name' => esc_html__( 'Headline', '%TEXTDOMAIN%' ),
-		'description' => esc_html__( 'A big title with flexible font size', '%TEXTDOMAIN%' ),
+		'name' => esc_html__( 'Headline', 'wolf-page-builder' ),
+		'description' => esc_html__( 'A big title with flexible font size', 'wolf-page-builder' ),
 		'base' => 'wpb_headline',
-		'category' => esc_html__( 'Content', '%TEXTDOMAIN%' ),
+		'category' => esc_html__( 'Content', 'wolf-page-builder' ),
 		'icon' => 'wpb-icon wpb-headline',
 		'params' => array(
 
 			array(
 				'type' => 'text',
-				'label' => esc_html__( 'Text', '%TEXTDOMAIN%' ),
+				'label' => esc_html__( 'Text', 'wolf-page-builder' ),
 				'param_name' => 'text',
-				'value' => esc_html__( 'My Headline', '%TEXTDOMAIN%' ),
+				'value' => esc_html__( 'My Headline', 'wolf-page-builder' ),
 				'display' => true,
 			),
 
 			array(
 				'type' => 'text',
-				'label' => esc_html__( 'Maximum Font Size', '%TEXTDOMAIN%' ),
+				'label' => esc_html__( 'Maximum Font Size', 'wolf-page-builder' ),
 				'param_name' => 'max_font_size',
 				'value' => 72,
 				'display' => true,
@@ -40,25 +40,25 @@ wpb_add_element(
 
 			array(
 				'type' => 'select',
-				'label' => esc_html__( 'Text Alignment', '%TEXTDOMAIN%' ),
+				'label' => esc_html__( 'Text Alignment', 'wolf-page-builder' ),
 				'param_name' => 'text_alignment',
 				'choices' => array(
-					'center' => esc_html__( 'Center', '%TEXTDOMAIN%' ),
-					'left' => esc_html__( 'Left', '%TEXTDOMAIN%' ),
-					'right' => esc_html__( 'Right', '%TEXTDOMAIN%' ),
+					'center' => esc_html__( 'Center', 'wolf-page-builder' ),
+					'left' => esc_html__( 'Left', 'wolf-page-builder' ),
+					'right' => esc_html__( 'Right', 'wolf-page-builder' ),
 				),
 			),
 
 			array(
 				'type' => 'colorpicker',
-				'label' => esc_html__( 'Text Color', '%TEXTDOMAIN%' ),
+				'label' => esc_html__( 'Text Color', 'wolf-page-builder' ),
 				'param_name' => 'color',
 			),
 
 
 			array(
 				'type' => 'text',
-				'label' => esc_html__( 'Font Weight', '%TEXTDOMAIN%' ),
+				'label' => esc_html__( 'Font Weight', 'wolf-page-builder' ),
 				'param_name' => 'font_weight',
 				'value' => 700,
 				'display' => true,
@@ -66,31 +66,31 @@ wpb_add_element(
 
 			array(
 				'type' => 'select',
-				'label' => esc_html__( 'Text Transform', '%TEXTDOMAIN%' ),
+				'label' => esc_html__( 'Text Transform', 'wolf-page-builder' ),
 				'param_name' => 'text_transform',
 				'choices' => array(
-					'none' => esc_html__( 'none', '%TEXTDOMAIN%' ),
-					'uppercase' => esc_html__( 'uppercase', '%TEXTDOMAIN%' ),
+					'none' => esc_html__( 'none', 'wolf-page-builder' ),
+					'uppercase' => esc_html__( 'uppercase', 'wolf-page-builder' ),
 				),
 			),
 
 			array(
 				'type' => 'int',
-				'label' => esc_html__( 'Letter Spacing', '%TEXTDOMAIN%' ),
+				'label' => esc_html__( 'Letter Spacing', 'wolf-page-builder' ),
 				'param_name' => 'letter_spacing',
 				'display' => true,
 			),
 
 			array(
 				'type' => 'font',
-				'label' => esc_html__( 'Font', '%TEXTDOMAIN%' ),
+				'label' => esc_html__( 'Font', 'wolf-page-builder' ),
 				'param_name' => 'font_family',
 				'display' => true,
 			),
 
 			array(
 				'type' => 'select',
-				'label' => esc_html__( 'Tag', '%TEXTDOMAIN%' ),
+				'label' => esc_html__( 'Tag', 'wolf-page-builder' ),
 				'param_name' => 'title_tag',
 				'choices' => array(
 					'h2',
@@ -104,7 +104,7 @@ wpb_add_element(
 
 			array(
 				'type' => 'link',
-				'label' => esc_html__( 'Link', '%TEXTDOMAIN%' ),
+				'label' => esc_html__( 'Link', 'wolf-page-builder' ),
 				'param_name' => 'link',
 				'placeholder' => 'http://',
 				'display' => true,

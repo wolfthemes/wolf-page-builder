@@ -4,8 +4,8 @@
  *
  * @author WolfThemes
  * @category Core
- * @package %PACKAGENAME%/FrontEnd/Shortcodes
- * @version %VERSION%
+ * @package WolfPageBuilder/FrontEnd/Shortcodes
+ * @version 3.2.8
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -113,7 +113,7 @@ if ( ! function_exists( 'wpb_do_button' ) ) {
 
 		// class
 		if ( ! $custom_button_type ) {
-			
+
 			$class .= ( 'yes' == $custom_style ) ? ' wpb-button-custom-style' : '';
 			$class .= ( ! $color && ! $color_hover ) ? ' wpb-button-default-color' : '';
 		}
@@ -125,7 +125,7 @@ if ( ! function_exists( 'wpb_do_button' ) ) {
 		}
 
 		$class .= ' wpb-button-icon-' . esc_attr( $icon_position );
-		
+
 		if ( $tagline ) {
 			$class .= ' wpb-has-tagline';
 		}
@@ -149,18 +149,18 @@ if ( ! function_exists( 'wpb_do_button' ) ) {
 			if ( $color_hover ) {
 				$button .= ' data-color-hover="' . wpb_sanitize_hex_color( $color_hover ) . '"';
 			}
-			
+
 			if ( $style ) {
 				$button .= ' style="' . wpb_esc_style_attr( $style ) . '"';
 			}
 		}
-		
+
 		if ( $class ) {
 			$button .= ' class="' . wpb_sanitize_html_classes( $class  ) . '"';
 		}
-		
+
 		$button .= ' href="' . esc_url( $href ) . '"';
-		
+
 		if ( $link_target ) {
 			$button .= ' target="_blank"';
 		}
@@ -241,7 +241,7 @@ if ( ! function_exists( 'wpb_button_container_shortcode' ) ) {
 		}
 
 		$output .= '>';
-		
+
 		$output .= do_shortcode( $content );
 		$output .= '</div>';
 		return $output;

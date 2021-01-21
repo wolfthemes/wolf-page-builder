@@ -4,8 +4,8 @@
  *
  * @author WolfThemes
  * @category Core
- * @package %PACKAGENAME%/FrontEnd/Shortcodes
- * @version %VERSION%
+ * @package WolfPageBuilder/FrontEnd/Shortcodes
+ * @version 3.2.8
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -32,13 +32,13 @@ if ( ! function_exists( 'wpb_shortcode_toggle' ) ) {
 		$output = '';
 		$class = 'wpb-toggle';
 		$content_class = 'wpb-toggle-content';
-		
+
 		if ( $open ) {
 			$class .= ' wpb-toggle-open';
 		} else {
 			$class .= ' wpb-toggle-close';
 		}
-		
+
 		$output .= '<div class="' . wpb_sanitize_html_classes( $class ) . '">';
 			$output .= '<h5 class="wpb-toggle-title"><span class="wpb-toggle-plus"></span><span class="wpb-toggle-title-text">' . sanitize_text_field( $title ) . '</span></h5>';
 			$output .= '<div class="' . wpb_sanitize_html_classes( $content_class ) . '">';

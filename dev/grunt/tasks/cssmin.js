@@ -1,5 +1,5 @@
 module.exports = {
-	
+
 	lib : {
 		files : {
 			'<%= app.cssPath %>/icon-pack.min.css': [ '<%= app.cssPath %>/icon-pack.css' ],

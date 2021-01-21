@@ -4,8 +4,8 @@
  *
  * @author WolfThemes
  * @category Core
- * @package %PACKAGENAME%/FrontEnd/Shortcodes
- * @version %VERSION%
+ * @package WolfPageBuilder/FrontEnd/Shortcodes
+ * @version 3.2.8
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -64,7 +64,7 @@ if ( ! function_exists( 'wpb_shortcode_last_videos_carousel' ) ) {
 					if ( $video_url )
 						$output .= '<div class="item-video" data-merge="2" style="background-image:url(' . esc_url( $thumbnail_url ) . ');"><a class="owl-video" href="' . esc_url( $video_url ) . '"></a></div>';
 				}
-			
+
 			$output .= '</div><!-- .wpb-video-carousel -->';
 
 			$output .= '</div><!-- .wpb-last-videos-carousel-container -->';

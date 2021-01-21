@@ -5,15 +5,15 @@
  * @class WPB_Admin
  * @author WolfThemes
  * @category Admin
- * @package %PACKAGENAME%/Admin
- * @version %VERSION%
+ * @package WolfPageBuilder/Admin
+ * @version 3.2.8
  */
-$title = esc_html__( 'Anchor', '%TEXTDOMAIN%' );
+$title = esc_html__( 'Anchor', 'wolf-page-builder' );
 $params = array(
 
 	array(
 		'id' => 'id',
-		'label' => esc_html__( 'ID', '%TEXTDOMAIN%' ),
+		'label' => esc_html__( 'ID', 'wolf-page-builder' ),
 	),
 
 );

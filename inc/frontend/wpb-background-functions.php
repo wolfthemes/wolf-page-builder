@@ -1,11 +1,11 @@
 <?php
 /**
- * %NAME% background functions
+ * Wolf Page Builder background functions
  *
  * @author WolfThemes
  * @category Core
- * @package %PACKAGENAME%/FRontend
- * @version %VERSION%
+ * @package WolfPageBuilder/FRontend
+ * @version 3.2.8
  */
 
 if ( ! defined( 'ABSPATH' ) ) {

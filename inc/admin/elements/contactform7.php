@@ -4,8 +4,8 @@
  *
  * @author WolfThemes
  * @category Core
- * @package %PACKAGENAME%/Admin/Elements
- * @version %VERSION%
+ * @package WolfPageBuilder/Admin/Elements
+ * @version 3.2.8
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -31,15 +31,15 @@ if ( defined( 'WPCF7_VERSION' ) ) { // check if the plugin is activated
 	// Contact from 7
 	wpb_add_element(
 		array(
-			'name' => esc_html__( 'Contactform7', '%TEXTDOMAIN%' ),
-			'description' => esc_html__( 'Add a contact form to your page', '%TEXTDOMAIN%' ),
+			'name' => esc_html__( 'Contactform7', 'wolf-page-builder' ),
+			'description' => esc_html__( 'Add a contact form to your page', 'wolf-page-builder' ),
 			'base' => 'contact-form-7',
-			'category' => esc_html__( 'Content', '%TEXTDOMAIN%' ),
+			'category' => esc_html__( 'Content', 'wolf-page-builder' ),
 			'icon' => 'wpb-icon wpb-contactform7',
 			'params' => array(
 				array(
 					'type' => 'select',
-					'label' => esc_html__( 'Contact Form', '%TEXTDOMAIN%' ),
+					'label' => esc_html__( 'Contact Form', 'wolf-page-builder' ),
 					'param_name' => 'id',
 					'choices' => $choices,
 					'display' => true,

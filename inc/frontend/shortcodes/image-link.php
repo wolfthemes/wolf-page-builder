@@ -2,12 +2,12 @@
 /**
  * Image link shortcode
  *
- * 
+ *
  *
  * @author WolfThemes
  * @category Core
- * @package %PACKAGENAME%/FrontEnd/Shortcodes
- * @version %VERSION%
+ * @package WolfPageBuilder/FrontEnd/Shortcodes
+ * @version 3.2.8
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -22,7 +22,7 @@ if ( ! function_exists( 'wpb_shortcode_image_link' ) ) {
 	 * @return string
 	 */
 	function wpb_shortcode_image_link( $atts ) {
-		
+
 		extract( shortcode_atts( array(
 			'image' => '',
 			'alignment' => 'center',
@@ -59,7 +59,7 @@ if ( ! function_exists( 'wpb_shortcode_image_link' ) ) {
 		$title = esc_attr( $text );
 
 		$secondary_text = sanitize_text_field( $secondary_text );
-		
+
 		$secondary_text_class = "wpb-linked-image-secondary-text text-$text_alignment $secondary_text_button";
 
 		if ( $secondary_text_button ) {
@@ -67,7 +67,7 @@ if ( ! function_exists( 'wpb_shortcode_image_link' ) ) {
 		}
 
 		$secondary_text = "<span class='$secondary_text_class' style='color:$text_color'>$secondary_text</span>";
-		
+
 		$text_color = ( $text_color ) ? sanitize_text_field( $text_color ) : '#fff';
 		$caption = "<$text_tag class='wpb-linked-image-caption text-$text_alignment' style='color:$text_color'>$text</$text_tag>";
 
@@ -84,29 +84,29 @@ if ( ! function_exists( 'wpb_shortcode_image_link' ) ) {
 		if ( $animation ) {
 			$container_class .= " wow $animation";
 		}
-		
+
 		$is_file = wpb_get_url_from_attachment_id( absint( $image ), $image_size );
 
 		if ( is_numeric( $image ) && $is_file ) {
-			
+
 			$src = wpb_get_url_from_attachment_id( absint( $image ), $image_size );
 
 		} elseif( wpb_is_url( $image ) ) {
 
 			$src = esc_url( $image );
-		
+
 		} else {
 
 			global $wpb_image_placeholders;
 			$src = ( isset( $wpb_image_placeholders[ $image_size ] ) ) ? $wpb_image_placeholders[ $image_size ] : '';
 		}
-		
+
 		$output = "<div class='$container_class'>";
 
 		if ( 'http://' != $url && $url ) {
 			$link_target = ( $link_target ) ? 'target="' . esc_attr( $link_target ) . '"' : '';
 			$output .= '<a href="' . esc_url( $url ) . '" title="' . esc_attr( $title ) . '"' . $link_target .' class="wpb-image-inner">';
-		
+
 		} else {
 			$output .= "<div class='wpb-image-inner'>";
 		}

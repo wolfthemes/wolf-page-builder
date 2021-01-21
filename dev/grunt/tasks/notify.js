@@ -36,13 +36,6 @@ module.exports = {
 		}
 	},
 
-	sandbox: {
-		options: {
-			title: '<%= app.name %> sandbox',
-			message: 'Plugin uploaded on sandbox'
-		}
-	},
-
 	prod: {
 		options: {
 			title: '<%= app.name %> Production',

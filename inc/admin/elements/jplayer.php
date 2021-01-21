@@ -4,8 +4,8 @@
  *
  * @author WolfThemes
  * @category Core
- * @package %PACKAGENAME%/Admin/Elements
- * @version %VERSION%
+ * @package WolfPageBuilder/Admin/Elements
+ * @version 3.2.8
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -26,14 +26,14 @@ if ( class_exists( 'Wolf_jPlayer' ) ) {
 		$args = array(
 			'name' => 'jPlayer',
 			'base' => 'wolf_jplayer_playlist',
-			'category' => esc_html__( 'Music', '%TEXTDOMAIN%' ),
-			'description' => esc_html__( 'A playlist of songs', '%TEXTDOMAIN%' ),
+			'category' => esc_html__( 'Music', 'wolf-page-builder' ),
+			'description' => esc_html__( 'A playlist of songs', 'wolf-page-builder' ),
 			'icon' => 'wpb-icon wpb-jplayer',
 			'params' => array(
 
 				array(
 					'type' => 'select',
-					'label' => esc_html__( 'Playlist', '%TEXTDOMAIN%' ),
+					'label' => esc_html__( 'Playlist', 'wolf-page-builder' ),
 					'param_name' => 'id',
 					'choices' => array(),
 					'display' => true,
@@ -49,16 +49,16 @@ if ( class_exists( 'Wolf_jPlayer' ) ) {
 		$args = array(
 			'name' => 'jPlayer',
 			'base' => 'wolf_jplayer_playlist',
-			'category' => esc_html__( 'Music', '%TEXTDOMAIN%' ),
-			'description' => esc_html__( 'A playlist of songs', '%TEXTDOMAIN%' ),
+			'category' => esc_html__( 'Music', 'wolf-page-builder' ),
+			'description' => esc_html__( 'A playlist of songs', 'wolf-page-builder' ),
 			'icon' => 'wpb-icon wpb-jplayer',
 			'params' => array(
 
 				array(
 					'type' => 'select',
-					'label' => esc_html__( 'Playlist', '%TEXTDOMAIN%' ),
+					'label' => esc_html__( 'Playlist', 'wolf-page-builder' ),
 					'param_name' => 'id',
-					'choices' => array( 0 => esc_html__( 'No playlist created yet', '%TEXTDOMAIN%' ) ),
+					'choices' => array( 0 => esc_html__( 'No playlist created yet', 'wolf-page-builder' ) ),
 				),
 			)
 		);

@@ -4,8 +4,8 @@
  *
  * @author WolfThemes
  * @category Core
- * @package %PACKAGENAME%/Admin/Elements
- * @version %VERSION%
+ * @package WolfPageBuilder/Admin/Elements
+ * @version 3.2.8
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -19,32 +19,32 @@ wpb_add_element(
 
 			array(
 				'type' => 'select',
-				'label' => esc_html__( 'Content Type', '%TEXTDOMAIN%' ),
+				'label' => esc_html__( 'Content Type', 'wolf-page-builder' ),
 				'param_name' => 'content_type',
 				'choices' => array(
-					'standard' => sprintf( esc_html__( 'Standard Width (%s centered)', '%TEXTDOMAIN%' ), '1140px' ),
-					'small' => sprintf( esc_html__( 'Small Width (%s centered)', '%TEXTDOMAIN%' ), '750px' ),
-					'large' => sprintf( esc_html__( 'Large Width (%s centered)', '%TEXTDOMAIN%' ), '98%' ),
-					'full' => sprintf( esc_html__( 'Full Width (%s)', '%TEXTDOMAIN%' ), '100%' ),
+					'standard' => sprintf( esc_html__( 'Standard Width (%s centered)', 'wolf-page-builder' ), '1140px' ),
+					'small' => sprintf( esc_html__( 'Small Width (%s centered)', 'wolf-page-builder' ), '750px' ),
+					'large' => sprintf( esc_html__( 'Large Width (%s centered)', 'wolf-page-builder' ), '98%' ),
+					'full' => sprintf( esc_html__( 'Full Width (%s)', 'wolf-page-builder' ), '100%' ),
 				),
 			),
 
 			array(
 				'type' => 'text',
 				'class' => 'wpb-col-6 wpb-first',
-				'label' => esc_html__( 'Margin Top', '%TEXTDOMAIN%' ),
+				'label' => esc_html__( 'Margin Top', 'wolf-page-builder' ),
 				'param_name' => 'margin_top',
 				'placeholder' => '50px',
-				'description' => esc_html__( 'Margin above the content', '%TEXTDOMAIN%' ),
+				'description' => esc_html__( 'Margin above the content', 'wolf-page-builder' ),
 			),
 
 			array(
 				'type' => 'text',
 				'class' => 'wpb-col-6 wpb-last',
-				'label' => esc_html__( 'Margin Bottom', '%TEXTDOMAIN%' ),
+				'label' => esc_html__( 'Margin Bottom', 'wolf-page-builder' ),
 				'param_name' => 'margin_bottom',
 				'placeholder' => '50px',
-				'description' => esc_html__( 'Margin below the content', '%TEXTDOMAIN%' ),
+				'description' => esc_html__( 'Margin below the content', 'wolf-page-builder' ),
 			),
 		)
 	)

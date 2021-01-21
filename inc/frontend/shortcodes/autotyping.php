@@ -4,8 +4,8 @@
  *
  * @author WolfThemes
  * @category Core
- * @package %PACKAGENAME%/FrontEnd/Shortcodes
- * @version %VERSION%
+ * @package WolfPageBuilder/FrontEnd/Shortcodes
+ * @version 3.2.8
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -20,7 +20,7 @@ if ( ! function_exists( 'wpb_shortcode_typed' ) ) {
 	 * @return string
 	 */
 	function wpb_shortcode_typed( $atts ) {
-		
+
 		extract( shortcode_atts( array(
 			'text' => '',
 			'tag' => 'h2',
@@ -36,7 +36,7 @@ if ( ! function_exists( 'wpb_shortcode_typed' ) ) {
 			'inline_style' => '',
 			'extra_class' => '',
 		), $atts ) );
-		
+
 		wp_enqueue_script( 'typed' );
 		wp_enqueue_script( 'wpb-typed' );
 
@@ -51,9 +51,9 @@ if ( ! function_exists( 'wpb_shortcode_typed' ) ) {
 
 		$rand_id = rand( 0,999 );
 		$output = '';
-		
+
 		$strings_data = '';
-		
+
 		$strings_array = wpb_texarea_lines_to_array( $text );
 		foreach ( $strings_array as $string ) {
 			$strings_data .= '"' . trim( $string ) . '",';
@@ -70,7 +70,7 @@ if ( ! function_exists( 'wpb_shortcode_typed' ) ) {
 		}
 
 		$output .= '<span';
-		$output .= ' data-string="[' . esc_js( $strings_data ) . ']" 
+		$output .= ' data-string="[' . esc_js( $strings_data ) . ']"
 		data-loop="' . wpb_shortcode_bool( $loop ) . '"
 		data-speed="' . absint( $speed ) . '"';
 

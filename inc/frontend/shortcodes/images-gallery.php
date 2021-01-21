@@ -4,8 +4,8 @@
  *
  * @author WolfThemes
  * @category Core
- * @package %PACKAGENAME%/FrontEnd/Shortcodes
- * @version %VERSION%
+ * @package WolfPageBuilder/FrontEnd/Shortcodes
+ * @version 3.2.8
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -41,11 +41,11 @@ if ( ! function_exists( 'wpb_shortcode_gallery' ) ) {
 		$images = wpb_list_to_array( $ids );
 
 		if ( 'mosaic' == $layout ) {
-			
+
 			$output = wpb_mosaic_gallery( $images, $link_type, $hover_effect, $orderby, $inline_style, $class );
 
 		} elseif ( 'carousel' == $layout ) {
-			
+
 			$output = wolf_carousel_gallery( $images, $link_type, $image_size, $padding, $columns, $hover_effect, $orderby, $inline_style, $class );
 
 		} elseif ( 'simple' == $layout ) {
@@ -117,7 +117,7 @@ if ( ! function_exists( 'wpb_simple_gallery' ) ) {
 		}
 
 		$output .= '>';
-		
+
 
 		if ( array() != $images ) {
 
@@ -138,7 +138,7 @@ if ( ! function_exists( 'wpb_simple_gallery' ) ) {
 					$href = ( 'post' == $link_type || 'attachment' == $link_type ) ? $image_page : $full_size;
 					$class = ( 'file' == $link_type ) ? 'wpb-lightbox wpb-image-inner' : 'wpb-image-inner';
 				} else {
-					
+
 					$alt = $post_excerpt = $href = $title = '';
 
 					if ( wpb_is_url( $image_id ) ) {
@@ -154,7 +154,7 @@ if ( ! function_exists( 'wpb_simple_gallery' ) ) {
 				$output .= "<div class='wpb-block'>";
 
 				if ( 'none' != $link_type ) {
-					
+
 					$output .= "<a";
 
 					if ( $title ) {
@@ -162,7 +162,7 @@ if ( ! function_exists( 'wpb_simple_gallery' ) ) {
 					}
 
 					$output .= ' href="' . esc_url( $href ) . '" class="' . wpb_sanitize_html_classes( $class ) . '" data-wpb-rel="' . esc_attr( $selector ) . '">';
-				
+
 				} else {
 					$output .= '<span class="' . wpb_sanitize_html_classes( $class ) . '">';
 				}
@@ -267,7 +267,7 @@ if ( ! function_exists( 'wolf_carousel_gallery' ) ) {
 				$output .= "<figure class='wpb-img-carousel'>";
 
 				if ( 'none' != $link_type ) {
-					
+
 					$output .= "<a";
 
 					if ( $title ) {
@@ -275,11 +275,11 @@ if ( ! function_exists( 'wolf_carousel_gallery' ) ) {
 					}
 
 					$output .= ' href="' . esc_url( $href ) . '" class="' . wpb_sanitize_html_classes( $class ) . '" data-wpb-rel="' . esc_attr( $selector ) . '">';
-				
+
 				} else {
 					$output .= '<span class="' . wpb_sanitize_html_classes( $class ) . '">';
 				}
-									
+
 				$output .= '<img src="' . esc_url( $image_url ) . '" alt="' . esc_attr( $title ) . '">';
 
 				if ( 'none' != $link_type ) {
@@ -334,7 +334,7 @@ if ( ! function_exists( 'wpb_mosaic_gallery' ) ) {
 		if ( array() != $images ) {
 
 			foreach ( $images as $image_id ) {
-				
+
 				if ( $i%6 == 0) {
 					if ( $i == 0 ) {
 						$output .= "\n";
@@ -385,7 +385,7 @@ if ( ! function_exists( 'wpb_mosaic_gallery' ) ) {
 					$alt = $title = $post_excerpt = $href = '';
 					$link_type = 'none';
 					$class= 'wpb-image-inner';
-					
+
 					if ( wpb_is_url( $image_id ) ) {
 
 						$image_url = esc_url( $image_id );
@@ -401,7 +401,7 @@ if ( ! function_exists( 'wpb_mosaic_gallery' ) ) {
 				} else {
 					$output .= "<span class='$class'>";
 				}
-									
+
 				$do_lazy_load = wpb_get_option( 'settings', 'do_lazyload' );
 				$src = ( $do_lazy_load ) ? WPB_URI . '/assets/img/blank.gif' : $image_url;
 				$lazy_load = ( $do_lazy_load ) ? ' class="lazy-hidden" data-src="' . esc_url( $image_url ) . '"' : '';

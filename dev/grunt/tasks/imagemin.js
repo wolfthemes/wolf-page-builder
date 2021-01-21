@@ -3,9 +3,9 @@ module.exports = {
 	assets: {                       
 		files: [{
 			expand: true,
-			cwd: '<%= app.imagesPath %>/',
+			cwd: '<%= imagesPath %>/',
 			src: ['**/*.{png,jpg,gif}'],
-			dest: '<%= app.root %>pack/<%= app.slug %>/assets/img/'
+			dest: '<%= root %>pack/<%= app.slug %>/assets/img/'
 		}]
 	}	
 

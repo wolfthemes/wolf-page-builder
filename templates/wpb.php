@@ -6,7 +6,7 @@
  *
  * @author WolfThemes
  * @package WolfPageBuilder/Templates
- * @version %VERSION%
+ * @version 3.2.8
  */
 
 if ( ! defined( 'ABSPATH' ) ) {

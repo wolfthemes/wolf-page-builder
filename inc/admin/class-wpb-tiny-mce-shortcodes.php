@@ -1,12 +1,12 @@
 <?php
 /**
- * %NAME% Tiny MCE shortcode.
+ * Wolf Page Builder Tiny MCE shortcode.
  *
  * @class WPB_Tiny_Mce_Shortcodes
  * @author WolfThemes
  * @category Admin
- * @package %PACKAGENAME%/Admin
- * @version %VERSION%
+ * @package WolfPageBuilder/Admin
+ * @version 3.2.8
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -21,7 +21,7 @@ if ( ! class_exists( 'WPB_Tiny_Mce_Shortcodes' ) ) {
 	 *
 	 * @class WPB_Tiny_Mce_Shortcodes
 	 * @since 1.0.0
-	 * @package %NAME%
+	 * @package Wolf Page Builder
 	 * @author WolfThemes
 	 */
 	class WPB_Tiny_Mce_Shortcodes {
@@ -82,7 +82,7 @@ if ( ! class_exists( 'WPB_Tiny_Mce_Shortcodes' ) ) {
 		 * @param array $params
 		 */
 		public function google_font_list( $params ) {
-			
+
 			$wpb_google_fonts = wpb_get_google_fonts_options();
 
 			$fonts = '';
@@ -106,26 +106,26 @@ if ( ! class_exists( 'WPB_Tiny_Mce_Shortcodes' ) ) {
 		public function admin_scripts() {
 
 			// wp_enqueue_style( 'wpb-popup', WPB_URI . '/inc/admin/tinymce/css/popup.css', false, '1.0', 'all' );
-			
+
 			wp_localize_script( 'jquery', 'Wolf_Shortcodes_Tiny_Mce', array( 'plugin_folder' => WPB_URI . '/inc/admin/tinymce/' ) );
 
 			wp_enqueue_script( 'wpb-tinymce', WPB_JS . '/admin/tinymce.js', array( 'jquery' ), WPB_VERSION, true );
-			
+
 			// Add JS global variables
 			wp_localize_script(
 				'wpb-tinymce', 'WPBTinyMceParams', array(
-					'anchor' => esc_html__( 'Anchor', '%TEXTDOMAIN%' ),
-					'dropcap' => esc_html__( 'Dropcap', '%TEXTDOMAIN%' ),
-					'button' => esc_html__( 'Button', '%TEXTDOMAIN%' ),
-					'alert' => esc_html__( 'Notifications', '%TEXTDOMAIN%' ),
-					'highlight' => esc_html__( 'Highlight', '%TEXTDOMAIN%' ),
-					'spacer' => esc_html__( 'Spacer', '%TEXTDOMAIN%' ),
-					// 'mailchimp' => esc_html__( 'Newsletter sign up', '%TEXTDOMAIN%' ),
-					'fittext' => esc_html__( 'Headline', '%TEXTDOMAIN%' ),
-					'socials' => esc_html__( 'Socials', '%TEXTDOMAIN%' ),
-					'fonts' => esc_html__( 'Fonts', '%TEXTDOMAIN%' ),
-					'columns' => esc_html__( 'Columns', '%TEXTDOMAIN%' ),
-					'insertText' => esc_html__( 'Insert a shortcode', '%TEXTDOMAIN%' ),
+					'anchor' => esc_html__( 'Anchor', 'wolf-page-builder' ),
+					'dropcap' => esc_html__( 'Dropcap', 'wolf-page-builder' ),
+					'button' => esc_html__( 'Button', 'wolf-page-builder' ),
+					'alert' => esc_html__( 'Notifications', 'wolf-page-builder' ),
+					'highlight' => esc_html__( 'Highlight', 'wolf-page-builder' ),
+					'spacer' => esc_html__( 'Spacer', 'wolf-page-builder' ),
+					// 'mailchimp' => esc_html__( 'Newsletter sign up', 'wolf-page-builder' ),
+					'fittext' => esc_html__( 'Headline', 'wolf-page-builder' ),
+					'socials' => esc_html__( 'Socials', 'wolf-page-builder' ),
+					'fonts' => esc_html__( 'Fonts', 'wolf-page-builder' ),
+					'columns' => esc_html__( 'Columns', 'wolf-page-builder' ),
+					'insertText' => esc_html__( 'Insert a shortcode', 'wolf-page-builder' ),
 					// 'fontList' => $wpb_fonts,
 				)
 			);

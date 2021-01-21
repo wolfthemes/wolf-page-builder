@@ -4,8 +4,8 @@
  *
  * @author WolfThemes
  * @category Core
- * @package %PACKAGENAME%/Admin/Elements
- * @version %VERSION%
+ * @package WolfPageBuilder/Admin/Elements
+ * @version 3.2.8
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -19,21 +19,21 @@ if ( class_exists( 'Wolf_Facebook_Page_Box' ) ) {
 		array(
 			'name' => 'Facebook Page Box',
 			'base' => 'wolf_facebook_page_box',
-			'description' => esc_html__( 'Display a facebook fan box', '%TEXTDOMAIN%' ),
-			'category' => esc_html__( 'Social', '%TEXTDOMAIN%' ),
+			'description' => esc_html__( 'Display a facebook fan box', 'wolf-page-builder' ),
+			'category' => esc_html__( 'Social', 'wolf-page-builder' ),
 			'icon' => 'wpb-icon wpb-facebook',
 			'params' => array(
 
 				array(
 					'type' => 'text',
-					'label' => esc_html__( 'Facebook Page URL', '%TEXTDOMAIN%' ),
+					'label' => esc_html__( 'Facebook Page URL', 'wolf-page-builder' ),
 					'param_name' => 'page_url',
 					'value' => wpb_get_option( 'socials', 'facebook' ),
 					'display' => true,
 				),
 
 				array(
-					'label' => esc_html__( 'Height', '%TEXTDOMAIN%' ),
+					'label' => esc_html__( 'Height', 'wolf-page-builder' ),
 					'type' => 'int',
 					'param_name' => 'height',
 					'value' => 400,
@@ -41,7 +41,7 @@ if ( class_exists( 'Wolf_Facebook_Page_Box' ) ) {
 				),
 
 				array(
-					'label' => esc_html__( 'Show posts', '%TEXTDOMAIN%' ),
+					'label' => esc_html__( 'Show posts', 'wolf-page-builder' ),
 					'class' => 'wpb-col-6 wpb-first',
 					'type' => 'checkbox',
 					'param_name' => 'show_posts',
@@ -49,7 +49,7 @@ if ( class_exists( 'Wolf_Facebook_Page_Box' ) ) {
 				),
 
 				array(
-					'label' => esc_html__( 'Show faces', '%TEXTDOMAIN%' ),
+					'label' => esc_html__( 'Show faces', 'wolf-page-builder' ),
 					'class' => 'wpb-col-6 wpb-last',
 					'type' => 'checkbox',
 					'param_name' => 'show_faces',
@@ -57,7 +57,7 @@ if ( class_exists( 'Wolf_Facebook_Page_Box' ) ) {
 				),
 
 				array(
-					'label' => esc_html__( 'Hide cover', '%TEXTDOMAIN%' ),
+					'label' => esc_html__( 'Hide cover', 'wolf-page-builder' ),
 					'class' => 'wpb-col-6 wpb-first',
 					'type' => 'checkbox',
 					'param_name' => 'hide_cover',
@@ -65,7 +65,7 @@ if ( class_exists( 'Wolf_Facebook_Page_Box' ) ) {
 				),
 
 				array(
-					'label' => esc_html__( 'Small header', '%TEXTDOMAIN%' ),
+					'label' => esc_html__( 'Small header', 'wolf-page-builder' ),
 					'class' => 'wpb-col-6 wpb-last',
 					'type' => 'checkbox',
 					'param_name' => 'small_header',

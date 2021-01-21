@@ -1,13 +1,13 @@
 <?php
 /**
- * %NAME% scripts functions
+ * Wolf Page Builder scripts functions
  *
  * Scripts related functions for frontend
  *
  * @author WolfThemes
  * @category Core
- * @package %PACKAGENAME%/FRontend
- * @version %VERSION%
+ * @package WolfPageBuilder/FRontend
+ * @version 3.2.8
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -35,7 +35,7 @@ function wpb_get_js_params() {
 /**
  * Register scripts
  *
- * @since %NAME% %VERSION%
+ * @since Wolf Page Builder 3.2.8
  */
 function wpb_register_scripts() {
 
@@ -118,7 +118,7 @@ add_action( 'wp_enqueue_scripts', 'wpb_register_scripts' );
 /**
  * Enqueue conditional scripts
  *
- * @since %NAME% %VERSION%
+ * @since Wolf Page Builder 3.2.8
  */
 function wpb_enqueue_common_scripts() {
 
@@ -170,7 +170,7 @@ add_action( 'wp_enqueue_scripts', 'wpb_enqueue_common_scripts' );
 /**
  * Force Enqueue  JS
  *
- * @since %NAME% %VERSION%
+ * @since Wolf Page Builder 3.2.8
  */
 function wpb_force_enqueue_scripts() {
 

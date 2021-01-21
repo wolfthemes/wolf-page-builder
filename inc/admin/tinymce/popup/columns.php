@@ -5,20 +5,20 @@
  * @class WPB_Admin
  * @author WolfThemes
  * @category Admin
- * @package %PACKAGENAME%/Admin
- * @version %VERSION%
+ * @package WolfPageBuilder/Admin
+ * @version 3.2.8
  */
-$title = esc_html__( 'Columns', '%TEXTDOMAIN%' );
+$title = esc_html__( 'Columns', 'wolf-page-builder' );
 $params = array(
 
 	array(
 		'id' => 'col',
-		'label' => esc_html__( 'Size', '%TEXTDOMAIN%' ),
+		'label' => esc_html__( 'Size', 'wolf-page-builder' ),
 		'type' => 'select',
 		'options' => array(
-			'wpb-col-6' => esc_html__( 'col-6 (one half)', '%TEXTDOMAIN%' ),
-			'wpb-col-4' => esc_html__( 'col-4 (one third)', '%TEXTDOMAIN%' ),
-			'wpb-col-3' => esc_html__( 'col-3 (one fourth)', '%TEXTDOMAIN%' ),
+			'wpb-col-6' => esc_html__( 'col-6 (one half)', 'wolf-page-builder' ),
+			'wpb-col-4' => esc_html__( 'col-4 (one third)', 'wolf-page-builder' ),
+			'wpb-col-3' => esc_html__( 'col-3 (one fourth)', 'wolf-page-builder' ),
 			'wpb-col-11' => 'col-11',
 			'wpb-col-10' => 'col-10',
 			'wpb-col-9' => 'col-9',
@@ -28,18 +28,18 @@ $params = array(
 			'wpb-col-2' => 'col-2',
 			'wpb-col-1' => 'col-1',
 		),
-		'desc' => esc_html__( 'A row consists of a series of columns (col-X) that add up to 12.<br>Check the "First" checkbox below if your column is the first of the row<br>and check the "Last" checkbox if your column is the last of the row.', '%TEXTDOMAIN%' ),
+		'desc' => esc_html__( 'A row consists of a series of columns (col-X) that add up to 12.<br>Check the "First" checkbox below if your column is the first of the row<br>and check the "Last" checkbox if your column is the last of the row.', 'wolf-page-builder' ),
 	),
 
 	array(
 		'id' => 'first',
-		'label' => esc_html__( 'First', '%TEXTDOMAIN%' ),
+		'label' => esc_html__( 'First', 'wolf-page-builder' ),
 		'type' => 'checkbox',
 	),
 
 	array(
 		'id' => 'last',
-		'label' => esc_html__( 'Last', '%TEXTDOMAIN%' ),
+		'label' => esc_html__( 'Last', 'wolf-page-builder' ),
 		'type' => 'checkbox',
 	),
 );

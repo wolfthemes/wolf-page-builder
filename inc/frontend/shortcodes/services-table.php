@@ -4,8 +4,8 @@
  *
  * @author WolfThemes
  * @category Core
- * @package %PACKAGENAME%/FrontEnd/Shortcodes
- * @version %VERSION%
+ * @package WolfPageBuilder/FrontEnd/Shortcodes
+ * @version 3.2.8
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -20,7 +20,7 @@ if ( ! function_exists( 'wpb_shortcode_services_table' ) ) {
 	 * @return string
 	 */
 	function wpb_shortcode_services_table( $atts ) {
-		
+
 		extract( shortcode_atts( array(
 			'title' => '',
 			'bg_color' => '',
@@ -45,11 +45,11 @@ if ( ! function_exists( 'wpb_shortcode_services_table' ) ) {
 		$opacity = ( $bg_opacity ) ? absint( $bg_opacity ) / 100 : 1;
 
 		if ( $bg_color ) {
-			
+
 			if ( $bg_opacity ) {
 				$bg_color = 'background:none;background-color:rgba(' . wpb_hex_to_rgb( $bg_color )  . ', ' . esc_attr( $opacity ) . ');';
 			}
-			
+
 			$inline_style .= "background-color:$bg_color;";
 		}
 

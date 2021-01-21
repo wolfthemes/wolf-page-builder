@@ -4,8 +4,8 @@
  *
  * @author WolfThemes
  * @category Core
- * @package %PACKAGENAME%/Admin/Elements
- * @version %VERSION%
+ * @package WolfPageBuilder/Admin/Elements
+ * @version 3.2.8
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -17,7 +17,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 // pages, calendar, archives, meta, categories, recent-posts, recent-comments, rss, tag_cloud
 
 foreach ( wpb_get_wp_widgets() as $widget ) {
-	
+
 	$base = $widget->id_base;
 	$name = $widget->name;
 	$description = $widget->widget_options['description'];
@@ -30,7 +30,7 @@ foreach ( wpb_get_wp_widgets() as $widget ) {
 	foreach ( $wp_menus as $menu ) {
 		$menus[ esc_attr( $menu->term_id ) ] = esc_html( $menu->name );
 	}
-	
+
 	if ( 'text' == $base ) {
 		$params = array(
 			array(
@@ -40,7 +40,7 @@ foreach ( wpb_get_wp_widgets() as $widget ) {
 			),
 			array(
 				'type' => 'text',
-				'label' => esc_html__( 'Title', '%TEXTDOMAIN%' ),
+				'label' => esc_html__( 'Title', 'wolf-page-builder' ),
 				'param_name' => 'title',
 				'display' => true,
 			),
@@ -62,27 +62,27 @@ foreach ( wpb_get_wp_widgets() as $widget ) {
 			),
 			array(
 				'type' => 'text',
-				'label' => esc_html__( 'Title', '%TEXTDOMAIN%' ),
+				'label' => esc_html__( 'Title', 'wolf-page-builder' ),
 				'param_name' => 'title',
 				'display' => true,
 			),
 			array(
 				'type' => 'select',
-				'label' => esc_html__( 'Sort by', '%TEXTDOMAIN%' ),
+				'label' => esc_html__( 'Sort by', 'wolf-page-builder' ),
 				'param_name' => 'sortby',
 				'display' => true,
 				'choices' => array(
-					'post_title' => esc_html__( 'Page title', '%TEXTDOMAIN%' ),
-					'menu_order' => esc_html__( 'Page order', '%TEXTDOMAIN%' ),
-					'ID' => esc_html__( 'Page ID', '%TEXTDOMAIN%' ),
+					'post_title' => esc_html__( 'Page title', 'wolf-page-builder' ),
+					'menu_order' => esc_html__( 'Page order', 'wolf-page-builder' ),
+					'ID' => esc_html__( 'Page ID', 'wolf-page-builder' ),
 				),
 			),
 			array(
 				'type' => 'text',
-				'label' => esc_html__( 'Exclude', '%TEXTDOMAIN%' ),
+				'label' => esc_html__( 'Exclude', 'wolf-page-builder' ),
 				'param_name' => 'exclude',
 				'display' => true,
-				'description' => esc_html__( 'Page IDs, separated by commas.', '%TEXTDOMAIN%' ),
+				'description' => esc_html__( 'Page IDs, separated by commas.', 'wolf-page-builder' ),
 			),
 		);
 	}
@@ -96,7 +96,7 @@ foreach ( wpb_get_wp_widgets() as $widget ) {
 			),
 			array(
 				'type' => 'text',
-				'label' => esc_html__( 'Title', '%TEXTDOMAIN%' ),
+				'label' => esc_html__( 'Title', 'wolf-page-builder' ),
 				'param_name' => 'title',
 				'display' => true,
 			),
@@ -112,18 +112,18 @@ foreach ( wpb_get_wp_widgets() as $widget ) {
 			),
 			array(
 				'type' => 'text',
-				'label' => esc_html__( 'Title', '%TEXTDOMAIN%' ),
+				'label' => esc_html__( 'Title', 'wolf-page-builder' ),
 				'param_name' => 'title',
 				'display' => true,
 			),
 			array(
 				'type' => 'checkbox',
-				'label' => esc_html__( 'Display as dropdown', '%TEXTDOMAIN%' ),
+				'label' => esc_html__( 'Display as dropdown', 'wolf-page-builder' ),
 				'param_name' => 'dropdown',
 			),
 			array(
 				'type' => 'checkbox',
-				'label' => esc_html__( 'Show post count', '%TEXTDOMAIN%' ),
+				'label' => esc_html__( 'Show post count', 'wolf-page-builder' ),
 				'param_name' => 'count',
 			),
 		);
@@ -138,7 +138,7 @@ foreach ( wpb_get_wp_widgets() as $widget ) {
 			),
 			array(
 				'type' => 'text',
-				'label' => esc_html__( 'Title', '%TEXTDOMAIN%' ),
+				'label' => esc_html__( 'Title', 'wolf-page-builder' ),
 				'param_name' => 'title',
 				'display' => true,
 			),
@@ -154,18 +154,18 @@ foreach ( wpb_get_wp_widgets() as $widget ) {
 			),
 			array(
 				'type' => 'text',
-				'label' => esc_html__( 'Title', '%TEXTDOMAIN%' ),
+				'label' => esc_html__( 'Title', 'wolf-page-builder' ),
 				'param_name' => 'title',
 				'display' => true,
 			),
 			array(
 				'type' => 'select',
-				'label' => esc_html__( 'Taxonomy:', '%TEXTDOMAIN%' ),
+				'label' => esc_html__( 'Taxonomy:', 'wolf-page-builder' ),
 				'param_name' => 'taxonomy',
 				'display' => true,
 				'choices' => array(
-					'post_tag' => esc_html__( 'Tags', '%TEXTDOMAIN%' ),
-					'category' => esc_html__( 'Categories', '%TEXTDOMAIN%' ),
+					'post_tag' => esc_html__( 'Tags', 'wolf-page-builder' ),
+					'category' => esc_html__( 'Categories', 'wolf-page-builder' ),
 				),
 			),
 		);
@@ -180,23 +180,23 @@ foreach ( wpb_get_wp_widgets() as $widget ) {
 			),
 			array(
 				'type' => 'text',
-				'label' => esc_html__( 'Title', '%TEXTDOMAIN%' ),
+				'label' => esc_html__( 'Title', 'wolf-page-builder' ),
 				'param_name' => 'title',
 				'display' => true,
 			),
 			array(
 				'type' => 'checkbox',
-				'label' => esc_html__( 'Display as dropdown', '%TEXTDOMAIN%' ),
+				'label' => esc_html__( 'Display as dropdown', 'wolf-page-builder' ),
 				'param_name' => 'dropdown',
 			),
 			array(
 				'type' => 'checkbox',
-				'label' => esc_html__( 'Show post count', '%TEXTDOMAIN%' ),
+				'label' => esc_html__( 'Show post count', 'wolf-page-builder' ),
 				'param_name' => 'count',
 			),
 			array(
 				'type' => 'checkbox',
-				'label' => esc_html__( 'Show hierarchy', '%TEXTDOMAIN%' ),
+				'label' => esc_html__( 'Show hierarchy', 'wolf-page-builder' ),
 				'param_name' => 'hierarchical',
 			),
 		);
@@ -211,18 +211,18 @@ foreach ( wpb_get_wp_widgets() as $widget ) {
 			),
 			array(
 				'type' => 'text',
-				'label' => esc_html__( 'Enter the RSS feed URL here', '%TEXTDOMAIN%' ),
+				'label' => esc_html__( 'Enter the RSS feed URL here', 'wolf-page-builder' ),
 				'param_name' => 'url',
 				'display' => true,
 			),
 			array(
 				'type' => 'text',
-				'label' => esc_html__( 'Give the feed a title (optional)', '%TEXTDOMAIN%' ),
+				'label' => esc_html__( 'Give the feed a title (optional)', 'wolf-page-builder' ),
 				'param_name' => 'title',
 			),
 			array(
 				'type' => 'select',
-				'label' => esc_html__( 'How many items would you like to display', '%TEXTDOMAIN%' ),
+				'label' => esc_html__( 'How many items would you like to display', 'wolf-page-builder' ),
 				'param_name' => 'items',
 				'display' => true,
 				'choices' => array(
@@ -231,17 +231,17 @@ foreach ( wpb_get_wp_widgets() as $widget ) {
 			),
 			array(
 				'type' => 'checkbox',
-				'label' => esc_html__( 'Display item content?', '%TEXTDOMAIN%' ),
+				'label' => esc_html__( 'Display item content?', 'wolf-page-builder' ),
 				'param_name' => 'show_summary',
 			),
 			array(
 				'type' => 'checkbox',
-				'label' => esc_html__( 'Display item author if available?', '%TEXTDOMAIN%' ),
+				'label' => esc_html__( 'Display item author if available?', 'wolf-page-builder' ),
 				'param_name' => 'show_author',
 			),
 			array(
 				'type' => 'checkbox',
-				'label' => esc_html__( 'Display item date?', '%TEXTDOMAIN%' ),
+				'label' => esc_html__( 'Display item date?', 'wolf-page-builder' ),
 				'param_name' => 'show_date',
 			),
 		);
@@ -256,19 +256,19 @@ foreach ( wpb_get_wp_widgets() as $widget ) {
 			),
 			array(
 				'type' => 'text',
-				'label' => esc_html__( 'Title', '%TEXTDOMAIN%' ),
+				'label' => esc_html__( 'Title', 'wolf-page-builder' ),
 				'param_name' => 'title',
 				'display' => true,
 			),
 			array(
 				'type' => 'int',
-				'label' => esc_html__( 'Count', '%TEXTDOMAIN%' ),
+				'label' => esc_html__( 'Count', 'wolf-page-builder' ),
 				'param_name' => 'number',
 				'display' => true,
 			),
 			array(
 				'type' => 'checkbox',
-				'label' => esc_html__( 'Display post date?', '%TEXTDOMAIN%' ),
+				'label' => esc_html__( 'Display post date?', 'wolf-page-builder' ),
 				'param_name' => 'show_date',
 			),
 		);
@@ -283,13 +283,13 @@ foreach ( wpb_get_wp_widgets() as $widget ) {
 			),
 			array(
 				'type' => 'text',
-				'label' => esc_html__( 'Title', '%TEXTDOMAIN%' ),
+				'label' => esc_html__( 'Title', 'wolf-page-builder' ),
 				'param_name' => 'title',
 				'display' => true,
 			),
 			array(
 				'type' => 'int',
-				'label' => esc_html__( 'Count', '%TEXTDOMAIN%' ),
+				'label' => esc_html__( 'Count', 'wolf-page-builder' ),
 				'param_name' => 'number',
 				'display' => true,
 			),
@@ -305,7 +305,7 @@ foreach ( wpb_get_wp_widgets() as $widget ) {
 			),
 			array(
 				'type' => 'text',
-				'label' => esc_html__( 'Title', '%TEXTDOMAIN%' ),
+				'label' => esc_html__( 'Title', 'wolf-page-builder' ),
 				'param_name' => 'title',
 				'display' => true,
 			),
@@ -322,14 +322,14 @@ foreach ( wpb_get_wp_widgets() as $widget ) {
 
 			array(
 				'type' => 'text',
-				'label' => esc_html__( 'Title', '%TEXTDOMAIN%' ),
+				'label' => esc_html__( 'Title', 'wolf-page-builder' ),
 				'param_name' => 'title',
 				'display' => true,
 			),
 
 			array(
 				'type' => 'select',
-				'label' => esc_html__( 'Select Menu', '%TEXTDOMAIN%' ),
+				'label' => esc_html__( 'Select Menu', 'wolf-page-builder' ),
 				'param_name' => 'nav_menu',
 				'display' => true,
 				'choices' => $menus,
@@ -340,10 +340,10 @@ foreach ( wpb_get_wp_widgets() as $widget ) {
 	// WP Widgets
 	wpb_add_element(
 		array(
-			'name' => sprintf( esc_html__( '%s Widget', '%TEXTDOMAIN%' ), ucfirst( $name ) ),
+			'name' => sprintf( esc_html__( '%s Widget', 'wolf-page-builder' ), ucfirst( $name ) ),
 			'base' => 'wpb_wp_widget_' . $base,
 			'description' => $description,
-			'category' => esc_html__( 'WordPress Widgets', '%TEXTDOMAIN%' ),
+			'category' => esc_html__( 'WordPress Widgets', 'wolf-page-builder' ),
 			'icon' => 'wpb-icon wpb-wordpress',
 			'params' => $params,
 		)

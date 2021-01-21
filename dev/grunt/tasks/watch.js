@@ -2,24 +2,21 @@ module.exports = {
 
 	js:{
 		files:[
-			'<%= app.jsPath %>/*.js',
-			'!<%= app.jsPath %>/lib/**',
-			'!<%= app.jsPath %>/admin/*.js',
+			'<%= app.jsPath %>/*.js', '!<%= app.jsPath %>/lib/**',
+			'<%= app.jsPath %>/admin/*.js', '!<%= app.jsPath %>/admin/min/**',
+			//'<%= app.jsPath %>/wp-wolf-framework/assets/js/src/*.js',
 			],
 		tasks: [
-			// 'jshint',
-			'uglify',
-			'notify:js'
+			//'jshint',
+			//'uglify:admin',
+			//'notify:js'
 		]
 	},
+
 
 	sass: {
 		files: [
 			'<%= app.scssPath %>/*.scss',
-			'<%= app.scssPath %>/global/*.scss',
-			'<%= app.scssPath %>/dependencies/*.scss',
-			'<%= app.scssPath %>/shortcodes/*.scss',
-			'<%= app.scssPath %>/icons/*.scss',
 			'<%= app.scssAdminPath %>/*.scss'
 		],
 		tasks: [
@@ -35,7 +32,7 @@ module.exports = {
 	},
 
 	livereload: {
-		files: [ '<%= app.cssPath %>/*.css', '<%= app.cssPath %>/admin/*.css' ],
+		files: [ '<%= cssPath %>/*.css', '<%= cssPath %>/admin/*.css' ],
 		options: { livereload: true }
 	}
 };

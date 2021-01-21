@@ -4,8 +4,8 @@
  *
  * @author WolfThemes
  * @category Core
- * @package %PACKAGENAME%/FrontEnd/Shortcodes
- * @version %VERSION%
+ * @package WolfPageBuilder/FrontEnd/Shortcodes
+ * @version 3.2.8
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -20,7 +20,7 @@ if ( ! function_exists( 'wpb_item_price' ) ) {
 	 * @return string
 	 */
 	function wpb_item_price_shortcode( $atts ) {
-		
+
 		extract( shortcode_atts(  array(
 			'layout' => 'text',
 			'image' => '',
@@ -59,15 +59,15 @@ if ( ! function_exists( 'wpb_item_price' ) ) {
 			$class_text = 'wpb-omega wpb-col-10';
 
 		} elseif ( 'medium-image' == $layout ) {
-			
+
 			$class_image = 'wpb-alpha wpb-col-6';
 			$class_text = 'wpb-omega wpb-col-6';
 		}
 
 		if ( $image && 'text' != $layout ) {
-			
+
 			if ( is_numeric( $image ) ) {
-			
+
 				$src = wpb_get_url_from_attachment_id( absint( $image ), 'wpb-2x2' );
 				$full_size_src = wpb_get_url_from_attachment_id( absint( $image ), 'wpb-XL' );
 			} else {

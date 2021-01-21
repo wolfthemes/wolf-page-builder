@@ -37,7 +37,7 @@ An enhanced version of flexslider that support video background and caption tran
 
 			plugin.settings = $.extend( {}, defaults, options );
 
-			$selector.flexslider( {
+			$( plugin.settings.selector ).flexslider( {
 				animation : plugin.settings.animation,
 				slideshow : plugin.settings.slideshow,
 				pauseOnHover : plugin.settings.pauseOnHover,
@@ -91,7 +91,7 @@ An enhanced version of flexslider that support video background and caption tran
 					bleed = 2;
 
 				winHeight = parseInt( value, 10 );
-				
+
 				if ( '%' === unit ) {
 					winHeight = Math.floor( $( window ).height() * value / 100 );
 				}
@@ -102,7 +102,7 @@ An enhanced version of flexslider that support video background and caption tran
 
 				winHeight = winHeight - scrollOffset + bleed;
 
-				$selector.find( '.slide' ).each( function() {
+				$( plugin.settings.selector ).find( '.slide' ).each( function() {
 					$( this ).css( { 'height' : winHeight  } );
 				} );
 			},
@@ -130,7 +130,7 @@ An enhanced version of flexslider that support video background and caption tran
 			 */
 			loadAllVideos : function () {
 
-				$selector.find( '.wpb-slide-video' ).each( function () {
+				$( plugin.settings.selector ).find( '.wpb-slide-video' ).each( function () {
 					$( this ).parents( '.wpb-slide' ).addClass( 'pause' );
 				} );
 			},
@@ -140,11 +140,11 @@ An enhanced version of flexslider that support video background and caption tran
 			 */
 			playCurrentVideo : function () {
 
-				if ( $selector.find( '.flex-active-slide .wpb-slide-video' ).length ) {
+				if ( $( plugin.settings.selector ).find( '.flex-active-slide .wpb-slide-video' ).length ) {
 
 					var $videoContainer = $( '.flex-active-slide' ),
 						$video = $videoContainer.find( '.wpb-slide-video' );
-					
+
 					this.playToggleVideo( $video );
 				}
 			},
@@ -153,7 +153,7 @@ An enhanced version of flexslider that support video background and caption tran
 			 * Play/Pause a video
 			 */
 			playToggleVideo : function ( $video ) {
-				
+
 				var $videoContainer = $video.parent().parent(),
 					state = $video.data( 'video-play' ),
 					id = $video.data( 'video-id' ),
@@ -165,7 +165,7 @@ An enhanced version of flexslider that support video background and caption tran
 					$video.get( 0 ).play();
 					$video.data( 'video-play', true );
 					$videoContainer.toggleClass( 'pause' );
-				
+
 				// pause
 				} else {
 					$video.get( 0 ).pause();
@@ -193,7 +193,7 @@ An enhanced version of flexslider that support video background and caption tran
 			muteToggleVideo : function ( $video ) {
 				var $videoContainer = $video.parent().parent(),
 					state = $video.data( 'video-mute' );
-				
+
 				// already muted
 				if ( true === state ) {
 					$video.prop( 'muted', false );
@@ -214,8 +214,8 @@ An enhanced version of flexslider that support video background and caption tran
 				var _this = this,
 					$video;
 
-				if ( $selector.find( '.wpb-slide-video' ).length ) {
-					$selector.find( '.wpb-slide-video' ).each( function () {
+				if ( $( plugin.settings.selector ).find( '.wpb-slide-video' ).length ) {
+					$( plugin.settings.selector ).find( '.wpb-slide-video' ).each( function () {
 
 						$video = $( this );
 
@@ -240,7 +240,7 @@ An enhanced version of flexslider that support video background and caption tran
 					$( this ).on( 'click' , function () {
 						var id = $( this ).data( 'video-mute-id' ),
 							$video = $( '#wpb-slide-video-' + id );
-						
+
 						_this.muteToggleVideo( $video );
 					} );
 				} );

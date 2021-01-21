@@ -1,13 +1,13 @@
 <?php
 /**
- * %NAME% Template Hooks
+ * Wolf Page Builder Template Hooks
  *
- * Action/filter hooks used for %NAME% functions/templates
+ * Action/filter hooks used for Wolf Page Builder functions/templates
  *
  * @author WolfThemes
  * @category Core
- * @package %PACKAGENAME%/Templates
- * @version %VERSION%
+ * @package WolfPageBuilder/Templates
+ * @version 3.2.8
  */
 
 if ( ! defined( 'ABSPATH' ) ) {

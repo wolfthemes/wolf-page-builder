@@ -4,8 +4,8 @@
  *
  * @author WolfThemes
  * @category Core
- * @package %PACKAGENAME%/Admin/Elements
- * @version %VERSION%
+ * @package WolfPageBuilder/Admin/Elements
+ * @version 3.2.8
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -16,15 +16,15 @@ if ( class_exists( 'Wolf_Portfolio' ) ) {
 	// Portfolio Shortcode
 	wpb_add_element(
 		array(
-			'name' => esc_html__( 'Last Works', '%TEXTDOMAIN%' ),
+			'name' => esc_html__( 'Last Works', 'wolf-page-builder' ),
 			'base' => 'wolf_last_works',
-			'category' => esc_html__( 'Medias', '%TEXTDOMAIN%' ),
+			'category' => esc_html__( 'Medias', 'wolf-page-builder' ),
 			'icon' => 'wpb-icon wpb-works',
 			'params' => array(
 
 				array(
 					'type' => 'int',
-					'label' => esc_html__( 'Count', '%TEXTDOMAIN%' ),
+					'label' => esc_html__( 'Count', 'wolf-page-builder' ),
 					'param_name' => 'count',
 					'value' => 3,
 					'display' => true,
@@ -32,7 +32,7 @@ if ( class_exists( 'Wolf_Portfolio' ) ) {
 
 				array(
 					'type' => 'select',
-					'label' => esc_html__( 'Columns', '%TEXTDOMAIN%' ),
+					'label' => esc_html__( 'Columns', 'wolf-page-builder' ),
 					'param_name' => 'col',
 					'choices' => array( 3,2,4 ),
 					'dependency' => array(
@@ -43,9 +43,9 @@ if ( class_exists( 'Wolf_Portfolio' ) ) {
 
 				array(
 					'type' => 'text',
-					'label' => esc_html__( 'Category', '%TEXTDOMAIN%' ),
+					'label' => esc_html__( 'Category', 'wolf-page-builder' ),
 					'param_name' => 'category',
-					'description' => esc_html__( 'Include only one or several categories. Paste category slug(s) separated by a comma', '%TEXTDOMAIN%' ),
+					'description' => esc_html__( 'Include only one or several categories. Paste category slug(s) separated by a comma', 'wolf-page-builder' ),
 					'display' => true,
 				),
 			)

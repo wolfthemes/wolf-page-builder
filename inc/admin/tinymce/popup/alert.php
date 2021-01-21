@@ -5,27 +5,27 @@
  * @class WPB_Admin
  * @author WolfThemes
  * @category Admin
- * @package %PACKAGENAME%/Admin
- * @version %VERSION%
+ * @package WolfPageBuilder/Admin
+ * @version 3.2.8
  */
-$title = esc_html__( 'Notification', '%TEXTDOMAIN%' );
+$title = esc_html__( 'Notification', 'wolf-page-builder' );
 $params = array(
 
 	array(
 		'id' => 'message',
-		'label' => esc_html__( 'Message', '%TEXTDOMAIN%' ),
-		'placeholder' => esc_html__( 'Your notification message', '%TEXTDOMAIN%' )
+		'label' => esc_html__( 'Message', 'wolf-page-builder' ),
+		'placeholder' => esc_html__( 'Your notification message', 'wolf-page-builder' )
 	),
 
 	array(
 		'id' => 'type',
-		'label' => esc_html__( 'Type', '%TEXTDOMAIN%' ),
+		'label' => esc_html__( 'Type', 'wolf-page-builder' ),
 		'type' => 'select',
 		'options' => array(
-			'success' => esc_html__( 'success', '%TEXTDOMAIN%' ),
-			'info' => esc_html__( 'info', '%TEXTDOMAIN%' ),
-			'tip' => esc_html__( 'tip', '%TEXTDOMAIN%' ),
-			'error' => esc_html__( 'error', '%TEXTDOMAIN%' ),
+			'success' => esc_html__( 'success', 'wolf-page-builder' ),
+			'info' => esc_html__( 'info', 'wolf-page-builder' ),
+			'tip' => esc_html__( 'tip', 'wolf-page-builder' ),
+			'error' => esc_html__( 'error', 'wolf-page-builder' ),
 		),
 	)
 );

@@ -4,8 +4,8 @@
  *
  * @author WolfThemes
  * @category Core
- * @package %PACKAGENAME%/FrontEnd/Shortcodes
- * @version %VERSION%
+ * @package WolfPageBuilder/FrontEnd/Shortcodes
+ * @version 3.2.8
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -35,9 +35,9 @@ if ( ! function_exists( 'wpb_shortcode_tweet_this' ) ) {
 		$output = '<a href="http://twitter.com/share" class="'
 		. wpb_sanitize_html_classes( $class ) . '" data-count="'
 		. $type . '">'
-		. esc_html__( 'Tweet', '%TEXTDOMAIN%' ) . '</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>';
+		. esc_html__( 'Tweet', 'wolf-page-builder' ) . '</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>';
 
-		
+
 		return $output;
 	}
 	add_shortcode( 'wpb_tweet_this', 'wpb_shortcode_tweet_this' );

@@ -4,8 +4,8 @@
  *
  * @author WolfThemes
  * @category Core
- * @package %PACKAGENAME%/Admin/Elements
- * @version %VERSION%
+ * @package WolfPageBuilder/Admin/Elements
+ * @version 3.2.8
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -16,16 +16,16 @@ if ( class_exists( 'Wolf_Videos' ) ) {
 	// Video Shortcode
 	wpb_add_element(
 		array(
-			'name' => esc_html__( 'Last Videos Carousel', '%TEXTDOMAIN%' ),
-			'description' => esc_html__( 'The last videos from your video gallery in a carousel', '%TEXTDOMAIN%' ),
+			'name' => esc_html__( 'Last Videos Carousel', 'wolf-page-builder' ),
+			'description' => esc_html__( 'The last videos from your video gallery in a carousel', 'wolf-page-builder' ),
 			'base' => 'wpb_last_videos_carousel',
-			'category' => esc_html__( 'Medias', '%TEXTDOMAIN%' ),
+			'category' => esc_html__( 'Medias', 'wolf-page-builder' ),
 			'icon' => 'wpb-icon wpb-videos',
 			'params' => array(
 
 				array(
 					'type' => 'int',
-					'label' => esc_html__( 'Count', '%TEXTDOMAIN%' ),
+					'label' => esc_html__( 'Count', 'wolf-page-builder' ),
 					'param_name' => 'count',
 					'value' => 4,
 					'display' => true,
@@ -33,7 +33,7 @@ if ( class_exists( 'Wolf_Videos' ) ) {
 
 				array(
 					'type' => 'select',
-					'label' => esc_html__( 'Columns', '%TEXTDOMAIN%' ),
+					'label' => esc_html__( 'Columns', 'wolf-page-builder' ),
 					'param_name' => 'col',
 					'choices' => array( 4,3,2 ),
 					'display' => true,
@@ -41,9 +41,9 @@ if ( class_exists( 'Wolf_Videos' ) ) {
 
 				array(
 					'type' => 'text',
-					'label' => esc_html__( 'Category', '%TEXTDOMAIN%' ),
+					'label' => esc_html__( 'Category', 'wolf-page-builder' ),
 					'param_name' => 'category',
-					'description' => esc_html__( 'Include only one or several categories. Paste category slug(s) separated by a comma', '%TEXTDOMAIN%' ),
+					'description' => esc_html__( 'Include only one or several categories. Paste category slug(s) separated by a comma', 'wolf-page-builder' ),
 					'display' => true,
 				),
 			)

@@ -1,13 +1,13 @@
 <?php
 /**
- * %NAME% frontend functions
+ * Wolf Page Builder frontend functions
  *
  * General functions available on frontend
  *
  * @author WolfThemes
  * @category Core
- * @package %PACKAGENAME%/FRontend
- * @version %VERSION%
+ * @package WolfPageBuilder/FRontend
+ * @version 3.2.8
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -17,7 +17,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Enqueue CSS
  *
- * @since %NAME% 1.0
+ * @since Wolf Page Builder 1.0
  */
 function wpb_enqueue_styles() {
 
@@ -80,7 +80,7 @@ add_action( 'wp_enqueue_scripts', 'wpb_enqueue_styles', 1 );
 /**
  * Output custom styles
  *
- * @since %NAME% 1.0
+ * @since Wolf Page Builder 1.0
  */
 function wpb_output_styles() {
 
@@ -194,7 +194,7 @@ if ( ! function_exists( 'wpb_post_entry_meta' ) ) {
 		$post_id = get_the_ID();
 
 		if ( is_sticky() && is_home() && ! is_paged() )
-			$output .= '<span class="wpb-featured-post">' . esc_html__( 'Featured', '%TEXTDOMAIN%' ) . '</span>';
+			$output .= '<span class="wpb-featured-post">' . esc_html__( 'Featured', 'wolf-page-builder' ) . '</span>';
 
 		if ( 'post' == get_post_type() || is_search() ) {
 			$output .= wpb_entry_date( false );
@@ -211,7 +211,7 @@ if ( ! function_exists( 'wpb_post_entry_meta' ) ) {
 			$output .= sprintf(
 				'<span class="author vcard"><a class="url fn n" href="%1$s" title="%2$s" rel="author">%3$s</a></span></span>',
 				esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
-				esc_attr( sprintf( __( 'View all posts by %s', '%TEXTDOMAIN%' ), get_the_author() ) ),
+				esc_attr( sprintf( __( 'View all posts by %s', 'wolf-page-builder' ), get_the_author() ) ),
 				wpb_the_author( false )
 			);
 
@@ -239,7 +239,7 @@ if ( ! function_exists( 'wpb_post_entry_meta' ) ) {
 
 		} else {
 			// Translators: used between list items, there is a space after the comma.
-			$categories_list = get_the_category_list( __( ', ', '%TEXTDOMAIN%' ) );
+			$categories_list = get_the_category_list( __( ', ', 'wolf-page-builder' ) );
 		}
 
 		if ( $categories_list ) {
@@ -247,7 +247,7 @@ if ( ! function_exists( 'wpb_post_entry_meta' ) ) {
 		}
 
 		// Translators: used between list items, there is a space after the comma.
-		$tag_list = get_the_tag_list( '', __( ', ', '%TEXTDOMAIN%' ) );
+		$tag_list = get_the_tag_list( '', __( ', ', 'wolf-page-builder' ) );
 		if ( $tag_list ) {
 			$output .= '<span class="wpb-tags-links tags-links">' . $tag_list . '</span>';
 		}
@@ -340,8 +340,8 @@ if ( ! function_exists( 'wpb_entry_date' ) ) {
 		$modified_display_time = get_the_modified_date();
 
 		//if ( 'human_diff' == wpb_get_theme_option( 'date_format' ) ) {
-			$display_time = sprintf( __( '%s ago', '%TEXTDOMAIN%' ), human_time_diff( get_the_time( 'U' ), current_time( 'timestamp' ) ) );
-			$modified_display_time = sprintf( __( '%s ago', '%TEXTDOMAIN%' ), human_time_diff( get_the_modified_time( 'U' ), current_time( 'timestamp' ) ) );
+			$display_time = sprintf( __( '%s ago', 'wolf-page-builder' ), human_time_diff( get_the_time( 'U' ), current_time( 'timestamp' ) ) );
+			$modified_display_time = sprintf( __( '%s ago', 'wolf-page-builder' ), human_time_diff( get_the_modified_time( 'U' ), current_time( 'timestamp' ) ) );
 		//}
 
 		$date = $display_time;
@@ -443,7 +443,7 @@ if ( ! function_exists( 'wpb_post_gallery_slider' ) ) {
 /**
  * Return the first video URL in the post if a video URL is found
  *
- * @since %NAME% 1.7.0
+ * @since Wolf Page Builder 1.7.0
  * @return string
  */
 function wpb_get_first_video_url( $post_id = null ) {
@@ -719,7 +719,7 @@ function wpb_last_posts_big_slide_button_text_filter( $text ) {
 
 	$post_type = get_post_type();
 	$format = null;
-	$text = esc_html__( 'Continue reading', '%TEXTDOMAIN%' );
+	$text = esc_html__( 'Continue reading', 'wolf-page-builder' );
 
 	if ( 'post' == $post_type || 'work' == $post_type ) {
 
@@ -729,37 +729,37 @@ function wpb_last_posts_big_slide_button_text_filter( $text ) {
 
 			if ( 'video' == $format ) {
 
-			 	$text = esc_html__( 'Watch the video', '%TEXTDOMAIN%' );
+			 	$text = esc_html__( 'Watch the video', 'wolf-page-builder' );
 
 			} elseif ( 'gallery' == $format || 'image' == $format ) {
 
-				$text = esc_html__( 'View more', '%TEXTDOMAIN%' );
+				$text = esc_html__( 'View more', 'wolf-page-builder' );
 
 			} elseif ( 'audio' == $format ) {
 
-				$text = esc_html__( 'Listen', '%TEXTDOMAIN%' );
+				$text = esc_html__( 'Listen', 'wolf-page-builder' );
 			}
 		}
 	}
 
 	if ( 'gallery' == $post_type ) {
-		$text = esc_html__( 'View album', '%TEXTDOMAIN%' );
+		$text = esc_html__( 'View album', 'wolf-page-builder' );
 	}
 
 	if ( 'video' == $post_type ) {
-		$text = esc_html__( 'Watch the video', '%TEXTDOMAIN%' );
+		$text = esc_html__( 'Watch the video', 'wolf-page-builder' );
 	}
 
 	if ( 'wpm_playlist' == $post_type ) {
-		$text = esc_html__( 'Listen', '%TEXTDOMAIN%' );
+		$text = esc_html__( 'Listen', 'wolf-page-builder' );
 	}
 
 	if ( 'show' == $post_type || 'event' == $post_type ) {
-		$text = esc_html__( 'View event details', '%TEXTDOMAIN%' );
+		$text = esc_html__( 'View event details', 'wolf-page-builder' );
 	}
 
 	if ( 'release' == $post_type ) {
-		$text = esc_html__( 'View release details', '%TEXTDOMAIN%' );
+		$text = esc_html__( 'View release details', 'wolf-page-builder' );
 	}
 
 	return $text;

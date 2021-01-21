@@ -4,8 +4,8 @@
  *
  * @author WolfThemes
  * @category Core
- * @package %PACKAGENAME%/FrontEnd/Shortcodes
- * @version %VERSION%
+ * @package WolfPageBuilder/FrontEnd/Shortcodes
+ * @version 3.2.8
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -52,9 +52,9 @@ if ( ! function_exists( 'wpb_shortcode_call_to_action') ) {
 		$class .= " wpb-call-to-action wpb-clearfix";
 
 		$output = '<div class="' . wpb_sanitize_html_classes( $class ) . '" style="' . wpb_esc_style_attr( $inline_style ) . '">';
-		
+
 		$output .= '<div class="wpb-call-to-action-text">';
-		
+
 		$output .= '<' . esc_attr( $title_tag ) . ' class="wpb-call-to-action-title">' . sanitize_text_field( $main_text ) . '</' . esc_attr( $title_tag ) . '>';
 
 		if ( $main_tagline ) {

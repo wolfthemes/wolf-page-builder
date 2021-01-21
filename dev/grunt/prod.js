@@ -2,9 +2,9 @@ module.exports = function(grunt) {
 
 	grunt.registerTask( 'prod', function() {
 		grunt.task.run( [
-			'rsync:demo',
-			// 'rsync:wolf',
-			// 'rsync:help',
+			'ftpush:prod',
+			'ftpush:aku',
+			'ftpush:wolf',
 			'notify:prod'
 		] );
 	} );

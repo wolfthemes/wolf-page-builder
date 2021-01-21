@@ -4,8 +4,8 @@
  *
  * @author WolfThemes
  * @category Core
- * @package %PACKAGENAME%/FrontEnd/Shortcodes
- * @version %VERSION%
+ * @package WolfPageBuilder/FrontEnd/Shortcodes
+ * @version 3.2.8
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -77,9 +77,9 @@ if ( ! function_exists( 'wpb_shortcode_headline' ) ) {
 		}
 
 		$output = '<' . esc_attr( $title_tag ) .'';
-		
+
 		$output .= ' style="' . wpb_esc_style_attr( $style ) . '" class="' . wpb_sanitize_html_classes( $class ) . '" data-max-font-size="' . absint( $max_font_size ) . '">';
-		
+
 		if ( $do_link ) {
 			$link_target = ( $link_target ) ? '_blank' : '_parent';
 			$output .= '<a style="' . wpb_esc_style_attr( $style ) . '" class="wpb-fittext-link" href="' . esc_url( $url ) . '" target="' . esc_attr( $link_target ) . '">';
@@ -90,9 +90,9 @@ if ( ! function_exists( 'wpb_shortcode_headline' ) ) {
 		if ( $do_link ) {
 			$output .= '</a>';
 		}
-		
+
 		$output .= '</' . esc_attr( $title_tag ) .'>';
-		
+
 		return $output;
 	}
 	add_shortcode( 'wpb_headline', 'wpb_shortcode_headline' );

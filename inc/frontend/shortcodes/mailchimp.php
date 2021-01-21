@@ -4,8 +4,8 @@
  *
  * @author WolfThemes
  * @category Core
- * @package %PACKAGENAME%/FrontEnd/Shortcodes
- * @version %VERSION%
+ * @package WolfPageBuilder/FrontEnd/Shortcodes
+ * @version 3.2.8
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -25,11 +25,11 @@ if ( ! function_exists( 'wpb_shortcode_mailchimp' ) ) {
 			'list' => wpb_get_option( 'mailchimp', 'default_mailchimp_list_id' ),
 			'size' => 'normal',
 			'label' => wpb_get_option( 'mailchimp', 'label' ),
-			'submit' => wpb_get_option( 'mailchimp', 'subscribe_text', esc_html__( 'Subscribe', '%TEXTDOMAIN%' ) ),
+			'submit' => wpb_get_option( 'mailchimp', 'subscribe_text', esc_html__( 'Subscribe', 'wolf-page-builder' ) ),
 			'bottom_line' => wpb_get_option( 'mailchimp', 'bottom_line' ),
 			'image_id' => wpb_get_option( 'mailchimp', 'background' ),
 			'use_bg' => true,
-			'placeholder' =>  wpb_get_option( 'mailchimp', 'placeholder', esc_html__( 'enter your email address', '%TEXTDOMAIN%' ) ),
+			'placeholder' =>  wpb_get_option( 'mailchimp', 'placeholder', esc_html__( 'enter your email address', 'wolf-page-builder' ) ),
 			'button_style' => '',
 			'alignment' => 'center',
 			'text_alignment' => 'center',
@@ -62,11 +62,11 @@ function wpb_mailchimp( $args = array() ) {
 		'list' => wpb_get_option( 'mailchimp', 'default_mailchimp_list_id' ),
 		'size' => 'normal',
 		'label' => wpb_get_option( 'mailchimp', 'label' ),
-		'submit' => wpb_get_option( 'mailchimp', 'subscribe_text', esc_html__( 'Subscribe', '%TEXTDOMAIN%' ) ),
+		'submit' => wpb_get_option( 'mailchimp', 'subscribe_text', esc_html__( 'Subscribe', 'wolf-page-builder' ) ),
 		'bottom_line' => wpb_get_option( 'mailchimp', 'bottom_line' ),
 		'image_id' => wpb_get_option( 'mailchimp', 'background' ),
 		'use_bg' => true,
-		'placeholder' =>  wpb_get_option( 'mailchimp', 'placeholder', esc_html__( 'enter your email address', '%TEXTDOMAIN%' ) ),
+		'placeholder' =>  wpb_get_option( 'mailchimp', 'placeholder', esc_html__( 'enter your email address', 'wolf-page-builder' ) ),
 		'button_style' => '',
 		'alignment' => 'center',
 		'text_alignment' => 'center',
@@ -143,11 +143,11 @@ function wpb_mailchimp( $args = array() ) {
 		$output = '<p class="wpb-text-center">';
 
 		if ( ! wpb_get_option( 'mailchimp', 'mailchimp_api_key' ) ) {
-			$output .= esc_html__( 'You must set your MailChimp API key in the plugin settings', '%TEXTDOMAIN%' ) . '<br>';
+			$output .= esc_html__( 'You must set your MailChimp API key in the plugin settings', 'wolf-page-builder' ) . '<br>';
 		}
 
 		if ( ! $list ) {
-			$output .= esc_html__( 'You must set a list ID.', '%TEXTDOMAIN%' );
+			$output .= esc_html__( 'You must set a list ID.', 'wolf-page-builder' );
 		}
 
 		$output .= '</p>';

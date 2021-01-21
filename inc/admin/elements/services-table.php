@@ -4,8 +4,8 @@
  *
  * @author WolfThemes
  * @category Core
- * @package %PACKAGENAME%/Admin/Elements
- * @version %VERSION%
+ * @package WolfPageBuilder/Admin/Elements
+ * @version 3.2.8
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -15,46 +15,46 @@ if ( ! defined( 'ABSPATH' ) ) {
 // Service table
 wpb_add_element(
 	array(
-		'name' => esc_html__( 'Service Table', '%TEXTDOMAIN%' ),
-		'description' => esc_html__( 'Show what your business is about', '%TEXTDOMAIN%' ),
+		'name' => esc_html__( 'Service Table', 'wolf-page-builder' ),
+		'description' => esc_html__( 'Show what your business is about', 'wolf-page-builder' ),
 		'base' => 'wpb_services_table',
-		'category' => esc_html__( 'Content', '%TEXTDOMAIN%' ),
+		'category' => esc_html__( 'Content', 'wolf-page-builder' ),
 		'icon' => 'wpb-icon wpb-service-table',
 		'params' => array(
 
 			array(
 				'type' => 'colorpicker',
-				'label' => esc_html__( 'Background Color', '%TEXTDOMAIN%' ),
+				'label' => esc_html__( 'Background Color', 'wolf-page-builder' ),
 				'param_name' => 'bg_color',
 				'display' => true,
 			),
 
 			array(
 				'type' => 'text',
-				'label' => esc_html__( 'Background Opacity', '%TEXTDOMAIN%' ),
+				'label' => esc_html__( 'Background Opacity', 'wolf-page-builder' ),
 				'param_name' => 'bg_opacity',
 				'placeholder' => 80,
-				'description' => esc_html__( 'in percent', '%TEXTDOMAIN%' ),
+				'description' => esc_html__( 'in percent', 'wolf-page-builder' ),
 				'display' => true,
 			),
 
 			array(
 				'type' => 'colorpicker',
-				'label' => esc_html__( 'Font Color', '%TEXTDOMAIN%' ),
+				'label' => esc_html__( 'Font Color', 'wolf-page-builder' ),
 				'param_name' => 'font_color',
 				'display' => true,
 			),
 
 			array(
 				'type' => 'text',
-				'label' => esc_html__( 'Title', '%TEXTDOMAIN%' ),
+				'label' => esc_html__( 'Title', 'wolf-page-builder' ),
 				'param_name' => 'title',
 				'display' => true,
 			),
 
 			array(
 				'type' => 'select',
-				'label' => esc_html__( 'Title Tag', '%TEXTDOMAIN%' ),
+				'label' => esc_html__( 'Title Tag', 'wolf-page-builder' ),
 				'param_name' => 'title_tag',
 				'choices' => array(
 					'h3',
@@ -70,24 +70,24 @@ wpb_add_element(
 
 			array(
 				'type' => 'colorpicker',
-				'label' => esc_html__( 'Title Color', '%TEXTDOMAIN%' ),
+				'label' => esc_html__( 'Title Color', 'wolf-page-builder' ),
 				'param_name' => 'title_color',
 				'display' => true,
 			),
 
 			array(
 				'type' => 'select',
-				'label' => esc_html__( 'Add Icon', '%TEXTDOMAIN%' ),
+				'label' => esc_html__( 'Add Icon', 'wolf-page-builder' ),
 				'param_name' => 'add_icon',
 				'choices' => array(
-					'no' => esc_html__( 'No', '%TEXTDOMAIN%' ),
-					'yes' => esc_html__( 'Yes', '%TEXTDOMAIN%' ),
+					'no' => esc_html__( 'No', 'wolf-page-builder' ),
+					'yes' => esc_html__( 'Yes', 'wolf-page-builder' ),
 				),
 			),
 
 			array(
 				'type' => 'icon',
-				'label' => esc_html__( 'Icon', '%TEXTDOMAIN%' ),
+				'label' => esc_html__( 'Icon', 'wolf-page-builder' ),
 				'param_name' => 'icon',
 				'choices' => $wpb_icons,
 				'dependency' => array( 'element' => 'add_icon', 'value' => array( 'yes' ) ),
@@ -96,7 +96,7 @@ wpb_add_element(
 
 			array(
 				'type' => 'colorpicker',
-				'label' => esc_html__( 'Icon Color', '%TEXTDOMAIN%' ),
+				'label' => esc_html__( 'Icon Color', 'wolf-page-builder' ),
 				'param_name' => 'icon_color',
 				'dependency' => array( 'element' => 'add_icon', 'value' => array( 'yes' ) ),
 				'display' => true,
@@ -104,7 +104,7 @@ wpb_add_element(
 
 			array(
 				'type' => 'textarea',
-				'label' => esc_html__( 'Services', '%TEXTDOMAIN%' ),
+				'label' => esc_html__( 'Services', 'wolf-page-builder' ),
 				'param_name' => 'services',
 				'description' => esc_html__( 'Enter one service per line.' ),
 				'display' => true,

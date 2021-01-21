@@ -1,12 +1,12 @@
 <?php
 /**
- * %NAME% Settings.
+ * Wolf Page Builder Settings.
  *
  * @class WPB_Admin
  * @author WolfThemes
  * @category Admin
- * @package %PACKAGENAME%/Admin
- * @version %VERSION%
+ * @package WolfPageBuilder/Admin
+ * @version 3.2.8
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -67,7 +67,7 @@ class WPB_Settings {
 
 		$icon = 'dashicons-hammer';
 
-		add_menu_page( esc_html__( 'Page Builder', '%TEXTDOMAIN%' ), esc_html__( 'Page Builder', '%TEXTDOMAIN%' ), 'activate_plugins', 'wpb-settings', array( $this, 'settings' ), $icon, 44 );
+		add_menu_page( esc_html__( 'Page Builder', 'wolf-page-builder' ), esc_html__( 'Page Builder', 'wolf-page-builder' ), 'activate_plugins', 'wpb-settings', array( $this, 'settings' ), $icon, 44 );
 
 		foreach ( $this->settings as $section ) {
 			$this->settings_id = $section['settings_id'];
@@ -157,7 +157,7 @@ class WPB_Settings {
 					event.preventDefault();
 					var $el = $( this ).parent();
 					var uploader = wp.media({
-						title : '<?php esc_js( esc_html_e( 'Choose an image', '%TEXTDOMAIN%' ) ); ?>',
+						title : '<?php esc_js( esc_html_e( 'Choose an image', 'wolf-page-builder' ) ); ?>',
 						library : { type : 'image'},
 						multiple : false
 					} )
@@ -238,8 +238,8 @@ class WPB_Settings {
 			<input type="hidden" name="<?php echo esc_attr( $settings_slug . '[' . $field_id . ']' ); ?>" value="<?php echo esc_attr( $image_id); ?>">
 			<img style="max-width:150px;<?php if ( ! $image_id ) echo 'display:none;'; ?>" class="wpb-img-preview" src="<?php echo esc_url( $image_url ); ?>" alt="<?php echo esc_attr( $field_id ); ?>">
 			<br>
-			<a href="#" class="button wpb-reset-img"><?php esc_html_e( 'Clear', '%TEXTDOMAIN%' ); ?></a>
-			<a href="#" class="button wpb-set-img"><?php esc_html_e( 'Choose an image', '%TEXTDOMAIN%' ); ?></a>
+			<a href="#" class="button wpb-reset-img"><?php esc_html_e( 'Clear', 'wolf-page-builder' ); ?></a>
+			<a href="#" class="button wpb-set-img"><?php esc_html_e( 'Choose an image', 'wolf-page-builder' ); ?></a>
 			<?php
 		} elseif ( 'background' == $type ) {
 			$bg_meta = wpb_get_bg_meta( $settings_slug, $field_id  );
@@ -251,7 +251,7 @@ class WPB_Settings {
 			?>
 			<p>
 				<label for="<?php echo esc_attr( $settings_slug . '[' . $field_id . '][color]' ); ?>">
-					<?php esc_html_e( 'Color', '%TEXTDOMAIN%' ); ?>
+					<?php esc_html_e( 'Color', 'wolf-page-builder' ); ?>
 				</label><br>
 				<input value="<?php echo wpb_sanitize_hex_color( $color ); ?>" name="<?php echo esc_attr( $settings_slug . '[' . $field_id . '][color]' ); ?>" class="wpb-settings-colorpicker">
 			</p>
@@ -263,13 +263,13 @@ class WPB_Settings {
 			?>
 			<p>
 				<label for="<?php echo esc_attr( $settings_slug . '[' . $field_id . '][image_id]' ); ?>">
-					<?php esc_html_e( 'Image', '%TEXTDOMAIN%' ); ?>
+					<?php esc_html_e( 'Image', 'wolf-page-builder' ); ?>
 				</label><br>
 				<input type="hidden" name="<?php echo esc_attr( $settings_slug . '[' . $field_id . '][image_id]' ); ?>" value="<?php echo esc_attr( $image_id); ?>">
 				<img style="max-width:150px;<?php if ( ! $image_id ) echo 'display:none;'; ?>" class="wpb-img-preview" src="<?php echo esc_url( $image_url ); ?>" alt="<?php echo esc_attr( $field_id ); ?>">
 				<br>
-				<a href="#" class="button wpb-reset-img"><?php esc_html_e( 'Clear', '%TEXTDOMAIN%' ); ?></a>
-				<a href="#" class="button wpb-set-img"><?php esc_html_e( 'Choose an image', '%TEXTDOMAIN%' ); ?></a>
+				<a href="#" class="button wpb-reset-img"><?php esc_html_e( 'Clear', 'wolf-page-builder' ); ?></a>
+				<a href="#" class="button wpb-set-img"><?php esc_html_e( 'Choose an image', 'wolf-page-builder' ); ?></a>
 			</p>
 			<?php
 
@@ -280,7 +280,7 @@ class WPB_Settings {
 			?>
 			<p>
 				<label for="<?php echo esc_attr( $settings_slug . '[' . $field_id . '][repeat]' ); ?>">
-					<?php esc_html_e( 'Repeat', '%TEXTDOMAIN%' ); ?>
+					<?php esc_html_e( 'Repeat', 'wolf-page-builder' ); ?>
 				</label><br>
 				<select name="<?php echo esc_attr( $settings_slug . '[' . $field_id . '][repeat]' ); ?>">
 					<?php foreach ( $options as $option ) : ?>
@@ -306,7 +306,7 @@ class WPB_Settings {
 			 ?>
 			 <p>
 				 <label for="<?php echo esc_attr( $settings_slug . '[' . $field_id . '][position]' ); ?>">
-					<?php esc_html_e( 'Position', '%TEXTDOMAIN%' ); ?>
+					<?php esc_html_e( 'Position', 'wolf-page-builder' ); ?>
 				</label><br>
 				 <select name="<?php echo esc_attr( $settings_slug . '[' . $field_id . '][position]' ); ?>">
 				 	<?php foreach ( $options as $option ) : ?>
@@ -320,14 +320,14 @@ class WPB_Settings {
 			 * Bg size
 			 */
 			$options = array(
-				'cover' => esc_html__( 'cover (resize)', '%TEXTDOMAIN%' ),
-				'normal' => esc_html__( 'normal', '%TEXTDOMAIN%' ),
-				'resize' => esc_html__( 'responsive (hard resize)', '%TEXTDOMAIN%' ),
+				'cover' => esc_html__( 'cover (resize)', 'wolf-page-builder' ),
+				'normal' => esc_html__( 'normal', 'wolf-page-builder' ),
+				'resize' => esc_html__( 'responsive (hard resize)', 'wolf-page-builder' ),
 			);
 			?>
 			<p>
 				<label for="<?php echo esc_attr( $settings_slug . '[' . $field_id . '][size]' ); ?>">
-					<?php esc_html_e( 'Size', '%TEXTDOMAIN%' ); ?>
+					<?php esc_html_e( 'Size', 'wolf-page-builder' ); ?>
 				</label><br>
 				<select name="<?php echo esc_attr( $settings_slug . '[' . $field_id . '][size]' ); ?>">
 					<?php foreach ( $options as $option => $display ) : ?>
@@ -347,7 +347,7 @@ class WPB_Settings {
 			?>
 			<p>
 				<label for="<?php echo esc_attr( $settings_slug . '[' . $field_id . '][attachment]' ); ?>">
-					<?php esc_html_e( 'Attachment', '%TEXTDOMAIN%' ); ?>
+					<?php esc_html_e( 'Attachment', 'wolf-page-builder' ); ?>
 				</label><br>
 				<select name="<?php echo esc_attr( $settings_slug . '[' . $field_id . '][attachment]' ); ?>">
 					<?php foreach ( $options as $option ) : ?>
@@ -373,13 +373,13 @@ class WPB_Settings {
 			<h2><?php esc_html_e( 'Page Builder Settings' ) ?></h2>
 			<?php if ( isset( $_GET['settings-updated'] ) && $_GET['settings-updated'] ) { ?>
 				<div id="setting-error-settings_updated" class="updated settings-error">
-					<p><strong><?php esc_html_e( 'Settings saved.', '%TEXTDOMAIN%' ); ?></strong></p>
+					<p><strong><?php esc_html_e( 'Settings saved.', 'wolf-page-builder' ); ?></strong></p>
 				</div>
 			<?php } ?>
 			<form action="options.php" method="post">
 				<?php settings_fields( $this->settings_id ); ?>
 				<?php do_settings_sections( $this->settings_id ); ?>
-				<p class="submit"><input name="save" type="submit" class="button-primary" value="<?php esc_html_e( 'Save Changes', '%TEXTDOMAIN%' ); ?>" /></p>
+				<p class="submit"><input name="save" type="submit" class="button-primary" value="<?php esc_html_e( 'Save Changes', 'wolf-page-builder' ); ?>" /></p>
 			</form>
 		</div>
 		<?php
@@ -409,9 +409,9 @@ class WPB_Settings {
 						'js_min' => true,
 					),
 					'mailchimp' => array(
-						'label' => esc_html__( 'Subscribe to our newsletter', '%TEXTDOMAIN%' ),
-						'subscribe_text' => esc_html__( 'Subscribe', '%TEXTDOMAIN%' ),
-						'placeholder' => esc_html__( 'your email', '%TEXTDOMAIN%' ),
+						'label' => esc_html__( 'Subscribe to our newsletter', 'wolf-page-builder' ),
+						'subscribe_text' => esc_html__( 'Subscribe', 'wolf-page-builder' ),
+						'placeholder' => esc_html__( 'your email', 'wolf-page-builder' ),
 					),
 					'fonts' => array(),
 

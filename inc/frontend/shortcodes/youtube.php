@@ -4,8 +4,8 @@
  *
  * @author WolfThemes
  * @category Core
- * @package %PACKAGENAME%/FrontEnd/Shortcodes
- * @version %VERSION%
+ * @package WolfPageBuilder/FrontEnd/Shortcodes
+ * @version 3.2.8
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -57,12 +57,12 @@ if ( ! function_exists( 'wpb_shortcode_youtube' ) ) {
 
 		$output .= '<span class="wpb-youtube-play-button"><i class="fa fa-youtube-play" aria-hidden="true"></i>';
 
-		$output .= sprintf( esc_html__( 'Watch %s', '%TEXTDOMAIN%' ), $title );
+		$output .= sprintf( esc_html__( 'Watch %s', 'wolf-page-builder' ), $title );
 
 		$output .= '</span><!-- .wpb-youtube-play-button -->';
 
 		$output .= '</div><!-- .wpb-youtube-cover -->';
-		
+
 		$output .= '</div><!-- .wpb-youtube-container -->';
 
 		return $output;

@@ -1,57 +1,45 @@
-module.exports = function(grunt) {
+module.exports = function (grunt) {
+  // load dependencies
+  require("load-grunt-tasks")(grunt);
 
-	// load dependencies
-	require('load-grunt-tasks')(grunt);
+  function loadConfig(path) {
+    var glob = require("glob");
+    var object = {};
+    var key;
 
-	function loadConfig(path) {
-		var glob = require('glob');
-		var object = {};
-		var key;
+    glob.sync("*", { cwd: path }).forEach(function (option) {
+      key = option.replace(/\.js$/, "");
+      object[key] = require(path + option);
+    });
 
-		glob.sync('*', {cwd: path}).forEach(function(option) {
-			key = option.replace(/\.js$/,'');
-			object[key] = require(path + option);
-		});
+    return object;
+  }
 
-		return object;
-	}
+  var config = {
+    pkg: grunt.file.readJSON("package.json"),
+    app: grunt.file.readJSON("../app.config.json"),
+    root: "..",
+    required: "5.0",
+	tested: "5.5",
+    buildIgnoreFiles: ["../dev{,/**/*}", "../pack{,/**/*}", "../bak{,/**/*}", "../node_modules{,/**/*}", "../vendor{,/**/*}"],
+  };
 
-	var config = {
-		pkg : grunt.file.readJSON('package.json'),
-		app : grunt.file.readJSON('app.config.json'),
-		version : grunt.option('target') || grunt.file.readJSON('app.config.json').version,
-		link : grunt.file.readJSON('app.config.json').link || 'http://wlfthm.es/mPJRk8',
-		shortlink : grunt.file.readJSON('app.config.json').shortlink || grunt.file.readJSON('app.config.json').link || 'http://wolfthemes.com/wordpress-plugins',
-		news : grunt.file.read('../html/news.html'),
-		info : grunt.file.read('../html/info.html'),
-		warning : grunt.file.read('../html/warning.html'),
-		changelog : grunt.file.read('../CHANGELOG.md')
-	};
+  grunt.util._.extend(config, loadConfig("./grunt/tasks/"));
 
-	grunt.util._.extend(config, loadConfig('./grunt/tasks/'));
+  grunt.initConfig(config);
 
-	grunt.initConfig(config);
+  grunt.loadTasks("grunt");
 
-	grunt.loadTasks('grunt');
+  grunt.registerTask("default", function () {
+    // grunt.log.writeln("Hello world!");
+	grunt.task.run(["compass", "cssmin",
+	//"jshint",
+	"uglify"]);
+  });
 
-	grunt.registerTask('default', function() {
-		// grunt.log.writeln("Hello world!");
-		grunt.task.run( [
-			'compass',
-			'autoprefixer',
-			'cssmin',
-			// 'jshint',
-			'uglify',
-		] );
-	});
-
-	grunt.registerTask('dev', function() {
-		grunt.task.run( [
-			'watch'
-		] );
-	});
-
-	grunt.registerTask('debug', function() {
-		grunt.log.writeln(grunt.file.read('../html/news.html'));
-	});
+  grunt.registerTask("dev", function () {
+	grunt.task.run(["compass", "cssmin",
+	//"jshint",
+	"uglify", "watch"]);
+  });
 };

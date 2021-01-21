@@ -1,12 +1,12 @@
 <?php
 /**
- * %NAME% Welcome Message.
+ * Wolf Page Builder Welcome Message.
  *
  * @class WPB_Admin
  * @author WolfThemes
  * @category Admin
- * @package %PACKAGENAME%/Admin
- * @version %VERSION%
+ * @package WolfPageBuilder/Admin
+ * @version 3.2.8
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -44,18 +44,18 @@ class WPB_Admin_Welcome_Message {
 		?>
 <div class="welcome-panel-content wpb-welcome-panel-content">
 	<div class="wpb-welcome-panel-overlay"></div>
-	
-	<h3><?php printf( esc_html__( '%s, a Hassle Free Page Builder for WordPress', '%TEXTDOMAIN%' ), 'Wolf Page Builder' ); ?></h3>
-	
+
+	<h3><?php printf( esc_html__( '%s, a Hassle Free Page Builder for WordPress', 'wolf-page-builder' ), 'Wolf Page Builder' ); ?></h3>
+
 	<div class="welcome-panel-column-container">
 		<div class="welcome-panel-column">
-			<h4><?php esc_html_e( 'Let\'s Get Started', '%TEXTDOMAIN%' ); ?></h4>
+			<h4><?php esc_html_e( 'Let\'s Get Started', 'wolf-page-builder' ); ?></h4>
 
-				<a class="button button-primary button-hero" href="<?php echo esc_url( admin_url( 'post-new.php?post_type=page' ) ); ?>"><?php esc_html_e( 'Start now!', '%TEXTDOMAIN%' ); ?></a>
+				<a class="button button-primary button-hero" href="<?php echo esc_url( admin_url( 'post-new.php?post_type=page' ) ); ?>"><?php esc_html_e( 'Start now!', 'wolf-page-builder' ); ?></a>
 				<br>
 				<?php printf(
 					wp_kses(
-						__( 'or, <a href="%s">go to the plugin settings</a>', '%TEXTDOMAIN%' ),
+						__( 'or, <a href="%s">go to the plugin settings</a>', 'wolf-page-builder' ),
 						array( 'a' => array( 'href' => array() ) )
 					),
 					esc_url( admin_url( 'admin.php?page=wpb-settings' ) )
@@ -63,19 +63,19 @@ class WPB_Admin_Welcome_Message {
 
 		</div>
 		<div class="welcome-panel-column">
-			<h4><?php esc_html_e( 'Help', '%TEXTDOMAIN%' ); ?></h4>
+			<h4><?php esc_html_e( 'Help', 'wolf-page-builder' ); ?></h4>
 			<ul>
-				<li><i class="fa-fw fa fa-plus"></i> <a target="_blank" href="<?php echo esc_url( WPB_DOC_URI ); ?>/#section"><?php esc_html_e( 'How to create a section', '%TEXTDOMAIN%' ); ?></a></li>
-				<li><i class="fa-fw fa fa-plus"></i> <a target="_blank" href="<?php echo esc_url( WPB_DOC_URI ); ?>/#element"><?php esc_html_e( 'How to add an element', '%TEXTDOMAIN%' ); ?></a></li>
-				<li><i class="fa-fw fa fa-font"></i> <a target="_blank" href="<?php echo esc_url( WPB_DOC_URI ); ?>/#fonts"><?php esc_html_e( 'How to load google fonts', '%TEXTDOMAIN%' ); ?></a></li>
-				<li><i class="fa-fw fa fa-file-text-o"></i> <a target="_blank" href="<?php echo esc_url( WPB_DOC_URI ); ?>"><?php esc_html_e( 'Documentation', '%TEXTDOMAIN%' ); ?></a></li>
+				<li><i class="fa-fw fa fa-plus"></i> <a target="_blank" href="<?php echo esc_url( WPB_DOC_URI ); ?>/#section"><?php esc_html_e( 'How to create a section', 'wolf-page-builder' ); ?></a></li>
+				<li><i class="fa-fw fa fa-plus"></i> <a target="_blank" href="<?php echo esc_url( WPB_DOC_URI ); ?>/#element"><?php esc_html_e( 'How to add an element', 'wolf-page-builder' ); ?></a></li>
+				<li><i class="fa-fw fa fa-font"></i> <a target="_blank" href="<?php echo esc_url( WPB_DOC_URI ); ?>/#fonts"><?php esc_html_e( 'How to load google fonts', 'wolf-page-builder' ); ?></a></li>
+				<li><i class="fa-fw fa fa-file-text-o"></i> <a target="_blank" href="<?php echo esc_url( WPB_DOC_URI ); ?>"><?php esc_html_e( 'Documentation', 'wolf-page-builder' ); ?></a></li>
 				<?php if ( wpb_is_wolf_theme() ) : ?>
-					<li><i class="fa-fw fa fa-support"></i> <a target="_blank" href="<?php echo WPB_SUPPORT_URL; ?>"><?php esc_html_e( 'Support forum', '%TEXTDOMAIN%' ); ?></a></li>
+					<li><i class="fa-fw fa fa-support"></i> <a target="_blank" href="<?php echo WPB_SUPPORT_URL; ?>"><?php esc_html_e( 'Support forum', 'wolf-page-builder' ); ?></a></li>
 				<?php endif; ?>
 			</ul>
 		</div>
 		<div class="welcome-panel-column welcome-panel-last">
-			<h4><?php esc_html_e( 'More plugins', '%TEXTDOMAIN%' ); ?></h4>
+			<h4><?php esc_html_e( 'More plugins', 'wolf-page-builder' ); ?></h4>
 			<ul>
 				<?php
 					$plugin_dir = WP_PLUGIN_DIR . DIRECTORY_SEPARATOR;
@@ -92,7 +92,7 @@ class WPB_Admin_Welcome_Message {
 					<li><i class="fa-fw fa fa-facebook"></i> <a target="_blank" href="<?php echo esc_url( WPB_WOLF_DOMAIN ); ?>/plugin/wolf-facebook-page-box/">Facebook Page Box</a></li>
 				<?php endif; ?>
 
-				<li><i class="fa-fw fa ti-wolf"></i> <a target="_blank" href="<?php echo esc_url( WPB_WOLF_DOMAIN ); ?>/plugins/"><?php esc_html_e( 'More plugins', '%TEXTDOMAIN%' ); ?></a></li>
+				<li><i class="fa-fw fa ti-wolf"></i> <a target="_blank" href="<?php echo esc_url( WPB_WOLF_DOMAIN ); ?>/plugins/"><?php esc_html_e( 'More plugins', 'wolf-page-builder' ); ?></a></li>
 			</ul>
 		</div>
 	</div>
@@ -124,6 +124,6 @@ class WPB_Admin_Welcome_Message {
 
 } // end class
 
-return new WPB_Admin_Welcome_Message();	
+return new WPB_Admin_Welcome_Message();
 
 } // end class exists check

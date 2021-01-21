@@ -1,13 +1,13 @@
 <?php
 /**
- * %NAME% core functions
+ * Wolf Page Builder core functions
  *
  * General core functions available on admin and frontend
  *
  * @author WolfThemes
  * @category Core
- * @package %PACKAGENAME%/Core
- * @version %VERSION%
+ * @package WolfPageBuilder/Core
+ * @version 3.2.8
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -51,7 +51,7 @@ add_action( 'init', 'wpb_add_image_sizes' );
 /**
  * Ouput page builder meta instead of content
  *
- * @since %NAME% 1.0
+ * @since Wolf Page Builder 1.0
  */
 function wpb_get_content( $post_id = null ) {
 
@@ -159,7 +159,7 @@ function wpb_get_element_list() {
 /**
  * Get any thumbnail URL
  *
- * @since %NAME% 1.7.0
+ * @since Wolf Page Builder 1.7.0
  * @param string $format
  * @param int $post_id
  * @return string
@@ -279,7 +279,7 @@ function wpb_get_template( $template_name, $args = array(), $template_path = '',
 	$located = wpb_locate_template( $template_name, $template_path, $default_path );
 
 	if ( ! file_exists( $located ) ) {
-		_doing_it_wrong( __FUNCTION__, sprintf( '<code>%s</code> does not exist.', $located ), '%VERSION%' );
+		_doing_it_wrong( __FUNCTION__, sprintf( '<code>%s</code> does not exist.', $located ), '3.2.8' );
 		return;
 	}
 
@@ -773,7 +773,7 @@ function wpb_sanitize_bg_meta( $meta = array() ) {
  * Get placeholder image URL
  */
 function wpb_placeholder_img_url( $img_size ) {
-	
+
 	if ( in_array( $img_size, array( 'thumbnail', 'medium', 'large', 'wpb-XL', 'wpb-photo', 'full' ) ) ) {
 
 		switch( $img_size ) {
@@ -810,7 +810,7 @@ function wpb_placeholder_img_url( $img_size ) {
 function wpb_placeholder_img( $img_size, $class = '' ) {
 
 	if ( wpb_placeholder_img_url( $img_size ) ) {
-		return '<img class="' . wpb_sanitize_html_classes( $class ) . '" src="' . wpb_placeholder_img_url( $img_size ) . '" alt="placeholder" title="' . esc_html__( 'Image is missing', '%TEXTDOMAIN%' ) . '">';
+		return '<img class="' . wpb_sanitize_html_classes( $class ) . '" src="' . wpb_placeholder_img_url( $img_size ) . '" alt="placeholder" title="' . esc_html__( 'Image is missing', 'wolf-page-builder' ) . '">';
 	}
 }
 

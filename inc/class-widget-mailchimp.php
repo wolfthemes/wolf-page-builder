@@ -34,7 +34,7 @@ class WPB_Widget_Mailchimp extends WP_Widget {
 
 		/* Widget variable settings. */
 		$this->wpb_widget_name 	= 'Mailchimp';
-		$this->wpb_widget_description = esc_html__( 'Newsletter signup form', '%TEXTDOMAIN%' );
+		$this->wpb_widget_description = esc_html__( 'Newsletter signup form', 'wolf-page-builder' );
 		$this->wpb_widget_cssclass 	= 'widget_mailchimp';
 		$this->wpb_widget_idbase 	= 'widget_mailchimp';
 
@@ -97,10 +97,10 @@ class WPB_Widget_Mailchimp extends WP_Widget {
 		$instance = wp_parse_args( ( array ) $instance, $defaults);
 		?>
 		<p>
-			<label for="<?php echo esc_attr( $this->get_field_id( 'list' ) ); ?>"><?php _e( 'List ID', '%TEXTDOMAIN%' ); ?>:</label>
+			<label for="<?php echo esc_attr( $this->get_field_id( 'list' ) ); ?>"><?php _e( 'List ID', 'wolf-page-builder' ); ?>:</label>
 			<input class="widefat" type="text" id="<?php echo esc_attr( $this->get_field_id( 'list' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name('list') ); ?>" value="<?php echo esc_attr( $instance['list'] ); ?>">
 			<br>
-			<small><?php _e( 'Can be found in your mailchimp account -> Lists -> Your List Name -> Settings -> List Name & default', '%TEXTDOMAIN%' ); ?></small>
+			<small><?php _e( 'Can be found in your mailchimp account -> Lists -> Your List Name -> Settings -> List Name & default', 'wolf-page-builder' ); ?></small>
 		</p>
 		<?php
 	}

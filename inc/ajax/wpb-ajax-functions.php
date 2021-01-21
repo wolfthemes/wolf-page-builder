@@ -1,12 +1,12 @@
 <?php
 /**
- * %NAME% AJAX Functions
+ * Wolf Page Builder AJAX Functions
  *
  *
  * @author WolfThemes
  * @category Ajax
- * @package %PACKAGENAME%/Functions
- * @version %VERSION%
+ * @package WolfPageBuilder/Functions
+ * @version 3.2.8
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -29,10 +29,10 @@ function wpb_mailchimp_ajax() {
 		if ( is_email( $email ) ) {
 			global $wpb_mailchimp;
 			$wpb_mailchimp->subscribe( $list_id, sanitize_email( $email ) );
-			esc_html_e( 'Subscription successful', '%TEXTDOMAIN%' );
+			esc_html_e( 'Subscription successful', 'wolf-page-builder' );
 
 		} else {
-			esc_html_e( 'Please insert a valid email', '%TEXTDOMAIN%' );
+			esc_html_e( 'Please insert a valid email', 'wolf-page-builder' );
 		}
 	}
 	exit;
@@ -63,7 +63,7 @@ function wpb_ajax_get_import_file_content() {
 		if ( 'txt' != $ext ) {
 
 			$result['result'] = 'error';
-			$result['content'] = esc_html__( 'It must be a text file', '%TEXTDOMAIN%' );
+			$result['content'] = esc_html__( 'It must be a text file', 'wolf-page-builder' );
 
 		} else {
 			$folder = WPB_UPLOAD_URI;
@@ -167,8 +167,8 @@ function wpb_ajax_get_templates() {
 	?>
 	<templates id="wpb-templates" class="wpb-table">
 		<div class="wpb-table-cell">
-			<a href="#" id="wpb-add-section-default" class="wpb-add-section button button-large"><?php esc_html_e( 'Add a section', '%TEXTDOMAIN%' ); ?></a>
-			<p id="wpb-template-separator"><?php esc_html_e( 'or choose a template', '%TEXTDOMAIN%' ); ?></p>
+			<a href="#" id="wpb-add-section-default" class="wpb-add-section button button-large"><?php esc_html_e( 'Add a section', 'wolf-page-builder' ); ?></a>
+			<p id="wpb-template-separator"><?php esc_html_e( 'or choose a template', 'wolf-page-builder' ); ?></p>
 			<?php foreach ( wpb_get_templates() as $template ) : ?>
 				<a title="<?php echo esc_attr( $template['title'] ); ?>" href="#" class="wpb-template-img" id="<?php echo esc_attr( $template['name'] ); ?>">
 					<img src="<?php echo esc_attr( $template['image'] ); ?>">
@@ -446,7 +446,7 @@ function wpb_ajax_get_element_params() {
 
 							} elseif ( 'checkbox' == $type ) {
 
-								$value = ( 1 == $value ) ? esc_html__( 'Yes', '%TEXTDOMAIN%' ) : '';
+								$value = ( 1 == $value ) ? esc_html__( 'Yes', 'wolf-page-builder' ) : '';
 
 							} elseif ( 'textarea_html' == $type || 'editor' == $type ) {
 
@@ -545,7 +545,7 @@ function wpb_ajax_get_elements() {
 	<div class="wpb-dialog-elements">
 		<div id="wpb-element-nav">
 			<div id="wpb-element-filter">
-				<a href="#" data-category="all"><?php esc_html_e( 'All', '%TEXTDOMAIN%' ); ?></a>
+				<a href="#" data-category="all"><?php esc_html_e( 'All', 'wolf-page-builder' ); ?></a>
 				<?php
 				foreach ( wpb_get_element_categories() as $cat ) {
 					?>
@@ -555,7 +555,7 @@ function wpb_ajax_get_elements() {
 				?>
 			</div><!-- #wpb-element-filter -->
 			<div id="wpb-element-search-container">
-				<input tabindex="-1" id="wpb-element-search" type="text" placeholder="<?php esc_html_e( 'Search an element...', '%TEXTDOMAIN%' ); ?>">
+				<input tabindex="-1" id="wpb-element-search" type="text" placeholder="<?php esc_html_e( 'Search an element...', 'wolf-page-builder' ); ?>">
 			</div><!-- #wpb-element-search -->
 		</div><!-- #wpb-element-nav -->
 		<?php foreach ( $elements as $element ) :
@@ -572,7 +572,7 @@ function wpb_ajax_get_elements() {
 
 					if ( $name ) :
 				?>
-					<div class="wpb-element" data-element-name="<?php echo esc_attr( $name ); ?>" data-element="<?php echo esc_attr( $base ); ?>" data-element-category="<?php echo esc_attr( $category ); ?>" data-element-tags="<?php echo esc_attr( $tags ); ?>" original-title="<?php printf( __( '%s Settings', '%TEXTDOMAIN%' ), $name ); ?>">
+					<div class="wpb-element" data-element-name="<?php echo esc_attr( $name ); ?>" data-element="<?php echo esc_attr( $base ); ?>" data-element-category="<?php echo esc_attr( $category ); ?>" data-element-tags="<?php echo esc_attr( $tags ); ?>" original-title="<?php printf( __( '%s Settings', 'wolf-page-builder' ), $name ); ?>">
 						<div class="wpb-icon-container">
 							<span class="<?php echo esc_attr( $icon ); ?>"></span>
 						</div>
@@ -600,7 +600,7 @@ function wpb_ajax_get_element_settings() {
 	if ( isset( $_POST['element'] ) ) {
 		$has_editor_array = array( 'wpb_toggle', 'wpb_text_block', 'wpb_accordion', 'wpb_tab' );
 		$elements = wpb_get_elements();
-		$error_message = esc_html__( 'Error retrieving the element settings. It seems that this element doesn\'t exist.', '%TEXTDOMAIN%' );
+		$error_message = esc_html__( 'Error retrieving the element settings. It seems that this element doesn\'t exist.', 'wolf-page-builder' );
 		$values = isset( $_POST['values'] ) ? $_POST['values'] : array();
 		$element = sanitize_text_field( $_POST['element'] );
 		$name = ( isset( $elements[ $element ]['name'] ) ) ? $elements[ $element ]['name'] : '';

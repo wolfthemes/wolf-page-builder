@@ -4,8 +4,8 @@
  *
  * @author WolfThemes
  * @category Core
- * @package %PACKAGENAME%/FrontEnd/Shortcodes
- * @version %VERSION%
+ * @package WolfPageBuilder/FrontEnd/Shortcodes
+ * @version 3.2.8
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -65,14 +65,14 @@ if ( ! function_exists( 'wpb_shortcode_tab' ) ) {
 	 * @return string
 	 */
 	function wpb_shortcode_tab( $atts ) {
-		
+
 		extract( shortcode_atts( array(
 			'title' => 'Tab %d',
 			'editorcontent' => '',
 		), $atts ) );
 
 		$count = $GLOBALS['wpb_tab_count'];
-		
+
 		$GLOBALS['tabs'][ $count ] = array(
 			'title' => sprintf( $title, $GLOBALS['wpb_tab_count'] ),
 			'content' => wpb_format_editor_content( $editorcontent ),

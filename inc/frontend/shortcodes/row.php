@@ -4,8 +4,8 @@
  *
  * @author WolfThemes
  * @category Core
- * @package %PACKAGENAME%/FrontEnd/Shortcodes
- * @version %VERSION%
+ * @package WolfPageBuilder/FrontEnd/Shortcodes
+ * @version 3.2.8
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -59,9 +59,9 @@ if ( ! function_exists( 'wpb_shortcode_row' ) ) {
 		$output .= ' class="' . wpb_sanitize_html_classes( $class ) . '"';
 
 		$output .= '>';
-		
+
 			$output .= do_shortcode( $content );
-		
+
 		$output .= '</div><!--.wpb-row-->';
 
 		return $output;

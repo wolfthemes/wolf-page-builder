@@ -4,8 +4,8 @@
  *
  * @author WolfThemes
  * @category Core
- * @package %PACKAGENAME%/Globals
- * @version %VERSION%
+ * @package WolfPageBuilder/Globals
+ * @version 3.2.8
  */
 
 if ( ! defined('ABSPATH' ) ) {

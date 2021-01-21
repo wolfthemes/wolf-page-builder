@@ -2,7 +2,7 @@
 /**
  * Get path to wordpress and load wp-load.php
  *
- * @version %VERSION%
+ * @version 3.2.8
  */
 $absolute_path = __FILE__;
 $path_to_file = explode( 'wp-content', $absolute_path );

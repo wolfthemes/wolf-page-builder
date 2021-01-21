@@ -4,8 +4,8 @@
  *
  * @author WolfThemes
  * @category Core
- * @package %PACKAGENAME%/FrontEnd/Shortcodes
- * @version %VERSION%
+ * @package WolfPageBuilder/FrontEnd/Shortcodes
+ * @version 3.2.8
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -53,7 +53,7 @@ if ( ! function_exists( 'wpb_shortcode_skill_bar' ) ) {
 
 				.' . $bar_id . '{
 					width :0;
-					
+
 				}
 
 				.wpb-skill-bar.animated.' . $bar_id . '{

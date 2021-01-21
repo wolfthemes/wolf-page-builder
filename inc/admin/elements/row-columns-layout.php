@@ -4,8 +4,8 @@
  *
  * @author WolfThemes
  * @category Core
- * @package %PACKAGENAME%/Admin/Elements
- * @version %VERSION%
+ * @package WolfPageBuilder/Admin/Elements
+ * @version 3.2.8
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -28,7 +28,7 @@ wpb_add_element(
 
 			array(
 				'type' => 'radio_image',
-				// 'label' => esc_html__( 'Layout', '%TEXTDOMAIN%' ),
+				// 'label' => esc_html__( 'Layout', 'wolf-page-builder' ),
 				'param_name' => 'layout',
 				'choices' => array(
 					'1-cols' => esc_url( WPB_URI . '/assets/img/admin/layout/columns/1-cols.png' ),

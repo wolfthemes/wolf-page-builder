@@ -1,12 +1,12 @@
 <?php
 /**
- * %NAME% TinyMCE popup HTML wrapper
+ * Wolf Page Builder TinyMCE popup HTML wrapper
  *
  * @class WPB_Admin
  * @author WolfThemes
  * @category Admin
- * @package %PACKAGENAME%/Admin
- * @version %VERSION%
+ * @package WolfPageBuilder/Admin
+ * @version 3.2.8
  */
 include_once( 'load.php' );
 $popup = null;

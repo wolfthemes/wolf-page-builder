@@ -4,8 +4,8 @@
  *
  * @author WolfThemes
  * @category Core
- * @package %PACKAGENAME%/Admin/Elements
- * @version %VERSION%
+ * @package WolfPageBuilder/Admin/Elements
+ * @version 3.2.8
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -15,21 +15,21 @@ if ( ! defined( 'ABSPATH' ) ) {
 // FB like
 wpb_add_element(
 	array(
-		'name' => esc_html__( 'Tweet This', '%TEXTDOMAIN%' ),
-		'description' => esc_html__( 'Tweet this button', '%TEXTDOMAIN%' ),
+		'name' => esc_html__( 'Tweet This', 'wolf-page-builder' ),
+		'description' => esc_html__( 'Tweet this button', 'wolf-page-builder' ),
 		'tags' => 'twitter',
 		'base' => 'wpb_tweet_this',
-		'category' => esc_html__( 'Social', '%TEXTDOMAIN%' ),
+		'category' => esc_html__( 'Social', 'wolf-page-builder' ),
 		'icon' => 'wpb-icon wpb-twitter',
 		'params' => array(
 			array(
 				'type' => 'select',
-				'label' => esc_html__( 'Button Type', '%TEXTDOMAIN%' ),
+				'label' => esc_html__( 'Button Type', 'wolf-page-builder' ),
 				'param_name' => 'type',
 				'choices' => array(
-					'horizontal' => esc_html__( 'Horizontal', '%TEXTDOMAIN%' ),
-					'vertical' => esc_html__( 'Horizontal with count', '%TEXTDOMAIN%' ),
-					'none' => esc_html__( 'Vertical with count', '%TEXTDOMAIN%' ),
+					'horizontal' => esc_html__( 'Horizontal', 'wolf-page-builder' ),
+					'vertical' => esc_html__( 'Horizontal with count', 'wolf-page-builder' ),
+					'none' => esc_html__( 'Vertical with count', 'wolf-page-builder' ),
 				),
 				'display' => true,
 			),

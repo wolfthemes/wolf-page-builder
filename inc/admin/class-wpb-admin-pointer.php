@@ -1,12 +1,12 @@
 <?php
 /**
- * %NAME% About Page.
+ * Wolf Page Builder About Page.
  *
  * @class WPB_Admin
  * @author WolfThemes
  * @category Admin
- * @package %PACKAGENAME%/Admin
- * @version %VERSION%
+ * @package WolfPageBuilder/Admin
+ * @version 3.2.8
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -41,9 +41,9 @@ class WPB_Admin_Pointer {
 			if ( $ptr['screen'] == $this->screen_id ) {
 				$options = array(
 					'content'  => sprintf(
-						'<h3> %s </h3> <p> %s </p>', 
-						esc_html__( $ptr['title'], '%TEXTDOMAIN%' ), 
-						esc_html__( $ptr['content'], '%TEXTDOMAIN%' )
+						'<h3> %s </h3> <p> %s </p>',
+						esc_html__( $ptr['title'], 'wolf-page-builder' ),
+						esc_html__( $ptr['content'], 'wolf-page-builder' )
 						),
 					'position' => $ptr['position']
 				);
@@ -61,24 +61,24 @@ class WPB_Admin_Pointer {
 	* Add pointers to the current screen if they were not dismissed
 	*/
 	public function add_pointers() {
-		
+
 		if ( ! $this->pointers || ! is_array( $this->pointers ) ) return;
 
 		// Get dismissed pointers
 		$get_dismissed = get_user_meta( get_current_user_id(), 'dismissed_wp_pointers', true );
-		
+
 		delete_user_meta( get_current_user_id(), 'dismissed_wp_pointers', false );
-		
+
 		$dismissed = explode( ',', (string) $get_dismissed );
 
 		// Check pointers and remove dismissed ones.
 		$valid_pointers = array( );
 		foreach( $this->pointers as $pointer_id => $pointer ) {
 			if (
-				in_array( $pointer_id, $dismissed ) 
-				|| empty( $pointer ) 
-				|| empty( $pointer_id ) 
-				|| empty( $pointer['target'] ) 
+				in_array( $pointer_id, $dismissed )
+				|| empty( $pointer )
+				|| empty( $pointer_id )
+				|| empty( $pointer['target'] )
 				|| empty( $pointer['options'] )
 			) {
 				continue;
@@ -91,7 +91,7 @@ class WPB_Admin_Pointer {
 
 		$this->valid = $valid_pointers;
 		wp_enqueue_style( 'wp-pointer' );
-		
+
 		wp_enqueue_script( 'wp-pointer' );
 
 		wp_enqueue_script( 'wpb-pointers', WPB_JS . '/admin/pointers.js', array( 'jquery' ), WPB_VERSION, true );

@@ -1,12 +1,12 @@
 <?php
 /**
- * %NAME% elements Functions
+ * Wolf Page Builder elements Functions
  *
  *
  * @author WolfThemes
  * @category Core
- * @package %PACKAGENAME%/Admin
- * @version %VERSION%
+ * @package WolfPageBuilder/Admin
+ * @version 3.2.8
  */
 
 if ( ! defined( 'ABSPATH' ) ) {

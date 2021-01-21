@@ -4,8 +4,8 @@
  *
  * @author WolfThemes
  * @category Core
- * @package %PACKAGENAME%/FrontEnd/Shortcodes
- * @version %VERSION%
+ * @package WolfPageBuilder/FrontEnd/Shortcodes
+ * @version 3.2.8
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -110,7 +110,7 @@ if ( ! function_exists( 'wpb_shortcode_icon_with_text' ) ) {
 		if ( $animation ) {
 			$box_class .= " wow $animation";
 		}
-			
+
 		$icon_container_class = 'wpb-icon-container ' .  $icon_size;
 
 		if ( 'normal' != $icon_type ) {
@@ -121,7 +121,7 @@ if ( ! function_exists( 'wpb_shortcode_icon_with_text' ) ) {
 
 		$data = '';
 		$data_icon_hover_color = '';
-		
+
 		if ( 'yes' == $custom_style ) {
 
 			if ( $bg_color )
@@ -194,7 +194,7 @@ if ( ! function_exists( 'wpb_shortcode_icon_with_text' ) ) {
 			$title_font_size = ( is_numeric( $title_font_size ) ) ? absint( $title_font_size ) . 'px' : $title_font_size;
 			$title_style .= 'font-size:' . esc_attr( $title_font_size ) . ';';
 		}
-		
+
 		$title_html .= '<' . esc_attr( $title_tag  ). ' style="' . wpb_esc_style_attr( $title_style ) . '" class="wpb-icon-title">';
 
 		$title_html .= sanitize_text_field( $title );
@@ -210,7 +210,7 @@ if ( ! function_exists( 'wpb_shortcode_icon_with_text' ) ) {
 			$output .= "<div class='wpb-icon-text-inner'>";
 			$output .= "<div class='wpb-icon-title-holder'>";
 			$output .= "<div class='wpb-icon-holder'>";
-			
+
 			// icon
 			$output .= wp_kses(
 				$icon_html,
@@ -227,7 +227,7 @@ if ( ! function_exists( 'wpb_shortcode_icon_with_text' ) ) {
 				)
 			);
 			$output .= '</div><! --.wpb-icon-holder-->';
-			
+
 			if ( $title ) {
 				$output .= wp_kses(
 					$title_html,
@@ -245,18 +245,18 @@ if ( ! function_exists( 'wpb_shortcode_icon_with_text' ) ) {
 				);
 			}
 			$output .= '</div><! --.wpb-icon-title-holder-->';
-			
+
 			if ( $text ) $output .= '<p style="' . wpb_esc_style_attr( $p_style ) . '">' . sanitize_text_field( $text ) . '</p>';
-			
+
 			$output .= '</div><! --.wpb-icon-text-inner-->';
 			$output .= '</div><! --.wpb-icon-text-holder-->';
 
 		} elseif ( 'right_from_title' == $icon_position ) {
-			
+
 			$output .= "<div class='wpb-icon-text-holder'>";
 				$output .= "<div class='wpb-icon-text-inner'>";
 				$output .= "<div class='wpb-icon-title-holder'>";
-				
+
 				if ( $title ) {
 					$output .= wp_kses(
 						$title_html,
@@ -274,7 +274,7 @@ if ( ! function_exists( 'wpb_shortcode_icon_with_text' ) ) {
 					);
 				}
 				$output .= "<div class='wpb-icon-holder'>";
-				
+
 				// icon
 				$output .= wp_kses(
 					$icon_html,
@@ -293,15 +293,15 @@ if ( ! function_exists( 'wpb_shortcode_icon_with_text' ) ) {
 				$output .= '</div><!--.wpb-icon-holder-->';
 
 				$output .= '</div><!--.wpb-icon-title-holder-->';
-				
+
 				if ( $text ) $output .= '<p style="' . wpb_esc_style_attr( $p_style ) . '">' . sanitize_text_field( $text ) . '</p>';
-				
+
 				$output .= '</div><!--.wpb-icon-text-inner-->';
 			$output .= '</div><!--.wpb-icon-text-holder-->';
 
 		} else {
 			$output .= "<div class='wpb-icon-holder'>";
-			
+
 			// icon
 			$output .= wp_kses(
 				$icon_html,
@@ -321,7 +321,7 @@ if ( ! function_exists( 'wpb_shortcode_icon_with_text' ) ) {
 
 			$output .= "<div class='wpb-icon-text-holder'>";
 			$output .= "<div class='wpb-icon-text-inner'>";
-			
+
 			if ( $title ) {
 				$output .= wp_kses(
 					$title_html,
@@ -338,9 +338,9 @@ if ( ! function_exists( 'wpb_shortcode_icon_with_text' ) ) {
 					)
 				);
 			}
-			
+
 			if ( $text ) $output .= '<p style="' . wpb_esc_style_attr( $p_style ) . '">' . sanitize_text_field( $text ) . '</p>';
-			
+
 			$output .= '</div><!--.wpb-icon-text-inner-->';
 			$output .= '</div><!--.wpb-icon-text-holder-->';
 		}

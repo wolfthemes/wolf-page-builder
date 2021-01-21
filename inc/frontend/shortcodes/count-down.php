@@ -4,8 +4,8 @@
  *
  * @author WolfThemes
  * @category Core
- * @package %PACKAGENAME%/FrontEnd/Shortcodes
- * @version %VERSION%
+ * @package WolfPageBuilder/FrontEnd/Shortcodes
+ * @version 3.2.8
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -20,17 +20,17 @@ if ( ! function_exists( 'wpb_shortcode_countdown' ) ) {
 	 * @return string
 	 */
 	function wpb_shortcode_countdown( $atts ) {
-		
+
 		extract( shortcode_atts( array(
 			'date' => '12/24/2020 12:00:00',
 			'offset' => -5,
-			'message' => esc_html__( 'Done!', '%TEXTDOMAIN%' ),
+			'message' => esc_html__( 'Done!', 'wolf-page-builder' ),
 			'animation' => '',
 			'animation_delay' => '',
 			'inline_style' => '',
 			'extra_class' => '',
 		), $atts ) );
-		
+
 		wp_enqueue_script( 'countdown' );
 		wp_enqueue_script( 'wpb-countdown' );
 
@@ -70,7 +70,7 @@ if ( ! function_exists( 'wpb_shortcode_countdown' ) ) {
 		}
 
 		$output .= '<section class="' . wpb_sanitize_html_classes( $class ) . '" style="' . wpb_esc_style_attr( $inline_style ) . '">';
-		$output .= '<div 
+		$output .= '<div
 			data-year="' . absint( $year ) . '"
 			data-month="' . absint( $month ) . '"
 			data-day="' . absint( $day ) . '"

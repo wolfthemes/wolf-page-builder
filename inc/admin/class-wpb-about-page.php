@@ -1,12 +1,12 @@
 <?php
 /**
- * %NAME% About Page.
+ * Wolf Page Builder About Page.
  *
  * @class WPB_Admin
  * @author WolfThemes
  * @category Admin
- * @package %PACKAGENAME%/Admin
- * @version %VERSION%
+ * @package WolfPageBuilder/Admin
+ * @version 3.2.8
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -48,7 +48,7 @@ if ( ! class_exists( 'WPB_Welcome_Page' ) ) {
 		 */
 		public function admin_menu() {
 
-			add_submenu_page( 'wpb-settings', esc_html__( 'About', '%TEXTDOMAIN%' ), esc_html__( 'About', '%TEXTDOMAIN%' ), 'edit_plugins', 'wpb-about', array( $this, 'about_screen' ) );
+			add_submenu_page( 'wpb-settings', esc_html__( 'About', 'wolf-page-builder' ), esc_html__( 'About', 'wolf-page-builder' ), 'edit_plugins', 'wpb-about', array( $this, 'about_screen' ) );
 		}
 
 		/**
@@ -88,21 +88,21 @@ if ( ! class_exists( 'WPB_Welcome_Page' ) ) {
 			$plugin_name = 'Wolf Page Builder';
 			$plugin_version = WPB_VERSION;
 			?>
-			<h1><?php printf( esc_html__( 'Welcome to %s %s', '%TEXTDOMAIN%' ), $plugin_name, $plugin_version ); ?></h1>
+			<h1><?php printf( esc_html__( 'Welcome to %s %s', 'wolf-page-builder' ), $plugin_name, $plugin_version ); ?></h1>
 
 			<div class="about-text wpb-about-text">
 				<?php
 					if ( isset( $_GET['wolf-theme-updated'] ) )
-						$message = esc_html__( 'Thank you for updating to the latest version!', '%TEXTDOMAIN%' );
+						$message = esc_html__( 'Thank you for updating to the latest version!', 'wolf-page-builder' );
 					else
-						$message = sprintf( esc_html__( 'Thanks for installing %s!', '%TEXTDOMAIN%' ), $plugin_name );
+						$message = sprintf( esc_html__( 'Thanks for installing %s!', 'wolf-page-builder' ), $plugin_name );
 
 					if ( isset( $_GET['wolf-theme-activated'] ) ) {
-						printf( esc_html__( '%s We hope you will enjoy using it.', '%TEXTDOMAIN%' ), $message );
+						printf( esc_html__( '%s We hope you will enjoy using it.', 'wolf-page-builder' ), $message );
 					} elseif ( isset( $_GET['wolf-theme-updated'] ) ) {
-						printf( esc_html__( '%s <br> %s is now more stable and secure than ever.<br>We hope you enjoy using it.', '%TEXTDOMAIN%' ), $message, $plugin_name );
+						printf( esc_html__( '%s <br> %s is now more stable and secure than ever.<br>We hope you enjoy using it.', 'wolf-page-builder' ), $message, $plugin_name );
 					} else {
-						printf( esc_html__( '%s We hope you enjoy using it.', '%TEXTDOMAIN%' ), $message );
+						printf( esc_html__( '%s We hope you enjoy using it.', 'wolf-page-builder' ), $message );
 					}
 				?>
 			</div>
@@ -136,11 +136,11 @@ if ( ! class_exists( 'WPB_Welcome_Page' ) ) {
 		public function features() {
 			$plugin_name = 'WPB';
 			$twitter_url = 'http://' . WPB_WOLF_DOMAIN . '/wolf-page-builder';
-			$twitter_text = sprintf( esc_html__( 'Build your website easily with %s', '%TEXTDOMAIN%' ), 'Wolf Page Builder #wordpress #plugin by @wolf_themes' );
+			$twitter_text = sprintf( esc_html__( 'Build your website easily with %s', 'wolf-page-builder' ), 'Wolf Page Builder #wordpress #plugin by @wolf_themes' );
 			?>
 			<p class="wpb-about-actions">
-<a href="<?php echo esc_url( admin_url( 'post-new.php?post_type=page' ) ); ?>" class="button button-primary"><?php esc_html_e( 'Start now', '%TEXTDOMAIN%' ); ?></a>
-<a href="<?php echo esc_url( admin_url( 'admin.php?page=wpb-settings' ) ); ?>" class="button"><?php esc_html_e( 'Settings', '%TEXTDOMAIN%' ); ?></a>
+<a href="<?php echo esc_url( admin_url( 'post-new.php?post_type=page' ) ); ?>" class="button button-primary"><?php esc_html_e( 'Start now', 'wolf-page-builder' ); ?></a>
+<a href="<?php echo esc_url( admin_url( 'admin.php?page=wpb-settings' ) ); ?>" class="button"><?php esc_html_e( 'Settings', 'wolf-page-builder' ); ?></a>
 <a
 					style="margin-right:3px;margin-top:3px;vertical-align:middle"
 					href="https://twitter.com/share"
@@ -181,9 +181,9 @@ if ( ! class_exists( 'WPB_Welcome_Page' ) ) {
 						<div class="wpb-changelog-notification" id="wpb-changelog-news"><?php echo $new; ?></div>
 					<?php } ?>
 				</div><!-- #wpb-notifications -->
-				
+
 				<div id="wpb-changelog">
-					<h3><?php _e( 'Changelog', '%TEXTDOMAIN%' ); ?></h3>
+					<h3><?php _e( 'Changelog', 'wolf-page-builder' ); ?></h3>
 					<?php echo wp_kses( $xml->changelog, array(
 						'h4' => array(),
 						'ul' => array(),
@@ -193,12 +193,12 @@ if ( ! class_exists( 'WPB_Welcome_Page' ) ) {
 					) ); ?>
 				</div><!-- #wpb-changelog -->
 				<hr>
-				
+
 				<div id="wpb-theme-details">
-					<h3><?php esc_html_e( 'Details', '%TEXTDOMAIN%' ); ?></h3>
-					<p><?php esc_html_e( 'Requires', '%TEXTDOMAIN%' ); ?> : Wordpress <?php echo sanitize_text_field( $xml->requires ); ?></p>
-					<p><?php esc_html_e( 'Tested', '%TEXTDOMAIN%' ); ?> : Wordpress <?php echo sanitize_text_field( $xml->tested ); ?></p>
-					<p><?php esc_html_e( 'Last update', '%TEXTDOMAIN%' ); ?> : <?php echo sanitize_text_field( mysql2date( get_option( 'date_format' ), $xml->date .' 00:00:00' ) ); ?></p>
+					<h3><?php esc_html_e( 'Details', 'wolf-page-builder' ); ?></h3>
+					<p><?php esc_html_e( 'Requires', 'wolf-page-builder' ); ?> : Wordpress <?php echo sanitize_text_field( $xml->requires ); ?></p>
+					<p><?php esc_html_e( 'Tested', 'wolf-page-builder' ); ?> : Wordpress <?php echo sanitize_text_field( $xml->tested ); ?></p>
+					<p><?php esc_html_e( 'Last update', 'wolf-page-builder' ); ?> : <?php echo sanitize_text_field( mysql2date( get_option( 'date_format' ), $xml->date .' 00:00:00' ) ); ?></p>
 				</div>
 				<?php
 			}

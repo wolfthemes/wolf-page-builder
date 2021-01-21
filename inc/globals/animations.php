@@ -4,8 +4,8 @@
  *
  * @author WolfThemes
  * @category Core
- * @package %PACKAGENAME%/Globals
- * @version %VERSION%
+ * @package WolfPageBuilder/Globals
+ * @version 3.2.8
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -13,7 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 $wpb_animations = array(
-	'' => esc_html__( 'None', '%TEXTDOMAIN%' ),
+	'' => esc_html__( 'None', 'wolf-page-builder' ),
 	// 'fadeIn' => 'Fade In',
 	// 'fadeInUp' => 'Fade In Up',
 	// 'fadeInUpBig' => 'Fade In Up Big',

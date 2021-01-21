@@ -20,8 +20,8 @@ function wpb_admin_pointers() {
 			'id'       => 'wpb-help-1',
 			'screen'   => 'page',
 			'target'   => '.toplevel_page_wpb-settings',
-			'title'    => esc_html__( 'Add a section', '%TEXTDOMAIN%' ),
-			'content'  => esc_html__( 'Start by adding your first section', '%TEXTDOMAIN%' ),
+			'title'    => esc_html__( 'Add a section', 'wolf-page-builder' ),
+			'content'  => esc_html__( 'Start by adding your first section', 'wolf-page-builder' ),
 			'position' => array(
 				'edge'  => 'left',
 				'align' => 'left',

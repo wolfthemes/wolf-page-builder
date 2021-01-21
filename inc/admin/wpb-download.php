@@ -1,12 +1,12 @@
 <?php
 /**
- * %NAME% Export text file.
+ * Wolf Page Builder Export text file.
  *
  * @class WPB_Admin
  * @author WolfThemes
  * @category Admin
- * @package %PACKAGENAME%/Admin
- * @version %VERSION%
+ * @package WolfPageBuilder/Admin
+ * @version 3.2.8
  */
 
 if ( empty( $_POST['filename'] ) || empty( $_POST['content'] ) ) {

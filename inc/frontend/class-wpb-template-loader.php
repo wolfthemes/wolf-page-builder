@@ -3,8 +3,8 @@
  * Template Loader
  *
  * @class WPB_Template
- * @version %VERSION%
- * @package %PACKAGENAME%/Classes
+ * @version 3.2.8
+ * @package WolfPageBuilder/Classes
  * @category Class
  * @author WolfThemes
  */

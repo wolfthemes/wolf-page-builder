@@ -4,8 +4,8 @@
  *
  * @author WolfThemes
  * @category Core
- * @package %PACKAGENAME%/Globals
- * @version %VERSION%
+ * @package WolfPageBuilder/Globals
+ * @version 3.2.8
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -15,14 +15,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 global $wpb_image_sizes, $wpb_image_placeholders;
 
 $wpb_image_sizes = array(
-	'wpb-thumb' => esc_html__( 'Landscape', '%TEXTDOMAIN%' ),
-	'wpb-2x2' => esc_html__( 'Square', '%TEXTDOMAIN%' ),
-	'wpb-portrait' => esc_html__( 'Portrait', '%TEXTDOMAIN%' ),
-	'wpb-XL' => esc_html__( 'Extra large', '%TEXTDOMAIN%' ),
-	'large' => esc_html__( 'Large', '%TEXTDOMAIN%' ),
-	'medium' => esc_html__( 'Medium', '%TEXTDOMAIN%' ),
-	'thumbnail' => esc_html__( 'Thumbnail', '%TEXTDOMAIN%' ),
-	'full' => esc_html__( 'Full', '%TEXTDOMAIN%' ),
+	'wpb-thumb' => esc_html__( 'Landscape', 'wolf-page-builder' ),
+	'wpb-2x2' => esc_html__( 'Square', 'wolf-page-builder' ),
+	'wpb-portrait' => esc_html__( 'Portrait', 'wolf-page-builder' ),
+	'wpb-XL' => esc_html__( 'Extra large', 'wolf-page-builder' ),
+	'large' => esc_html__( 'Large', 'wolf-page-builder' ),
+	'medium' => esc_html__( 'Medium', 'wolf-page-builder' ),
+	'thumbnail' => esc_html__( 'Thumbnail', 'wolf-page-builder' ),
+	'full' => esc_html__( 'Full', 'wolf-page-builder' ),
 );
 
 $wpb_image_placeholders = array(
@@ -38,6 +38,6 @@ $wpb_image_placeholders = array(
 	'wpb-XL' => 'https://placeimg.com/2000/1500/any',
 	'large' => 'https://placeimg.com/1024/1024/any',
 	'medium' => 'https://placeimg.com/200/300/any',
-	'thumbnail' => 'https://placehold.it/150x150?text=' . esc_html__( 'DEMO IMAGE', '%TEXTDOMAIN%' ),
+	'thumbnail' => 'https://placehold.it/150x150?text=' . esc_html__( 'DEMO IMAGE', 'wolf-page-builder' ),
 	'full' => 'https://placeimg.com/1600/1200/any',
 );

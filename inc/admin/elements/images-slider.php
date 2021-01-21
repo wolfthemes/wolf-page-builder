@@ -4,8 +4,8 @@
  *
  * @author WolfThemes
  * @category Core
- * @package %PACKAGENAME%/Admin/Elements
- * @version %VERSION%
+ * @package WolfPageBuilder/Admin/Elements
+ * @version 3.2.8
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -14,31 +14,31 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 wpb_add_element(
 	array(
-		'name' => esc_html__( 'Image Slider', '%TEXTDOMAIN%' ),
-		'description' => esc_html__( 'An elegant image slideshow', '%TEXTDOMAIN%' ),
+		'name' => esc_html__( 'Image Slider', 'wolf-page-builder' ),
+		'description' => esc_html__( 'An elegant image slideshow', 'wolf-page-builder' ),
 		'base' => 'wpb_slider',
-		'category' => esc_html__( 'Sliders', '%TEXTDOMAIN%' ),
+		'category' => esc_html__( 'Sliders', 'wolf-page-builder' ),
 		'icon' => 'wpb-icon wpb-images-slider',
 		'params' => array(
 			array(
 				'type' => 'multiple_images',
-				'label' => esc_html__( 'Images', '%TEXTDOMAIN%' ),
+				'label' => esc_html__( 'Images', 'wolf-page-builder' ),
 				'param_name' => 'ids',
 				'display' => true,
 			),
 
 			array(
 				'type' => 'select',
-				'label' => esc_html__( 'Layout', '%TEXTDOMAIN%' ),
+				'label' => esc_html__( 'Layout', 'wolf-page-builder' ),
 				'param_name' => 'layout',
 				'choices' => array(
-					'default' => esc_html__( 'None', '%TEXTDOMAIN%' ),
-					'desktop' => esc_html__( 'Desktop Screen', '%TEXTDOMAIN%' ),
-					'laptop' => esc_html__( 'Laptop Screen', '%TEXTDOMAIN%' ),
-					'tablet' => esc_html__( 'Tablet Screen', '%TEXTDOMAIN%' ),
-					'mobile' => esc_html__( 'Mobile Screen', '%TEXTDOMAIN%' ),
+					'default' => esc_html__( 'None', 'wolf-page-builder' ),
+					'desktop' => esc_html__( 'Desktop Screen', 'wolf-page-builder' ),
+					'laptop' => esc_html__( 'Laptop Screen', 'wolf-page-builder' ),
+					'tablet' => esc_html__( 'Tablet Screen', 'wolf-page-builder' ),
+					'mobile' => esc_html__( 'Mobile Screen', 'wolf-page-builder' ),
 				),
-				'description' => esc_html__( 'If you choose a custom layout your image may be cropped.', '%TEXTDOMAIN%' ),
+				'description' => esc_html__( 'If you choose a custom layout your image may be cropped.', 'wolf-page-builder' ),
 				'display' => true,
 			),
 		)

@@ -1,13 +1,13 @@
 <?php
 /**
- * %NAME% Fonts Functions
+ * Wolf Page Builder Fonts Functions
  *
  * Enqueue google fonts depending on user settings
  *
  * @author WolfThemes
  * @category Core
- * @package %PACKAGENAME%/Admin
- * @version %VERSION%
+ * @package WolfPageBuilder/Admin
+ * @version 3.2.8
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -46,7 +46,7 @@ function wpb_get_google_fonts_options() {
 /**
  * Get google font URL
  *
- * @since %NAME% 1.7
+ * @since Wolf Page Builder 1.7
  */
 function wpb_get_google_fonts_file_url() {
 
@@ -64,7 +64,7 @@ function wpb_get_google_fonts_file_url() {
 		 * Translators: To add an additional character subset specific to your language,
 		 * translate this to 'greek', 'cyrillic', 'devanagari' or 'vietnamese'. Do not translate into your own language.
 		 */
-		$subset = _x( 'no-subset', 'Add new subset (greek, cyrillic, devanagari, vietnamese)', '%TEXTDOMAIN%' );
+		$subset = _x( 'no-subset', 'Add new subset (greek, cyrillic, devanagari, vietnamese)', 'wolf-page-builder' );
 
 		if ( 'cyrillic' == $subset ) {
 			$subsets .= ',cyrillic,cyrillic-ext';
@@ -88,7 +88,7 @@ function wpb_get_google_fonts_file_url() {
 /**
  * Loads our special font CSS file.
  *
- * @since %NAME% 1.0
+ * @since Wolf Page Builder 1.0
  */
 function wpb_enqueue_google_fonts() {
 
@@ -102,7 +102,7 @@ add_action( 'wp_enqueue_scripts', 'wpb_enqueue_google_fonts' ); // enqueue googl
 /**
  * Add preconnect for Google Fonts.
  *
- * @since %NAME% 2.4.8
+ * @since Wolf Page Builder 2.4.8
  *
  * @param array  $urls           URLs to print for resource hints.
  * @param string $relation_type  The relation type the URLs are printed.
@@ -124,7 +124,7 @@ add_filter( 'wp_resource_hints', 'wpb_resource_hints', 10, 2 );
 /**
  * Add google font to editor style
  *
- * @since %NAME% 1.7
+ * @since Wolf Page Builder 1.7
  */
 function wpb_add_google_fonts_editor_styles() {
 

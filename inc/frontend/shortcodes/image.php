@@ -4,8 +4,8 @@
  *
  * @author WolfThemes
  * @category Core
- * @package %PACKAGENAME%/FrontEnd/Shortcodes
- * @version %VERSION%
+ * @package WolfPageBuilder/FrontEnd/Shortcodes
+ * @version 3.2.8
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -88,7 +88,7 @@ if ( ! function_exists( 'wpb_shortcode_image' ) ) {
 			$alt = $title = $post_excerpt = $href = '';
 			$link_type = 'none';
 			$class= 'wpb-image-inner';
-			
+
 			if ( wpb_is_url( $image_id ) ) {
 
 				$image_url = esc_url( $image_id );
@@ -100,7 +100,7 @@ if ( ! function_exists( 'wpb_shortcode_image' ) ) {
 		}
 
 		if ( 'none' != $link_type ) {
-			
+
 			if ( $scroll_to_anchor ) {
 				$class .= ' wpb-scroll';
 			}
@@ -110,7 +110,7 @@ if ( ! function_exists( 'wpb_shortcode_image' ) ) {
 			if ( 'url' == $link_type && $link_target ) {
 				$output .= " target='_blank'";
 			}
-			
+
 			$output .= ">";
 		} else {
 			$output .= "<span class='$class'>";
@@ -121,14 +121,14 @@ if ( ! function_exists( 'wpb_shortcode_image' ) ) {
 		if ( $full_width ) {
 			$image_style .= 'width:100%;';
 		}
-				
+
 		if ( $image_url ) {
 			$output .= '<img style="' . wpb_esc_style_attr( $image_style ) . '" src="' . esc_url( $image_url ) . '" alt="' . esc_attr( $title ) . '" class="' . wpb_sanitize_html_classes( $extra_class ) . '">';
 
 			if ( $add_image_hover && $image_hover_url ) {
 				$output .= "<img src='$image_hover_url' alt='$title' class='wpb-image-hover-image'>";
 			}
-		}			
+		}
 
 		if ( 'none' != $link_type ) {
 			$output .= '</a>';

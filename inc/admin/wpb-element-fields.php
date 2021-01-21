@@ -1,12 +1,12 @@
 <?php
 /**
- * %NAME% element fields function
+ * Wolf Page Builder element fields function
  *
  *
  * @author WolfThemes
  * @category Core
- * @package %PACKAGENAME%/Admin
- * @version %VERSION%
+ * @package WolfPageBuilder/Admin
+ * @version 3.2.8
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -23,7 +23,7 @@ function wpb_get_element_settings( $element, $values = array() ) {
 	$settings = $elements[ $element ]['params'];
 
 	if ( array() ==  $settings ) {
-		esc_html_e( 'There is no settings for this element. You can save it as is.', '%TEXTDOMAIN%' );
+		esc_html_e( 'There is no settings for this element. You can save it as is.', 'wolf-page-builder' );
 	}
 
 	foreach ( $settings as $setting ) {
@@ -185,16 +185,16 @@ function wpb_get_element_settings( $element, $values = array() ) {
 				});
 			} );
 			</script>
-			<button class="button wpb-link-btn"><?php esc_html_e( 'Helper', '%TEXTDOMAIN%' ); ?></button>
+			<button class="button wpb-link-btn"><?php esc_html_e( 'Helper', 'wolf-page-builder' ); ?></button>
 			<p>
-				<label><?php esc_html_e( 'URL', '%TEXTDOMAIN%' ); ?></label>
+				<label><?php esc_html_e( 'URL', 'wolf-page-builder' ); ?></label>
 				<input value="<?php echo esc_attr( $meta_url ); ?>" tabindex="-1" data-element-type="<?php echo esc_attr( $type ); ?>" type="text" name="<?php echo esc_attr( $param_name . '_url' ); ?>" class="wpb-link-url">
 			</p>
 			<p>
 				<label>
 					<input value="0" name="<?php echo esc_attr( $param_name . '_target' ); ?>" type="hidden">
 					<input value="1" class="wpb-link-target" name="<?php echo esc_attr( $param_name . '_target' ); ?>"  data-element-type="checkbox" type="checkbox" <?php checked( $meta_target, true ); ?>>
-					<?php esc_html_e( 'Open link in a new tab', '%TEXTDOMAIN%' ); ?>
+					<?php esc_html_e( 'Open link in a new tab', 'wolf-page-builder' ); ?>
 				</label>
 			<p>
 			<?php
@@ -289,7 +289,7 @@ function wpb_get_element_settings( $element, $values = array() ) {
 			// debug( $wpb_google_fonts );
 			?>
 			<select tabindex="-1" data-element-type="<?php echo esc_attr( $type ); ?>" name="<?php echo esc_attr( $param_name ); ?>" >
-				<option value=""><?php esc_html_e( 'Default', '%TEXTDOMAIN%' ); ?></option>
+				<option value=""><?php esc_html_e( 'Default', 'wolf-page-builder' ); ?></option>
 				<?php foreach ( $wpb_google_fonts as $name => $font ) : ?>
 					<option value="<?php echo esc_attr( $name ); ?>" <?php echo selected( $name, $meta ); ?>><?php echo sanitize_text_field( $name ); ?></option>
 				<?php endforeach; ?>
@@ -411,8 +411,8 @@ function wpb_get_element_settings( $element, $values = array() ) {
 			<input data-element-type="<?php echo esc_attr( $type ); ?>" type="hidden" name="<?php echo esc_attr( $param_name ); ?>" value="<?php echo esc_attr( $meta ); ?>">
 			<img <?php if ( ! $meta ) echo 'style="display:none;"'; ?> class="wpb-param-img-preview" src="<?php echo esc_url( $img_url ); ?>" alt="<?php echo esc_attr( $param_name ); ?>">
 			<br>
-			<a href="#" class="button wpb-param-reset-img"><?php esc_html_e( 'Clear', '%TEXTDOMAIN%' ); ?></a>
-			<a href="#" class="button wpb-param-set-img"><?php esc_html_e( 'Choose an Image', '%TEXTDOMAIN%' ); ?></a>
+			<a href="#" class="button wpb-param-reset-img"><?php esc_html_e( 'Clear', 'wolf-page-builder' ); ?></a>
+			<a href="#" class="button wpb-param-set-img"><?php esc_html_e( 'Choose an Image', 'wolf-page-builder' ); ?></a>
 			<?php
 		}
 
@@ -433,8 +433,8 @@ function wpb_get_element_settings( $element, $values = array() ) {
 			}
 			?>
 			<input data-element-type="<?php echo esc_attr( $type ); ?>" type="text" name="<?php echo esc_attr( $param_name ); ?>" value="<?php echo esc_attr( $file_url ); ?>">
-			<a href="#" class="button wpb-param-reset-file"><?php esc_html_e( 'Clear', '%TEXTDOMAIN%' ); ?></a>
-			<a href="#" class="button wpb-param-set-file"><?php esc_html_e( 'Choose a File', '%TEXTDOMAIN%' ); ?></a>
+			<a href="#" class="button wpb-param-reset-file"><?php esc_html_e( 'Clear', 'wolf-page-builder' ); ?></a>
+			<a href="#" class="button wpb-param-set-file"><?php esc_html_e( 'Choose a File', 'wolf-page-builder' ); ?></a>
 			<?php
 		}
 
@@ -449,8 +449,8 @@ function wpb_get_element_settings( $element, $values = array() ) {
 			$file_url = esc_url( $meta );
 			?>
 			<input data-element-type="<?php echo esc_attr( $type ); ?>" type="text" name="<?php echo esc_attr( $param_name ); ?>" value="<?php echo esc_attr( $file_url ); ?>">
-			<a href="#" class="button wpb-param-reset-file"><?php esc_html_e( 'Clear', '%TEXTDOMAIN%' ); ?></a>
-			<a href="#" class="button wpb-param-set-video-file"><?php esc_html_e( 'Choose a Video File', '%TEXTDOMAIN%' ); ?></a>
+			<a href="#" class="button wpb-param-reset-file"><?php esc_html_e( 'Clear', 'wolf-page-builder' ); ?></a>
+			<a href="#" class="button wpb-param-set-video-file"><?php esc_html_e( 'Choose a Video File', 'wolf-page-builder' ); ?></a>
 			<?php
 		}
 
@@ -471,7 +471,7 @@ function wpb_get_element_settings( $element, $values = array() ) {
 			} else {
 				$attachments = explode( ',', $meta );
 			}
-			$reset_multiple_image_confirm = esc_html__( 'Are you sure to want to reset all images ?', '%TEXTDOMAIN%' );
+			$reset_multiple_image_confirm = esc_html__( 'Are you sure to want to reset all images ?', 'wolf-page-builder' );
 			?>
 			<div class="wpb-images-set clearfix">
 				<?php
@@ -511,8 +511,8 @@ function wpb_get_element_settings( $element, $values = array() ) {
 			<div class="wpb-clear"></div>
 			<br>
 			<input data-element-type="<?php echo esc_attr( $type ); ?>" type="hidden" name="<?php echo esc_attr( $param_name ); ?>" value="<?php echo esc_attr( $meta ); ?>">
-			<a href="#" class="button wpb-param-reset-all-img"><?php esc_html_e( 'Clear All', '%TEXTDOMAIN%' ); ?></a>
-			<a href="#" class="button wpb-param-set-multiple-img"><?php esc_html_e( 'Select Images', '%TEXTDOMAIN%' ); ?></a>
+			<a href="#" class="button wpb-param-reset-all-img"><?php esc_html_e( 'Clear All', 'wolf-page-builder' ); ?></a>
+			<a href="#" class="button wpb-param-set-multiple-img"><?php esc_html_e( 'Select Images', 'wolf-page-builder' ); ?></a>
 			<?php
 		}
 
@@ -527,7 +527,7 @@ function wpb_get_element_settings( $element, $values = array() ) {
 			$meta = ( isset( $values[ $param_name . '_color' ] ) ) ? $values[ $param_name . '_color' ] : '';
 			?>
 			<p class="<?php echo wpb_sanitize_html_classes( $p_class ); ?>">
-				<label class="wpb-param-label"><?php printf( esc_html__( '%s Color', '%TEXTDOMAIN%' ), sanitize_text_field( $label ) ); ?></label>
+				<label class="wpb-param-label"><?php printf( esc_html__( '%s Color', 'wolf-page-builder' ), sanitize_text_field( $label ) ); ?></label>
 				<input data-element-type="<?php echo esc_attr( $type ); ?>" type="text" class="wpb-param-colorpicker" name="<?php echo esc_attr( $param_name . '_color' ); ?>" value="<?php echo esc_attr( $meta ); ?>">
 			</p>
 			<?php
@@ -560,12 +560,12 @@ function wpb_get_element_settings( $element, $values = array() ) {
 			}
 			?>
 			<p class="<?php echo wpb_sanitize_html_classes( $p_class ); ?>">
-				<label class="wpb-param-label"><?php printf( esc_html__( '%s Image', '%TEXTDOMAIN%' ), sanitize_text_field( $label ) ); ?></label>
+				<label class="wpb-param-label"><?php printf( esc_html__( '%s Image', 'wolf-page-builder' ), sanitize_text_field( $label ) ); ?></label>
 				<input data-element-type="<?php echo esc_attr( $type ); ?>" type="hidden" name="<?php echo esc_attr( $param_name . '_img' ); ?>" value="<?php echo esc_attr( $meta ); ?>">
 				<img <?php if ( ! $meta ) echo 'style="display:none;"'; ?> class="wpb-param-img-preview" src="<?php echo esc_url( $img_url ); ?>" alt="<?php echo esc_attr( $param_name . '_img' ); ?>">
 				<br>
-				<a href="#" class="button wpb-param-reset-bg"><?php esc_html_e( 'Clear', '%TEXTDOMAIN%' ); ?></a>
-				<a href="#" class="button wpb-param-set-bg"><?php esc_html_e( 'Choose an Image', '%TEXTDOMAIN%' ); ?></a>
+				<a href="#" class="button wpb-param-reset-bg"><?php esc_html_e( 'Clear', 'wolf-page-builder' ); ?></a>
+				<a href="#" class="button wpb-param-set-bg"><?php esc_html_e( 'Choose an Image', 'wolf-page-builder' ); ?></a>
 			</p>
 			<?php
 			$p_class = '';
@@ -574,17 +574,17 @@ function wpb_get_element_settings( $element, $values = array() ) {
 			 */
 			$bg_settings = array(
 				'size' => array(
-					'cover' => esc_html__( 'cover', '%TEXTDOMAIN%' ),
-					'contain' => esc_html__( 'contain', '%TEXTDOMAIN%' ),
-					'inherit' => esc_html__( 'default', '%TEXTDOMAIN%' ),
-					//'100% auto' => esc_html__( '100% width', '%TEXTDOMAIN%' ),
-					//'auto 100%' => esc_html__( '100% height', '%TEXTDOMAIN%' ),
+					'cover' => esc_html__( 'cover', 'wolf-page-builder' ),
+					'contain' => esc_html__( 'contain', 'wolf-page-builder' ),
+					'inherit' => esc_html__( 'default', 'wolf-page-builder' ),
+					//'100% auto' => esc_html__( '100% width', 'wolf-page-builder' ),
+					//'auto 100%' => esc_html__( '100% height', 'wolf-page-builder' ),
 				),
 				'repeat' => array(
-					'no-repeat' => esc_html__( 'no repeat', '%TEXTDOMAIN%' ),
-					'repeat' => esc_html__( 'repeat', '%TEXTDOMAIN%' ),
-					'repeat-x' => esc_html__( 'repeat horizontally', '%TEXTDOMAIN%' ),
-					'repeat-y' => esc_html__( 'repeat vertically', '%TEXTDOMAIN%' ),
+					'no-repeat' => esc_html__( 'no repeat', 'wolf-page-builder' ),
+					'repeat' => esc_html__( 'repeat', 'wolf-page-builder' ),
+					'repeat-x' => esc_html__( 'repeat horizontally', 'wolf-page-builder' ),
+					'repeat-y' => esc_html__( 'repeat vertically', 'wolf-page-builder' ),
 				),
 				'position' => array(
 					'center center',
@@ -636,11 +636,11 @@ function wpb_get_element_settings( $element, $values = array() ) {
 			$p_class = 'wpb-param-fieldset-' . esc_attr( $param_name . '_type' );
 			?>
 			<p style="<?php echo ( $video_type_option ) ? '' : 'display:none'; ?>" class="<?php echo wpb_sanitize_html_classes( $p_class ); ?>">
-				<label class="wpb-param-label"><?php printf( esc_html__( '%s Type', '%TEXTDOMAIN%' ), sanitize_text_field( $label ) ); ?></label>
+				<label class="wpb-param-label"><?php printf( esc_html__( '%s Type', 'wolf-page-builder' ), sanitize_text_field( $label ) ); ?></label>
 				<select data-element-type="select" name="<?php echo esc_attr( $param_name . '_type' ); ?>">
 					<option value="youtube" <?php selected( $meta, 'youtube' ); ?>>YouTube</option>
 					<option value="vimeo" <?php selected( $meta, 'vimeo' ); ?>>Vimeo (beta)</option>
-					<option value="selfhosted" <?php selected( $meta, 'selfhosted' ); ?>><?php _e( 'Self hosted', '%TEXTDOMAIN%' ); ?></option>
+					<option value="selfhosted" <?php selected( $meta, 'selfhosted' ); ?>><?php _e( 'Self hosted', 'wolf-page-builder' ); ?></option>
 				</select>
 			</p>
 			<?php
@@ -648,14 +648,14 @@ function wpb_get_element_settings( $element, $values = array() ) {
 			$p_class = 'wpb-has-dependency';
 			?>
 			<p data-dependency-element="<?php echo esc_attr( $param_name . '_type' ); ?>" data-dependency-values='["youtube"]' class="<?php echo wpb_sanitize_html_classes( $p_class ); ?>">
-				<label class="wpb-param-label"><?php printf( esc_html__( '%s YouTube URL', '%TEXTDOMAIN%' ), sanitize_text_field( $label ) ); ?></label>
+				<label class="wpb-param-label"><?php printf( esc_html__( '%s YouTube URL', 'wolf-page-builder' ), sanitize_text_field( $label ) ); ?></label>
 				<input data-element-type="<?php echo esc_attr( $type ); ?>" type="text" name="<?php echo esc_attr( $param_name . '_youtube_url' ); ?>" value="<?php echo esc_url( $meta ); ?>" placeholder="https://www.youtube.com/watch?v=nrJtHemSPW4">
 			<p>
 			<?php
 			$meta = ( isset( $values[ $param_name . '_youtube_start_time' ] ) ) ? $values[ $param_name . '_youtube_start_time' ] : '';
 			?>
 			<p data-dependency-element="<?php echo esc_attr( $param_name . '_type' ); ?>" data-dependency-values='["youtube"]' class="<?php echo wpb_sanitize_html_classes( $p_class ); ?>">
-				<label class="wpb-param-label"><?php printf( esc_html__( '%s Start Time (in seconds)', '%TEXTDOMAIN%' ), sanitize_text_field( $label ) ); ?></label>
+				<label class="wpb-param-label"><?php printf( esc_html__( '%s Start Time (in seconds)', 'wolf-page-builder' ), sanitize_text_field( $label ) ); ?></label>
 				<input data-element-type="<?php echo esc_attr( $type ); ?>" type="text" name="<?php echo esc_attr( $param_name . '_youtube_start_time' ); ?>" value="<?php echo esc_attr( $meta ); ?>" placeholder="10">
 			<p>
 			<?php
@@ -663,14 +663,14 @@ function wpb_get_element_settings( $element, $values = array() ) {
 			$p_class = 'wpb-has-dependency';
 			?>
 			<p data-dependency-element="<?php echo esc_attr( $param_name . '_type' ); ?>" data-dependency-values='["vimeo"]' class="<?php echo wpb_sanitize_html_classes( $p_class ); ?>">
-				<label class="wpb-param-label"><?php printf( esc_html__( '%s Vimeo URL', '%TEXTDOMAIN%' ), sanitize_text_field( $label ) ); ?></label>
+				<label class="wpb-param-label"><?php printf( esc_html__( '%s Vimeo URL', 'wolf-page-builder' ), sanitize_text_field( $label ) ); ?></label>
 				<input data-element-type="<?php echo esc_attr( $type ); ?>" type="text" name="<?php echo esc_attr( $param_name . '_vimeo_url' ); ?>" value="<?php echo esc_url( $meta ); ?>" placeholder="https://vimeo.com/90069307">
 			<p>
 			<!-- <p>
-				<?php // esc_html_e( 'more videos formats', '%TEXTDOMAIN%' ); ?>
+				<?php // esc_html_e( 'more videos formats', 'wolf-page-builder' ); ?>
 				<select>
-					<option value="hide"><?php // esc_html_e( 'hide', '%TEXTDOMAIN%' ); ?></option>
-					<option value="show"><?php // esc_html_e( 'show', '%TEXTDOMAIN%' ); ?></option>
+					<option value="hide"><?php // esc_html_e( 'hide', 'wolf-page-builder' ); ?></option>
+					<option value="show"><?php // esc_html_e( 'show', 'wolf-page-builder' ); ?></option>
 				</select>
 			</p> -->
 			<?php
@@ -689,8 +689,8 @@ function wpb_get_element_settings( $element, $values = array() ) {
 				<p data-dependency-element="<?php echo esc_attr( $param_name . '_type' ); ?>" data-dependency-values='["selfhosted"]' class="<?php echo wpb_sanitize_html_classes( $p_class ); ?>">
 					<label class="wpb-param-label"><?php echo sanitize_text_field( $label . ' ' . $video_file ); ?></label>
 					<input data-element-type="<?php echo esc_attr( $type ); ?>" type="text" name="<?php echo esc_attr( $param_name . '_' . $video_file ); ?>" value="<?php echo esc_attr( esc_url( $meta ) ); ?>">
-					<a href="#" class="button wpb-param-reset-file"><?php esc_html_e( 'Clear', '%TEXTDOMAIN%' ); ?></a>
-					<a href="#" class="button wpb-param-set-video-file"><?php esc_html_e( 'Choose a Video File', '%TEXTDOMAIN%' ); ?></a>
+					<a href="#" class="button wpb-param-reset-file"><?php esc_html_e( 'Clear', 'wolf-page-builder' ); ?></a>
+					<a href="#" class="button wpb-param-set-video-file"><?php esc_html_e( 'Choose a Video File', 'wolf-page-builder' ); ?></a>
 				</p>
 				<?php
 			}
@@ -708,13 +708,13 @@ function wpb_get_element_settings( $element, $values = array() ) {
 			}
 			?>
 			<p class="<?php echo wpb_sanitize_html_classes( $p_class ); ?>">
-				<label class="wpb-param-label"><?php printf( esc_html__( '%s Image Fallback', '%TEXTDOMAIN%' ), sanitize_text_field( $label ) ); ?></label>
-				<span class="wpb-description"><?php esc_html_e( 'Used in case the video can\'t be displayed.', '%TEXTDOMAIN%' ); ?></span>
+				<label class="wpb-param-label"><?php printf( esc_html__( '%s Image Fallback', 'wolf-page-builder' ), sanitize_text_field( $label ) ); ?></label>
+				<span class="wpb-description"><?php esc_html_e( 'Used in case the video can\'t be displayed.', 'wolf-page-builder' ); ?></span>
 				<input data-element-type="<?php echo esc_attr( $type ); ?>" type="hidden" name="<?php echo esc_attr( $param_name . '_img' ); ?>" value="<?php echo esc_attr( $meta ); ?>">
 				<img <?php if ( ! $meta ) echo 'style="display:none;"'; ?> class="wpb-param-img-preview" src="<?php echo esc_url( $img_url ); ?>" alt="<?php echo esc_attr( $param_name ); ?>">
 				<br>
-				<a href="#" class="button wpb-param-reset-img"><?php esc_html_e( 'Clear', '%TEXTDOMAIN%' ); ?></a>
-				<a href="#" class="button wpb-param-set-img"><?php esc_html_e( 'Choose an Image', '%TEXTDOMAIN%' ); ?></a>
+				<a href="#" class="button wpb-param-reset-img"><?php esc_html_e( 'Clear', 'wolf-page-builder' ); ?></a>
+				<a href="#" class="button wpb-param-set-img"><?php esc_html_e( 'Choose an Image', 'wolf-page-builder' ); ?></a>
 			</p>
 			<?php
 

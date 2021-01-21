@@ -5,17 +5,17 @@
  * @class WPB_Admin
  * @author WolfThemes
  * @category Admin
- * @package %PACKAGENAME%/Admin
- * @version %VERSION%
+ * @package WolfPageBuilder/Admin
+ * @version 3.2.8
  */
-$title = esc_html__( 'Socials', '%TEXTDOMAIN%' );
+$title = esc_html__( 'Socials', 'wolf-page-builder' );
 $params = array(
 
 	array(
 		'id' => 'services',
-		'label' => esc_html__( 'Services', '%TEXTDOMAIN%' ),
+		'label' => esc_html__( 'Services', 'wolf-page-builder' ),
 		'desc' => wp_kses(
-			__( 'Leave empty to display them all.<br>* See the social networks available in the plugin options.', '%TEXTDOMAIN%' ),
+			__( 'Leave empty to display them all.<br>* See the social networks available in the plugin options.', 'wolf-page-builder' ),
 			array( 'br' => array() )
 		),
 		'placeholder' => 'facebook,twitter',
@@ -23,24 +23,24 @@ $params = array(
 
 	array(
 		'id' => 'type',
-		'label' => esc_html__( 'Type', '%TEXTDOMAIN%' ),
+		'label' => esc_html__( 'Type', 'wolf-page-builder' ),
 		'type' => 'select',
 		'options' => array(
-			'normal' => esc_html__( 'Normal', '%TEXTDOMAIN%' ),
-			'circle' => esc_html__( 'Circle', '%TEXTDOMAIN%' ),
-			'square' => esc_html__( 'Square', '%TEXTDOMAIN%' ),
+			'normal' => esc_html__( 'Normal', 'wolf-page-builder' ),
+			'circle' => esc_html__( 'Circle', 'wolf-page-builder' ),
+			'square' => esc_html__( 'Square', 'wolf-page-builder' ),
 		),
 	),
 
 	array(
 		'id' => 'size',
-		'label' => esc_html__( 'Size', '%TEXTDOMAIN%' ),
+		'label' => esc_html__( 'Size', 'wolf-page-builder' ),
 		'type' => 'select',
 		'options' => array(
-			'1x' => esc_html__( 'Small', '%TEXTDOMAIN%' ),
-			'2x' => esc_html__( 'Medium', '%TEXTDOMAIN%' ),
-			'3x' => esc_html__( 'Large', '%TEXTDOMAIN%' ),
-			'4x' => esc_html__( 'Very Large', '%TEXTDOMAIN%' ),
+			'1x' => esc_html__( 'Small', 'wolf-page-builder' ),
+			'2x' => esc_html__( 'Medium', 'wolf-page-builder' ),
+			'3x' => esc_html__( 'Large', 'wolf-page-builder' ),
+			'4x' => esc_html__( 'Very Large', 'wolf-page-builder' ),
 		),
 	),
 );

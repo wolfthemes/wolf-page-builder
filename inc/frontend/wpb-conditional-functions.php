@@ -1,13 +1,13 @@
 <?php
 /**
- * %NAME% frontend functions
+ * Wolf Page Builder frontend functions
  *
  * General core functions available on admin.and frontend
  *
  * @author WolfThemes
  * @category Core
- * @package %PACKAGENAME%/FRontend
- * @version %VERSION%
+ * @package WolfPageBuilder/FRontend
+ * @version 3.2.8
  */
 
 if ( ! defined( 'ABSPATH' ) ) {

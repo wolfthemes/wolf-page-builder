@@ -1,13 +1,13 @@
 <?php
 /**
- * %NAME% admin functions
+ * Wolf Page Builder admin functions
  *
  * General  functions available on admin.
  *
  * @author WolfThemes
  * @category Core
- * @package %PACKAGENAME%/Admin
- * @version %VERSION%
+ * @package WolfPageBuilder/Admin
+ * @version 3.2.8
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -215,7 +215,7 @@ function wpb_get_element_properties( $basename, $new_params = array() ) {
 
 	} else {
 		//unknown element
-		$message = esc_html__( 'This shortcode is deprecated or is from a disabled plugin', '%TEXTDOMAIN%' );
+		$message = esc_html__( 'This shortcode is deprecated or is from a disabled plugin', 'wolf-page-builder' );
 		$markup = '<aside class="wpb-element-properties wpb-clearfix">
 				<span class="wpb-element-icon-container">
 					<span class="wpb-icon wpb-unknown"></span>
@@ -255,10 +255,10 @@ function wpb_get_element_properties_bak( $basename, $params_values = '' ) {
 			$child_element_name = $elements[ $child_element ]['name'];
 
 			$markup = '<aside class="wpb-element-action">
-				<span class="wpb-edit-element wpb-tipsy" data-element="' . esc_attr( $child_element ) . '" title="' . sprintf( esc_html__( '%s settings', '%TEXTDOMAIN%' ), $child_element_name ) . '"></span>
-				<span class="wpb-duplicate-element wpb-tipsy" title="' .  esc_html__( 'Duplicate element', '%TEXTDOMAIN%' ) . '"></span>
-				<span class="wpb-remove-element wpb-tipsy" title="' .  esc_html__( 'Remove element', '%TEXTDOMAIN%' ) . '"></span>
-				<span class="wpb-move-element-item" title="' .  esc_html__( 'Move element', '%TEXTDOMAIN%' ) . '"></span>
+				<span class="wpb-edit-element wpb-tipsy" data-element="' . esc_attr( $child_element ) . '" title="' . sprintf( esc_html__( '%s settings', 'wolf-page-builder' ), $child_element_name ) . '"></span>
+				<span class="wpb-duplicate-element wpb-tipsy" title="' .  esc_html__( 'Duplicate element', 'wolf-page-builder' ) . '"></span>
+				<span class="wpb-remove-element wpb-tipsy" title="' .  esc_html__( 'Remove element', 'wolf-page-builder' ) . '"></span>
+				<span class="wpb-move-element-item" title="' .  esc_html__( 'Move element', 'wolf-page-builder' ) . '"></span>
 			</aside>';
 			$test = '<aside class="wpb-element-properties wpb-clearfix">
 				<span class="wpb-element-icon-container">
@@ -286,7 +286,7 @@ function wpb_get_element_properties_bak( $basename, $params_values = '' ) {
 
 	} else {
 		// to do
-		$message = esc_html__( 'This shortcode is deprecated or is from a disabled plugin', '%TEXTDOMAIN%' );
+		$message = esc_html__( 'This shortcode is deprecated or is from a disabled plugin', 'wolf-page-builder' );
 		$markup = '<aside class="wpb-element-properties wpb-clearfix">
 				<span class="wpb-element-icon-container">
 					<span class="wpb-icon wpb-unknown"></span>
@@ -312,20 +312,20 @@ function wpb_get_section_toolbar( $element, $layout, $section_type ) {
 
 	$markup = '';
 	$markup .= '<aside class="wpb-section-action">
-			<span class="wpb-move-section" data-element="' . $element . '" title="' . esc_html__( 'Move section', '%TEXTDOMAIN%' ) . '"></span>
-			<span class="wpb-collapse-section wpb-tipsy" data-element="' . $element . '" title="' . esc_html__( 'Collapse section', '%TEXTDOMAIN%' ) . '"></span>';
+			<span class="wpb-move-section" data-element="' . $element . '" title="' . esc_html__( 'Move section', 'wolf-page-builder' ) . '"></span>
+			<span class="wpb-collapse-section wpb-tipsy" data-element="' . $element . '" title="' . esc_html__( 'Collapse section', 'wolf-page-builder' ) . '"></span>';
 
 	if ( 'blocks' == $section_type ) {
-		$markup .= '<span class="wpb-layout-section wpb-tipsy" data-element="section_blocks_layout" title="' . esc_html__( 'Layout', '%TEXTDOMAIN%' ) . '"></span>';
+		$markup .= '<span class="wpb-layout-section wpb-tipsy" data-element="section_blocks_layout" title="' . esc_html__( 'Layout', 'wolf-page-builder' ) . '"></span>';
 	}
 
 	$markup .= '<span class="wpb-section-title">section</span>
-		<span class="wpb-edit-section wpb-tipsy" data-element="section_' . $section_type . '" title="' . esc_html__( 'Section settings', '%TEXTDOMAIN%' ) . '"></span>
-		<span class="wpb-duplicate-section wpb-tipsy" title="' . esc_html__( 'Duplicate section', '%TEXTDOMAIN%' ) . '"></span>
-		<span class="wpb-remove-section wpb-tipsy" title="' . esc_html__( 'Remove section', '%TEXTDOMAIN%' ) . '"></span>';
+		<span class="wpb-edit-section wpb-tipsy" data-element="section_' . $section_type . '" title="' . esc_html__( 'Section settings', 'wolf-page-builder' ) . '"></span>
+		<span class="wpb-duplicate-section wpb-tipsy" title="' . esc_html__( 'Duplicate section', 'wolf-page-builder' ) . '"></span>
+		<span class="wpb-remove-section wpb-tipsy" title="' . esc_html__( 'Remove section', 'wolf-page-builder' ) . '"></span>';
 
 	if ( 'columns' == $section_type ) {
-		$markup .= '<span class="wpb-add-row wpb-tipsy" data-element="new_row" title="' . esc_html__( 'Add a row of columns', '%TEXTDOMAIN%' ) . '"></span>';
+		$markup .= '<span class="wpb-add-row wpb-tipsy" data-element="new_row" title="' . esc_html__( 'Add a row of columns', 'wolf-page-builder' ) . '"></span>';
 	}
 
 	$markup .= '</aside>';
@@ -342,11 +342,11 @@ function wpb_get_row_toolbar() {
 	$markup = '';
 
 	$markup = '<aside>
-		<span class="wpb-move-row" data-element="row" title="' . esc_html__( 'Move row', '%TEXTDOMAIN%' ) . '"></span>
-		<span class="wpb-layout-row wpb-tipsy" data-element="row_columns_layout" title="' . esc_html__( 'Layout', '%TEXTDOMAIN%' ) . '"></span>
-		<span class="wpb-duplicate-row wpb-tipsy" title="' . esc_html__( 'Duplicate row', '%TEXTDOMAIN%' ) . '"></span>
-		<span class="wpb-remove-row wpb-tipsy" title="' . esc_html__( 'Remove row', '%TEXTDOMAIN%' ) . '"></span>
-		<span class="wpb-edit-row wpb-tipsy" data-element="row" title="' . esc_html__( 'Row Settings', '%TEXTDOMAIN%' ) . '"></span>
+		<span class="wpb-move-row" data-element="row" title="' . esc_html__( 'Move row', 'wolf-page-builder' ) . '"></span>
+		<span class="wpb-layout-row wpb-tipsy" data-element="row_columns_layout" title="' . esc_html__( 'Layout', 'wolf-page-builder' ) . '"></span>
+		<span class="wpb-duplicate-row wpb-tipsy" title="' . esc_html__( 'Duplicate row', 'wolf-page-builder' ) . '"></span>
+		<span class="wpb-remove-row wpb-tipsy" title="' . esc_html__( 'Remove row', 'wolf-page-builder' ) . '"></span>
+		<span class="wpb-edit-row wpb-tipsy" data-element="row" title="' . esc_html__( 'Row Settings', 'wolf-page-builder' ) . '"></span>
 	</aside>';
 
 	return $markup;
@@ -361,8 +361,8 @@ function wpb_get_container_toolbar( $element = 'column' ) {
 	$markup = '';
 
 	$markup = '<aside class="wpb-col-action">
-		<span class="wpb-action wpb-view-elements wpb-add-element wpb-tipsy" title="' . esc_html__( 'Add element', '%TEXTDOMAIN%' ) . '"></span>
-		<span class="wpb-action wpb-edit-column wpb-tipsy" data-element="' . $element . '" title="' . sprintf( esc_html__( '%s Settings', '%TEXTDOMAIN%' ), ucfirst( $element ) ) . '"></span>
+		<span class="wpb-action wpb-view-elements wpb-add-element wpb-tipsy" title="' . esc_html__( 'Add element', 'wolf-page-builder' ) . '"></span>
+		<span class="wpb-action wpb-edit-column wpb-tipsy" data-element="' . $element . '" title="' . sprintf( esc_html__( '%s Settings', 'wolf-page-builder' ), ucfirst( $element ) ) . '"></span>
 		</aside>';
 
 	return $markup;
@@ -384,11 +384,11 @@ function wpb_get_element_toolbar( $basename, $element_name = '' ) {
 	}
 
 	if ( $element_name ) {
-		$markup .= '<span class="wpb-edit-element wpb-tipsy" data-element="' .  esc_attr( $basename ) . '" title="' . sprintf( esc_html__( '%s Settings', '%TEXTDOMAIN%' ), $element_name ) . '"></span>
-		<span class="wpb-duplicate-element wpb-tipsy" title="' .  esc_html__( 'Duplicate element', '%TEXTDOMAIN%' ) . '"></span>';
+		$markup .= '<span class="wpb-edit-element wpb-tipsy" data-element="' .  esc_attr( $basename ) . '" title="' . sprintf( esc_html__( '%s Settings', 'wolf-page-builder' ), $element_name ) . '"></span>
+		<span class="wpb-duplicate-element wpb-tipsy" title="' .  esc_html__( 'Duplicate element', 'wolf-page-builder' ) . '"></span>';
 	}
 
-	$markup .= '<span class="wpb-remove-element wpb-tipsy" title="' .  esc_html__( 'Remove element', '%TEXTDOMAIN%' ) . '"></span>';
+	$markup .= '<span class="wpb-remove-element wpb-tipsy" title="' .  esc_html__( 'Remove element', 'wolf-page-builder' ) . '"></span>';
 
 	$markup .= '</aside>';
 
@@ -525,7 +525,7 @@ function wpb_get_revsliders() {
 		if ( $arrA && $arrT ) {
 			$result = array_combine( $arrA, $arrT );
 		} else {
-			$result = array( '' => esc_html__( 'No slider yet', '%TEXTDOMAIN%' ) );
+			$result = array( '' => esc_html__( 'No slider yet', 'wolf-page-builder' ) );
 		}
 		return $result;
 	}
@@ -545,7 +545,7 @@ function wpb_admin_notice( $message = null, $type = null, $dismiss = false, $id 
 
 	if ( $dismiss ) {
 
-		$dismiss = esc_html__( 'Hide permanently', '%TEXTDOMAIN%' );
+		$dismiss = esc_html__( 'Hide permanently', 'wolf-page-builder' );
 
 		if ( $id ) {
 			if ( ! isset( $_COOKIE[ $id ] ) )

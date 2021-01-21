@@ -19,7 +19,7 @@ require_once( $path_to_wp . '/wp-load.php' );
  */
 function wpb_generate_tinymce_popup( $shortcode_id, $params = array(), $title = 'Shortcode', $wrap = false ) {
 
-	$submit = $wrap ? esc_html__( 'Wrap selection', '%TEXTDOMAIN%' ) : esc_html__( 'Insert', '%TEXTDOMAIN%' );
+	$submit = $wrap ? esc_html__( 'Wrap selection', 'wolf-page-builder' ) : esc_html__( 'Insert', 'wolf-page-builder' );
 	$output = "<script>
 	jQuery( function( $ ) {
 		$( '#wpb-insert' ).click( function() {
@@ -79,7 +79,7 @@ function wpb_generate_tinymce_popup( $shortcode_id, $params = array(), $title = 
 			<table class="form-table">';
 
 			foreach ( $params as $param ) {
-				$label = isset( $param['label'] ) ? $param['label'] : esc_html__( 'Label', '%TEXTDOMAIN%' );
+				$label = isset( $param['label'] ) ? $param['label'] : esc_html__( 'Label', 'wolf-page-builder' );
 				$param_id = isset( $param['id'] ) ? $param['id'] : null;
 				$type = isset( $param['type'] ) ? $param['type'] : 'text';
 				$options = isset( $param['options'] ) ? $param['options'] : array();

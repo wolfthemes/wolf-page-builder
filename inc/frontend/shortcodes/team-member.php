@@ -4,8 +4,8 @@
  *
  * @author WolfThemes
  * @category Core
- * @package %PACKAGENAME%/FrontEnd/Shortcodes
- * @version %VERSION%
+ * @package WolfPageBuilder/FrontEnd/Shortcodes
+ * @version 3.2.8
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -20,7 +20,7 @@ if ( ! function_exists( 'wpb_shortcode_team_member' ) ) {
 	 * @return string
 	 */
 	function wpb_shortcode_team_member( $atts ) {
-		
+
 		global $wpb_team_member_socials, $ti_icons;
 
 		extract( shortcode_atts( array(
@@ -68,7 +68,7 @@ if ( ! function_exists( 'wpb_shortcode_team_member' ) ) {
 		if ( $animation ) {
 			$class .= " wow $animation";
 		}
-			
+
 
 		if ( $animation_delay && 'none' != $animation ) {
 			$style .= 'animation-delay:' . absint( $animation_delay ) / 1000 . 's;-webkit-animation-delay:' . absint( $animation_delay ) / 1000 . 's;';
@@ -83,14 +83,14 @@ if ( ! function_exists( 'wpb_shortcode_team_member' ) ) {
 		$output = "<div class='$class'$style>";
 
 		if ( is_numeric( $image ) ) {
-			
+
 			$src = wpb_get_url_from_attachment_id( absint( $image ), $image_size );
 		} else {
 			$src = esc_url( $image );
 		}
 
 		if ( $src ) {
-			$output .= '<div class="wpb-team-member-image"><img src="' . esc_url( $src ) . '" alt="' . esc_attr( esc_html__( 'team member', '%TEXTDOMAIN%' ) ) . '"></div>';
+			$output .= '<div class="wpb-team-member-image"><img src="' . esc_url( $src ) . '" alt="' . esc_attr( esc_html__( 'team member', 'wolf-page-builder' ) ) . '"></div>';
 		}
 
 		$headings_array = array( 'h2', 'h3', 'h4', 'h5', 'h6' );

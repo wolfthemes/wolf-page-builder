@@ -5,51 +5,51 @@
  * @class WPB_Admin
  * @author WolfThemes
  * @category Admin
- * @package %PACKAGENAME%/Admin
- * @version %VERSION%
+ * @package WolfPageBuilder/Admin
+ * @version 3.2.8
  */
-$font_list = array( '' => esc_html__( 'Default heading font', '%TEXTDOMAIN%' ) );
+$font_list = array( '' => esc_html__( 'Default heading font', 'wolf-page-builder' ) );
 $wpb_google_fonts = wpb_get_google_fonts_options();
 
 foreach ( $wpb_google_fonts as $key => $value ) {
 	$font_list[ $key ] = $key;
 }
 
-$title = esc_html__( 'Headline', '%TEXTDOMAIN%' );
+$title = esc_html__( 'Headline', 'wolf-page-builder' );
 $params = array(
 
 	array(
 		'id' => 'text',
-		'label' => esc_html__( 'Text', '%TEXTDOMAIN%' ),
-		'placeholder' => esc_html__( 'My Cool Headline', '%TEXTDOMAIN%' ),
+		'label' => esc_html__( 'Text', 'wolf-page-builder' ),
+		'placeholder' => esc_html__( 'My Cool Headline', 'wolf-page-builder' ),
 	),
 
 	array(
 		'id' => 'max_font_size',
-		'label' => esc_html__( 'Font Size', '%TEXTDOMAIN%' ),
+		'label' => esc_html__( 'Font Size', 'wolf-page-builder' ),
 		'placeholder' => '48px',
 	),
 
 	array(
 		'id' => 'letter_spacing',
-		'label' => esc_html__( 'Letter Spacing', '%TEXTDOMAIN%' ),
+		'label' => esc_html__( 'Letter Spacing', 'wolf-page-builder' ),
 		'placeholder' => '3px',
 	),
 
 	array(
 		'id' => 'font_family',
-		'label' => esc_html__( 'Font Family', '%TEXTDOMAIN%' ),
+		'label' => esc_html__( 'Font Family', 'wolf-page-builder' ),
 		'type' => 'select',
 		'options' => $font_list,
 	),
 
 	array(
 		'id' => 'text_transform',
-		'label' => esc_html__( 'Font Transform', '%TEXTDOMAIN%' ),
+		'label' => esc_html__( 'Font Transform', 'wolf-page-builder' ),
 		'type' => 'select',
 		'options' => array(
-			'uppercase' => esc_html__( 'uppercase', '%TEXTDOMAIN%' ),
-			'none' => esc_html__( 'none', '%TEXTDOMAIN%' ),
+			'uppercase' => esc_html__( 'uppercase', 'wolf-page-builder' ),
+			'none' => esc_html__( 'none', 'wolf-page-builder' ),
 		),
 	),
 );

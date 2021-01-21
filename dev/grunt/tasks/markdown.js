@@ -12,7 +12,7 @@ module.exports = {
 		options: {
 			template: 'log-template.jst',
 			templateContext: {
-				version: '<%= version %>'
+				version: '<%= app.version %>'
 			}
 		}
 	}
